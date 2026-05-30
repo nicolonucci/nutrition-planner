@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutritionPlanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Piano alimentare personale</div>
+  <h1 class="header-title">Nutrition <em>&</em> Training</h1>
+  <div class="header-sub">Menù · Dispensa · Pianificazione</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link active">Settimane</a>
+  <a href="menu.html" class="nav-link">Menù</a>
+  <a href="dispensa.html" class="nav-link">Dispensa</a>
+  <a href="ricettario.html" class="nav-link">Ricettario</a>
+</nav>
+
+<div class="container">
+
+  <div class="stats-row" id="stats-row">
+    <div class="stat">
+      <div class="stat-value" id="stat-settimane">—</div>
+      <div class="stat-label">Settimane archiviate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-dispensa">—</div>
+      <div class="stat-label">Alimenti in dispensa</div>
+    </div>
+  </div>
+
+  <div class="sl">Tutte le settimane</div>
+
+  <div id="loading" class="loader"><div class="spinner"></div> Caricamento...</div>
+  <div id="week-grid" class="card-grid" style="display:none"></div>
+  <div id="empty" class="empty" style="display:none">
+    <div class="icon">📅</div>
+    <p>Nessun menù ancora pianificato.<br>Avvia la skill <strong>Pianificazione</strong> nel weekend per creare il primo menù.</p>
+  </div>
+
+</div>
+
+<div class="footer-note">NutritionPlanner · aggiornato ogni weekend</div>
+
+<script src="js/config.js"></script>
+<script>
+async function init() {
+  try {
+    const [settimane, dispensa] = await Promise.all([
+      fetchData(CONFIG.paths.settimane),
+      fetchData(CONFIG.paths.dispensa)
+    ]);
+    document.getElementById('stat-settimane').textContent = settimane.settimane.length;
+    document.getElementById('stat-dispensa').textContent = dispensa.alimenti.length;
+
+    const grid = document.getElementById('week-grid');
+    document.getElementById('loading').style.display = 'none';
+    const currentWeek = getCurrentWeek();
+
+    if (!settimane.settimane.length) {
+      document.getElementById('empty').style.display = 'block';
+      return;
+    }
+    grid.style.display = 'grid';
+    const sorted = [...settimane.settimane].sort((a, b) => b.id.localeCompare(a.id));
+    sorted.forEach(s => {
+      const isCurrent = s.id === currentWeek;
+      const wn = s.id.split('-W')[1];
+      const yr = s.id.split('-W')[0];
+      const card = document.createElement('a');
+      card.href = `menu.html?week=${s.id}`;
+      card.className = `week-card${isCurrent ? ' current' : ''}`;
+      card.innerHTML = `
+        <div class="wk-num">Settimana ${wn} · ${yr}</div>
+        <div class="wk-dates">${weekLabel(s.id)}</div>
+        <div class="wk-footer">
+          ${isCurrent ? '<span class="pill current">✦ Corrente</span>' : ''}
+          ${s.confermato ? '<span class="pill ok">✓ Pianificato</span>' : '<span class="pill low">⚠ Bozza</span>'}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  } catch (e) {
+    document.getElementById('loading').innerHTML = `<span style="color:#9c2a52">Errore caricamento: ${e.message}</span>`;
+  }
+}
+init();
+</script>
+</body>
+</html>

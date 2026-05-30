@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricettario — NutritionPlanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── MAIN TABS (CSS-only) ── */
+    .act-inp{display:none !important}
+
+    .tabs-wrap{
+      display:flex;background:#fff;
+      border-bottom:2.5px solid var(--black);
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+      position:sticky;top:48px;z-index:99;
+    }
+    .tabs-wrap::-webkit-scrollbar{display:none}
+    .act-tab{
+      flex:1;min-width:72px;padding:13px 4px 11px;
+      border:none;background:transparent;cursor:pointer;
+      font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+      color:var(--grey);text-align:center;border-right:1px solid var(--mid);
+      transition:background .15s,color .15s;display:block;line-height:1.4;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .act-tab:last-child{border-right:none}
+    .act-panel{display:none}
+
+    /* Tab active states */
+    #tab-col:checked~.tabs-wrap label[for="tab-col"],
+    #tab-pra:checked~.tabs-wrap label[for="tab-pra"],
+    #tab-cen:checked~.tabs-wrap label[for="tab-cen"],
+    #tab-spu:checked~.tabs-wrap label[for="tab-spu"]{background:var(--black);color:#fff}
+
+    #tab-col:checked~#p-col,
+    #tab-pra:checked~#p-pra,
+    #tab-cen:checked~#p-cen,
+    #tab-spu:checked~#p-spu{display:block}
+
+    /* ── Sub-tabs per tipo giornata ── */
+    .sub-inp{display:none !important}
+    .sub-tabs{
+      display:flex;padding:12px 12px 0;background:var(--bg);
+      border-bottom:1px solid var(--mid);overflow-x:auto;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+      gap:0;position:sticky;top:calc(48px + 46px);z-index:98;
+    }
+    .sub-tabs::-webkit-scrollbar{display:none}
+    .sub-tab{
+      padding:8px 14px;border:1.5px solid var(--mid);background:#fff;
+      cursor:pointer;font-size:10px;font-weight:600;color:var(--grey);
+      transition:all .15s;border-radius:8px 8px 0 0;margin-right:4px;
+      font-family:'DM Sans',sans-serif;display:block;white-space:nowrap;
+      flex-shrink:0;-webkit-tap-highlight-color:transparent;
+    }
+    .sub-panel{display:none}
+
+    /* Sub-tab active — per colazione */
+    #sc-all:checked~.sub-tabs label[for="sc-all"],
+    #sc-pre:checked~.sub-tabs label[for="sc-pre"],
+    #sc-ris:checked~.sub-tabs label[for="sc-ris"]{background:var(--black);color:#fff;border-color:var(--black)}
+    #sc-all:checked~.sub-panels #scp-all,
+    #sc-pre:checked~.sub-panels #scp-pre,
+    #sc-ris:checked~.sub-panels #scp-ris{display:block}
+
+    #sp-all:checked~.sub-tabs label[for="sp-all"],
+    #sp-pre:checked~.sub-tabs label[for="sp-pre"],
+    #sp-ris:checked~.sub-tabs label[for="sp-ris"]{background:var(--black);color:#fff;border-color:var(--black)}
+    #sp-all:checked~.sub-panels #spp-all,
+    #sp-pre:checked~.sub-panels #spp-pre,
+    #sp-ris:checked~.sub-panels #spp-ris{display:block}
+
+    #scn-all:checked~.sub-tabs label[for="scn-all"],
+    #scn-pre:checked~.sub-tabs label[for="scn-pre"],
+    #scn-ris:checked~.sub-tabs label[for="scn-ris"]{background:var(--black);color:#fff;border-color:var(--black)}
+    #scn-all:checked~.sub-panels #scnp-all,
+    #scn-pre:checked~.sub-panels #scnp-pre,
+    #scn-ris:checked~.sub-panels #scnp-ris{display:block}
+
+    #ss-all:checked~.sub-tabs label[for="ss-all"],
+    #ss-pre:checked~.sub-tabs label[for="ss-pre"],
+    #ss-ris:checked~.sub-tabs label[for="ss-ris"]{background:var(--black);color:#fff;border-color:var(--black)}
+    #ss-all:checked~.sub-panels #ssp-all,
+    #ss-pre:checked~.sub-panels #ssp-pre,
+    #ss-ris:checked~.sub-panels #ssp-ris{display:block}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Tutte le opzioni disponibili</div>
+  <h1 class="header-title">Ricettario <em>completo</em></h1>
+  <div class="header-sub">Colazione · Pranzo · Cena · Spuntini</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Settimane</a>
+  <a href="menu.html" class="nav-link">Menù</a>
+  <a href="dispensa.html" class="nav-link">Dispensa</a>
+  <a href="ricettario.html" class="nav-link active">Ricettario</a>
+</nav>
+
+<div class="legend">
+  <span class="leg fast">⚡ Veloce (&lt;15min)</span>
+  <span class="leg cls">✓ Classico</span>
+  <span class="leg sfiz">★ Sfizioso</span>
+  <span class="leg prot">💪 Alto proteico</span>
+  <span class="leg light">🥗 Light</span>
+</div>
+
+<!-- ══ MAIN TAB RADIOS ══ -->
+<input type="radio" class="act-inp" name="main" id="tab-col" checked>
+<input type="radio" class="act-inp" name="main" id="tab-pra">
+<input type="radio" class="act-inp" name="main" id="tab-cen">
+<input type="radio" class="act-inp" name="main" id="tab-spu">
+
+<div class="tabs-wrap">
+  <label for="tab-col" class="act-tab">🌅<br>Colazione</label>
+  <label for="tab-pra" class="act-tab">☀️<br>Pranzo</label>
+  <label for="tab-cen" class="act-tab">🌙<br>Cena</label>
+  <label for="tab-spu" class="act-tab">🍎<br>Spuntini</label>
+</div>
+
+<!-- ══════════════════════════════
+     COLAZIONE
+══════════════════════════════ -->
+<div class="act-panel" id="p-col">
+  <input type="radio" class="sub-inp" name="sub-col" id="sc-all" checked>
+  <input type="radio" class="sub-inp" name="sub-col" id="sc-pre">
+  <input type="radio" class="sub-inp" name="sub-col" id="sc-ris">
+  <div class="sub-tabs">
+    <label for="sc-all" class="sub-tab">Tutte</label>
+    <label for="sc-pre" class="sub-tab">💪 Pre-allenamento</label>
+    <label for="sc-ris" class="sub-tab">💤 Riposo</label>
+  </div>
+  <div class="sub-panels">
+
+    <!-- TUTTE -->
+    <div class="sub-panel" id="scp-all">
+      <div class="container">
+        <div class="scenario-sub">Tutte le opzioni disponibili per la colazione — filtra per tipo di giornata usando i tab qui sopra.</div>
+
+        <!-- Avena & Bowl -->
+        <input type="checkbox" class="meal-tog" id="m-col-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-col-1">
+            <span class="meal-ic">🥣</span>
+            <span class="meal-lbl">Avena & Bowl</span>
+            <span class="meal-kcal">350–550 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-col-1a">
+            <label class="rec-row" for="r-col-1a">
+              <div class="rec-body">
+                <div class="rec-name">Porridge di avena con banana e miele</div>
+                <div class="rec-meta">~420 kcal · 15g prot · 15min</div>
+              </div>
+              <span class="pill cls">Classico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">80g fiocchi d'avena</span>
+                <span class="chip g">250ml latte</span>
+                <span class="chip">1 banana</span>
+                <span class="chip">1 cucchiaio miele</span>
+                <span class="chip">cannella q.b.</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--green)">1</div><div class="st">Scalda il latte in un pentolino, aggiungi i fiocchi d'avena.</div></div>
+                <div class="step"><div class="sn" style="background:var(--green)">2</div><div class="st">Cuoci mescolando per 5 minuti fino alla consistenza desiderata.</div></div>
+                <div class="step"><div class="sn" style="background:var(--green)">3</div><div class="st">Servi con banana a rondelle, miele e una spolverata di cannella.</div></div>
+              </div>
+            </div>
+
+            <input type="checkbox" class="rec-tog" id="r-col-1b">
+            <label class="rec-row" for="r-col-1b">
+              <div class="rec-body">
+                <div class="rec-name">Overnight oats con frutti di bosco e burro d'arachidi</div>
+                <div class="rec-meta">~480 kcal · 20g prot · 5min (prep serale)</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">80g fiocchi d'avena</span>
+                <span class="chip g">150ml latte</span>
+                <span class="chip g">100g yogurt greco 0%</span>
+                <span class="chip">1 cucchiaio burro d'arachidi</span>
+                <span class="chip">80g frutti di bosco misti</span>
+                <span class="chip">1 cucchiaino miele</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--orange)">1</div><div class="st">Mescola avena, latte e yogurt in un barattolo. Copri e lascia in frigo tutta la notte.</div></div>
+                <div class="step"><div class="sn" style="background:var(--orange)">2</div><div class="st">Al mattino aggiungi burro d'arachidi, frutti di bosco e miele. Pronto subito.</div></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /meal-card -->
+
+        <!-- Uova -->
+        <input type="checkbox" class="meal-tog" id="m-col-2">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-col-2">
+            <span class="meal-ic">🍳</span>
+            <span class="meal-lbl">Uova & Proteico</span>
+            <span class="meal-kcal">350–500 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-col-2a">
+            <label class="rec-row" for="r-col-2a">
+              <div class="rec-body">
+                <div class="rec-name">Uova strapazzate con pane integrale e avocado</div>
+                <div class="rec-meta">~450 kcal · 28g prot · 10min</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">3 uova intere</span>
+                <span class="chip g">2 fette pane integrale</span>
+                <span class="chip">½ avocado</span>
+                <span class="chip">sale, pepe, erba cipollina</span>
+                <span class="chip">1 cucchiaino olio EVO</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--orange)">1</div><div class="st">Sbatti le uova con sale e pepe. Scalda olio in padella a fuoco basso.</div></div>
+                <div class="step"><div class="sn" style="background:var(--orange)">2</div><div class="st">Versa le uova e mescola delicatamente finché cremose. Togli dal fuoco leggermente lucide.</div></div>
+                <div class="step"><div class="sn" style="background:var(--orange)">3</div><div class="st">Servi sul pane tostato con avocado schiacciato ed erba cipollina.</div></div>
+              </div>
+            </div>
+
+            <input type="checkbox" class="rec-tog" id="r-col-2b">
+            <label class="rec-row" for="r-col-2b">
+              <div class="rec-body">
+                <div class="rec-name">Greek yogurt bowl con granola e frutta secca</div>
+                <div class="rec-meta">~400 kcal · 25g prot · 3min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">200g yogurt greco 0%</span>
+                <span class="chip g">40g granola</span>
+                <span class="chip">20g mandorle</span>
+                <span class="chip">1 cucchiaino miele</span>
+                <span class="chip">frutta fresca a piacere</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pancake & Dolce -->
+        <input type="checkbox" class="meal-tog" id="m-col-3">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-col-3">
+            <span class="meal-ic">🥞</span>
+            <span class="meal-lbl">Pancake & Weekend</span>
+            <span class="meal-kcal">450–600 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-col-3a">
+            <label class="rec-row" for="r-col-3a">
+              <div class="rec-body">
+                <div class="rec-name">Pancake proteici all'avena (4 pezzi)</div>
+                <div class="rec-meta">~500 kcal · 35g prot · 20min</div>
+              </div>
+              <span class="pill sfiz">Sfizioso</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">100g fiocchi d'avena (frullati)</span>
+                <span class="chip g">2 uova</span>
+                <span class="chip g">100g yogurt greco</span>
+                <span class="chip">½ cucchiaino lievito</span>
+                <span class="chip">1 cucchiaio miele</span>
+                <span class="chip">sciroppo d'acero per servire</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--blue)">1</div><div class="st">Frulla l'avena fino a farina. Mescola tutti gli ingredienti fino a ottenere un composto liscio.</div></div>
+                <div class="step"><div class="sn" style="background:var(--blue)">2</div><div class="st">Cuoci in padella antiaderente a fuoco medio, circa 2 min per lato.</div></div>
+                <div class="step"><div class="sn" style="background:var(--blue)">3</div><div class="st">Servi con sciroppo d'acero e frutti di bosco.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </div><!-- /scp-all -->
+
+    <!-- PRE-ALLENAMENTO -->
+    <div class="sub-panel" id="scp-pre">
+      <div class="container">
+        <div class="scenario-sub">Colazioni ottimizzate per giornate con allenamento: carboidrati complessi, moderato grasso, tempo di digestione &lt;90 min.</div>
+        <div class="note-wrap"><div class="note-inner nb"><strong>Timing:</strong> mangia 1.5–2h prima dell'allenamento. Se ti alleni presto, opta per porzioni ridotte e digestione rapida.</div></div>
+
+        <input type="checkbox" class="meal-tog" id="m-pre-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-pre-1">
+            <span class="meal-ic">⚡</span>
+            <span class="meal-lbl">Carica energetica</span>
+            <span class="meal-kcal">400–500 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-pre-1a">
+            <label class="rec-row" for="r-pre-1a">
+              <div class="rec-body">
+                <div class="rec-name">Porridge di avena con banana e miele</div>
+                <div class="rec-meta">~420 kcal · 15g prot · 65g carb · 15min</div>
+              </div>
+              <span class="pill cls">Classico</span>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="note-wrap" style="margin-top:0"><div class="note-inner ng">✓ Ideale pre-workout: avena a rilascio lento + banana per carboidrati rapidi.</div></div>
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">80g fiocchi d'avena</span><span class="chip g">250ml latte</span>
+                <span class="chip">1 banana matura</span><span class="chip">1 cucchiaio miele</span>
+              </div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-pre-1b">
+            <label class="rec-row" for="r-pre-1b">
+              <div class="rec-body">
+                <div class="rec-name">Pane integrale + burro d'arachidi + banana</div>
+                <div class="rec-meta">~430 kcal · 18g prot · 55g carb · 5min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">2 fette pane integrale</span>
+                <span class="chip g">2 cucchiai burro d'arachidi</span>
+                <span class="chip">1 banana</span>
+                <span class="chip">caffè senza zucchero</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /scp-pre -->
+
+    <!-- RIPOSO -->
+    <div class="sub-panel" id="scp-ris">
+      <div class="container">
+        <div class="scenario-sub">Colazioni per giorni di recupero o riposo: più leggere nei carboidrati, soddisfacenti, senza fretta.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-ris-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-ris-1">
+            <span class="meal-ic">🧘</span>
+            <span class="meal-lbl">Colazioni light</span>
+            <span class="meal-kcal">300–400 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-ris-1a">
+            <label class="rec-row" for="r-ris-1a">
+              <div class="rec-body">
+                <div class="rec-name">Greek yogurt bowl con frutta fresca e noci</div>
+                <div class="rec-meta">~350 kcal · 22g prot · 3min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="pill light">Light</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">200g yogurt greco 0%</span>
+                <span class="chip">1 cucchiaino miele</span>
+                <span class="chip">frutta stagionale</span>
+                <span class="chip">15g noci</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /sub-panels colazione -->
+</div><!-- /p-col -->
+
+<!-- ══════════════════════════════
+     PRANZO
+══════════════════════════════ -->
+<div class="act-panel" id="p-pra">
+  <input type="radio" class="sub-inp" name="sub-pra" id="sp-all" checked>
+  <input type="radio" class="sub-inp" name="sub-pra" id="sp-pre">
+  <input type="radio" class="sub-inp" name="sub-pra" id="sp-ris">
+  <div class="sub-tabs">
+    <label for="sp-all" class="sub-tab">Tutti</label>
+    <label for="sp-pre" class="sub-tab">💪 Post-allenamento</label>
+    <label for="sp-ris" class="sub-tab">💤 Riposo</label>
+  </div>
+  <div class="sub-panels">
+
+    <div class="sub-panel" id="spp-all">
+      <div class="container">
+        <div class="scenario-sub">Tutti i pranzi disponibili — ordinati per categoria.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-pra-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-pra-1">
+            <span class="meal-ic">🍚</span>
+            <span class="meal-lbl">Riso & Cereali</span>
+            <span class="meal-kcal">550–700 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-pra-1a">
+            <label class="rec-row" for="r-pra-1a">
+              <div class="rec-body">
+                <div class="rec-name">Riso integrale con pollo alla piastra e verdure</div>
+                <div class="rec-meta">~620 kcal · 48g prot · 30min</div>
+              </div>
+              <span class="pill cls">Classico</span>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">90g riso integrale</span>
+                <span class="chip g">160g petto di pollo</span>
+                <span class="chip">zucchine, peperoni</span>
+                <span class="chip">olio EVO, limone</span>
+                <span class="chip">sale, pepe, rosmarino</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--green)">1</div><div class="st">Cuoci il riso (35 min). Marina il pollo con olio, limone, rosmarino.</div></div>
+                <div class="step"><div class="sn" style="background:var(--green)">2</div><div class="st">Cuoci il pollo alla piastra 5 min per lato. Grigliata o saltate le verdure.</div></div>
+                <div class="step"><div class="sn" style="background:var(--green)">3</div><div class="st">Assembla il bowl con riso, pollo a fette e verdure.</div></div>
+              </div>
+            </div>
+
+            <input type="checkbox" class="rec-tog" id="r-pra-1b">
+            <label class="rec-row" for="r-pra-1b">
+              <div class="rec-body">
+                <div class="rec-name">Bowl di quinoa con salmone e avocado</div>
+                <div class="rec-meta">~600 kcal · 40g prot · 25min</div>
+              </div>
+              <span class="pill sfiz">Sfizioso</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">80g quinoa</span>
+                <span class="chip g">150g salmone fresco o al vapore</span>
+                <span class="chip">½ avocado</span>
+                <span class="chip">spinacini, pomodorini</span>
+                <span class="chip">salsa di soia, lime, sesamo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-pra-2">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-pra-2">
+            <span class="meal-ic">🍝</span>
+            <span class="meal-lbl">Pasta</span>
+            <span class="meal-kcal">550–680 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-pra-2a">
+            <label class="rec-row" for="r-pra-2a">
+              <div class="rec-body">
+                <div class="rec-name">Pasta integrale con tonno, pomodorini e capperi</div>
+                <div class="rec-meta">~580 kcal · 38g prot · 15min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="pill cls">Classico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">90g pasta integrale</span>
+                <span class="chip g">150g tonno al naturale</span>
+                <span class="chip">pomodorini, capperi, olive</span>
+                <span class="chip">olio EVO, aglio, prezzemolo</span>
+              </div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-pra-2b">
+            <label class="rec-row" for="r-pra-2b">
+              <div class="rec-body">
+                <div class="rec-name">Pasta al pesto con pollo e fagiolini</div>
+                <div class="rec-meta">~640 kcal · 45g prot · 20min</div>
+              </div>
+              <span class="pill sfiz">Sfizioso</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">90g pasta integrale</span>
+                <span class="chip g">150g petto di pollo</span>
+                <span class="chip">100g fagiolini</span>
+                <span class="chip">2 cucchiai pesto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-pra-3">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-pra-3">
+            <span class="meal-ic">🥗</span>
+            <span class="meal-lbl">Insalate proteiche</span>
+            <span class="meal-kcal">400–520 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-pra-3a">
+            <label class="rec-row" for="r-pra-3a">
+              <div class="rec-body">
+                <div class="rec-name">Insalata greca con pollo e feta</div>
+                <div class="rec-meta">~450 kcal · 38g prot · 10min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="pill light">Light</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">150g pollo cotto</span>
+                <span class="chip g">50g feta</span>
+                <span class="chip">lattuga, pomodori, cetriolo</span>
+                <span class="chip">olive nere, origano</span>
+                <span class="chip">olio EVO, aceto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /spp-all -->
+
+    <div class="sub-panel" id="spp-pre">
+      <div class="container">
+        <div class="scenario-sub">Pranzi post-allenamento: priorità a proteine + carboidrati complessi per ottimizzare il recupero muscolare.</div>
+        <div class="note-wrap"><div class="note-inner ng"><strong>Recovery window:</strong> consuma entro 1–2h dall'allenamento. Mira a 40–50g di proteine e 60–80g di carboidrati.</div></div>
+
+        <input type="checkbox" class="meal-tog" id="m-post-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-post-1">
+            <span class="meal-ic">💪</span>
+            <span class="meal-lbl">Pasti di recupero</span>
+            <span class="meal-kcal">600–750 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-post-1a">
+            <label class="rec-row" for="r-post-1a">
+              <div class="rec-body">
+                <div class="rec-name">Riso integrale con pollo alla piastra e verdure</div>
+                <div class="rec-meta">~650 kcal · 48g prot · 70g carb</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="note-wrap" style="margin-top:0"><div class="note-inner ng">✓ Combinazione ideale: proteine magre + carboidrati complessi + micronutrienti.</div></div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-post-1b">
+            <label class="rec-row" for="r-post-1b">
+              <div class="rec-body">
+                <div class="rec-name">Patate dolci con tacchino e broccoli</div>
+                <div class="rec-meta">~600 kcal · 45g prot · 65g carb</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">200g patate dolci</span>
+                <span class="chip g">160g petto di tacchino</span>
+                <span class="chip">200g broccoli</span>
+                <span class="chip">olio EVO, aglio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-panel" id="spp-ris">
+      <div class="container">
+        <div class="scenario-sub">Pranzi per giorni di riposo: leggermente ridotti nei carboidrati, sazianti e nutrienti.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-pris-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-pris-1">
+            <span class="meal-ic">🥗</span>
+            <span class="meal-lbl">Pranzi bilanciati</span>
+            <span class="meal-kcal">450–550 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-pris-1a">
+            <label class="rec-row" for="r-pris-1a">
+              <div class="rec-body">
+                <div class="rec-name">Insalata di lenticchie con feta e verdure arrosto</div>
+                <div class="rec-meta">~480 kcal · 28g prot · 20min</div>
+              </div>
+              <span class="pill light">Light</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">120g lenticchie cotte</span>
+                <span class="chip g">60g feta</span>
+                <span class="chip">zucchine, peperoni arrosto</span>
+                <span class="chip">rucola, olio EVO, limone</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sub-panels pranzo -->
+</div><!-- /p-pra -->
+
+<!-- ══════════════════════════════
+     CENA
+══════════════════════════════ -->
+<div class="act-panel" id="p-cen">
+  <input type="radio" class="sub-inp" name="sub-cen" id="scn-all" checked>
+  <input type="radio" class="sub-inp" name="sub-cen" id="scn-pre">
+  <input type="radio" class="sub-inp" name="sub-cen" id="scn-ris">
+  <div class="sub-tabs">
+    <label for="scn-all" class="sub-tab">Tutte</label>
+    <label for="scn-pre" class="sub-tab">💪 Post-allenamento serale</label>
+    <label for="scn-ris" class="sub-tab">💤 Riposo / Deficit</label>
+  </div>
+  <div class="sub-panels">
+
+    <div class="sub-panel" id="scnp-all">
+      <div class="container">
+        <div class="scenario-sub">Tutte le cene disponibili. Generalmente più leggere a carboidrati rispetto al pranzo, ricche di proteine e verdure.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-cen-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-cen-1">
+            <span class="meal-ic">🐟</span>
+            <span class="meal-lbl">Pesce</span>
+            <span class="meal-kcal">450–600 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-cen-1a">
+            <label class="rec-row" for="r-cen-1a">
+              <div class="rec-body">
+                <div class="rec-name">Salmone al forno con patate dolci e broccoli</div>
+                <div class="rec-meta">~560 kcal · 42g prot · 30min</div>
+              </div>
+              <span class="pill cls">Classico</span>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="sl">Ingredienti</div>
+              <div class="chips">
+                <span class="chip g">200g filetto di salmone</span>
+                <span class="chip g">150g patate dolci</span>
+                <span class="chip">200g broccoli</span>
+                <span class="chip">olio EVO, limone, aneto</span>
+                <span class="chip">aglio, sale</span>
+              </div>
+              <div class="sl">Preparazione</div>
+              <div class="steps">
+                <div class="step"><div class="sn" style="background:var(--blue)">1</div><div class="st">Preriscalda forno a 200°C. Taglia le patate dolci a cubetti e inforna 15 min con olio e sale.</div></div>
+                <div class="step"><div class="sn" style="background:var(--blue)">2</div><div class="st">Aggiungi il salmone e i broccoli. Cuoci altri 15 min.</div></div>
+                <div class="step"><div class="sn" style="background:var(--blue)">3</div><div class="st">Servi con succo di limone e aneto fresco.</div></div>
+              </div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-cen-1b">
+            <label class="rec-row" for="r-cen-1b">
+              <div class="rec-body">
+                <div class="rec-name">Merluzzo al vapore con quinoa e zucchine grigliate</div>
+                <div class="rec-meta">~480 kcal · 44g prot · 25min</div>
+              </div>
+              <span class="pill light">Light</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">200g filetto di merluzzo</span>
+                <span class="chip g">70g quinoa</span>
+                <span class="chip">2 zucchine</span>
+                <span class="chip">limone, erbe aromatiche</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-cen-2">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-cen-2">
+            <span class="meal-ic">🥩</span>
+            <span class="meal-lbl">Carne & Proteine</span>
+            <span class="meal-kcal">500–650 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-cen-2a">
+            <label class="rec-row" for="r-cen-2a">
+              <div class="rec-body">
+                <div class="rec-name">Petto di tacchino con quinoa e spinaci saltati</div>
+                <div class="rec-meta">~520 kcal · 48g prot · 20min</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">180g petto di tacchino</span>
+                <span class="chip g">70g quinoa</span>
+                <span class="chip">200g spinaci freschi</span>
+                <span class="chip">aglio, olio EVO, sale</span>
+              </div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-cen-2b">
+            <label class="rec-row" for="r-cen-2b">
+              <div class="rec-body">
+                <div class="rec-name">Bistecca di manzo magra con verdure arrosto</div>
+                <div class="rec-meta">~580 kcal · 52g prot · 20min</div>
+              </div>
+              <span class="pill sfiz">Sfizioso</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">180g bistecca di manzo (scelta magra)</span>
+                <span class="chip">peperoni, zucchine, cipolla</span>
+                <span class="chip">rosmarino, olio EVO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-cen-3">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-cen-3">
+            <span class="meal-ic">🌱</span>
+            <span class="meal-lbl">Vegetariano</span>
+            <span class="meal-kcal">420–540 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-cen-3a">
+            <label class="rec-row" for="r-cen-3a">
+              <div class="rec-body">
+                <div class="rec-name">Frittata di uova con verdure e feta</div>
+                <div class="rec-meta">~450 kcal · 35g prot · 15min</div>
+              </div>
+              <span class="pill fast">Veloce</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">4 uova</span>
+                <span class="chip g">50g feta</span>
+                <span class="chip">spinaci, pomodorini, cipolla</span>
+                <span class="chip">olio EVO, sale, pepe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sub-panel" id="scnp-pre">
+      <div class="container">
+        <div class="scenario-sub">Cene post-allenamento serale: proteine alte per il recupero notturno, carboidrati moderati.</div>
+        <div class="note-wrap"><div class="note-inner nbl"><strong>Nota:</strong> dopo l'allenamento serale, includi sempre almeno 40g di proteine per ottimizzare la sintesi muscolare durante il sonno.</div></div>
+
+        <input type="checkbox" class="meal-tog" id="m-cpost-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-cpost-1">
+            <span class="meal-ic">💪</span>
+            <span class="meal-lbl">Recupero notturno</span>
+            <span class="meal-kcal">520–640 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-cpost-1a">
+            <label class="rec-row" for="r-cpost-1a">
+              <div class="rec-body">
+                <div class="rec-name">Salmone al forno con patate dolci e broccoli</div>
+                <div class="rec-meta">~560 kcal · 42g prot</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="note-wrap" style="margin-top:0"><div class="note-inner ng">✓ Omega-3 del salmone riducono l'infiammazione post-workout.</div></div>
+            </div>
+            <input type="checkbox" class="rec-tog" id="r-cpost-1b">
+            <label class="rec-row" for="r-cpost-1b">
+              <div class="rec-body">
+                <div class="rec-name">Tacchino con quinoa e spinaci + yogurt greco (dessert)</div>
+                <div class="rec-meta">~590 kcal · 55g prot</div>
+              </div>
+              <span class="pill prot">Alto proteico</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="note-wrap" style="margin-top:0"><div class="note-inner ng">✓ Lo yogurt greco a fine cena aggiunge caseina a lento rilascio notturno.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-panel" id="scnp-ris">
+      <div class="container">
+        <div class="scenario-sub">Cene leggere per giorni di riposo o in deficit calorico.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-cris-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-cris-1">
+            <span class="meal-ic">🥗</span>
+            <span class="meal-lbl">Cene light</span>
+            <span class="meal-kcal">350–450 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <input type="checkbox" class="rec-tog" id="r-cris-1a">
+            <label class="rec-row" for="r-cris-1a">
+              <div class="rec-body">
+                <div class="rec-name">Merluzzo al vapore con verdure miste e limone</div>
+                <div class="rec-meta">~380 kcal · 40g prot · 20min</div>
+              </div>
+              <span class="pill light">Light</span>
+              <span class="chevron-r">▸</span>
+            </label>
+            <div class="rec-detail">
+              <div class="chips">
+                <span class="chip g">200g merluzzo</span>
+                <span class="chip">zucchine, fagiolini</span>
+                <span class="chip">limone, olio EVO a crudo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sub-panels cena -->
+</div><!-- /p-cen -->
+
+<!-- ══════════════════════════════
+     SPUNTINI
+══════════════════════════════ -->
+<div class="act-panel" id="p-spu">
+  <input type="radio" class="sub-inp" name="sub-spu" id="ss-all" checked>
+  <input type="radio" class="sub-inp" name="sub-spu" id="ss-pre">
+  <input type="radio" class="sub-inp" name="sub-spu" id="ss-ris">
+  <div class="sub-tabs">
+    <label for="ss-all" class="sub-tab">Tutti</label>
+    <label for="ss-pre" class="sub-tab">⚡ Pre/Post workout</label>
+    <label for="ss-ris" class="sub-tab">💤 Riposo</label>
+  </div>
+  <div class="sub-panels">
+
+    <div class="sub-panel" id="ssp-all">
+      <div class="container">
+        <div class="scenario-sub">Spuntini per ogni occasione — da inserire tra i pasti principali in base al fabbisogno.</div>
+
+        <div class="macro-bar">
+          <span class="macro-pill">150–300 kcal <span>ciascuno</span></span>
+          <span class="macro-pill">1–2 <span>al giorno</span></span>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-spu-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-spu-1">
+            <span class="meal-ic">🍎</span>
+            <span class="meal-lbl">Frutta & Naturale</span>
+            <span class="meal-kcal">100–200 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Frutta fresca + 15g mandorle</div><div class="rec-meta">~180 kcal · 4g prot</div></div>
+              <span class="pill fast">Veloce</span>
+            </div>
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Banana + cucchiaino burro d'arachidi</div><div class="rec-meta">~200 kcal · 5g prot</div></div>
+              <span class="pill fast">Veloce</span>
+            </div>
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Mela + 20g noci</div><div class="rec-meta">~200 kcal · 4g prot</div></div>
+              <span class="pill light">Light</span>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-spu-2">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-spu-2">
+            <span class="meal-ic">🥛</span>
+            <span class="meal-lbl">Latticini & Proteico</span>
+            <span class="meal-kcal">150–280 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Yogurt greco 0% con miele</div><div class="rec-meta">~160 kcal · 18g prot</div></div>
+              <span class="pill prot">Alto proteico</span>
+            </div>
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Fiocchi di latte + frutti di bosco</div><div class="rec-meta">~180 kcal · 22g prot</div></div>
+              <span class="pill prot">Alto proteico</span>
+            </div>
+            <div class="rec-row" style="cursor:default">
+              <div class="rec-body"><div class="rec-name">Shake proteico (whey + latte)</div><div class="rec-meta">~220 kcal · 30g prot</div></div>
+              <span class="pill prot">Alto proteico</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sub-panel" id="ssp-pre">
+      <div class="container">
+        <div class="scenario-sub">Snack pre-workout (30–60 min prima): carb rapidi + proteina. Post-workout: proteina + carb per recupero.</div>
+
+        <input type="checkbox" class="meal-tog" id="m-sw-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-sw-1">
+            <span class="meal-ic">⚡</span>
+            <span class="meal-lbl">Pre-workout</span>
+            <span class="meal-kcal">150–220 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Banana + caffè</div><div class="rec-meta">~100 kcal · energia rapida</div></div><span class="pill fast">Veloce</span></div>
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Pane integrale + marmellata</div><div class="rec-meta">~180 kcal · carb rapidi</div></div><span class="pill fast">Veloce</span></div>
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Dattero + mandorle (5-6 pz)</div><div class="rec-meta">~150 kcal</div></div><span class="pill fast">Veloce</span></div>
+          </div>
+        </div>
+
+        <input type="checkbox" class="meal-tog" id="m-sw-2">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-sw-2">
+            <span class="meal-ic">💪</span>
+            <span class="meal-lbl">Post-workout</span>
+            <span class="meal-kcal">200–280 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Shake proteico + banana</div><div class="rec-meta">~280 kcal · 32g prot</div></div><span class="pill prot">Alto proteico</span></div>
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Yogurt greco + miele + fiocchi d'avena</div><div class="rec-meta">~250 kcal · 20g prot</div></div><span class="pill prot">Alto proteico</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-panel" id="ssp-ris">
+      <div class="container">
+        <div class="scenario-sub">Snack per giorni di riposo: più controllati nelle calorie, sazianti.</div>
+        <input type="checkbox" class="meal-tog" id="m-sris-1">
+        <div class="meal-card">
+          <label class="meal-hdr" for="m-sris-1">
+            <span class="meal-ic">🥗</span>
+            <span class="meal-lbl">Snack light</span>
+            <span class="meal-kcal">100–180 kcal</span>
+            <span class="meal-chev">▾</span>
+          </label>
+          <div class="meal-body">
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Verdure crude (carote, sedano, cetriolo) + hummus</div><div class="rec-meta">~120 kcal</div></div><span class="pill light">Light</span></div>
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Mela + cannella</div><div class="rec-meta">~80 kcal</div></div><span class="pill light">Light</span></div>
+            <div class="rec-row" style="cursor:default"><div class="rec-body"><div class="rec-name">Fiocchi di latte 150g</div><div class="rec-meta">~130 kcal · 18g prot</div></div><span class="pill prot">Alto proteico</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sub-panels spuntini -->
+</div><!-- /p-spu -->
+
+<div class="footer-note">NutritionPlanner · Ricettario aggiornato manualmente tramite skill</div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispensa — NutritionPlanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Inventario alimenti</div>
+  <h1 class="header-title">La mia <em>dispensa</em></h1>
+  <div class="header-sub" id="header-sub">—</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Settimane</a>
+  <a href="menu.html" class="nav-link">Menù</a>
+  <a href="dispensa.html" class="nav-link active">Dispensa</a>
+  <a href="ricettario.html" class="nav-link">Ricettario</a>
+</nav>
+
+<div class="container">
+
+  <div class="stats-row">
+    <div class="stat"><div class="stat-value" id="stat-tot">—</div><div class="stat-label">Totale alimenti</div></div>
+    <div class="stat"><div class="stat-value" id="stat-ok" style="color:var(--green)">—</div><div class="stat-label">Disponibili</div></div>
+    <div class="stat"><div class="stat-value" id="stat-low" style="color:var(--gold)">—</div><div class="stat-label">In esaurimento</div></div>
+    <div class="stat"><div class="stat-value" id="stat-out" style="color:var(--red)">—</div><div class="stat-label">Esauriti</div></div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Cerca alimento o categoria..." oninput="filterTable()">
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('tutti',this)">Tutti</button>
+    <button class="filter-btn" onclick="setFilter('ok',this)">✓ Disponibili</button>
+    <button class="filter-btn" onclick="setFilter('low',this)">⚠ In esaurimento</button>
+    <button class="filter-btn" onclick="setFilter('out',this)">✗ Esauriti</button>
+  </div>
+
+  <div id="loading" class="loader"><div class="spinner"></div> Caricamento dispensa...</div>
+  <div id="table-container" style="display:none" id="categories-container"></div>
+  <div id="empty" class="empty" style="display:none">
+    <div class="icon">🥫</div>
+    <p>La dispensa è vuota.<br>Usa la skill <strong>Aggiungi a Dispensa</strong> per inizializzarla.</p>
+  </div>
+
+</div>
+
+<div class="footer-note">NutritionPlanner</div>
+
+<script src="js/config.js"></script>
+<script>
+let allAlimenti = [];
+let activeFilter = 'tutti';
+
+function getStatus(a) {
+  const qty = parseFloat(a.quantita) || 0;
+  const soglia = parseFloat(a.soglia_minima) || 0;
+  if (qty <= 0) return 'out';
+  if (soglia > 0 && qty <= soglia) return 'low';
+  return 'ok';
+}
+
+function statusPill(s) {
+  const map = { ok:'ok ✓ Disponibile', low:'low ⚠ Esaurimento', out:'out ✗ Esaurito' };
+  const [cls, ...rest] = map[s].split(' ');
+  return `<span class="pill ${cls}">${rest.join(' ')}</span>`;
+}
+
+function renderTable(alimenti) {
+  const tc = document.getElementById('table-container');
+  tc.innerHTML = '';
+  if (!alimenti.length) {
+    tc.innerHTML = `<p style="color:var(--grey);padding:20px 0;font-size:12px">Nessun alimento trovato.</p>`;
+    return;
+  }
+  const cats = {};
+  alimenti.forEach(a => {
+    const c = a.categoria || 'Altro';
+    if (!cats[c]) cats[c] = [];
+    cats[c].push(a);
+  });
+  Object.entries(cats).sort(([a],[b]) => a.localeCompare(b)).forEach(([cat, items]) => {
+    const hdr = document.createElement('div');
+    hdr.className = 'cat-header';
+    hdr.textContent = cat;
+    tc.appendChild(hdr);
+    const table = document.createElement('table');
+    table.innerHTML = `<thead><tr><th>Alimento</th><th>Quantità</th><th>Stato</th><th>Scadenza</th></tr></thead>`;
+    const tbody = document.createElement('tbody');
+    items.forEach(a => {
+      const s = getStatus(a);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><strong>${a.nome}</strong>${a.note?`<br><span style="font-size:10px;color:var(--grey)">${a.note}</span>`:''}
+        </td>
+        <td style="font-weight:600">${a.quantita ?? '—'} <span style="color:var(--grey);font-weight:400">${a.unita||''}</span></td>
+        <td>${statusPill(s)}</td>
+        <td style="font-size:11px;color:var(--grey)">${a.scadenza||'—'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    tc.appendChild(table);
+  });
+}
+
+function filterTable() {
+  const q = document.getElementById('search').value.toLowerCase();
+  let f = allAlimenti;
+  if (activeFilter !== 'tutti') f = f.filter(a => getStatus(a) === activeFilter);
+  if (q) f = f.filter(a => a.nome.toLowerCase().includes(q) || (a.categoria||'').toLowerCase().includes(q));
+  renderTable(f);
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTable();
+}
+
+async function init() {
+  try {
+    const d = await fetchData(CONFIG.paths.dispensa);
+    allAlimenti = d.alimenti || [];
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('header-sub').textContent = `Aggiornata il ${d.ultimo_aggiornamento || '—'}`;
+    const ok = allAlimenti.filter(a => getStatus(a) === 'ok').length;
+    const low = allAlimenti.filter(a => getStatus(a) === 'low').length;
+    const out = allAlimenti.filter(a => getStatus(a) === 'out').length;
+    document.getElementById('stat-tot').textContent = allAlimenti.length;
+    document.getElementById('stat-ok').textContent = ok;
+    document.getElementById('stat-low').textContent = low;
+    document.getElementById('stat-out').textContent = out;
+    if (!allAlimenti.length) { document.getElementById('empty').style.display = 'block'; return; }
+    document.getElementById('table-container').style.display = 'block';
+    renderTable(allAlimenti);
+  } catch(e) {
+    document.getElementById('loading').innerHTML = `<span style="color:#9c2a52">Errore: ${e.message}</span>`;
+  }
+}
+init();
+</script>
+</body>
+</html>

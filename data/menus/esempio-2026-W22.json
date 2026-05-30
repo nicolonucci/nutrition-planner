@@ -1,0 +1,61 @@
+{
+  "settimana": "2026-W22",
+  "dal": "2026-05-25",
+  "al": "2026-05-31",
+  "creato_il": "2026-05-24",
+  "note_generali": "",
+  "giorni": [
+    {
+      "giorno": "Lunedì",
+      "data": "2026-05-25",
+      "allenamento": {
+        "tipo": "Forza - Upper",
+        "orario": "18:00"
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Avena con latte, banana e miele",
+          "calorie_stimate": 450,
+          "proteine_g": 15
+        },
+        "pranzo": {
+          "descrizione": "Riso integrale con pollo alla piastra e verdure",
+          "calorie_stimate": 650,
+          "proteine_g": 45
+        },
+        "cena": {
+          "descrizione": "Salmone al forno con patate dolci e broccoli",
+          "calorie_stimate": 600,
+          "proteine_g": 40
+        },
+        "spuntini": ["Yogurt greco con frutta secca"]
+      }
+    },
+    {
+      "giorno": "Martedì",
+      "data": "2026-05-26",
+      "allenamento": {
+        "tipo": "Riposo attivo",
+        "orario": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate con pane integrale",
+          "calorie_stimate": 400,
+          "proteine_g": 25
+        },
+        "pranzo": {
+          "descrizione": "Pasta integrale con tonno e pomodorini",
+          "calorie_stimate": 600,
+          "proteine_g": 38
+        },
+        "cena": {
+          "descrizione": "Petto di tacchino con quinoa e spinaci",
+          "calorie_stimate": 550,
+          "proteine_g": 42
+        },
+        "spuntini": ["Frutta fresca", "Mandorle"]
+      }
+    }
+  ]
+}
