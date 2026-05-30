@@ -75,7 +75,7 @@ input[type="checkbox"].rec-tog{
   border-bottom:2.5px solid var(--black);
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;
-  position:sticky;top:48px;z-index:100;
+  position:sticky;top:0;z-index:100;
 }
 .tabs-wrap::-webkit-scrollbar{display:none}
 .act-tab{
@@ -98,7 +98,7 @@ input[type="checkbox"].rec-tog{
   background:var(--bg);border-bottom:1px solid var(--mid);
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;gap:0;
-  position:sticky;top:96px;z-index:99;
+  position:sticky;top:48px;z-index:99;
 }
 .time-tabs::-webkit-scrollbar{display:none}
 .var-tab{
@@ -258,25 +258,18 @@ input[type="checkbox"].rec-tog{
 </head>
 <body>
 
-<nav style="background:#fff;border-bottom:2.5px solid #0f0f0f;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:0;z-index:200;">
-  <a href="index.html" style="flex:1;min-width:80px;padding:13px 4px 11px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:#8a8680;text-align:center;text-decoration:none;border-right:1px solid #e5e0d8;line-height:1.4;">Settimane</a>
-  <a href="menu.html" style="flex:1;min-width:80px;padding:13px 4px 11px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:#8a8680;text-align:center;text-decoration:none;border-right:1px solid #e5e0d8;line-height:1.4;">Menù</a>
-  <a href="dispensa.html" style="flex:1;min-width:80px;padding:13px 4px 11px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;color:#8a8680;text-align:center;text-decoration:none;border-right:1px solid #e5e0d8;line-height:1.4;">Dispensa</a>
-  <a href="ricettario.html" style="flex:1;min-width:80px;padding:13px 4px 11px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;background:#0f0f0f;color:#fff;text-align:center;text-decoration:none;line-height:1.4;">Ricettario</a>
-</nav>
-
 <header class="site-header">
-  <p class="header-eyebrow">Ricettario per tipo di allenamento</p>
-  <h1 class="header-title">Menù per <em>tipo</em><br>di <em>allenamento</em></h1>
-  <p class="header-sub">80 kg · Muscle building · 3–5 all./sett.</p>
+  <p class="header-eyebrow">Piano Alimentare Personalizzato · v4</p>
+  <h1 class="header-title">Senza <em>Glutine</em><br>per Tipo di <em>Allenamento</em></h1>
+  <p class="header-sub">70 kg · 170 cm · 24 anni · 3–5 all./sett.</p>
 </header>
 
 <div class="info-banner">
-  <span class="info-item">🏋️ <strong>Palestra ~2.200 kcal</strong></span>
-  <span class="info-item">🏊 <strong>Nuoto ~2.250 kcal</strong></span>
-  <span class="info-item">🚴 <strong>Cardio ~2.100 kcal</strong></span>
-  <span class="info-item">😴 <strong>Riposo ~1.900 kcal</strong></span>
-  <span class="info-item">💪 <strong>Proteine ≥ 160 g</strong></span>
+  <span class="info-item">🏋️ <strong>Palestra ~1.900 kcal</strong></span>
+  <span class="info-item">🏊 <strong>Nuoto ~1.950 kcal</strong></span>
+  <span class="info-item">🚴 <strong>Cardio ~1.850 kcal</strong></span>
+  <span class="info-item">😴 <strong>Riposo ~1.600 kcal</strong></span>
+  <span class="info-item">💪 <strong>Proteine ≥ 140 g</strong></span>
 </div>
 <div class="legend">
   <span class="leg fast">⚡ Veloce</span>
