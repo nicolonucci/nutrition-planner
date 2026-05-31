@@ -11,9 +11,10 @@ const CONFIG = {
 
   // Percorsi dati
   paths: {
-    dispensa:  'data/dispensa.json',
-    settimane: 'data/settimane.json',
-    menu: (settimana) => `data/menus/${settimana}.json`,
+    dispensa:       'data/dispensa.json',
+    settimane:      'data/settimane.json',
+    menu:           (settimana) => `data/menus/${settimana}.json`,
+    health_history: 'data/health_history.json',
   }
 };
 
