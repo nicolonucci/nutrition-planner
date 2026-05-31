@@ -119,6 +119,10 @@ async function loadWeekList() {
     const s = await fetchData(CONFIG.paths.settimane);
     const sel = document.getElementById('week-select');
     const sorted = [...s.settimane].sort((a,b) => b.id.localeCompare(a.id));
+    // Se la settimana corrente non è nell'elenco, usa la più recente disponibile
+    if (!sorted.find(w => w.id === currentWeek) && sorted.length) {
+      currentWeek = sorted[0].id;
+    }
     sorted.forEach(w => {
       const o = document.createElement('option');
       o.value = w.id;
