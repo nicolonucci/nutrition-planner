@@ -17,13 +17,13 @@
 </header>
 
 <nav class="page-nav">
-  <a href="index.html" class="nav-link active">Settimane</a>
+  <a href="index.html" class="nav-link active" id="nav-settimane">Settimane</a>
   <a href="menu.html" class="nav-link">Menù</a>
   <a href="dispensa.html" class="nav-link">Dispensa</a>
-  <a href="ricettario.html" class="nav-link">Ricettario</a>
+  <a href="#" class="nav-link" id="nav-ricettario" onclick="toggleRicettario(event)">Ricettario</a>
 </nav>
 
-<div class="container">
+<div class="container" id="main-content">
 
   <div class="stats-row" id="stats-row">
     <div class="stat">
@@ -47,8 +47,63 @@
 
 </div>
 
+<div id="ricettario-section" style="display:none"></div>
+
 <div class="footer-note">NutritionPlanner · aggiornato ogni weekend</div>
 
+<script>
+let ricettarioLoaded = false;
+
+async function toggleRicettario(e) {
+  e.preventDefault();
+  const section = document.getElementById('ricettario-section');
+  const mainContent = document.getElementById('main-content');
+  const navRic = document.getElementById('nav-ricettario');
+  const navSet = document.getElementById('nav-settimane');
+
+  const isVisible = section.style.display !== 'none';
+  if (isVisible) {
+    section.style.display = 'none';
+    mainContent.style.display = 'block';
+    navRic.classList.remove('active');
+    navSet.classList.add('active');
+    return;
+  }
+
+  mainContent.style.display = 'none';
+  navSet.classList.remove('active');
+  navRic.classList.add('active');
+  section.style.display = 'block';
+
+  if (!ricettarioLoaded) {
+    section.innerHTML = '<div class="loader" style="padding:40px 20px"><div class="spinner"></div> Caricamento ricettario...</div>';
+    try {
+      const resp = await fetch('ricettario.html');
+      const html = await resp.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Inject ricettario styles once
+      const style = doc.querySelector('style');
+      if (style) {
+        const s = document.createElement('style');
+        s.id = 'ricettario-styles';
+        s.textContent = style.textContent;
+        document.head.appendChild(s);
+      }
+
+      // Inject body content (skip <header> since index.html already has one)
+      const body = doc.body;
+      const header = body.querySelector('.site-header');
+      if (header) header.remove();
+      section.innerHTML = body.innerHTML;
+      ricettarioLoaded = true;
+    } catch (err) {
+      section.innerHTML = '<div style="padding:40px;color:#9c2a52">Errore caricamento ricettario: ' + err.message + '</div>';
+    }
+  }
+}
+</script>
 <script src="js/config.js"></script>
 <script>
 async function init() {
