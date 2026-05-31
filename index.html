@@ -148,6 +148,11 @@ async function init() {
   }
 }
 init();
+
+// Auto-apri ricettario se arrivato da un'altra pagina con ?ricettario=1
+if (new URLSearchParams(location.search).get('ricettario') === '1') {
+  window.addEventListener('load', () => toggleRicettario({ preventDefault: () => {} }));
+}
 </script>
 </body>
 </html>
