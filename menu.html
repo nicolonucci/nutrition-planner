@@ -119,10 +119,6 @@ async function loadWeekList() {
     const s = await fetchData(CONFIG.paths.settimane);
     const sel = document.getElementById('week-select');
     const sorted = [...s.settimane].sort((a,b) => b.id.localeCompare(a.id));
-    // Se la settimana corrente non è nell'elenco, usa la più recente disponibile
-    if (!sorted.find(w => w.id === currentWeek) && sorted.length) {
-      currentWeek = sorted[0].id;
-    }
     sorted.forEach(w => {
       const o = document.createElement('option');
       o.value = w.id;
@@ -142,14 +138,7 @@ function trainBanner(g) {
   const t = g.allenamento?.tipo || '';
   const h = g.allenamento?.orario || '';
   const isRest = !t || /riposo/i.test(t);
-  const icon = /palestra|forza|strength|gym/i.test(t) ? '🏋️' :
-               /nuoto|swim/i.test(t) ? '🏊' :
-               /wingfoil|wing\s*foil|kitesurf|surf/i.test(t) ? '🪁' :
-               /cardio|corsa|run/i.test(t) ? '🏃' :
-               /hiit/i.test(t) ? '⚡' :
-               /ciclismo|bici|bike|cycling/i.test(t) ? '🚴' :
-               /yoga|pilates/i.test(t) ? '🧘' :
-               isRest ? '😴' : '💪';
+  const icon = /forza|strength/i.test(t) ? '💪' : /cardio/i.test(t) ? '🏃' : /hiit/i.test(t) ? '⚡' : /nuoto|swim/i.test(t) ? '🏊' : '💤';
   return `<div class="train-banner${isRest?' rest':''}">${icon} ${t || 'Riposo'}${h ? ` <span style="opacity:.6;font-weight:400">· ${h}</span>` : ''}</div>`;
 }
 
