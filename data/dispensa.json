@@ -1,4 +1,95 @@
 {
-  "ultimo_aggiornamento": "2026-05-30",
-  "alimenti": []
+  "ultimo_aggiornamento": "2026-05-31",
+  "alimenti": [
+    {
+      "nome": "Banane",
+      "categoria": "Verdure & Frutta",
+      "quantita": 7,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Mele",
+      "categoria": "Verdure & Frutta",
+      "quantita": 4,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Zucchine",
+      "categoria": "Verdure & Frutta",
+      "quantita": 816,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodoro sardo",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1000,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 401,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Filetto di salmone",
+      "categoria": "Proteine",
+      "quantita": 216,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Yogurt greco",
+      "categoria": "Latticini",
+      "quantita": 5,
+      "unita": "pz",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": "150g a vasetto"
+    },
+    {
+      "nome": "Bistecca di manzo",
+      "categoria": "Proteine",
+      "quantita": 190,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Uova",
+      "categoria": "Proteine",
+      "quantita": 15,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Fagiolini",
+      "categoria": "Verdure & Frutta",
+      "quantita": 220,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    }
+  ]
 }
