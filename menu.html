@@ -54,7 +54,20 @@
     .meal-box{background:#fff;border:1.5px solid var(--mid);border-radius:10px;padding:13px}
     .meal-box-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
     .meal-box-desc{font-size:13px;font-weight:500;line-height:1.4;margin-bottom:6px}
-    .meal-box-meta{font-size:10px;color:var(--grey)}
+    .meal-box-meta{font-size:10px;color:var(--grey);margin-bottom:8px}
+    .meal-box-toggle{font-size:10px;font-weight:600;color:var(--black);cursor:pointer;border:none;background:none;padding:0;display:flex;align-items:center;gap:4px}
+    .meal-box-toggle::before{content:'▸';transition:transform .2s}
+    .meal-box-toggle.open::before{content:'▾'}
+    .meal-box-ricetta{display:none;margin-top:10px;border-top:1px solid var(--mid);padding-top:10px}
+    .meal-box-ricetta.open{display:block}
+    .ricetta-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);margin:8px 0 4px}
+    .ricetta-label:first-child{margin-top:0}
+    .chip-list{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px}
+    .chip-ing{font-size:10px;padding:3px 8px;border-radius:12px;background:#f0f0ec;border:1px solid var(--mid);color:#333}
+    .step-list{display:flex;flex-direction:column;gap:5px}
+    .step-row{display:flex;gap:7px;align-items:flex-start}
+    .step-num{width:18px;height:18px;border-radius:50%;background:var(--black);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .step-txt{font-size:11px;line-height:1.5;color:#444}
 
     .day-totals{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
 
@@ -185,24 +198,45 @@ async function loadMenu() {
       }
 
       const pasti = g.pasti;
-      const order = ['colazione','pranzo','cena','spuntini'];
-      const icons = {colazione:'🌅',pranzo:'☀️',cena:'🌙',spuntini:'🍎'};
+      const order = ['colazione','pre_workout','pranzo','post_workout','cena','spuntini'];
+      const icons = {colazione:'🌅',pre_workout:'⚡',pranzo:'☀️',post_workout:'💪',cena:'🌙',spuntini:'🍎'};
+      const labels = {colazione:'Colazione',pre_workout:'Pre-workout',pranzo:'Pranzo',post_workout:'Post-workout',cena:'Cena',spuntini:'Spuntini'};
 
       html += `<div class="meal-grid">`;
-      order.forEach(nome => {
+      order.forEach((nome,idx) => {
         if (!pasti[nome]) return;
         const v = pasti[nome];
         if (nome === 'spuntini') {
           const lista = Array.isArray(v) ? v.join(', ') : v;
+          if (!lista) return;
           html += `<div class="meal-box">
-            <div class="meal-box-title">${icons[nome]} Spuntini</div>
-            <div class="meal-box-desc">${lista||'—'}</div>
+            <div class="meal-box-title">${icons[nome]} ${labels[nome]}</div>
+            <div class="meal-box-desc">${lista}</div>
           </div>`;
         } else {
+          const rid = `r-${i}-${idx}`;
+          const r = v.ricetta;
+          const hasRicetta = r && (r.ingredienti?.length || r.preparazione?.length);
+          let ricettaHtml = '';
+          if (hasRicetta) {
+            if (r.ingredienti?.length) {
+              ricettaHtml += `<div class="ricetta-label">Ingredienti</div><div class="chip-list">`;
+              r.ingredienti.forEach(ing => { ricettaHtml += `<span class="chip-ing">${ing}</span>`; });
+              ricettaHtml += `</div>`;
+            }
+            if (r.preparazione?.length) {
+              ricettaHtml += `<div class="ricetta-label">Preparazione</div><div class="step-list">`;
+              r.preparazione.forEach((s,n) => {
+                ricettaHtml += `<div class="step-row"><span class="step-num">${n+1}</span><span class="step-txt">${s}</span></div>`;
+              });
+              ricettaHtml += `</div>`;
+            }
+          }
           html += `<div class="meal-box">
-            <div class="meal-box-title">${icons[nome]||''} ${nome.charAt(0).toUpperCase()+nome.slice(1)}</div>
+            <div class="meal-box-title">${icons[nome]||''} ${labels[nome]}</div>
             <div class="meal-box-desc">${v.descrizione||'—'}</div>
             <div class="meal-box-meta">${v.calorie_stimate?`${v.calorie_stimate} kcal`:''}${v.proteine_g?` · ${v.proteine_g}g prot`:''}</div>
+            ${hasRicetta ? `<button class="meal-box-toggle" onclick="toggleRicetta('${rid}',this)">Ricetta</button><div class="meal-box-ricetta" id="${rid}">${ricettaHtml}</div>` : ''}
           </div>`;
         }
       });
@@ -220,6 +254,12 @@ async function loadMenu() {
   } catch(e) {
     loading.innerHTML = `<span style="color:#9c2a52">Menù non trovato per questa settimana.</span>`;
   }
+}
+
+function toggleRicetta(id, btn) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+  btn.classList.toggle('open');
 }
 
 async function init() {
