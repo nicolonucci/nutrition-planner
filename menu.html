@@ -142,7 +142,14 @@ function trainBanner(g) {
   const t = g.allenamento?.tipo || '';
   const h = g.allenamento?.orario || '';
   const isRest = !t || /riposo/i.test(t);
-  const icon = /forza|strength/i.test(t) ? '💪' : /cardio/i.test(t) ? '🏃' : /hiit/i.test(t) ? '⚡' : /nuoto|swim/i.test(t) ? '🏊' : '💤';
+  const icon = /palestra|forza|strength|gym/i.test(t) ? '🏋️' :
+               /nuoto|swim/i.test(t) ? '🏊' :
+               /wingfoil|wing\s*foil|kitesurf|surf/i.test(t) ? '🪁' :
+               /cardio|corsa|run/i.test(t) ? '🏃' :
+               /hiit/i.test(t) ? '⚡' :
+               /ciclismo|bici|bike|cycling/i.test(t) ? '🚴' :
+               /yoga|pilates/i.test(t) ? '🧘' :
+               isRest ? '😴' : '💪';
   return `<div class="train-banner${isRest?' rest':''}">${icon} ${t || 'Riposo'}${h ? ` <span style="opacity:.6;font-weight:400">· ${h}</span>` : ''}</div>`;
 }
 
