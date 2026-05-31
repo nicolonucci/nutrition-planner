@@ -6,113 +6,327 @@
     {
       "giorno": "Lunedì",
       "data": "2026-06-01",
-      "allenamento": {
-        "tipo": "Palestra",
-        "orario": "Pomeriggio",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Palestra", "orario": "Pomeriggio", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Yogurt greco + banana + noci + miele", "calorie_stimate": 370, "proteine_g": 22 },
-        "pranzo": { "descrizione": "Riso basmati saltato con pollo & curcuma", "calorie_stimate": 590, "proteine_g": 46 },
-        "pre_workout": { "descrizione": "Banana + yogurt greco 150g", "calorie_stimate": 190, "proteine_g": 10 },
-        "post_workout": { "descrizione": "Yogurt greco 150g + banana + miele", "calorie_stimate": 255, "proteine_g": 20 },
-        "cena": { "descrizione": "Bistecca di manzo + insalata di pomodori", "calorie_stimate": 450, "proteine_g": 46 },
+        "colazione": {
+          "descrizione": "Yogurt greco + banana + noci + miele",
+          "calorie_stimate": 370, "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate", "10g miele"],
+            "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati saltato con pollo & curcuma",
+          "calorie_stimate": 590, "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90g riso basmati (peso crudo)", "180g petto di pollo", "100g zucchine", "100g carote", "15ml tamari GF", "10g olio EVO", "curcuma · zenzero q.b."],
+            "preparazione": [
+              "Cuoci il riso 10–12 min in acqua salata. In parallelo rosola il pollo a cubetti con curcuma 4 min.",
+              "Aggiungi verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min a fuoco vivo."
+            ]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana + caffè",
+          "calorie_stimate": 100, "proteine_g": 1,
+          "ricetta": {
+            "ingredienti": ["1 banana matura (~120g)", "1 caffè (opzionale)"],
+            "preparazione": ["Mangia la banana mentre esci di casa. Zero prep. Il caffè migliora la performance — opzionale se lo tolleri a stomaco quasi vuoto."]
+          }
+        },
+        "post_workout": {
+          "descrizione": "2 uova sode + banana",
+          "calorie_stimate": 240, "proteine_g": 16,
+          "ricetta": {
+            "ingredienti": ["2 uova sode (~100g)", "1 banana matura (~120g)"],
+            "preparazione": ["Bolli le uova 9 min la sera prima. Conserva in frigo con il guscio. Porta in borsa con la banana — zero prep post-allenamento."]
+          }
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori",
+          "calorie_stimate": 450, "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["200g bistecca di manzo (controfiletto)", "200g pomodori", "40g rucola", "15g olio EVO", "sale · pepe · rosmarino GF q.b."],
+            "preparazione": [
+              "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato (al sangue/media). Riposa 3 min avvolta in carta stagnola.",
+              "Insalata di pomodori e rucola condita con olio e sale."
+            ]
+          }
+        },
         "spuntini": ["frutta secca 30g"]
       }
     },
     {
       "giorno": "Martedì",
       "data": "2026-06-02",
-      "allenamento": {
-        "tipo": "Nuoto",
-        "orario": "Mattina",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Nuoto", "orario": "Mattina", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Smoothie fragola + banana + yogurt greco", "calorie_stimate": 320, "proteine_g": 20 },
-        "pre_workout": { "descrizione": "4 datteri secchi", "calorie_stimate": 110, "proteine_g": 1 },
-        "post_workout": { "descrizione": "Yogurt greco 150g + banana + miele + granola GF", "calorie_stimate": 310, "proteine_g": 22 },
-        "pranzo": { "descrizione": "Riso basmati con pollo & zucchine", "calorie_stimate": 600, "proteine_g": 46 },
-        "cena": { "descrizione": "Merluzzo al vapore + carote & piselli", "calorie_stimate": 380, "proteine_g": 42 },
+        "colazione": {
+          "descrizione": "Smoothie fragola + banana + yogurt greco",
+          "calorie_stimate": 320, "proteine_g": 20,
+          "ricetta": {
+            "ingredienti": ["150g fragole fresche o surgelate", "1 banana matura (~120g)", "150g yogurt greco 0%", "80ml latte parz. scremato", "cubetti di ghiaccio q.b."],
+            "preparazione": [
+              "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+              "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+            ]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "4 crackers di riso GF + marmellata GF",
+          "calorie_stimate": 170, "proteine_g": 3,
+          "ricetta": {
+            "ingredienti": ["4 crackers di riso GF (~40g)", "20g marmellata GF"],
+            "preparazione": [
+              "⚠️ Mangia almeno 90 min prima dell'entrata in acqua. Zero grassi e zero fibre = digestione rapida, nessun crampo in piscina.",
+              "Prepara in sacchettino la sera prima."
+            ]
+          }
+        },
+        "post_workout": {
+          "descrizione": "6 crackers GF + tonno + pomodoro",
+          "calorie_stimate": 300, "proteine_g": 30,
+          "ricetta": {
+            "ingredienti": ["6 crackers di riso GF (~60g)", "160g tonno al naturale", "1 pomodoro (~120g)", "5g olio EVO"],
+            "preparazione": ["Porta i crackers in borsa. Apri la scatoletta, aggiungi il pomodoro a fette e un filo d'olio. Mangia in spogliatoio."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine",
+          "calorie_stimate": 600, "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90g riso basmati (peso crudo)", "180g petto di pollo", "200g zucchine", "1 spicchio aglio", "10g olio EVO", "succo ½ limone", "sale · pepe q.b."],
+            "preparazione": [
+              "Cuoci il riso. Rosola il pollo a strisce con aglio e olio 5–6 min.",
+              "Aggiungi le zucchine a rondelle 4 min. Servi sul riso con limone."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Merluzzo al vapore + carote & piselli",
+          "calorie_stimate": 380, "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["220g merluzzo fresco o surgelato", "150g carote", "150g piselli surgelati", "15g olio EVO", "succo ½ limone", "prezzemolo · sale q.b."],
+            "preparazione": ["Merluzzo al vapore 10–12 min. Carote + piselli saltati in padella con olio 5 min. Condisci con olio, limone e prezzemolo."]
+          }
+        },
         "spuntini": ["frutta fresca"]
       }
     },
     {
       "giorno": "Mercoledì",
       "data": "2026-06-03",
-      "allenamento": {
-        "tipo": "Riposo",
-        "orario": "",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Riposo", "orario": "", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Yogurt greco + frutti di bosco + semi di chia", "calorie_stimate": 330, "proteine_g": 22 },
-        "pranzo": { "descrizione": "Insalata tonno, pomodori & fagiolini", "calorie_stimate": 480, "proteine_g": 40 },
-        "cena": { "descrizione": "Pollo al limone + zucchine grigliate", "calorie_stimate": 380, "proteine_g": 48 },
+        "colazione": {
+          "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+          "calorie_stimate": 330, "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "100g frutti di bosco misti", "15g semi di chia", "10g miele", "cannella q.b."],
+            "preparazione": ["Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella. Prepara la sera prima — i semi si gonfiano durante la notte e la rendono più saziante."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Insalata tonno, pomodori & fagiolini",
+          "calorie_stimate": 480, "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": ["160g tonno al naturale", "200g pomodorini", "150g fagiolini", "50g olive nere", "15g olio EVO", "succo ½ limone", "basilico · sale q.b."],
+            "preparazione": [
+              "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
+              "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo al limone + zucchine grigliate",
+          "calorie_stimate": 380, "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": ["220g petto di pollo", "250g zucchine", "15g olio EVO", "succo 1 limone", "origano GF · sale · pepe q.b."],
+            "preparazione": [
+              "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
+              "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
+            ]
+          }
+        },
         "spuntini": ["noci 30g", "frutta fresca"]
       }
     },
     {
       "giorno": "Giovedì",
       "data": "2026-06-04",
-      "allenamento": {
-        "tipo": "Nuoto",
-        "orario": "Mattina",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Nuoto", "orario": "Mattina", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Yogurt greco 150g + banana + noci + miele", "calorie_stimate": 370, "proteine_g": 22 },
-        "pre_workout": { "descrizione": "4 crackers di riso GF + marmellata GF", "calorie_stimate": 170, "proteine_g": 3 },
-        "post_workout": { "descrizione": "6 crackers GF + tonno + pomodoro", "calorie_stimate": 300, "proteine_g": 30 },
-        "pranzo": { "descrizione": "Pasta di riso al tonno & pomodoro", "calorie_stimate": 580, "proteine_g": 42 },
-        "cena": { "descrizione": "Salmone al forno + piselli & pomodorini", "calorie_stimate": 490, "proteine_g": 44 },
+        "colazione": {
+          "descrizione": "Yogurt greco 150g + banana + noci + miele",
+          "calorie_stimate": 370, "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate", "10g miele"],
+            "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "4 crackers di riso GF + marmellata GF",
+          "calorie_stimate": 170, "proteine_g": 3,
+          "ricetta": {
+            "ingredienti": ["4 crackers di riso GF (~40g)", "20g marmellata GF"],
+            "preparazione": ["⚠️ Mangia almeno 90 min prima dell'entrata in acqua. Zero grassi e zero fibre = digestione rapida, nessun crampo in piscina."]
+          }
+        },
+        "post_workout": {
+          "descrizione": "6 crackers GF + tonno + pomodoro",
+          "calorie_stimate": 300, "proteine_g": 30,
+          "ricetta": {
+            "ingredienti": ["6 crackers di riso GF (~60g)", "160g tonno al naturale", "1 pomodoro (~120g)", "5g olio EVO"],
+            "preparazione": ["Porta i crackers in borsa. Apri la scatoletta, aggiungi il pomodoro e un filo d'olio. Mangia in spogliatoio."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Pasta di riso al tonno & pomodoro",
+          "calorie_stimate": 580, "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["90g pasta di riso GF", "160g tonno al naturale", "200g passata di pomodoro", "1 spicchio aglio", "10g olio EVO", "basilico · sale q.b."],
+            "preparazione": [
+              "Cuoci la pasta GF (attento: tende a scuocersi, controlla spesso). In parallelo scalda olio e aglio, aggiungi passata, cuoci 5 min.",
+              "Scola la pasta, aggiungi tonno al sugo, condisci con basilico fresco."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Salmone al forno + piselli & pomodorini",
+          "calorie_stimate": 490, "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": ["200g filetto di salmone fresco", "150g piselli surgelati", "150g pomodorini", "15g olio EVO", "succo ½ limone", "timo GF · sale q.b."],
+            "preparazione": [
+              "Forno 200°C. Salmone su carta forno con olio, limone e timo → 12–14 min.",
+              "In padella: piselli + pomodorini 5 min con 5g olio."
+            ]
+          }
+        },
         "spuntini": ["frutta secca 20g"]
       }
     },
     {
       "giorno": "Venerdì",
       "data": "2026-06-05",
-      "allenamento": {
-        "tipo": "Wingfoil",
-        "orario": "Mattina",
-        "note": "casa amici, dieta difficile da rispettare"
-      },
+      "allenamento": { "tipo": "Wingfoil", "orario": "Mattina", "note": "casa amici, dieta difficile da rispettare" },
       "pasti": {
-        "colazione": { "descrizione": "Yogurt greco 150g + banana + mandorle (abbondante prima di uscire)", "calorie_stimate": 365, "proteine_g": 22 },
-        "pranzo": { "descrizione": "Fuori casa — proteina magra + verdure, evita fritti", "calorie_stimate": 500, "proteine_g": 40 },
-        "cena": { "descrizione": "Cena da amici — flessibile, limita alcol", "calorie_stimate": 600, "proteine_g": 35 },
+        "colazione": {
+          "descrizione": "Yogurt greco 150g + banana + mandorle (abbondante prima di uscire)",
+          "calorie_stimate": 365, "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g mandorle intere"],
+            "preparazione": ["Yogurt + banana a rondelle + mandorle. Mangia prima di uscire — è il pasto più controllabile della giornata."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Fuori casa — proteina magra + verdure, evita fritti",
+          "calorie_stimate": 500, "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": [],
+            "preparazione": ["Punta a proteina magra (pollo, pesce, uova) + verdure. Evita fritti, salse pesanti e pane in eccesso."]
+          }
+        },
+        "cena": {
+          "descrizione": "Cena da amici — flessibile, limita alcol",
+          "calorie_stimate": 600, "proteine_g": 35,
+          "ricetta": {
+            "ingredienti": [],
+            "preparazione": ["Goditi la serata. Prediligi carne/pesce + contorno. Limita alcol e dolci elaborati. Il wingfoil ha bruciato calorie extra."]
+          }
+        },
         "spuntini": []
       }
     },
     {
       "giorno": "Sabato",
       "data": "2026-06-06",
-      "allenamento": {
-        "tipo": "Wingfoil",
-        "orario": "Mattina",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Wingfoil", "orario": "Mattina", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Yogurt greco + banana + noci + miele", "calorie_stimate": 370, "proteine_g": 22 },
-        "pre_workout": { "descrizione": "Banana + caffè", "calorie_stimate": 100, "proteine_g": 1 },
-        "post_workout": { "descrizione": "Yogurt greco 150g + miele + noci", "calorie_stimate": 260, "proteine_g": 20 },
-        "pranzo": { "descrizione": "Riso basmati con tonno, pomodori & olive", "calorie_stimate": 550, "proteine_g": 40 },
-        "cena": { "descrizione": "Piadina GF con gamberetti, pomodori & fagiolini", "calorie_stimate": 440, "proteine_g": 36 },
+        "colazione": {
+          "descrizione": "Yogurt greco + banana + noci + miele",
+          "calorie_stimate": 370, "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate", "10g miele"],
+            "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana + caffè",
+          "calorie_stimate": 100, "proteine_g": 1,
+          "ricetta": {
+            "ingredienti": ["1 banana matura (~120g)", "1 caffè (opzionale)"],
+            "preparazione": ["Mangiali mentre esci di casa. La banana dà energia rapida + potassio anti-crampi. Il caffè migliora la performance aerobica."]
+          }
+        },
+        "post_workout": {
+          "descrizione": "2 uova sode + banana",
+          "calorie_stimate": 240, "proteine_g": 16,
+          "ricetta": {
+            "ingredienti": ["2 uova sode (~100g)", "1 banana (~120g)"],
+            "preparazione": ["Bolli le uova la sera prima. Porta in borsa con la banana. Zero prep post-allenamento."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con tonno, pomodori & olive",
+          "calorie_stimate": 550, "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": ["85g riso basmati (peso crudo)", "160g tonno al naturale", "150g pomodorini", "50g olive nere", "15g olio EVO", "succo ½ limone", "basilico · sale q.b."],
+            "preparazione": ["Cuoci il riso 10–12 min. Scola e intiepidisci. Mescola con tonno, pomodorini, olive, olio e limone. Si prepara in anticipo — ottimo anche freddo."]
+          }
+        },
+        "cena": {
+          "descrizione": "Piadina GF con gamberetti, pomodori & fagiolini",
+          "calorie_stimate": 440, "proteine_g": 36,
+          "ricetta": {
+            "ingredienti": ["1 piadina GF (~80g)", "180g gamberetti surgelati", "150g pomodorini", "100g fagiolini", "10g olio EVO", "succo ½ limone", "aglio · prezzemolo q.b."],
+            "preparazione": [
+              "Lessa i fagiolini 6 min in acqua salata. In padella con olio e aglio: gamberetti 3 min.",
+              "Scalda la piadina GF in padella asciutta 1 min per lato. Riempi con gamberetti, fagiolini, pomodorini e limone."
+            ]
+          }
+        },
         "spuntini": ["frutta fresca"]
       }
     },
     {
       "giorno": "Domenica",
       "data": "2026-06-07",
-      "allenamento": {
-        "tipo": "Riposo",
-        "orario": "",
-        "note": ""
-      },
+      "allenamento": { "tipo": "Riposo", "orario": "", "note": "" },
       "pasti": {
-        "colazione": { "descrizione": "Toast GF avocado + salmone affumicato", "calorie_stimate": 410, "proteine_g": 28 },
-        "pranzo": { "descrizione": "Bowl riso venere, tonno & pomodorini", "calorie_stimate": 500, "proteine_g": 38 },
-        "cena": { "descrizione": "Frittata zucchine & carote al forno", "calorie_stimate": 420, "proteine_g": 32 },
+        "colazione": {
+          "descrizione": "Toast GF avocado + salmone affumicato",
+          "calorie_stimate": 410, "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": ["2 fette pane GF (~60g)", "½ avocado maturo (~80g)", "80g salmone affumicato GF", "succo ½ limone", "pepe · erba cipollina q.b."],
+            "preparazione": [
+              "Tosta il pane GF. Schiaccia l'avocado con limone, sale e pepe fino a crema rustica.",
+              "Spalma l'avocado, disponi il salmone, finisci con erba cipollina tritata."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Bowl riso venere, tonno & pomodorini",
+          "calorie_stimate": 500, "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["70g riso venere (peso crudo)", "160g tonno al naturale", "150g pomodorini", "50g olive nere", "15g olio EVO", "succo ½ limone", "basilico · sale q.b."],
+            "preparazione": [
+              "Cuoci il riso venere 18 min. Scola e lascia intiepidire (oppure usa quello preparato in meal prep).",
+              "Mescola tutto: riso, tonno, pomodorini, olive. Condisci con olio, limone e basilico."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Frittata zucchine & carote al forno",
+          "calorie_stimate": 420, "proteine_g": 32,
+          "ricetta": {
+            "ingredienti": ["4 uova intere (200g)", "150g zucchine", "100g carote", "40g parmigiano GF grattugiato", "10g olio EVO", "sale · pepe q.b."],
+            "preparazione": [
+              "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
+              "Sbatti le uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
+            ]
+          }
+        },
         "spuntini": ["yogurt greco 150g", "frutta secca"]
       }
     }
