@@ -95,6 +95,7 @@ function renderTable(alimenti) {
     const table = document.createElement('table');
     table.innerHTML = `<thead><tr><th>Alimento</th><th>Quantità</th><th></th><th>Stato</th><th>Scadenza</th></tr></thead>`;
     const tbody = document.createElement('tbody');
+    items.sort((a, b) => (a.congelato ? 1 : 0) - (b.congelato ? 1 : 0));
     items.forEach(a => {
       const s = getStatus(a);
       const tr = document.createElement('tr');
