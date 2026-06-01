@@ -93,7 +93,7 @@ function renderTable(alimenti) {
     hdr.textContent = cat;
     tc.appendChild(hdr);
     const table = document.createElement('table');
-    table.innerHTML = `<thead><tr><th>Alimento</th><th>Quantità</th><th>Stato</th><th>Scadenza</th></tr></thead>`;
+    table.innerHTML = `<thead><tr><th>Alimento</th><th>Quantità</th><th></th><th>Stato</th><th>Scadenza</th></tr></thead>`;
     const tbody = document.createElement('tbody');
     items.forEach(a => {
       const s = getStatus(a);
@@ -102,6 +102,7 @@ function renderTable(alimenti) {
         <td><strong>${a.nome}</strong>${a.note?`<br><span style="font-size:10px;color:var(--grey)">${a.note}</span>`:''}
         </td>
         <td style="font-weight:600">${a.quantita ?? '—'} <span style="color:var(--grey);font-weight:400">${a.unita||''}</span></td>
+        <td style="font-size:14px;text-align:center" title="${a.congelato?'Congelato':''}">${a.congelato?'❄️':''}</td>
         <td>${statusPill(s)}</td>
         <td style="font-size:11px;color:var(--grey)">${a.scadenza||'—'}</td>
       `;
