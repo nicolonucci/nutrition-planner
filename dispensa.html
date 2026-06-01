@@ -117,7 +117,11 @@ function renderTable(alimenti) {
 function filterTable() {
   const q = document.getElementById('search').value.toLowerCase();
   let f = allAlimenti;
-  if (activeFilter !== 'tutti') f = f.filter(a => getStatus(a) === activeFilter);
+  if (activeFilter === 'tutti') {
+    f = f.filter(a => getStatus(a) !== 'out');
+  } else {
+    f = f.filter(a => getStatus(a) === activeFilter);
+  }
   if (q) f = f.filter(a => a.nome.toLowerCase().includes(q) || (a.categoria||'').toLowerCase().includes(q));
   renderTable(f);
 }
