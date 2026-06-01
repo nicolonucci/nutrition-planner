@@ -2,6 +2,96 @@
   "ultimo_aggiornamento": "2026-06-01",
   "alimenti": [
     {
+      "nome": "Patate gialle",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1532,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Patate dolci",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 613,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 257,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 128,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Carne trita",
+      "categoria": "Proteine",
+      "quantita": 242,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Salmone affumicato",
+      "categoria": "Proteine",
+      "quantita": 100,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Philadelphia light",
+      "categoria": "Latticini",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Mela Granny Smith",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Carote",
+      "categoria": "Verdure & Frutta",
+      "quantita": 930,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
       "nome": "Banane",
       "categoria": "Verdure & Frutta",
       "quantita": 7,
@@ -22,8 +112,18 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 816,
+      "quantita": 1302,
       "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodori",
+      "categoria": "Verdure & Frutta",
+      "quantita": 100,
+      "unita": "g",
+      "congelato": false,
       "soglia_minima": 100,
       "scadenza": "",
       "note": ""
