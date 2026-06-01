@@ -143,7 +143,7 @@ async function init() {
     document.getElementById('stat-out').textContent = out;
     if (!allAlimenti.length) { document.getElementById('empty').style.display = 'block'; return; }
     document.getElementById('table-container').style.display = 'block';
-    renderTable(allAlimenti);
+    filterTable();
   } catch(e) {
     document.getElementById('loading').innerHTML = `<span style="color:#9c2a52">Errore: ${e.message}</span>`;
   }
