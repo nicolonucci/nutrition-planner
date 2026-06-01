@@ -166,15 +166,6 @@
       "note": "150g a vasetto"
     },
     {
-      "nome": "Bistecca di manzo",
-      "categoria": "Proteine",
-      "quantita": 0,
-      "unita": "g",
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
       "nome": "Uova",
       "categoria": "Proteine",
       "quantita": 15,
