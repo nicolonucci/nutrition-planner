@@ -38,6 +38,12 @@
   </div>
 
 
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter('ok',this)">✓ Disponibili</button>
+    <button class="filter-btn" onclick="setFilter('low',this)">⚠ In esaurimento</button>
+    <button class="filter-btn" onclick="setFilter('out',this)">✗ Esauriti</button>
+  </div>
+
   <div id="loading" class="loader"><div class="spinner"></div> Caricamento dispensa...</div>
   <div id="table-container" style="display:none" id="categories-container"></div>
   <div id="empty" class="empty" style="display:none">
@@ -52,7 +58,7 @@
 <script src="js/config.js"></script>
 <script>
 let allAlimenti = [];
-let activeFilter = 'tutti';
+let activeFilter = 'ok';
 
 function getStatus(a) {
   const qty = parseFloat(a.quantita) || 0;
@@ -110,9 +116,16 @@ function renderTable(alimenti) {
 
 function filterTable() {
   const q = document.getElementById('search').value.toLowerCase();
-  let f = allAlimenti.filter(a => getStatus(a) !== 'out');
+  let f = allAlimenti.filter(a => getStatus(a) === activeFilter);
   if (q) f = f.filter(a => a.nome.toLowerCase().includes(q) || (a.categoria||'').toLowerCase().includes(q));
   renderTable(f);
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTable();
 }
 
 async function init() {
