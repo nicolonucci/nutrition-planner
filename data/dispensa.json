@@ -183,6 +183,36 @@
       "note": ""
     },
     {
+      "nome": "Scottona",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Fettine di vitello",
+      "categoria": "Proteine",
+      "quantita": 180,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Nasello",
+      "categoria": "Proteine",
+      "quantita": 160,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
       "nome": "Fagiolini",
       "categoria": "Verdure & Frutta",
       "quantita": 220,
