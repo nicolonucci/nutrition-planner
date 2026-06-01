@@ -119,9 +119,9 @@
       "note": ""
     },
     {
-      "nome": "Pomodori",
+      "nome": "Pomodoro ciliegino",
       "categoria": "Verdure & Frutta",
-      "quantita": 100,
+      "quantita": 500,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -131,8 +131,9 @@
     {
       "nome": "Pomodoro sardo",
       "categoria": "Verdure & Frutta",
-      "quantita": 1000,
+      "quantita": 1500,
       "unita": "g",
+      "congelato": false,
       "soglia_minima": 100,
       "scadenza": "",
       "note": ""
