@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-05-31",
+  "ultimo_aggiornamento": "2026-06-01",
   "alimenti": [
     {
       "nome": "Banane",
@@ -58,7 +58,7 @@
     {
       "nome": "Yogurt greco",
       "categoria": "Latticini",
-      "quantita": 5,
+      "quantita": 4,
       "unita": "pz",
       "soglia_minima": 1,
       "scadenza": "",
