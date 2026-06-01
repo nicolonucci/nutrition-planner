@@ -33,13 +33,8 @@
     <div class="stat"><div class="stat-value" id="stat-out" style="color:var(--red)">—</div><div class="stat-label">Esauriti</div></div>
   </div>
 
-  <div class="search-bar">
-    <input type="text" id="search" placeholder="Cerca alimento o categoria..." oninput="filterTable()">
-  </div>
-
-
   <div class="filter-bar">
-    <button class="filter-btn active" onclick="setFilter('ok',this)">✓ Disponibili</button>
+    <button class="filter-btn" onclick="setFilter('ok',this)">✓ Disponibili</button>
     <button class="filter-btn" onclick="setFilter('low',this)">⚠ In esaurimento</button>
     <button class="filter-btn" onclick="setFilter('out',this)">✗ Esauriti</button>
   </div>
@@ -58,7 +53,7 @@
 <script src="js/config.js"></script>
 <script>
 let allAlimenti = [];
-let activeFilter = 'ok';
+let activeFilter = null;
 
 function getStatus(a) {
   const qty = parseFloat(a.quantita) || 0;
@@ -115,16 +110,21 @@ function renderTable(alimenti) {
 }
 
 function filterTable() {
-  const q = document.getElementById('search').value.toLowerCase();
-  let f = allAlimenti.filter(a => getStatus(a) === activeFilter);
-  if (q) f = f.filter(a => a.nome.toLowerCase().includes(q) || (a.categoria||'').toLowerCase().includes(q));
+  let f = activeFilter
+    ? allAlimenti.filter(a => getStatus(a) === activeFilter)
+    : allAlimenti.filter(a => getStatus(a) !== 'out');
   renderTable(f);
 }
 
 function setFilter(f, btn) {
-  activeFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (activeFilter === f) {
+    activeFilter = null;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  } else {
+    activeFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
   filterTable();
 }
 
