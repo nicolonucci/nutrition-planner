@@ -205,6 +205,16 @@
       "note": ""
     },
     {
+      "nome": "Bistecca di manzo",
+      "categoria": "Proteine",
+      "quantita": 0,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
       "nome": "Fagiolini",
       "categoria": "Verdure & Frutta",
       "quantita": 220,
