@@ -103,76 +103,6 @@
       "giorno": "Martedì",
       "data": "2026-06-02",
       "allenamento": {
-        "tipo": "Riposo",
-        "orario": "",
-        "note": ""
-      },
-      "pasti": {
-        "colazione": {
-          "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
-          "calorie_stimate": 330,
-          "proteine_g": 22,
-          "ricetta": {
-            "ingredienti": [
-              "150g yogurt greco 0%",
-              "100g frutti di bosco misti",
-              "15g semi di chia",
-              "10g miele",
-              "cannella q.b."
-            ],
-            "preparazione": [
-              "Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella. Prepara la sera prima — i semi si gonfiano durante la notte e la rendono più saziante."
-            ]
-          }
-        },
-        "pranzo": {
-          "descrizione": "Insalata tonno, pomodori & fagiolini",
-          "calorie_stimate": 480,
-          "proteine_g": 40,
-          "ricetta": {
-            "ingredienti": [
-              "160g tonno al naturale",
-              "200g pomodorini",
-              "150g fagiolini",
-              "50g olive nere",
-              "15g olio EVO",
-              "succo ½ limone",
-              "basilico · sale q.b."
-            ],
-            "preparazione": [
-              "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
-              "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
-            ]
-          }
-        },
-        "cena": {
-          "descrizione": "Pollo al limone + zucchine grigliate",
-          "calorie_stimate": 380,
-          "proteine_g": 48,
-          "ricetta": {
-            "ingredienti": [
-              "220g petto di pollo",
-              "250g zucchine",
-              "15g olio EVO",
-              "succo 1 limone",
-              "origano GF · sale · pepe q.b."
-            ],
-            "preparazione": [
-              "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
-              "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
-            ]
-          }
-        },
-        "spuntini": [
-          "noci 30g",
-          "frutta fresca"
-        ]
-      }
-    },
-    {
-      "giorno": "Mercoledì",
-      "data": "2026-06-03",
-      "allenamento": {
         "tipo": "Nuoto",
         "orario": "Mattina",
         "note": ""
@@ -266,6 +196,76 @@
           }
         },
         "spuntini": [
+          "frutta fresca"
+        ]
+      }
+    },
+    {
+      "giorno": "Mercoledì",
+      "data": "2026-06-03",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+          "calorie_stimate": 330,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": [
+              "150g yogurt greco 0%",
+              "100g frutti di bosco misti",
+              "15g semi di chia",
+              "10g miele",
+              "cannella q.b."
+            ],
+            "preparazione": [
+              "Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella. Prepara la sera prima — i semi si gonfiano durante la notte e la rendono più saziante."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Insalata tonno, pomodori & fagiolini",
+          "calorie_stimate": 480,
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": [
+              "160g tonno al naturale",
+              "200g pomodorini",
+              "150g fagiolini",
+              "50g olive nere",
+              "15g olio EVO",
+              "succo ½ limone",
+              "basilico · sale q.b."
+            ],
+            "preparazione": [
+              "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
+              "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo al limone + zucchine grigliate",
+          "calorie_stimate": 380,
+          "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": [
+              "220g petto di pollo",
+              "250g zucchine",
+              "15g olio EVO",
+              "succo 1 limone",
+              "origano GF · sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
+              "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
+            ]
+          }
+        },
+        "spuntini": [
+          "noci 30g",
           "frutta fresca"
         ]
       }
