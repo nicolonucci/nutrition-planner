@@ -131,7 +131,7 @@
     {
       "nome": "Pomodoro sardo",
       "categoria": "Verdure & Frutta",
-      "quantita": 1500,
+      "quantita": 1288,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -168,7 +168,7 @@
     {
       "nome": "Bistecca di manzo",
       "categoria": "Proteine",
-      "quantita": 190,
+      "quantita": 0,
       "unita": "g",
       "soglia_minima": 200,
       "scadenza": "",
