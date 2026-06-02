@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-06-01",
+  "ultimo_aggiornamento": "2026-06-02",
   "alimenti": [
     {
       "nome": "Patate gialle",
@@ -94,7 +94,7 @@
     {
       "nome": "Banane",
       "categoria": "Verdure & Frutta",
-      "quantita": 7,
+      "quantita": 5,
       "unita": "pz",
       "soglia_minima": 2,
       "scadenza": "",
@@ -131,7 +131,7 @@
     {
       "nome": "Pomodoro sardo",
       "categoria": "Verdure & Frutta",
-      "quantita": 1288,
+      "quantita": 1076,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -159,7 +159,7 @@
     {
       "nome": "Yogurt greco",
       "categoria": "Latticini",
-      "quantita": 4,
+      "quantita": 3,
       "unita": "pz",
       "soglia_minima": 1,
       "scadenza": "",
@@ -217,7 +217,7 @@
     {
       "nome": "Fagiolini",
       "categoria": "Verdure & Frutta",
-      "quantita": 220,
+      "quantita": 0,
       "unita": "g",
       "soglia_minima": 100,
       "scadenza": "",
