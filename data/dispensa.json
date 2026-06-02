@@ -112,7 +112,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 1302,
+      "quantita": 1012,
       "unita": "g",
       "soglia_minima": 100,
       "scadenza": "",
@@ -121,7 +121,7 @@
     {
       "nome": "Pomodoro ciliegino",
       "categoria": "Verdure & Frutta",
-      "quantita": 500,
+      "quantita": 356,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -131,7 +131,7 @@
     {
       "nome": "Pomodoro sardo",
       "categoria": "Verdure & Frutta",
-      "quantita": 1076,
+      "quantita": 1000,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -197,7 +197,7 @@
     {
       "nome": "Nasello",
       "categoria": "Proteine",
-      "quantita": 160,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -211,6 +211,16 @@
       "unita": "g",
       "congelato": false,
       "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Piselli",
+      "categoria": "Verdure & Frutta",
+      "quantita": 850,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
       "scadenza": "",
       "note": ""
     },
