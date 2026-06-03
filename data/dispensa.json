@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-06-02",
+  "ultimo_aggiornamento": "2026-06-03",
   "alimenti": [
     {
       "nome": "Patate gialle",
@@ -159,7 +159,7 @@
     {
       "nome": "Yogurt greco",
       "categoria": "Latticini",
-      "quantita": 3,
+      "quantita": 2,
       "unita": "pz",
       "soglia_minima": 1,
       "scadenza": "",
