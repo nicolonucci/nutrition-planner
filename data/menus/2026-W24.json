@@ -25,20 +25,59 @@
           "calorie_stimate": 360,
           "proteine_g": 22,
           "orario": "12:15",
-          "nota": "⚡ 3 min — colazione post-allenamento, a casa"
+          "nota": "⚡ 3 min — colazione post-allenamento, a casa",
+          "ricetta": {
+            "ingredienti": [
+              "1 banana matura (~120g)",
+              "150g yogurt greco 0%",
+              "150ml latte p.s.",
+              "15g cacao amaro GF",
+              "10g miele"
+            ],
+            "preparazione": [
+              "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+              "Frulla 1 min. Ottimo anche come post-allenamento."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Riso basmati saltato con pollo & curcuma",
           "calorie_stimate": 590,
           "proteine_g": 46,
           "orario": "14:00",
-          "nota": "🎒 Meal prep — si porta in contenitore, buono anche freddo"
+          "nota": "🎒 Meal prep — si porta in contenitore, buono anche freddo",
+          "ricetta": {
+            "ingredienti": [
+              "90g riso basmati (crudo)",
+              "180g petto di pollo",
+              "100g zucchine",
+              "100g carote",
+              "15ml tamari GF",
+              "10g olio EVO"
+            ],
+            "preparazione": [
+              "Cuoci il riso 10–12 min. Rosola il pollo a cubetti con curcuma 4 min.",
+              "Aggiungi verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Pollo alla piastra + zucchine grigliate",
           "calorie_stimate": 390,
           "proteine_g": 48,
-          "nota": "🎒 Meal prep — da preparare la sera prima o mattina"
+          "nota": "🎒 Meal prep — da preparare la sera prima o mattina",
+          "ricetta": {
+            "ingredienti": [
+              "220g petto di pollo",
+              "250g zucchine",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Marina il pollo 5 min con olio e limone. Grill 4–5 min per lato.",
+              "Griglia le zucchine 2–3 min per lato. Servi caldo o freddo."
+            ]
+          }
         },
         "spuntini": [
           "Yogurt greco 150g + banana + miele + granola GF (~310 kcal, P:22g) — pomeriggio",
@@ -71,20 +110,55 @@
           "calorie_stimate": 370,
           "proteine_g": 22,
           "orario": "12:15",
-          "nota": "⚡ 3 min — colazione post-nuoto, a casa"
+          "nota": "⚡ 3 min — colazione post-nuoto, a casa",
+          "ricetta": {
+            "ingredienti": [
+              "150g yogurt greco 0%",
+              "1 banana (~120g)",
+              "20g noci sgusciate",
+              "10g miele"
+            ],
+            "preparazione": [
+              "Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Pasta di riso al tonno & pomodoro",
           "calorie_stimate": 580,
           "proteine_g": 42,
           "orario": "14:00",
-          "nota": "⭐ Richiesta speciale · 🎒 ottima anche fredda"
+          "nota": "⭐ Richiesta speciale · 🎒 ottima anche fredda",
+          "ricetta": {
+            "ingredienti": [
+              "90g pasta di riso GF",
+              "160g tonno al naturale",
+              "200g passata di pomodoro",
+              "10g olio EVO"
+            ],
+            "preparazione": [
+              "Cuoci la pasta GF al dente.",
+              "Prepara sugo aglio+olio+passata 5 min. Aggiungi tonno. Condisci la pasta, finisci con basilico."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Bistecca di manzo + insalata di pomodori",
           "calorie_stimate": 450,
           "proteine_g": 46,
-          "nota": "🎒 Meal prep — bistecca in fettine + insalata in contenitore"
+          "nota": "🎒 Meal prep — bistecca in fettine + insalata in contenitore",
+          "ricetta": {
+            "ingredienti": [
+              "200g bistecca di manzo",
+              "200g pomodori",
+              "40g rucola",
+              "15g olio EVO"
+            ],
+            "preparazione": [
+              "Padella caldissima, 2–3 min per lato. Riposa 3 min coperta.",
+              "Insalata di pomodori e rucola con olio, sale e pepe."
+            ]
+          }
         },
         "spuntini": [
           "Yogurt greco 150g + banana + miele + granola GF (~310 kcal, P:22g) — pomeriggio",
@@ -109,17 +183,57 @@
           "descrizione": "Uova strapazzate al pomodoro + pane GF",
           "calorie_stimate": 420,
           "proteine_g": 26,
-          "nota": "Giorno di riposo — colazione tranquilla a casa"
+          "nota": "Giorno di riposo — colazione tranquilla a casa",
+          "ricetta": {
+            "ingredienti": [
+              "3 uova intere",
+              "100g passata di pomodoro",
+              "½ cipolla (~40g)",
+              "2 fette pane GF (~60g)",
+              "10g olio EVO"
+            ],
+            "preparazione": [
+              "Soffriggi la cipolla 2 min. Aggiungi la passata, cuoci 4 min.",
+              "Sguscia le uova nel sugo, strapazza 2 min. Servi su pane GF tostato."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Bowl riso venere, tonno & pomodorini",
           "calorie_stimate": 500,
-          "proteine_g": 38
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": [
+              "70g riso venere (crudo)",
+              "160g tonno al naturale",
+              "150g pomodorini",
+              "50g olive nere",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Cuoci il riso venere 18 min. Scola e lascia intiepidire.",
+              "Mescola tutto: riso, tonno, pomodorini, olive. Condisci con olio, limone e basilico."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Salmone in padella + piselli & pomodorini",
           "calorie_stimate": 470,
-          "proteine_g": 44
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": [
+              "200g filetto di salmone",
+              "150g piselli",
+              "150g pomodorini",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "In padella con olio e aglio: cuoci il salmone 3–4 min per lato. Metti da parte.",
+              "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, limone e prezzemolo."
+            ]
+          }
         },
         "spuntini": [
           "Yogurt greco 150g + banana + miele (~255 kcal, P:20g)",
@@ -152,20 +266,59 @@
           "calorie_stimate": 320,
           "proteine_g": 20,
           "orario": "12:15",
-          "nota": "⚡ 3 min — colazione post-allenamento, a casa"
+          "nota": "⚡ 3 min — colazione post-allenamento, a casa",
+          "ricetta": {
+            "ingredienti": [
+              "150g fragole fresche o surgelate",
+              "1 banana (~120g)",
+              "150g yogurt greco 0%",
+              "80ml latte p.s."
+            ],
+            "preparazione": [
+              "Taglia fragole e banana. Metti tutto nel frullatore con latte e ghiaccio.",
+              "Frulla 1 min alla massima velocità. Bevi subito o porta in bottiglietta."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Piadina GF con pollo, pomodori & rucola",
           "calorie_stimate": 550,
           "proteine_g": 42,
           "orario": "14:00",
-          "nota": "🎒 Perfetta da portare — niente contenitore, si avvolge in carta"
+          "nota": "🎒 Perfetta da portare — niente contenitore, si avvolge in carta",
+          "ricetta": {
+            "ingredienti": [
+              "1 piadina GF (~80g)",
+              "170g petto di pollo",
+              "2 pomodori (~160g)",
+              "40g rucola",
+              "30g philadelphia GF",
+              "10g olio EVO"
+            ],
+            "preparazione": [
+              "Cuoci il pollo a striscioline con olio e origano 5–6 min. Scalda la piadina 1 min per lato.",
+              "Spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Merluzzo al vapore + piselli & carote",
           "calorie_stimate": 370,
           "proteine_g": 42,
-          "nota": "🎒 Meal prep — buono anche a temperatura ambiente"
+          "nota": "🎒 Meal prep — buono anche a temperatura ambiente",
+          "ricetta": {
+            "ingredienti": [
+              "220g merluzzo (fresco o surgelato)",
+              "150g piselli",
+              "150g carote",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Merluzzo al vapore 10–12 min. Piselli + carote saltate in padella 5 min.",
+              "Condisci tutto con olio, limone e prezzemolo."
+            ]
+          }
         },
         "spuntini": [
           "Frullato cioccolato + banana + yogurt greco (~360 kcal, P:22g) — pomeriggio",
@@ -198,20 +351,59 @@
           "calorie_stimate": 430,
           "proteine_g": 28,
           "orario": "12:15",
-          "nota": "⚡ 10 min — colazione post-nuoto, a casa (venerdì più tempo)"
+          "nota": "⚡ 10 min — colazione post-nuoto, a casa (venerdì più tempo)",
+          "ricetta": {
+            "ingredienti": [
+              "3 uova intere",
+              "2 fette pane GF (~60g)",
+              "1 arancia (~150g)",
+              "5g olio EVO"
+            ],
+            "preparazione": [
+              "Sbatti le uova con sale e pepe. Cuoci a fuoco basso mescolando 2–3 min finché cremose.",
+              "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Riso basmati con tonno, pomodori & olive",
           "calorie_stimate": 550,
           "proteine_g": 40,
           "orario": "14:00",
-          "nota": "🎒 Meal prep — ottimo anche freddo"
+          "nota": "🎒 Meal prep — ottimo anche freddo",
+          "ricetta": {
+            "ingredienti": [
+              "85g riso basmati (crudo)",
+              "160g tonno al naturale",
+              "150g pomodorini",
+              "50g olive nere",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Cuoci il riso 10–12 min. Scola e intiepidisci.",
+              "Mescola con tonno, pomodorini, olive, olio e limone. Ottimo preparato in anticipo."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Salmone al forno + piselli & carote",
           "calorie_stimate": 480,
           "proteine_g": 44,
-          "nota": "🎒 Meal prep — in contenitore, si può riscaldare"
+          "nota": "🎒 Meal prep — in contenitore, si può riscaldare",
+          "ricetta": {
+            "ingredienti": [
+              "200g filetto di salmone",
+              "150g carote",
+              "150g piselli",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Forno 200°C. Salmone su carta forno con olio, limone e rosmarino → 12–14 min.",
+              "Carote + piselli saltati in padella con olio 8 min. Servi insieme."
+            ]
+          }
         },
         "spuntini": [
           "Yogurt greco 150g + banana + miele (~255 kcal, P:20g) — pomeriggio",
@@ -243,17 +435,56 @@
           "calorie_stimate": 410,
           "proteine_g": 28,
           "orario": "12:00",
-          "nota": "Weekend — colazione post-bici, ci si gode il pasto a casa"
+          "nota": "Weekend — colazione post-bici, ci si gode il pasto a casa",
+          "ricetta": {
+            "ingredienti": [
+              "2 fette pane GF (~60g)",
+              "½ avocado (~80g)",
+              "80g salmone affumicato GF",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Tosta il pane GF. Schiaccia l'avocado con limone, sale e pepe.",
+              "Spalma, disponi il salmone affumicato sopra, erba cipollina."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Riso basmati con pollo & zucchine",
           "calorie_stimate": 600,
-          "proteine_g": 46
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "90g riso basmati (crudo)",
+              "180g petto di pollo",
+              "200g zucchine",
+              "1 spicchio aglio",
+              "10g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Cuoci il riso. Rosola il pollo a strisce con aglio 5 min.",
+              "Aggiungi le zucchine a rondelle 4 min. Servi con succo di limone."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Salmone in padella + piselli & pomodorini",
           "calorie_stimate": 470,
-          "proteine_g": 44
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": [
+              "200g filetto di salmone",
+              "150g piselli",
+              "150g pomodorini",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "In padella con olio e aglio: cuoci il salmone 3–4 min per lato. Metti da parte.",
+              "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, limone e prezzemolo."
+            ]
+          }
         },
         "spuntini": [
           "Smoothie fragola + banana + yogurt greco (~320 kcal, P:20g) — pomeriggio",
@@ -278,17 +509,55 @@
           "descrizione": "Philadelphia GF + salmone + pane GF + pomodoro",
           "calorie_stimate": 400,
           "proteine_g": 26,
-          "nota": "Brunch domenicale tranquillo"
+          "nota": "Brunch domenicale tranquillo",
+          "ricetta": {
+            "ingredienti": [
+              "2 fette pane GF (~60g)",
+              "60g philadelphia GF",
+              "80g salmone affumicato GF",
+              "1 pomodoro (~120g)"
+            ],
+            "preparazione": [
+              "Tosta il pane. Spalma il philadelphia generosamente.",
+              "Aggiungi salmone e pomodoro a fette. Pepe e erba cipollina."
+            ]
+          }
         },
         "pranzo": {
           "descrizione": "Insalata tonno, pomodori & fagiolini",
           "calorie_stimate": 480,
-          "proteine_g": 40
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": [
+              "160g tonno al naturale",
+              "200g pomodorini",
+              "150g fagiolini",
+              "50g olive nere",
+              "15g olio EVO",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Lessa i fagiolini 6 min in acqua salata, scola e raffredda sotto acqua fredda.",
+              "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
+            ]
+          }
         },
         "cena": {
           "descrizione": "Bistecca di manzo + insalata di pomodori",
           "calorie_stimate": 450,
-          "proteine_g": 46
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "200g bistecca di manzo",
+              "200g pomodori",
+              "40g rucola",
+              "15g olio EVO"
+            ],
+            "preparazione": [
+              "Padella caldissima, 2–3 min per lato. Riposa 3 min coperta.",
+              "Insalata di pomodori e rucola con olio, sale e pepe."
+            ]
+          }
         },
         "spuntini": [
           "Yogurt greco + banana + noci + miele (~370 kcal, P:22g)",
