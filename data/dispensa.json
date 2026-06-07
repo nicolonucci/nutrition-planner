@@ -275,13 +275,103 @@
     },
     {
       "nome": "Cioccolato Excellence 78%",
-      "categoria": "Altro",
+      "categoria": "Dolci",
       "quantita": 1,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 0,
       "scadenza": "",
       "note": "~100g"
+    },
+    {
+      "nome": "Rigatoni Rummo",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 800,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2029-01-12",
+      "note": ""
+    },
+    {
+      "nome": "Rigatoni Rummo",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 400,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2029-12-09",
+      "note": ""
+    },
+    {
+      "nome": "Crackers Mulino Bianco",
+      "categoria": "Snack & Altro",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-10-20",
+      "note": "6x33.4g"
+    },
+    {
+      "nome": "Pane Carasau",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 150,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-09-06",
+      "note": ""
+    },
+    {
+      "nome": "Lingue di Gatto",
+      "categoria": "Dolci",
+      "quantita": 110,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-10-16",
+      "note": ""
+    },
+    {
+      "nome": "Piadina Loriana",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 450,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-08-15",
+      "note": "2x225g"
+    },
+    {
+      "nome": "Cous Cous",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 375,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2027-04-10",
+      "note": ""
+    },
+    {
+      "nome": "Pancarrè",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 330,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-06-26",
+      "note": ""
+    },
+    {
+      "nome": "Cacao amaro",
+      "categoria": "Condimenti & Spezie",
+      "quantita": 75,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2028-03-09",
+      "note": ""
     }
   ]
 }
