@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-06-03",
+  "ultimo_aggiornamento": "2026-06-07",
   "alimenti": [
     {
       "nome": "Patate gialle",
@@ -159,7 +159,7 @@
     {
       "nome": "Yogurt greco",
       "categoria": "Latticini",
-      "quantita": 2,
+      "quantita": 3,
       "unita": "pz",
       "soglia_minima": 1,
       "scadenza": "",
@@ -197,12 +197,12 @@
     {
       "nome": "Nasello",
       "categoria": "Proteine",
-      "quantita": 0,
+      "quantita": 600,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
       "scadenza": "",
-      "note": ""
+      "note": "Cuori di nasello gratinati"
     },
     {
       "nome": "Bistecca di manzo",
@@ -232,6 +232,56 @@
       "soglia_minima": 100,
       "scadenza": "",
       "note": ""
+    },
+    {
+      "nome": "Tonno naturale",
+      "categoria": "Proteine",
+      "quantita": 9,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": "Lattine al naturale"
+    },
+    {
+      "nome": "Yogurt Delta Bianco",
+      "categoria": "Latticini",
+      "quantita": 2,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Riso Basmati",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1000,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Udon Rice Noodles",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Cioccolato Excellence 78%",
+      "categoria": "Altro",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": "~100g"
     }
   ]
 }
