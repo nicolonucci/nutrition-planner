@@ -50,6 +50,43 @@
 
 <div class="footer-note">NutritionPlanner</div>
 
+<style>
+.group-row td { cursor: pointer; }
+.group-row:hover td { background: rgba(0,0,0,0.03); }
+.group-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--grey);
+  background: rgba(0,0,0,0.07);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
+}
+.expand-arrow {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--grey);
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+.expand-arrow.open { transform: rotate(90deg); }
+.detail-row td {
+  font-size: 11px !important;
+  color: var(--grey);
+  background: rgba(0,0,0,0.015);
+  border-top: none !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+.detail-row td:first-child {
+  padding-left: 28px !important;
+}
+.detail-row td strong { color: var(--text); font-size: 11px; }
+</style>
+
 <script src="js/config.js"></script>
 <script>
 let allAlimenti = [];
@@ -63,10 +100,28 @@ function getStatus(a) {
   return 'ok';
 }
 
+function worstStatus(items) {
+  const statuses = items.map(getStatus);
+  if (statuses.includes('out')) return 'out';
+  if (statuses.includes('low')) return 'low';
+  return 'ok';
+}
+
 function statusPill(s) {
   const map = { ok:'ok ✓ Disponibile', low:'low ⚠ Esaurimento', out:'out ✗ Esaurito' };
   const [cls, ...rest] = map[s].split(' ');
   return `<span class="pill ${cls}">${rest.join(' ')}</span>`;
+}
+
+function toggleGroup(id) {
+  const rows = document.querySelectorAll(`.detail-row[data-group="${id}"]`);
+  const arrow = document.getElementById(`arrow_${id}`);
+  const isOpen = arrow.classList.contains('open');
+  rows.forEach(r => {
+    r.style.maxHeight = isOpen ? '0' : '200px';
+    r.style.display = isOpen ? 'none' : 'table-row';
+  });
+  arrow.classList.toggle('open', !isOpen);
 }
 
 function renderTable(alimenti) {
@@ -76,43 +131,116 @@ function renderTable(alimenti) {
     tc.innerHTML = `<p style="color:var(--grey);padding:20px 0;font-size:12px">Nessun alimento trovato.</p>`;
     return;
   }
+
+  // Raggruppa per categoria, poi per nome
   const cats = {};
   alimenti.forEach(a => {
     const c = a.categoria || 'Altro';
-    if (!cats[c]) cats[c] = [];
-    cats[c].push(a);
+    if (!cats[c]) cats[c] = {};
+    const n = a.nome;
+    if (!cats[c][n]) cats[c][n] = [];
+    cats[c][n].push(a);
   });
-  Object.entries(cats).sort(([a],[b]) => a.localeCompare(b)).forEach(([cat, items]) => {
+
+  Object.entries(cats).sort(([a],[b]) => a.localeCompare(b)).forEach(([cat, groups]) => {
     const hdr = document.createElement('div');
     hdr.className = 'cat-header';
     hdr.textContent = cat;
     tc.appendChild(hdr);
+
     const table = document.createElement('table');
     table.innerHTML = `<thead><tr><th>Alimento</th><th>Quantità</th><th></th><th>Stato</th><th>Scadenza</th></tr></thead>`;
     const tbody = document.createElement('tbody');
-    items.sort((a, b) => (a.congelato ? 1 : 0) - (b.congelato ? 1 : 0));
-    items.forEach(a => {
-      const s = getStatus(a);
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td><strong>${a.nome}</strong>${a.note?`<br><span style="font-size:10px;color:var(--grey)">${a.note}</span>`:''}
-        </td>
-        <td style="font-weight:600">${a.quantita ?? '—'} <span style="color:var(--grey);font-weight:400">${a.unita||''}</span></td>
-        <td style="font-size:14px;text-align:center" title="${a.congelato?'Congelato':''}">${a.congelato?'❄️':''}</td>
-        <td>${statusPill(s)}</td>
-        <td style="font-size:11px;color:var(--grey)">${a.scadenza||'—'}</td>
-      `;
-      tbody.appendChild(tr);
+
+    Object.entries(groups).sort(([a],[b]) => a.localeCompare(b)).forEach(([name, items]) => {
+      const multi = items.length > 1;
+      const gid = name.replace(/\s+/g,'_') + '_' + Math.random().toString(36).substr(2,5);
+
+      if (multi) {
+        // Riga raggruppata: somma quantità, stato peggiore
+        const totalQty = items.reduce((s, a) => s + (parseFloat(a.quantita) || 0), 0);
+        const unit = items[0].unita || '';
+        const hasCongelato = items.some(a => a.congelato);
+        const ws = worstStatus(items);
+        // Scadenza più vicina (non vuota)
+        const scadenze = items.map(a => a.scadenza).filter(Boolean).sort();
+        const scadenzaLabel = scadenze.length ? scadenze[0] + (scadenze.length > 1 ? ' +' : '') : '—';
+
+        const tr = document.createElement('tr');
+        tr.className = 'group-row';
+        tr.onclick = () => toggleGroup(gid);
+        tr.innerHTML = `
+          <td>
+            <strong>${name}</strong>
+            <span class="group-badge">${items.length} lotti</span>
+          </td>
+          <td style="font-weight:600">${totalQty} <span style="color:var(--grey);font-weight:400">${unit}</span></td>
+          <td style="font-size:14px;text-align:center">${hasCongelato ? '❄️' : ''}</td>
+          <td>${statusPill(ws)}</td>
+          <td style="font-size:11px;color:var(--grey)">
+            <span style="margin-right:8px">${scadenzaLabel}</span>
+            <span class="expand-arrow" id="arrow_${gid}">▶</span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+
+        // Righe di dettaglio (nascoste)
+        items.forEach((a, i) => {
+          const s = getStatus(a);
+          const detailTr = document.createElement('tr');
+          detailTr.className = 'detail-row';
+          detailTr.setAttribute('data-group', gid);
+          detailTr.style.display = 'none';
+          const noteLabel = a.note ? ` — ${a.note}` : '';
+          const congLabel = a.congelato ? ' ❄️' : '';
+          detailTr.innerHTML = `
+            <td><strong>Lotto ${i + 1}${noteLabel}${congLabel}</strong></td>
+            <td style="font-weight:600">${a.quantita ?? '—'} <span style="color:var(--grey);font-weight:400">${a.unita||''}</span></td>
+            <td></td>
+            <td>${statusPill(s)}</td>
+            <td>${a.scadenza || '—'}</td>
+          `;
+          tbody.appendChild(detailTr);
+        });
+
+      } else {
+        // Riga singola — comportamento originale
+        const a = items[0];
+        const s = getStatus(a);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${a.nome}</strong>${a.note ? `<br><span style="font-size:10px;color:var(--grey)">${a.note}</span>` : ''}</td>
+          <td style="font-weight:600">${a.quantita ?? '—'} <span style="color:var(--grey);font-weight:400">${a.unita||''}</span></td>
+          <td style="font-size:14px;text-align:center">${a.congelato ? '❄️' : ''}</td>
+          <td>${statusPill(s)}</td>
+          <td style="font-size:11px;color:var(--grey)">${a.scadenza || '—'}</td>
+        `;
+        tbody.appendChild(tr);
+      }
     });
+
     table.appendChild(tbody);
     tc.appendChild(table);
   });
 }
 
 function filterTable() {
-  let f = activeFilter
-    ? allAlimenti.filter(a => getStatus(a) === activeFilter)
-    : allAlimenti.filter(a => getStatus(a) !== 'out');
+  // Per il filtro, usa lo stato del gruppo (peggiore) per prodotti multipli
+  let f;
+  if (activeFilter) {
+    // Includi prodotto se almeno un lotto corrisponde al filtro
+    const nomiDaIncludere = new Set();
+    allAlimenti.forEach(a => { if (getStatus(a) === activeFilter) nomiDaIncludere.add(a.nome); });
+    f = allAlimenti.filter(a => nomiDaIncludere.has(a.nome));
+  } else {
+    // Default: escludi prodotti tutti esauriti
+    const nomiTuttiOut = new Set(
+      Object.entries(
+        allAlimenti.reduce((acc, a) => { (acc[a.nome] = acc[a.nome]||[]).push(a); return acc; }, {})
+      ).filter(([, items]) => items.every(a => getStatus(a) === 'out')).map(([n]) => n)
+    );
+    f = allAlimenti.filter(a => !nomiTuttiOut.has(a.nome));
+  }
   renderTable(f);
 }
 
@@ -134,13 +262,18 @@ async function init() {
     allAlimenti = d.alimenti || [];
     document.getElementById('loading').style.display = 'none';
     document.getElementById('header-sub').textContent = `Aggiornata il ${d.ultimo_aggiornamento || '—'}`;
-    const ok = allAlimenti.filter(a => getStatus(a) === 'ok').length;
-    const low = allAlimenti.filter(a => getStatus(a) === 'low').length;
-    const out = allAlimenti.filter(a => getStatus(a) === 'out').length;
-    document.getElementById('stat-tot').textContent = allAlimenti.length;
+
+    // Stats per prodotto unico (stato peggiore del gruppo)
+    const grouped = allAlimenti.reduce((acc, a) => { (acc[a.nome] = acc[a.nome]||[]).push(a); return acc; }, {});
+    const prodotti = Object.values(grouped);
+    const ok = prodotti.filter(g => worstStatus(g) === 'ok').length;
+    const low = prodotti.filter(g => worstStatus(g) === 'low').length;
+    const out = prodotti.filter(g => worstStatus(g) === 'out').length;
+    document.getElementById('stat-tot').textContent = prodotti.length;
     document.getElementById('stat-ok').textContent = ok;
     document.getElementById('stat-low').textContent = low;
     document.getElementById('stat-out').textContent = out;
+
     if (!allAlimenti.length) { document.getElementById('empty').style.display = 'block'; return; }
     document.getElementById('table-container').style.display = 'block';
     filterTable();
