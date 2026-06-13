@@ -1,0 +1,365 @@
+{
+  "settimana": "2026-W25",
+  "dal": "2026-06-15",
+  "al": "2026-06-21",
+  "note_settimana": "Richieste speciali: cena premio lunedì, piadina sabato a pranzo. Settimana con 2 riposi consecutivi (mer-gio), bici e camminata nel weekend.",
+  "giorni": [
+    {
+      "giorno": "Lunedì",
+      "data": "2026-06-15",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": "16:00–19:00 · ⚠️ Pre-nuoto almeno 90 min prima (entro 14:00)"
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "orario": "08:00",
+          "nota": "Colazione completa — giornata con nuoto pomeridiano"
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "orario": "13:00",
+          "nota": "Carbo abbondanti pre-nuoto"
+        },
+        "pre_workout": {
+          "descrizione": "4 crackers riso GF + marmellata GF",
+          "calorie_stimate": 170,
+          "proteine_g": 3,
+          "orario": "14:00",
+          "nota": "⚠️ Leggerissimo — zero grassi, stomaco sgombro per le 16:00"
+        },
+        "post_workout": {
+          "descrizione": "Yogurt greco 150g + banana + miele + granola GF",
+          "calorie_stimate": 310,
+          "proteine_g": 22,
+          "orario": "19:15",
+          "nota": "💪 Mangia subito in spogliatoio — fame intensa garantita dopo il nuoto"
+        },
+        "cena": {
+          "descrizione": "🎉 CENA PREMIO — Bistecca di manzo 250g + patate al forno + insalata di rucola & pomodori",
+          "calorie_stimate": 720,
+          "proteine_g": 58,
+          "orario": "20:30",
+          "nota": "Cena premio settimanale — porzione abbondante, goditi il pasto!",
+          "ricetta": {
+            "ingredienti": [
+              "250g controfiletto di manzo",
+              "250g patate",
+              "50g rucola",
+              "2 pomodori (~160g)",
+              "15g olio EVO",
+              "sale · pepe · rosmarino GF q.b."
+            ],
+            "preparazione": [
+              "Patate a spicchi, forno 200°C con 10g olio e rosmarino, 30–35 min.",
+              "Bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato. Riposa 3 min in carta stagnola.",
+              "Insalata rucola + pomodori + olio. Servi tutto insieme."
+            ]
+          }
+        },
+        "spuntini": [
+          "Frutta di stagione (~100 kcal)"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 2330,
+        "proteine_g": 157
+      }
+    },
+    {
+      "giorno": "Martedì",
+      "data": "2026-06-16",
+      "allenamento": {
+        "tipo": "Palestra",
+        "orario": "Mattina",
+        "note": "9:00–12:00"
+      },
+      "pasti": {
+        "pre_workout": {
+          "descrizione": "Banana + caffè",
+          "calorie_stimate": 100,
+          "proteine_g": 1,
+          "orario": "08:30",
+          "nota": "Leggero — stomaco quasi vuoto per l'allenamento"
+        },
+        "colazione": {
+          "descrizione": "Frullato fragola + banana + yogurt greco + latte",
+          "calorie_stimate": 340,
+          "proteine_g": 22,
+          "orario": "12:15",
+          "nota": "⚡ 3 min — colazione post-allenamento",
+          "ricetta": {
+            "ingredienti": [
+              "150g yogurt greco 0%",
+              "150g fragole fresche o surgelate",
+              "1 banana (~120g)",
+              "100ml latte p.s.",
+              "5g miele"
+            ],
+            "preparazione": [
+              "Frulla tutto 1 min. Aggiungi ghiaccio a piacere."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Piadina GF con pollo, pomodori & rucola",
+          "calorie_stimate": 550,
+          "proteine_g": 42,
+          "orario": "14:00",
+          "nota": "Pasto principale post-palestra"
+        },
+        "cena": {
+          "descrizione": "Salmone al forno + carote & piselli",
+          "calorie_stimate": 480,
+          "proteine_g": 44,
+          "orario": "19:30",
+          "nota": "Proteica, carbo ridotti"
+        },
+        "spuntini": [
+          "Yogurt greco 150g + banana + miele (~255 kcal, P:20g) — pomeriggio",
+          "Crackers riso GF + frutta secca (~150 kcal) — sera se fame"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 2225,
+        "proteine_g": 166
+      }
+    },
+    {
+      "giorno": "Mercoledì",
+      "data": "2026-06-17",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco 150g + banana + noci + miele",
+          "calorie_stimate": 370,
+          "proteine_g": 22,
+          "orario": "08:30",
+          "nota": "Giornata di riposo — colazione leggera ma completa"
+        },
+        "pranzo": {
+          "descrizione": "Pasta di riso al tonno & pomodoro",
+          "calorie_stimate": 580,
+          "proteine_g": 42,
+          "orario": "13:00"
+        },
+        "cena": {
+          "descrizione": "Merluzzo al vapore + carote & piselli",
+          "calorie_stimate": 380,
+          "proteine_g": 42,
+          "orario": "19:30",
+          "nota": "Leggera e proteica"
+        },
+        "spuntini": [
+          "Yogurt greco 150g + frutta di stagione (~230 kcal, P:14g)",
+          "Crackers riso GF + marmellata GF (~120 kcal)"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 1880,
+        "proteine_g": 162
+      }
+    },
+    {
+      "giorno": "Giovedì",
+      "data": "2026-06-18",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate al pomodoro + pane GF",
+          "calorie_stimate": 420,
+          "proteine_g": 26,
+          "orario": "08:30"
+        },
+        "pranzo": {
+          "descrizione": "Bowl riso venere, tonno & pomodorini",
+          "calorie_stimate": 550,
+          "proteine_g": 40,
+          "orario": "13:00",
+          "nota": "Piatto fresco estivo",
+          "ricetta": {
+            "ingredienti": [
+              "80g riso venere (peso crudo)",
+              "160g tonno al naturale",
+              "200g pomodorini",
+              "40g rucola",
+              "15g olio EVO",
+              "succo ½ limone · sale q.b."
+            ],
+            "preparazione": [
+              "Cuoci il riso venere 35–40 min in acqua salata. Scola e raffredda.",
+              "Condisci con olio, limone e sale. Aggiungi tonno sgocciolato, pomodorini tagliati e rucola."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Frittata zucchine & carote al forno",
+          "calorie_stimate": 420,
+          "proteine_g": 32,
+          "orario": "19:30"
+        },
+        "spuntini": [
+          "Yogurt greco 150g + banana (~255 kcal, P:20g)",
+          "Frutta di stagione (~100 kcal)"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 1895,
+        "proteine_g": 163
+      }
+    },
+    {
+      "giorno": "Venerdì",
+      "data": "2026-06-19",
+      "allenamento": {
+        "tipo": "Bici",
+        "orario": "Mattina",
+        "note": "Ciclismo mattutino — attività cardio moderata/alta"
+      },
+      "pasti": {
+        "pre_workout": {
+          "descrizione": "Banana + pane GF + marmellata GF",
+          "calorie_stimate": 250,
+          "proteine_g": 4,
+          "orario": "07:30",
+          "nota": "Carboidrati veloci — energia per la bici"
+        },
+        "colazione": {
+          "descrizione": "Yogurt greco 150g + banana + miele + granola GF",
+          "calorie_stimate": 310,
+          "proteine_g": 22,
+          "orario": "Dopo bici",
+          "nota": "💪 Post-attività — ripristina glicogeno e proteine"
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati saltato con pollo & curcuma",
+          "calorie_stimate": 590,
+          "proteine_g": 46,
+          "orario": "13:30",
+          "nota": "Pasto principale post-cardio — carbo abbondanti"
+        },
+        "cena": {
+          "descrizione": "Pollo alla piastra + carote & piselli",
+          "calorie_stimate": 420,
+          "proteine_g": 50,
+          "orario": "19:30",
+          "nota": "Proteica, leggera",
+          "ricetta": {
+            "ingredienti": [
+              "220g petto di pollo",
+              "150g carote",
+              "150g piselli surgelati",
+              "10g olio EVO",
+              "succo ½ limone · origano GF · sale q.b."
+            ],
+            "preparazione": [
+              "Pollo con olio, limone e origano in padella grill 4–5 min per lato.",
+              "Carote + piselli saltati in padella con olio 6–7 min."
+            ]
+          }
+        },
+        "spuntini": [
+          "Banana + 20g noci durante la bici (~260 kcal, P:5g) — in borsa",
+          "Crackers riso GF + frutta (~150 kcal) — pomeriggio"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 2130,
+        "proteine_g": 160
+      }
+    },
+    {
+      "giorno": "Sabato",
+      "data": "2026-06-20",
+      "allenamento": {
+        "tipo": "Camminata in montagna",
+        "orario": "Mattina",
+        "note": "Attività cardio prolungata — porta snack in borsa"
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Toast GF avocado + salmone affumicato",
+          "calorie_stimate": 410,
+          "proteine_g": 28,
+          "orario": "07:00",
+          "nota": "Colazione abbondante prima di partire — energia duratura per la montagna"
+        },
+        "pranzo": {
+          "descrizione": "🌮 Piadina GF con pollo, pomodori & rucola",
+          "calorie_stimate": 550,
+          "proteine_g": 42,
+          "orario": "13:00",
+          "nota": "⭐ Richiesta speciale — piadina pranzo sabato"
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori & rucola",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "orario": "19:30",
+          "nota": "Proteica, carbo ridotti — recupero dopo la camminata"
+        },
+        "spuntini": [
+          "In montagna: banana + 20g noci + 3 datteri (~300 kcal, P:5g) — porta in zaino",
+          "Post-camminata: yogurt greco 150g + miele (~170 kcal, P:14g)"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 2080,
+        "proteine_g": 152
+      }
+    },
+    {
+      "giorno": "Domenica",
+      "data": "2026-06-21",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco 150g + banana + noci + miele",
+          "calorie_stimate": 370,
+          "proteine_g": 22,
+          "orario": "09:00",
+          "nota": "Domenica — colazione tranquilla"
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "orario": "13:00",
+          "nota": "Pranzo domenicale più elaborato"
+        },
+        "cena": {
+          "descrizione": "Salmone al forno + piselli & pomodorini",
+          "calorie_stimate": 490,
+          "proteine_g": 44,
+          "orario": "19:30"
+        },
+        "spuntini": [
+          "Frutta di stagione (~120 kcal)",
+          "Crackers riso GF + philadelphia GF (~180 kcal, P:8g)"
+        ]
+      },
+      "totale": {
+        "calorie_stimate": 1910,
+        "proteine_g": 162
+      }
+    }
+  ]
+}
