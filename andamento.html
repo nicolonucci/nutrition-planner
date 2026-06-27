@@ -615,7 +615,7 @@ function toggleWorkoutDetail(wid){
       if(gTimelines){
         requestAnimationFrame(()=>renderWorkoutChart(w));
       }else{
-        fetchData('data/workout_timelines.json').then(tl=>{
+        fetchCached('data/workout_timelines.json').then(tl=>{
           gTimelines=tl;
           el('view-allenamenti').innerHTML=buildAllenamenti();
           requestAnimationFrame(()=>renderWorkoutChart(w));
@@ -628,16 +628,20 @@ function toggleWorkoutDetail(wid){
 // ─── INIT ─────────────────────────────────────────────────
 async function init(){
   try{
-    const[healthData,workoutData]=await Promise.all([
-      fetchData(CONFIG.paths.health_history),
-      fetchData('data/workout_details.json'),
-    ]);
+    // health_history è essenziale; workout_details opzionale (non blocca il caricamento)
+    const healthData = await fetchCached(CONFIG.paths.health_history);
     gSettimane=(healthData.settimane||[]).slice().sort((a,b)=>a.settimana>b.settimana?1:-1);
-    gWorkouts=workoutData.workouts||[];
-    gMaxHR=workoutData.max_hr_ref||175;
-    gHeight=workoutData.height_m||1.70;
 
     if(!gSettimane.length){el('loading').style.display='none';el('empty').style.display='block';return}
+
+    // Carica workout in parallelo ma non blocca il render se fallisce
+    fetchCached('data/workout_details.json').then(workoutData=>{
+      gWorkouts=workoutData.workouts||[];
+      gMaxHR=workoutData.max_hr_ref||175;
+      gHeight=workoutData.height_m||1.70;
+      el('view-allenamenti').innerHTML=buildAllenamenti();
+      el('view-settimane').innerHTML=buildSettimane();
+    }).catch(e=>console.warn('workout_details non disponibile:', e));
 
     const ultima=gSettimane[gSettimane.length-1];
     const records=computeRecords(gSettimane,gWorkouts);

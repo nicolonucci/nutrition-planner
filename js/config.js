@@ -19,16 +19,43 @@ const CONFIG = {
 };
 
 // Utility: fetcha un JSON dal repo
-// Usa path relativo se siamo su GitHub Pages (stesso origin), altrimenti raw.githubusercontent.com
 async function fetchData(path) {
-  // Prova prima con path relativo (GitHub Pages CDN, cache browser completa)
-  const isGHPages = location.hostname.includes('github.io') || location.hostname.includes('github.com');
+  const isGHPages = location.hostname.endsWith('github.io');
   const url = isGHPages
     ? `/${CONFIG.github_repo}/${path}`
     : `${CONFIG.raw_base}/${path}`;
-  const res = await fetch(url, { cache: 'default' }); // rispetta ETag / Last-Modified
+  const res = await fetch(url, { cache: 'no-cache' });
   if (!res.ok) throw new Error(`HTTP ${res.status} — ${path}`);
   return res.json();
+}
+
+// Utility: fetch con cache localStorage (ritorna dati subito, aggiorna in background)
+// TTL in secondi (default 30 min). Passa ttl=0 per forzare refresh.
+async function fetchCached(path, ttl = 1800) {
+  const key = `_nh_${path}`;
+  let cached = null;
+  try {
+    const raw = localStorage.getItem(key);
+    if (raw) {
+      const { ts, data } = JSON.parse(raw);
+      if (ttl > 0 && Date.now() - ts < ttl * 1000) cached = data;
+    }
+  } catch (_) {}
+
+  // Fetch rete in background — aggiorna localStorage
+  const netPromise = fetchData(path).then(data => {
+    try { localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data })); } catch (_) {}
+    return data;
+  });
+
+  // Se abbiamo dati cached validi, mostrali subito (la rete aggiorna in silenzio)
+  if (cached !== null) {
+    netPromise.catch(() => {});  // ignora errori background
+    return cached;
+  }
+
+  // Prima visita o cache scaduta: aspetta la rete
+  return netPromise;
 }
 
 // Utility: calcola settimana ISO corrente (YYYY-WNN)
