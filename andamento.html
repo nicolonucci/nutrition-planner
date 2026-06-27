@@ -170,6 +170,18 @@
 
 <script src="js/config.js"></script>
 <script>
+// Fallback: ridefinisce fetchCached se config.js vecchio non ce l'ha
+if (typeof fetchCached === 'undefined') {
+  window.fetchCached = async function(path, ttl=1800) {
+    const key='_nh_'+path; let cached=null;
+    try{const raw=localStorage.getItem(key);if(raw){const{ts,data}=JSON.parse(raw);if(Date.now()-ts<ttl*1000)cached=data;}}catch(_){}
+    const net=fetchData(path).then(d=>{try{localStorage.setItem(key,JSON.stringify({ts:Date.now(),data:d}));}catch(_){}return d;});
+    if(cached!==null){net.catch(()=>{});return cached;}
+    return net;
+  };
+}
+</script>
+<script>
 // ─── GLOBALS ──────────────────────────────────────────────
 let gSettimane=[], gWorkouts=[], gMaxHR=175, gHeight=1.70;
 let chartInstances={}, chartsReady=false;
