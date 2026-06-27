@@ -148,39 +148,32 @@
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
-        "note": "A casa di amici. Possibile wingfoil o bici. Cena sociale."
+        "note": "A casa di amici da gio a dom. Possibile wingfoil o bici. Cena sociale ogni sera."
       },
+      "note": "Giorni fuori casa: colazione e pranzo il più normali possibile, a cena goditi la serata senza eccedere. Porta da casa crackers riso GF + noci come backup.",
       "pasti": {
         "colazione": {
-          "descrizione": "Prima di partire: yogurt greco 200g + banana + noci",
+          "descrizione": "Prima di partire: yogurt greco 200g + banana + 25g noci + miele",
           "calorie_stimate": 380,
           "proteine_g": 24,
           "ricetta": {
             "ingredienti": ["200g yogurt greco 0%", "1 banana", "25g noci", "1 cucchiaino miele"],
-            "preparazione": ["Mescola tutto in una ciotola. Consuma prima di partire per partire con buone proteine."]
+            "preparazione": ["Mescola in una ciotola e consuma prima di partire.", "Obiettivo: almeno 20g proteine prima di uscire."]
           }
         },
         "pranzo": {
-          "descrizione": "Proteina magra + verdure + frutto (adatta all'offerta disponibile)",
+          "descrizione": "Punta a proteina magra (pollo, uova o tonno) + verdure abbondanti. Evita fritti e salse pesanti.",
           "calorie_stimate": 500,
-          "proteine_g": 38,
-          "ricetta": {
-            "ingredienti": ["200g petto di pollo o 3 uova o tonno in scatola", "verdure di stagione a piacere", "frutto"],
-            "preparazione": ["Scegli l'opzione proteica disponibile.", "Evita salse pesanti e fritti. Aggiungi verdure abbondanti."]
-          }
+          "proteine_g": 38
         },
         "cena": {
-          "descrizione": "🎉 Cena con gli amici: goditi la serata. Punta a proteina magra + verdure. Evita eccessi di alcol.",
+          "descrizione": "🎉 Cena con gli amici — goditi la serata. Scegli una proteina magra + verdure se riesci. Max 1–2 bicchieri vino, evita fritti.",
           "calorie_stimate": 700,
-          "proteine_g": 35,
-          "ricetta": {
-            "ingredienti": ["Proteina magra disponibile (carne, pesce, uova)", "Verdure o insalata", "Carboidrati con moderazione"],
-            "preparazione": ["Priorità: proteina + verdure.", "Alcol: max 1–2 bicchieri vino se vuoi.", "Evita fritti e salse pesanti."]
-          }
+          "proteine_g": 35
         },
         "spuntini": [
           "Se fai wingfoil/bici: banana + 20g noci post-attività (~250 kcal)",
-          "Porta da casa: crackers riso GF + frutta secca come backup (~200 kcal)"
+          "Backup da casa: crackers riso GF + frutta secca (~200 kcal)"
         ]
       },
       "totale": {
@@ -198,35 +191,23 @@
       },
       "pasti": {
         "colazione": {
-          "descrizione": "Uova strapazzate (3) o yogurt greco 200g + frutta (adatta a ciò che c'è)",
+          "descrizione": "Uova strapazzate (3) o yogurt greco 200g + frutta — punta a ≥25g proteine con quello che c'è.",
           "calorie_stimate": 420,
-          "proteine_g": 28,
-          "ricetta": {
-            "ingredienti": ["3 uova o 200g yogurt greco 0%", "frutta fresca", "pane GF o crackers riso GF se disponibile"],
-            "preparazione": ["Punta a ≥25g proteine a colazione.", "Scegli l'opzione disponibile tra uova strapazzate o yogurt con frutta."]
-          }
+          "proteine_g": 28
         },
         "pranzo": {
-          "descrizione": "Piatto bilanciato: proteina magra + carboidrati semplici + verdure",
+          "descrizione": "Proteina magra + verdure + un carboidrato semplice (riso, pane, patata). Componi il piatto: metà proteina, resto verdure e carbo. Niente fritti.",
           "calorie_stimate": 550,
-          "proteine_g": 40,
-          "ricetta": {
-            "ingredienti": ["200g proteina magra (pollo, pesce o manzo magro)", "80–100g carboidrati (riso o pane GF)", "verdure abbondanti"],
-            "preparazione": ["Componi il piatto: ½ proteina, ¼ carboidrati, ¼ verdure.", "Evita fritti e condimenti pesanti."]
-          }
+          "proteine_g": 40
         },
         "cena": {
-          "descrizione": "Cena con gli amici: come giovedì, proteina + verdure",
+          "descrizione": "Come giovedì: proteina magra + verdure. Se possibile riduci carboidrati a cena rispetto al pranzo.",
           "calorie_stimate": 700,
-          "proteine_g": 35,
-          "ricetta": {
-            "ingredienti": ["Proteina magra disponibile", "Verdure o insalata", "Acqua come bevanda principale"],
-            "preparazione": ["Mantieni lo stesso approccio di giovedì.", "Se possibile riduci carboidrati a cena e privilegia proteine."]
-          }
+          "proteine_g": 35
         },
         "spuntini": [
           "Post-attività: banana + yogurt greco se disponibile (~250 kcal, P:15g)",
-          "Porta da casa: crackers riso GF + frutta secca (~200 kcal)"
+          "Backup da casa: crackers riso GF + frutta secca (~200 kcal)"
         ]
       },
       "totale": {
@@ -244,35 +225,23 @@
       },
       "pasti": {
         "colazione": {
-          "descrizione": "Uova (3) + frutta o yogurt greco + granola GF",
+          "descrizione": "Uova strapazzate (3) o yogurt greco + frutta — stesso approccio dei giorni precedenti, punta a ≥25g proteine.",
           "calorie_stimate": 420,
-          "proteine_g": 28,
-          "ricetta": {
-            "ingredienti": ["3 uova o 200g yogurt greco 0%", "frutta fresca", "30g granola o cereali GF"],
-            "preparazione": ["Obiettivo: almeno 25–30g proteine a colazione.", "Scegli uova strapazzate o yogurt+granola in base a cosa c'è."]
-          }
+          "proteine_g": 28
         },
         "pranzo": {
-          "descrizione": "Grigliata: carne magra + insalata + pane GF o patate (se disponibile)",
+          "descrizione": "Se c'è grigliata, perfetto: carne magra + insalata abbondante. Evita salse pesanti e fritti. Moderazione con pane e patate.",
           "calorie_stimate": 600,
-          "proteine_g": 45,
-          "ricetta": {
-            "ingredienti": ["200g carne magra (pollo, manzo, pesce) alla griglia", "insalata mista abbondante", "pane GF o patate al forno"],
-            "preparazione": ["Scegli la proteina disponibile, preferibilmente alla griglia.", "Abbina insalata abbondante. Moderazione con salse."]
-          }
+          "proteine_g": 45
         },
         "cena": {
-          "descrizione": "Cena con gli amici: goditi senza eccedere. Punta a proteina + verdure.",
+          "descrizione": "Goditi la serata, ma inizia a ridurre l'alcol rispetto ai giorni precedenti per recuperare meglio. Proteina + verdure come sempre.",
           "calorie_stimate": 700,
-          "proteine_g": 35,
-          "ricetta": {
-            "ingredienti": ["Proteina magra disponibile", "Verdure", "Max 1–2 bicchieri vino"],
-            "preparazione": ["Rilassati ma mantieni la consapevolezza.", "Riduci alcol rispetto ai giorni precedenti per recuperare meglio."]
-          }
+          "proteine_g": 35
         },
         "spuntini": [
           "Post-attività: banana + noci (~230 kcal, P:5g)",
-          "Yogurt greco 150g se disponibile (~150 kcal, P:14g)"
+          "Yogurt greco se disponibile (~150 kcal, P:14g)"
         ]
       },
       "totale": {
@@ -286,34 +255,26 @@
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
-        "note": "A casa di amici. Ultima giornata fuori, rientro in serata."
+        "note": "Ultima giornata fuori, rientro in serata."
       },
       "pasti": {
         "colazione": {
-          "descrizione": "Colazione proteica: uova o yogurt greco + frutta",
+          "descrizione": "Colazione proteica con quello che c'è: uova o yogurt greco + frutta. Punta a compensare i giorni precedenti.",
           "calorie_stimate": 400,
-          "proteine_g": 25,
-          "ricetta": {
-            "ingredienti": ["3 uova o 200g yogurt greco 0%", "frutta fresca", "pane GF se disponibile"],
-            "preparazione": ["Punta a una colazione proteica per compensare i giorni precedenti.", "Aggiungi frutta per micronutrienti."]
-          }
+          "proteine_g": 25
         },
         "pranzo": {
-          "descrizione": "Pasto leggero ma proteico prima di rientrare",
+          "descrizione": "Pasto leggero prima di rientrare: proteina magra + insalata. Se stai viaggiando, usa i crackers riso GF + tonno portati da casa come backup.",
           "calorie_stimate": 500,
-          "proteine_g": 38,
-          "ricetta": {
-            "ingredienti": ["200g proteina magra (tonno in scatola, pollo, uova)", "insalata abbondante", "pane GF o crackers riso GF"],
-            "preparazione": ["Scegli l'opzione più semplice disponibile.", "Se stai rientrando porta crackers + tonno come backup."]
-          }
+          "proteine_g": 38
         },
         "cena": {
-          "descrizione": "Rientro a casa: cena di recupero. Pollo alla piastra + riso basmati + verdure.",
+          "descrizione": "Cena di recupero a casa — rientro normale al menù.",
           "calorie_stimate": 560,
           "proteine_g": 50,
           "ricetta": {
             "ingredienti": ["220g petto di pollo", "100g riso basmati", "200g verdure miste", "olio EVO, limone, sale"],
-            "preparazione": ["Cuoci il riso. Griglia il pollo 5–6 min per lato.", "Prepara le verdure al vapore o alla piastra. Cena semplice per ripartire bene."]
+            "preparazione": ["Cuoci il riso. Griglia il pollo 5–6 min per lato.", "Prepara le verdure al vapore o alla piastra."]
           }
         },
         "spuntini": [
