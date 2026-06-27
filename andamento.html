@@ -468,7 +468,7 @@ function buildAllenamenti(){
       return`<div class="type-card${filterTipo===t.tipo?' active':''}" onclick="filterByType('${t.tipo}')">
         <div class="type-ic">${t.tipo==='tutti'?'🏅':workoutIcon(t.tipo)}</div>
         <div class="type-name">${t.tipo==='tutti'?'Tutti':t.tipo}</div>
-        <div class="type-meta">${t.count} sess. · ${t.totalMin} min${avgHR?` · ♥ ${avgHR}':''}</div>
+        <div class="type-meta">${t.count} sess. · ${t.totalMin} min${avgHR?` · ♥ ${avgHR}`:''}</div>
       </div>`;
     }).join('');
 
@@ -627,15 +627,34 @@ function toggleWorkoutDetail(wid){
   }
 }
 
+// ─── SAFE LOAD ────────────────────────────────────────────
+async function safeLoad(path){
+  // 1) try cache
+  try{
+    const d=await fetchCached(path);
+    if(d&&typeof d==='object')return d;
+    // cache returned bad data — clear it
+    try{localStorage.removeItem('_nh_'+path);}catch(_){}
+  }catch(e){
+    console.warn('fetchCached failed for',path,e);
+    try{localStorage.removeItem('_nh_'+path);}catch(_){}
+  }
+  // 2) fallback: direct network
+  try{return await fetchData(path);}
+  catch(e){console.error('fetchData also failed for',path,e);throw e;}
+}
+
 // ─── INIT ─────────────────────────────────────────────────
 async function init(){
   try{
-    const[healthData,workoutData]=await Promise.all([
-      fetchCached(CONFIG.paths.health_history),
-      fetchCached('data/workout_details.json'),
+    const[healthData,workoutData,timelineData]=await Promise.all([
+      safeLoad(CONFIG.paths.health_history),
+      safeLoad('data/workout_details.json'),
+      safeLoad('data/workout_timelines.json').catch(()=>({})),
     ]);
     gSettimane=(healthData.settimane||[]).slice().sort((a,b)=>a.settimana>b.settimana?1:-1);
-    gWorkouts=workoutData.workouts||[];
+    const timelines=timelineData||{};
+    gWorkouts=(workoutData.workouts||[]).map(w=>({...w,hr_timeline:timelines[w.id]||null}));
     gMaxHR=workoutData.max_hr_ref||175;
     gHeight=workoutData.height_m||1.70;
 
