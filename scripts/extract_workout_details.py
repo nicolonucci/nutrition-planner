@@ -228,17 +228,38 @@ for w in workouts_raw:
     if hr_avg:     entry['hr_avg']       = hr_avg
     if hr_max:     entry['hr_max']       = hr_max
     if zones:      entry['hr_zones']     = {f'z{k}':round(v,1) for k,v in sorted(zones.items())}
-    if timeline:   entry['hr_timeline']  = timeline
+    if timeline:   entry['_hr_timeline'] = timeline  # tenuto separato dal salvataggio
     new_workouts.append(entry)
 
 # ── Merge e salva ─────────────────────────────────────────────────────────
 all_workouts = existing_workouts + new_workouts
 all_workouts.sort(key=lambda x: x['id'], reverse=True)
 
+# Carica timelines esistenti e unisci le nuove
+import os as _os
+timelines_path = _os.path.join(_os.path.dirname(OUTPUT_PATH), 'workout_timelines.json')
+try:
+    with open(timelines_path) as f:
+        all_timelines = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    all_timelines = {}
+
+for w in all_workouts:
+    tl = w.pop('_hr_timeline', None)
+    if tl:
+        all_timelines[w['id']] = tl
+
+# workout_details.json — leggero, senza timeline
 result = {'max_hr_ref': MAX_HR, 'height_m': HEIGHT_M, 'workouts': all_workouts}
 with open(OUTPUT_PATH, 'w') as f:
     json.dump(result, f, ensure_ascii=False, separators=(',',':'))
 
-print(f"\n✅ {len(all_workouts)} workout totali ({len(new_workouts)} nuovi) → {OUTPUT_PATH}")
+# workout_timelines.json — caricato lazy dal browser solo al click
+with open(timelines_path, 'w') as f:
+    json.dump(all_timelines, f, ensure_ascii=False, separators=(',',':'))
+
+print(f"\n✅ {len(all_workouts)} workout totali ({len(new_workouts)} nuovi)")
+print(f"   workout_details.json:   {_os.path.getsize(OUTPUT_PATH)//1024} KB")
+print(f"   workout_timelines.json: {_os.path.getsize(timelines_path)//1024} KB")
 for w in new_workouts[:4]:
     print(f"  {w['tipo']:15s} {w['data']} {w['durata_min']}min hr={w.get('hr_avg','—')}/{w.get('hr_max','—')} dist={w.get('distanza_km','—')}km")
