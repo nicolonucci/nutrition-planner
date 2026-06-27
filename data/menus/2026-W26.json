@@ -1,11 +1,11 @@
 {
   "settimana": "2026-W26",
-  "dal": "2026-06-23",
-  "al": "2026-06-29",
+  "dal": "2026-06-22",
+  "al": "2026-06-28",
   "giorni": [
     {
       "giorno": "Lunedì",
-      "data": "2026-06-23",
+      "data": "2026-06-22",
       "allenamento": {
         "tipo": "Riposo",
         "orario": "",
@@ -17,8 +17,16 @@
           "calorie_stimate": 400,
           "proteine_g": 25,
           "ricetta": {
-            "ingredienti": ["200g yogurt greco 0%", "1 banana", "30g noci", "1 cucchiaino miele"],
-            "preparazione": ["Metti lo yogurt in una ciotola.", "Affetta la banana sopra, aggiungi noci e miele."]
+            "ingredienti": [
+              "200g yogurt greco 0%",
+              "1 banana",
+              "30g noci",
+              "1 cucchiaino miele"
+            ],
+            "preparazione": [
+              "Metti lo yogurt in una ciotola.",
+              "Affetta la banana sopra, aggiungi noci e miele."
+            ]
           }
         },
         "pranzo": {
@@ -26,8 +34,19 @@
           "calorie_stimate": 560,
           "proteine_g": 44,
           "ricetta": {
-            "ingredienti": ["90g pasta di riso GF", "160g tonno al naturale (scolato)", "200g passata di pomodoro", "1 spicchio aglio", "basilico fresco", "1 cucchiaio olio EVO", "sale, pepe"],
-            "preparazione": ["Cuoci la pasta al dente. In padella soffriggi l'aglio, aggiungi la passata e cuoci 5 min.", "Aggiungi il tonno spezzettato, mescola e condisci la pasta scolata."]
+            "ingredienti": [
+              "90g pasta di riso GF",
+              "160g tonno al naturale (scolato)",
+              "200g passata di pomodoro",
+              "1 spicchio aglio",
+              "basilico fresco",
+              "1 cucchiaio olio EVO",
+              "sale, pepe"
+            ],
+            "preparazione": [
+              "Cuoci la pasta al dente. In padella soffriggi l'aglio, aggiungi la passata e cuoci 5 min.",
+              "Aggiungi il tonno spezzettato, mescola e condisci la pasta scolata."
+            ]
           }
         },
         "cena": {
@@ -35,8 +54,17 @@
           "calorie_stimate": 580,
           "proteine_g": 52,
           "ricetta": {
-            "ingredienti": ["220g petto di pollo", "80g riso basmati", "200g zucchine e peperoni", "1 cucchiaio olio EVO", "sale, origano"],
-            "preparazione": ["Cuoci il riso. Griglia le verdure a fette con olio e sale.", "Cuoci il pollo sulla piastra 5–6 min per lato e impiatta."]
+            "ingredienti": [
+              "220g petto di pollo",
+              "80g riso basmati",
+              "200g zucchine e peperoni",
+              "1 cucchiaio olio EVO",
+              "sale, origano"
+            ],
+            "preparazione": [
+              "Cuoci il riso. Griglia le verdure a fette con olio e sale.",
+              "Cuoci il pollo sulla piastra 5–6 min per lato e impiatta."
+            ]
           }
         },
         "spuntini": [
@@ -51,7 +79,7 @@
     },
     {
       "giorno": "Martedì",
-      "data": "2026-06-24",
+      "data": "2026-06-23",
       "allenamento": {
         "tipo": "Bici",
         "orario": "Mattina",
@@ -63,8 +91,18 @@
           "calorie_stimate": 680,
           "proteine_g": 48,
           "ricetta": {
-            "ingredienti": ["200g yogurt greco 0%", "1 banana", "150ml latte parzialmente scremato", "30g granola GF", "2 uova intere", "olio EVO q.b."],
-            "preparazione": ["Frulla yogurt, banana e latte. Versa in bicchiere con granola.", "In padella antiaderente, strapazza le uova con poco olio e servi a lato."]
+            "ingredienti": [
+              "200g yogurt greco 0%",
+              "1 banana",
+              "150ml latte parzialmente scremato",
+              "30g granola GF",
+              "2 uova intere",
+              "olio EVO q.b."
+            ],
+            "preparazione": [
+              "Frulla yogurt, banana e latte. Versa in bicchiere con granola.",
+              "In padella antiaderente, strapazza le uova con poco olio e servi a lato."
+            ]
           }
         },
         "pranzo": {
@@ -72,8 +110,17 @@
           "calorie_stimate": 590,
           "proteine_g": 43,
           "ricetta": {
-            "ingredienti": ["90g riso basmati", "180g filetto di salmone", "150g zucchine", "1 cucchiaio olio EVO", "limone, aneto, sale"],
-            "preparazione": ["Cuoci il riso. Condisci il salmone con olio, limone e aneto.", "Inforna a 200°C per 15 min. Griglia le zucchine e impiatta."]
+            "ingredienti": [
+              "90g riso basmati",
+              "180g filetto di salmone",
+              "150g zucchine",
+              "1 cucchiaio olio EVO",
+              "limone, aneto, sale"
+            ],
+            "preparazione": [
+              "Cuoci il riso. Condisci il salmone con olio, limone e aneto.",
+              "Inforna a 200°C per 15 min. Griglia le zucchine e impiatta."
+            ]
           }
         },
         "cena": {
@@ -81,8 +128,17 @@
           "calorie_stimate": 520,
           "proteine_g": 50,
           "ricetta": {
-            "ingredienti": ["250g filetto di merluzzo", "150g piselli", "100g carote", "2 fette pane GF", "olio EVO, limone, prezzemolo"],
-            "preparazione": ["Inforna il merluzzo con olio e limone a 180°C per 18 min.", "Cuoci piselli e carote al vapore. Impiatta con pane GF."]
+            "ingredienti": [
+              "250g filetto di merluzzo",
+              "150g piselli",
+              "100g carote",
+              "2 fette pane GF",
+              "olio EVO, limone, prezzemolo"
+            ],
+            "preparazione": [
+              "Inforna il merluzzo con olio e limone a 180°C per 18 min.",
+              "Cuoci piselli e carote al vapore. Impiatta con pane GF."
+            ]
           }
         },
         "spuntini": [
@@ -98,7 +154,7 @@
     },
     {
       "giorno": "Mercoledì",
-      "data": "2026-06-25",
+      "data": "2026-06-24",
       "allenamento": {
         "tipo": "Riposo",
         "orario": "",
@@ -110,8 +166,16 @@
           "calorie_stimate": 520,
           "proteine_g": 35,
           "ricetta": {
-            "ingredienti": ["3 uova intere", "1 fetta pane GF", "150g yogurt greco 0%", "sale, pepe, erba cipollina"],
-            "preparazione": ["Sbatti le uova con sale e pepe, cuoci in padella antiaderente a fuoco medio.", "Servi con pane GF tostato e yogurt greco a lato."]
+            "ingredienti": [
+              "3 uova intere",
+              "1 fetta pane GF",
+              "150g yogurt greco 0%",
+              "sale, pepe, erba cipollina"
+            ],
+            "preparazione": [
+              "Sbatti le uova con sale e pepe, cuoci in padella antiaderente a fuoco medio.",
+              "Servi con pane GF tostato e yogurt greco a lato."
+            ]
           }
         },
         "pranzo": {
@@ -119,8 +183,17 @@
           "calorie_stimate": 580,
           "proteine_g": 40,
           "ricetta": {
-            "ingredienti": ["80g riso venere", "160g tonno al naturale", "150g pomodorini", "½ avocado", "lime, coriandolo, olio EVO"],
-            "preparazione": ["Cuoci il riso venere (25 min). Taglia pomodorini e avocado.", "Componi la bowl: riso, tonno spezzettato, pomodorini, avocado. Condisci con lime e olio."]
+            "ingredienti": [
+              "80g riso venere",
+              "160g tonno al naturale",
+              "150g pomodorini",
+              "½ avocado",
+              "lime, coriandolo, olio EVO"
+            ],
+            "preparazione": [
+              "Cuoci il riso venere (25 min). Taglia pomodorini e avocado.",
+              "Componi la bowl: riso, tonno spezzettato, pomodorini, avocado. Condisci con lime e olio."
+            ]
           }
         },
         "cena": {
@@ -128,8 +201,18 @@
           "calorie_stimate": 520,
           "proteine_g": 45,
           "ricetta": {
-            "ingredienti": ["200g filetto di salmone", "60g rucola", "150g pomodori", "1 cetriolo", "2 fette pane GF", "olio EVO, limone, sale"],
-            "preparazione": ["Griglia il salmone 4 min per lato.", "Prepara l'insalata e condisci con olio e limone. Servi con pane GF."]
+            "ingredienti": [
+              "200g filetto di salmone",
+              "60g rucola",
+              "150g pomodori",
+              "1 cetriolo",
+              "2 fette pane GF",
+              "olio EVO, limone, sale"
+            ],
+            "preparazione": [
+              "Griglia il salmone 4 min per lato.",
+              "Prepara l'insalata e condisci con olio e limone. Servi con pane GF."
+            ]
           }
         },
         "spuntini": [
@@ -144,7 +227,7 @@
     },
     {
       "giorno": "Giovedì",
-      "data": "2026-06-26",
+      "data": "2026-06-25",
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
@@ -157,8 +240,16 @@
           "calorie_stimate": 380,
           "proteine_g": 24,
           "ricetta": {
-            "ingredienti": ["200g yogurt greco 0%", "1 banana", "25g noci", "1 cucchiaino miele"],
-            "preparazione": ["Mescola in una ciotola e consuma prima di partire.", "Obiettivo: almeno 20g proteine prima di uscire."]
+            "ingredienti": [
+              "200g yogurt greco 0%",
+              "1 banana",
+              "25g noci",
+              "1 cucchiaino miele"
+            ],
+            "preparazione": [
+              "Mescola in una ciotola e consuma prima di partire.",
+              "Obiettivo: almeno 20g proteine prima di uscire."
+            ]
           }
         },
         "pranzo": {
@@ -183,7 +274,7 @@
     },
     {
       "giorno": "Venerdì",
-      "data": "2026-06-27",
+      "data": "2026-06-26",
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
@@ -217,7 +308,7 @@
     },
     {
       "giorno": "Sabato",
-      "data": "2026-06-28",
+      "data": "2026-06-27",
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
@@ -251,7 +342,7 @@
     },
     {
       "giorno": "Domenica",
-      "data": "2026-06-29",
+      "data": "2026-06-28",
       "allenamento": {
         "tipo": "Difficile da rispettare",
         "orario": "",
@@ -273,8 +364,16 @@
           "calorie_stimate": 560,
           "proteine_g": 50,
           "ricetta": {
-            "ingredienti": ["220g petto di pollo", "100g riso basmati", "200g verdure miste", "olio EVO, limone, sale"],
-            "preparazione": ["Cuoci il riso. Griglia il pollo 5–6 min per lato.", "Prepara le verdure al vapore o alla piastra."]
+            "ingredienti": [
+              "220g petto di pollo",
+              "100g riso basmati",
+              "200g verdure miste",
+              "olio EVO, limone, sale"
+            ],
+            "preparazione": [
+              "Cuoci il riso. Griglia il pollo 5–6 min per lato.",
+              "Prepara le verdure al vapore o alla piastra."
+            ]
           }
         },
         "spuntini": [
