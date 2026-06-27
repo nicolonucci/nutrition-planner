@@ -1,27 +1,79 @@
+#!/usr/bin/env python3
+"""
+extract_health_history.py — Aggiornamento incrementale di health_history.json
+
+Uso:
+  python3 extract_health_history.py <xml_path> <output_path>
+
+Logica incrementale:
+  - Se output_path esiste già, legge le settimane presenti
+  - Processa solo le ultime 2 settimane già presenti (per aggiornare dati parziali)
+    + tutte le settimane nuove
+  - Salta il parsing dei record più vecchi della data di cutoff → molto più veloce
+"""
+
+import sys
 import xml.etree.ElementTree as ET
 import json
 from collections import defaultdict
 from datetime import datetime, timedelta
 
-XML_PATH = "/tmp/ah_extract/apple_health_export/dati esportati.xml"
+if len(sys.argv) < 3:
+    print("Uso: python3 extract_health_history.py <xml_path> <output_path>", file=sys.stderr)
+    sys.exit(1)
+
+XML_PATH    = sys.argv[1]
+OUTPUT_PATH = sys.argv[2]
 
 def iso_week(date_str):
     d = datetime.fromisoformat(date_str[:10])
     iso = d.isocalendar()
     return f"{iso[0]}-W{iso[1]:02d}"
 
+def week_start_date(wk):
+    """Restituisce la data di inizio settimana ISO come stringa YYYY-MM-DD."""
+    year, w = wk.split('-W')
+    jan4 = datetime(int(year), 1, 4)
+    start_w1 = jan4 - timedelta(days=(jan4.weekday()))
+    start = start_w1 + timedelta(weeks=int(w) - 1)
+    return start.date().isoformat()
+
+# ── Carica dati esistenti (modalità incrementale) ──────────────────────────
+existing_weeks = {}   # wk -> entry
+cutoff_date   = None  # stringa YYYY-MM-DD: ignora record prima di questa data
+
+try:
+    with open(OUTPUT_PATH) as f:
+        existing = json.load(f)
+    all_wks = sorted(s['settimana'] for s in existing.get('settimane', []))
+    if all_wks:
+        # Mantieni tutto tranne le ultime 2 settimane (le ri-processiamo per dati parziali)
+        keep_until   = all_wks[-3] if len(all_wks) >= 3 else ''
+        reprocess_from = all_wks[-2] if len(all_wks) >= 2 else all_wks[0]
+        existing_weeks = {
+            s['settimana']: s
+            for s in existing['settimane']
+            if s['settimana'] <= keep_until
+        }
+        cutoff_date = week_start_date(reprocess_from)
+        print(f"Modalità incrementale: {len(existing_weeks)} settimane già presenti, riprocesso da {cutoff_date}", flush=True)
+    else:
+        print("Nessun dato esistente — parsing completo", flush=True)
+except (FileNotFoundError, json.JSONDecodeError):
+    print("Nessun dato esistente — parsing completo", flush=True)
+
+# ── Parsing XML ────────────────────────────────────────────────────────────
 print("Parsing XML...", flush=True)
 context = ET.iterparse(XML_PATH, events=('end',))
 
-peso_by_date = {}
-passi_by_week = defaultdict(float)
-passi_days = defaultdict(set)
+peso_by_date        = {}
+passi_by_week       = defaultdict(float)
+passi_days          = defaultdict(set)
 kcal_attive_by_week = defaultdict(float)
-kcal_bmr_by_week = defaultdict(float)
-# Sleep: list of (start_dt, end_dt) per week — only "real sleep" stages
+kcal_bmr_by_week    = defaultdict(float)
 sleep_intervals_by_week = defaultdict(list)
-fc_by_week = defaultdict(list)
-workouts = []
+fc_by_week          = defaultdict(list)
+workouts            = []
 
 SLEEP_ASLEEP = {
     'HKCategoryValueSleepAnalysisAsleepCore',
@@ -31,12 +83,19 @@ SLEEP_ASLEEP = {
     'HKCategoryValueSleepAnalysisAsleep',
 }
 
+skipped = 0
 for event, elem in context:
     if elem.tag == 'Record':
-        t = elem.get('type','')
-        val = elem.get('value','')
-        sd = elem.get('startDate','')
-        ed = elem.get('endDate','')
+        t   = elem.get('type', '')
+        val = elem.get('value', '')
+        sd  = elem.get('startDate', '')
+        ed  = elem.get('endDate', '')
+
+        # Skip veloce se il record è più vecchio del cutoff
+        if cutoff_date and sd and sd[:10] < cutoff_date:
+            skipped += 1
+            elem.clear()
+            continue
 
         if t == 'HKQuantityTypeIdentifierBodyMass' and val and sd:
             try: peso_by_date[sd[:10]] = float(val)
@@ -65,8 +124,7 @@ for event, elem in context:
                 s_dt = datetime.fromisoformat(sd[:19])
                 e_dt = datetime.fromisoformat(ed[:19])
                 mins = (e_dt - s_dt).total_seconds() / 60
-                if mins > 10:  # ignora micro-segmenti
-                    # Notte = usare la data di fine mattina (ore 0-14)
+                if mins > 10:
                     night_date = e_dt.date() if e_dt.hour < 14 else (e_dt.date() + timedelta(days=1))
                     wk = iso_week(night_date.isoformat())
                     sleep_intervals_by_week[wk].append((s_dt, e_dt, night_date.isoformat()))
@@ -75,12 +133,16 @@ for event, elem in context:
         elem.clear()
 
     elif elem.tag == 'Workout':
-        wtype = elem.get('workoutActivityType','')
-        sd = elem.get('startDate','')
-        ed_full = elem.get('endDate','')
+        sd_full = elem.get('startDate', '')
+        if cutoff_date and sd_full and sd_full[:10] < cutoff_date:
+            elem.clear()
+            continue
+
+        wtype = elem.get('workoutActivityType', '')
+        ed_full = elem.get('endDate', '')
         kcal = float(elem.get('totalEnergyBurned') or 0)
         try:
-            dur = int((datetime.fromisoformat(ed_full[:19]) - datetime.fromisoformat(sd[:19])).seconds / 60)
+            dur = int((datetime.fromisoformat(ed_full[:19]) - datetime.fromisoformat(sd_full[:19])).seconds / 60)
         except:
             dur = 0
         tipo_map = {
@@ -94,42 +156,47 @@ for event, elem in context:
             'HKWorkoutActivityTypeYoga': 'Yoga',
             'HKWorkoutActivityTypeHighIntensityIntervalTraining': 'HIIT',
             'HKWorkoutActivityTypeSurfingSports': 'Surf/Wingfoil',
+            'HKWorkoutActivityTypeCoreTraining': 'CoreTraining',
+            'HKWorkoutActivityTypeHiking': 'Hiking',
+            'HKWorkoutActivityTypeSnowboarding': 'Snowboarding',
+            'HKWorkoutActivityTypeWaterSports': 'WaterSports',
             'HKWorkoutActivityTypeOther': 'Other',
         }
-        tipo = tipo_map.get(wtype, wtype.replace('HKWorkoutActivityType',''))
-        if sd[:10]:
-            workouts.append({'tipo': tipo, 'data': sd[:10], 'durata_min': dur, 'kcal': round(kcal), 'week': iso_week(sd[:10])})
+        tipo = tipo_map.get(wtype, wtype.replace('HKWorkoutActivityType', ''))
+        if sd_full[:10]:
+            workouts.append({'tipo': tipo, 'data': sd_full[:10], 'durata_min': dur, 'kcal': round(kcal), 'week': iso_week(sd_full[:10])})
         elem.clear()
 
+if cutoff_date:
+    print(f"  Skippati {skipped:,} record precedenti al {cutoff_date}", flush=True)
+
+# ── Elaborazione sonno ────────────────────────────────────────────────────
 print("Elaborazione sonno...", flush=True)
 
-# Calcola ore di sonno per notte usando merge di intervalli sovrapposti
 def merge_intervals(intervals):
-    """Unisce intervalli (start, end) sovrapposti, restituisce minuti totali per notte."""
     nights = defaultdict(list)
     for s, e, night in intervals:
         nights[night].append((s, e))
     result = {}
     for night, ivs in nights.items():
         ivs.sort()
-        merged = [ivs[0]]
+        merged = [list(ivs[0])]
         for s, e in ivs[1:]:
             if s < merged[-1][1]:
-                merged[-1] = (merged[-1][0], max(merged[-1][1], e))
+                merged[-1] = [merged[-1][0], max(merged[-1][1], e)]
             else:
-                merged.append((s, e))
-        mins = sum((e-s).total_seconds()/60 for s, e in merged)
+                merged.append([s, e])
+        mins = sum((e - s).total_seconds() / 60 for s, e in merged)
         result[night] = mins
     return result
 
 sleep_by_week = {}
 for wk, intervals in sleep_intervals_by_week.items():
     nights = merge_intervals(intervals)
-    valid = [m for m in nights.values() if m > 120]  # almeno 2h
+    valid = [m for m in nights.values() if m > 120]
     if valid:
         sleep_by_week[wk] = valid
 
-# Workouts: rimuovi "Other" se c'è già un tipo specifico stesso giorno e durata simile
 def dedup_workouts(ws):
     specific = [(w['tipo'], w['data'], w['durata_min']) for w in ws if w['tipo'] != 'Other']
     out = []
@@ -140,12 +207,10 @@ def dedup_workouts(ws):
             continue
         seen.add(key)
         if w['tipo'] == 'Other':
-            # Salta se c'è un tipo specifico stesso giorno con durata simile (±5 min)
             skip = any(d == w['data'] and abs(dur - w['durata_min']) <= 5
-                      for t, d, dur in specific)
+                       for t, d, dur in specific)
             if skip:
                 continue
-        # Salta camminata < 20 min
         if w['tipo'] == 'Camminata' and w['durata_min'] < 20:
             continue
         out.append(w)
@@ -155,20 +220,28 @@ workouts_by_week = defaultdict(list)
 for w in workouts:
     workouts_by_week[w['week']].append(w)
 
-# Costruisci settimane
-all_weeks = sorted(set(
+# ── Costruisci settimane nuove ─────────────────────────────────────────────
+all_weeks_new = sorted(set(
     list(passi_by_week) + list(kcal_attive_by_week) +
     list(workouts_by_week) + list(sleep_by_week)
 ))
 
+# Peso storico (serve anche da vecchi dati)
 peso_by_week = {}
 for d, kg in sorted(peso_by_date.items()):
     peso_by_week[iso_week(d)] = {'kg': kg, 'data': d}
 
-settimane = []
+# Calcola il prev_peso dal confine tra dati vecchi e nuovi
+all_existing_sorted = sorted(existing_weeks.values(), key=lambda s: s['settimana'])
 prev_peso = None
+if all_existing_sorted:
+    for s in reversed(all_existing_sorted):
+        if s.get('peso', {}).get('ultimo_kg') is not None:
+            prev_peso = s['peso']['ultimo_kg']
+            break
 
-for wk in all_weeks:
+new_settimane = []
+for wk in all_weeks_new:
     entry = {'settimana': wk, 'data_analisi': datetime.today().date().isoformat()}
 
     if wk in peso_by_week:
@@ -202,9 +275,8 @@ for wk in all_weeks:
 
     if wk in sleep_by_week:
         nights = sleep_by_week[wk]
-        media = round(sum(nights) / len(nights) / 60, 2)
         entry['sonno'] = {
-            'media_ore': media,
+            'media_ore': round(sum(nights) / len(nights) / 60, 2),
             'min_ore': round(min(nights) / 60, 2),
             'max_ore': round(max(nights) / 60, 2)
         }
@@ -215,16 +287,21 @@ for wk in all_weeks:
             entry['fc_riposo_media'] = round(sum(resting) / len(resting))
 
     if len(entry) > 2:
-        settimane.append(entry)
+        new_settimane.append(entry)
 
-print(f"Settimane: {len(settimane)}  ({settimane[0]['settimana']} → {settimane[-1]['settimana']})")
+# ── Merge: esistenti (stabili) + nuove ────────────────────────────────────
+merged = list(existing_weeks.values()) + new_settimane
+merged.sort(key=lambda s: s['settimana'])
 
-# Verifica ultime settimane
-for s in settimane[-2:]:
+print(f"Settimane totali: {len(merged)}  ({merged[0]['settimana']} → {merged[-1]['settimana']})")
+print(f"  Già presenti (stabili): {len(existing_weeks)}")
+print(f"  Elaborate ora:          {len(new_settimane)}")
+
+for s in merged[-2:]:
     print(f"\n{s['settimana']}:")
-    if 'sonno' in s: print(f"  Sonno: {s['sonno']}")
+    if 'sonno' in s:      print(f"  Sonno: {s['sonno']}")
     if 'allenamenti' in s: print(f"  Allenamenti: {[a['tipo'] for a in s['allenamenti']]}")
 
-with open("/tmp/health_history_new.json", "w") as f:
-    json.dump({"settimane": settimane}, f, ensure_ascii=False, indent=2)
-print("\nSalvato!")
+with open(OUTPUT_PATH, 'w') as f:
+    json.dump({"settimane": merged}, f, ensure_ascii=False, separators=(',', ':'))
+print(f"\n✅ Salvato: {OUTPUT_PATH}")
