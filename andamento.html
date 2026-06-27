@@ -9,7 +9,37 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
-    /* ── HEALTH PAGE SPECIFICS ── */
+    /* ── VIEW TABS ── */
+    .view-tabs {
+      display: flex;
+      background: #fff;
+      border-radius: 10px;
+      padding: 4px;
+      border: 1.5px solid var(--mid);
+      margin-bottom: 16px;
+      gap: 3px;
+      position: sticky;
+      top: 44px;
+      z-index: 90;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    }
+    .vtab {
+      flex: 1;
+      padding: 8px 4px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--grey);
+      border-radius: 7px;
+      transition: background .15s, color .15s;
+      letter-spacing: .3px;
+    }
+    .vtab.active { background: var(--black); color: #fff; }
+
+    /* ── CHART CARDS ── */
     .health-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -18,10 +48,8 @@
     }
     @media (max-width: 500px) {
       .health-grid { grid-template-columns: 1fr; }
-      .health-grid .span2 { grid-column: 1; }
     }
     .health-grid .span2 { grid-column: 1 / -1; }
-
     .chart-card {
       background: #fff;
       border-radius: 12px;
@@ -29,6 +57,7 @@
       border: 1.5px solid var(--mid);
       padding: 16px;
       overflow: hidden;
+      margin-bottom: 12px;
     }
     .chart-title {
       font-size: 9px;
@@ -38,13 +67,10 @@
       color: var(--grey);
       margin-bottom: 14px;
     }
-    .chart-wrap {
-      position: relative;
-      height: 180px;
-    }
+    .chart-wrap { position: relative; height: 180px; }
     .chart-wrap.tall { height: 220px; }
 
-    /* ── LATEST WEEK HERO ── */
+    /* ── HERO ── */
     .week-hero {
       background: var(--black);
       color: #fff;
@@ -61,55 +87,44 @@
       background: repeating-linear-gradient(-55deg, transparent, transparent 44px, rgba(255,255,255,.015) 44px, rgba(255,255,255,.015) 45px);
       pointer-events: none;
     }
-    .hero-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    .hero-dates {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(16px, 4vw, 22px);
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 12px;
-    }
-    .hero-stat { }
-    .hero-stat .hs-val {
-      font-family: 'Fraunces', serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.1;
-    }
-    .hero-stat .hs-val .hs-unit {
-      font-size: 12px;
-      font-weight: 300;
-      color: #aaa;
-      margin-left: 2px;
-    }
-    .hero-stat .hs-delta {
-      font-size: 11px;
-      margin-top: 1px;
-    }
+    .hero-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 4px; }
+    .hero-dates { font-family: 'Fraunces', serif; font-size: clamp(15px,4vw,20px); font-weight: 600; color: #fff; margin-bottom: 16px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 12px; }
+    .hero-stat .hs-val { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: #fff; line-height: 1.1; }
+    .hero-stat .hs-val .hs-unit { font-size: 11px; font-weight: 300; color: #aaa; margin-left: 2px; }
+    .hero-stat .hs-delta { font-size: 10px; margin-top: 1px; }
     .hero-stat .hs-delta.pos { color: #6dbd94; }
     .hero-stat .hs-delta.neg { color: #e88aaa; }
-    .hero-stat .hs-delta.neu { color: #888; }
-    .hero-stat .hs-lbl {
-      font-size: 10px;
-      color: #555;
-      margin-top: 2px;
-      letter-spacing: .5px;
-    }
+    .hero-stat .hs-delta.neu { color: #777; }
+    .hero-stat .hs-lbl { font-size: 10px; color: #555; margin-top: 2px; letter-spacing: .5px; }
 
-    /* ── ALLENAMENTI LIST ── */
+    /* ── RECORDS ── */
+    .records-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 420px) { .records-grid { grid-template-columns: repeat(2, 1fr); } }
+    .record-card {
+      background: #fff;
+      border: 1.5px solid var(--mid);
+      border-radius: 12px;
+      padding: 12px 10px;
+    }
+    .record-icon { font-size: 18px; margin-bottom: 4px; }
+    .record-val {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.1;
+    }
+    .record-unit { font-size: 10px; font-weight: 400; color: var(--grey); margin-left: 2px; }
+    .record-lbl { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-top: 4px; }
+    .record-sub { font-size: 10px; color: var(--grey); margin-top: 2px; }
+
+    /* ── WORKOUT LIST ── */
     .workout-list { list-style: none; }
     .workout-item {
       display: flex;
@@ -124,55 +139,158 @@
       border-radius: 10px;
       background: var(--blue-l);
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
+      font-size: 18px; flex-shrink: 0;
     }
     .workout-info { flex: 1; min-width: 0; }
-    .workout-tipo {
-      font-weight: 600;
-      font-size: 13px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    .workout-tipo { font-weight: 600; font-size: 13px; }
     .workout-meta { font-size: 11px; color: var(--grey); margin-top: 1px; }
-    .workout-kcal {
-      font-family: 'Fraunces', serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--orange);
-      white-space: nowrap;
-    }
+    .workout-dur { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; color: var(--blue); white-space: nowrap; }
 
-    /* ── EMPTY STATE ── */
-    .health-empty {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--grey);
+    /* ── RANGE SELECTOR ── */
+    .range-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
     }
-    .health-empty .icon { font-size: 48px; margin-bottom: 16px; }
-    .health-empty p { font-size: 14px; line-height: 1.6; }
-    .health-empty strong { color: var(--black); }
-
-    /* ── BADGE variazione peso ── */
-    .peso-badge {
-      display: inline-block;
-      padding: 2px 8px;
+    .rtab {
+      padding: 6px 14px;
+      border: 1.5px solid var(--mid);
+      background: #fff;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 600;
-    }
-    .peso-badge.down { background: var(--green-l); color: var(--green); }
-    .peso-badge.up   { background: var(--red-l);   color: var(--red);   }
-    .peso-badge.same { background: var(--mid);      color: var(--grey);  }
-
-    /* ── DATA TAG ── */
-    .data-tag {
-      font-size: 10px;
       color: var(--grey);
-      margin-top: 6px;
-      text-align: right;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all .15s;
     }
+    .rtab.active { background: var(--black); color: #fff; border-color: var(--black); }
+    .range-label { font-size: 11px; color: var(--grey); margin-bottom: 12px; }
+
+    /* ── WEEKS TABLE ── */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1.5px solid var(--mid);
+      background: #fff;
+      margin-bottom: 12px;
+    }
+    .weeks-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 500px;
+    }
+    .weeks-table th {
+      padding: 10px 10px 8px;
+      text-align: right;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey);
+      background: #faf9f7;
+      border-bottom: 1.5px solid var(--mid);
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .weeks-table th:first-child { text-align: left; }
+    .weeks-table th .sort-arrow { margin-left: 3px; opacity: 0.4; }
+    .weeks-table th.sorted .sort-arrow { opacity: 1; color: var(--black); }
+    .weeks-table td {
+      padding: 9px 10px;
+      text-align: right;
+      border-bottom: 1px solid var(--mid);
+      color: var(--black);
+      white-space: nowrap;
+    }
+    .weeks-table td:first-child { text-align: left; font-weight: 600; }
+    .weeks-table tr:last-child td { border-bottom: none; }
+    .weeks-table tr.data-row { cursor: pointer; transition: background .1s; }
+    .weeks-table tr.data-row:hover { background: #faf9f7; }
+    .weeks-table tr.data-row.expanded { background: #f4f1ec; }
+    .weeks-table .expand-row td {
+      background: #f4f1ec;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .weeks-table .expand-row .mini-workouts { display: flex; flex-wrap: wrap; gap: 6px; }
+    .weeks-table .mini-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      background: #fff;
+      border: 1.5px solid var(--mid);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .weeks-table .no-workouts { font-size: 11px; color: var(--grey); font-style: italic; }
+    .delta-pos { color: #1a5c3a; font-size: 11px; }
+    .delta-neg { color: #9c2a52; font-size: 11px; }
+    .btn-more {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 10px;
+      background: #fff;
+      border: 1.5px solid var(--mid);
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--grey);
+      cursor: pointer;
+      text-align: center;
+      transition: border-color .15s, color .15s;
+    }
+    .btn-more:hover { border-color: var(--black); color: var(--black); }
+
+    /* ── ALLENAMENTI TAB ── */
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .type-card {
+      background: #fff;
+      border: 1.5px solid var(--mid);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+    .type-card:hover, .type-card.active { border-color: var(--black); }
+    .type-card.active { background: var(--black); color: #fff; }
+    .type-card.active .type-meta { color: #888; }
+    .type-card .type-ic { font-size: 22px; margin-bottom: 4px; }
+    .type-card .type-name { font-weight: 700; font-size: 12px; }
+    .type-card .type-meta { font-size: 10px; color: var(--grey); margin-top: 2px; }
+
+    .all-workouts { list-style: none; }
+    .all-workouts .workout-item { padding: 10px 0; }
+    .all-workouts-wrap {
+      background: #fff;
+      border: 1.5px solid var(--mid);
+      border-radius: 12px;
+      padding: 0 14px;
+      margin-bottom: 12px;
+    }
+    .all-workouts-wrap.empty { display: none; }
+    .empty-filter { text-align: center; padding: 30px; color: var(--grey); font-size: 13px; }
+
+    /* ── MISC ── */
+    .health-empty { text-align: center; padding: 60px 20px; color: var(--grey); }
+    .health-empty .icon { font-size: 48px; margin-bottom: 16px; }
+    .health-empty p { font-size: 14px; line-height: 1.6; }
+    .health-empty strong { color: var(--black); }
+    .view-panel { display: none; }
+    .view-panel.active { display: block; }
   </style>
 </head>
 <body>
@@ -193,10 +311,24 @@
 
 <div class="container" id="main-content">
   <div id="loading" class="loader"><div class="spinner"></div> Caricamento dati salute...</div>
-  <div id="content" style="display:none"></div>
+
+  <div id="content" style="display:none">
+    <div class="view-tabs" id="view-tabs">
+      <button class="vtab active" data-view="riepilogo">Riepilogo</button>
+      <button class="vtab" data-view="trend">Trend</button>
+      <button class="vtab" data-view="settimane">Settimane</button>
+      <button class="vtab" data-view="allenamenti">Allenamenti</button>
+    </div>
+
+    <div id="view-riepilogo" class="view-panel active"></div>
+    <div id="view-trend" class="view-panel"></div>
+    <div id="view-settimane" class="view-panel"></div>
+    <div id="view-allenamenti" class="view-panel"></div>
+  </div>
+
   <div id="empty" class="health-empty" style="display:none">
     <div class="icon">❤️</div>
-    <p>Nessun dato ancora presente.<br>Carica il tuo export Apple Health e usa la skill <strong>Apple Health</strong> per iniziare.</p>
+    <p>Nessun dato ancora presente.<br>Carica il tuo export Apple Health e usa la skill <strong>Apple Health</strong>.</p>
   </div>
 </div>
 
@@ -204,38 +336,32 @@
 
 <script src="js/config.js"></script>
 <script>
-// ── CHART.JS DEFAULTS ──────────────────────────────────────────────
-Chart.defaults.font.family = "'DM Sans', sans-serif";
-Chart.defaults.font.size = 11;
-Chart.defaults.color = '#8a8680';
-Chart.defaults.plugins.legend.display = false;
-Chart.defaults.plugins.tooltip.callbacks = {};
+// ── GLOBALS ───────────────────────────────────────────────
+let gSettimane = [];
+let gWorkouts  = [];
+let chartInstances = {};
+let chartsReady = false;
+let currentRange = 26;
+let expandedRow = null;
+let tableShowAll = false;
+let tableSortCol = 'settimana';
+let tableSortDir = -1; // -1 = desc (recent first)
+let filterTipo = 'tutti';
+
+const TABLE_DEFAULT_ROWS = 26;
 
 const PALETTE = {
-  black:  '#0f0f0f',
-  green:  '#1a5c3a',
-  greenL: '#6dbd94',
-  blue:   '#2040a0',
-  blueL:  '#8099e0',
-  red:    '#9c2a52',
-  redL:   '#e88aaa',
-  gold:   '#c47c00',
-  goldL:  '#f0cc5a',
-  orange: '#a03a00',
-  orangeL:'#f09060',
-  purple: '#6020a0',
-  purpleL:'#b080e0',
-  grey:   '#8a8680',
-  mid:    '#e5e0d8',
+  black:'#0f0f0f', green:'#1a5c3a', greenL:'#6dbd94',
+  blue:'#2040a0', blueL:'#8099e0', red:'#9c2a52', redL:'#e88aaa',
+  gold:'#c47c00', goldL:'#f0cc5a', orange:'#a03a00', orangeL:'#f09060',
+  purple:'#6020a0', purpleL:'#b080e0', grey:'#8a8680', mid:'#e5e0d8',
 };
 
-// ── UTILS ──────────────────────────────────────────────────────────
+// ── UTILS ─────────────────────────────────────────────────
 function fmtDate(iso) {
   if (!iso) return '—';
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
+  return new Date(iso + 'T12:00:00').toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
 }
-
 function fmtWeek(isoWeek) {
   if (!isoWeek) return '—';
   const [year, wPart] = isoWeek.split('-W');
@@ -248,249 +374,139 @@ function fmtWeek(isoWeek) {
   const fmt = d => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
   return `${fmt(start)} – ${fmt(end)} ${end.getFullYear()}`;
 }
-
-function fmtNum(n, decimals = 0) {
-  if (n == null) return '—';
-  return Number(n).toLocaleString('it-IT', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+function weekStart(isoWeek) {
+  if (!isoWeek) return null;
+  const [year, wPart] = isoWeek.split('-W');
+  const week = parseInt(wPart);
+  const jan4 = new Date(parseInt(year), 0, 4);
+  const startW1 = new Date(jan4);
+  startW1.setDate(jan4.getDate() - ((jan4.getDay() + 6) % 7));
+  return new Date(startW1.getTime() + (week - 1) * 7 * 86400000);
 }
-
+function shortWeek(isoWeek) {
+  const d = weekStart(isoWeek);
+  if (!d) return isoWeek;
+  return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
+}
+function fmtNum(n, dec = 0) {
+  if (n == null) return '—';
+  return Number(n).toLocaleString('it-IT', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+}
 function fmtOre(ore) {
   if (ore == null) return '—';
   const h = Math.floor(ore);
   const m = Math.round((ore - h) * 60);
-  return `${h}h ${m > 0 ? m + 'm' : ''}`.trim();
+  return `${h}h${m > 0 ? ' ' + m + 'm' : ''}`;
 }
-
 function workoutIcon(tipo) {
   const t = (tipo || '').toLowerCase();
-  if (t.includes('corsa') || t.includes('run')) return '🏃';
-  if (t.includes('ciclismo') || t.includes('cycling') || t.includes('bici')) return '🚴';
   if (t.includes('nuoto') || t.includes('swim')) return '🏊';
-  if (t.includes('forza') || t.includes('strength') || t.includes('functional')) return '🏋️';
+  if (t.includes('ciclismo') || t.includes('cycling') || t.includes('bici')) return '🚴';
+  if (t.includes('corsa') || t.includes('run')) return '🏃';
+  if (t.includes('surf') || t.includes('wing')) return '🏄';
+  if (t.includes('pesi') || t.includes('strength')) return '🏋️';
+  if (t.includes('core')) return '💪';
   if (t.includes('yoga')) return '🧘';
   if (t.includes('camminata') || t.includes('walk')) return '🚶';
-  if (t.includes('hiit')) return '⚡';
-  if (t.includes('calcio') || t.includes('soccer')) return '⚽';
   if (t.includes('tennis')) return '🎾';
+  if (t.includes('hiking') || t.includes('hike')) return '🥾';
+  if (t.includes('snow')) return '🏂';
+  if (t.includes('water')) return '🌊';
+  if (t.includes('hiit')) return '⚡';
   return '💪';
 }
+function el(id) { return document.getElementById(id); }
 
-// ── MAIN RENDER ────────────────────────────────────────────────────
-async function init() {
-  const loader  = document.getElementById('loading');
-  const content = document.getElementById('content');
-  const empty   = document.getElementById('empty');
-
-  try {
-    const data = await fetchData(CONFIG.paths.health_history);
-    const settimane = (data.settimane || []).slice().sort((a, b) => a.settimana > b.settimana ? 1 : -1);
-
-    if (!settimane.length) {
-      loader.style.display = 'none';
-      empty.style.display = 'block';
-      return;
+// ── DATA PROCESSING ───────────────────────────────────────
+function extractWorkouts(settimane) {
+  const out = [];
+  for (const s of settimane) {
+    for (const a of (s.allenamenti || [])) {
+      out.push({ ...a, settimana: s.settimana });
     }
-
-    const ultima = settimane[settimane.length - 1];
-    document.getElementById('header-sub').textContent =
-      `Apple Health · ${fmtWeek(ultima.settimana)}`;
-
-    content.innerHTML = buildPage(settimane, ultima);
-    loader.style.display = 'none';
-    content.style.display = 'block';
-
-    renderCharts(settimane, ultima);
-
-  } catch (e) {
-    loader.style.display = 'none';
-    empty.style.display = 'block';
-    console.error(e);
   }
+  return out.sort((a, b) => (b.data || '') > (a.data || '') ? 1 : -1);
 }
 
-// ── BUILD HTML ─────────────────────────────────────────────────────
-function buildPage(settimane, ultima) {
-  return `
-    ${buildHero(ultima)}
-    ${buildChartGrid(settimane, ultima)}
-  `;
+function computeRecords(settimane, workouts) {
+  const pesoVals = settimane.filter(s => s.peso?.ultimo_kg).map(s => ({ kg: s.peso.ultimo_kg, data: s.peso.data_rilevamento, wk: s.settimana }));
+  const pesoMin  = pesoVals.length ? pesoVals.reduce((m, v) => v.kg < m.kg ? v : m) : null;
+
+  const passiVals = settimane.filter(s => s.passi?.totale).map(s => ({ tot: s.passi.totale, wk: s.settimana }));
+  const bestPassi = passiVals.length ? passiVals.reduce((m, v) => v.tot > m.tot ? v : m) : null;
+
+  const last4 = settimane.slice(-4);
+  const mediaPassi4 = last4.filter(s => s.passi?.media_giorno).map(s => s.passi.media_giorno);
+  const avgPassi4 = mediaPassi4.length ? Math.round(mediaPassi4.reduce((a, b) => a + b) / mediaPassi4.length) : null;
+
+  const longestWk = workouts.length ? workouts.reduce((m, v) => (v.durata_min || 0) > (m.durata_min || 0) ? v : m) : null;
+
+  const weekMin = settimane.map(s => ({
+    wk: s.settimana,
+    min: (s.allenamenti || []).reduce((sum, a) => sum + (a.durata_min || 0), 0)
+  })).filter(s => s.min > 0);
+  const bestWeekMin = weekMin.length ? weekMin.reduce((m, v) => v.min > m.min ? v : m) : null;
+
+  const last8 = settimane.slice(-8);
+  const sleepVals = last8.filter(s => s.sonno?.media_ore).map(s => s.sonno.media_ore);
+  const avgSleep = sleepVals.length ? sleepVals.reduce((a, b) => a + b) / sleepVals.length : null;
+
+  const totalSessions = workouts.length;
+  const totalMinutes  = workouts.reduce((s, w) => s + (w.durata_min || 0), 0);
+
+  return { pesoMin, bestPassi, avgPassi4, longestWk, bestWeekMin, avgSleep, totalSessions, totalMinutes };
 }
 
-function buildHero(s) {
-  const peso = s.peso || {};
-  const passi = s.passi || {};
-  const kcal  = s.calorie_attive || {};
-  const sonno = s.sonno || {};
-  const allenamenti = s.allenamenti || [];
-
-  const pesoVal = peso.ultimo_kg != null ? fmtNum(peso.ultimo_kg, 1) : '—';
-  const pesoDelta = peso.variazione_kg;
-  const deltaClass = pesoDelta == null ? 'neu' : (pesoDelta < 0 ? 'pos' : (pesoDelta > 0 ? 'neg' : 'neu'));
-  const deltaText = pesoDelta == null ? '' :
-    `${pesoDelta > 0 ? '+' : ''}${fmtNum(pesoDelta, 1)} kg settimana`;
-
-  const nAllen = allenamenti.length;
-
-  return `
-  <div class="week-hero">
-    <div class="hero-label">Ultima settimana</div>
-    <div class="hero-dates">${fmtWeek(s.settimana)}</div>
-    <div class="hero-stats">
-      ${peso.ultimo_kg != null ? `
-      <div class="hero-stat">
-        <div class="hs-val">${pesoVal}<span class="hs-unit">kg</span></div>
-        ${deltaText ? `<div class="hs-delta ${deltaClass}">${deltaText}</div>` : ''}
-        <div class="hs-lbl">Peso</div>
-      </div>` : ''}
-      ${passi.media_giorno != null ? `
-      <div class="hero-stat">
-        <div class="hs-val">${fmtNum(Math.round(passi.media_giorno))}<span class="hs-unit">/g</span></div>
-        <div class="hs-delta neu">${fmtNum(passi.totale)} tot.</div>
-        <div class="hs-lbl">Passi</div>
-      </div>` : ''}
-      ${kcal.media_giorno != null ? `
-      <div class="hero-stat">
-        <div class="hs-val">${fmtNum(Math.round(kcal.media_giorno))}<span class="hs-unit">kcal</span></div>
-        <div class="hs-delta neu">attive/giorno</div>
-        <div class="hs-lbl">Calorie attive</div>
-      </div>` : ''}
-      ${nAllen > 0 ? `
-      <div class="hero-stat">
-        <div class="hs-val">${nAllen}<span class="hs-unit">sess.</span></div>
-        <div class="hs-delta neu">${allenamenti.map(a => a.tipo).filter((v,i,arr) => arr.indexOf(v) === i).slice(0,2).join(', ')}</div>
-        <div class="hs-lbl">Allenamenti</div>
-      </div>` : ''}
-      ${sonno.media_ore != null ? `
-      <div class="hero-stat">
-        <div class="hs-val">${fmtOre(sonno.media_ore)}</div>
-        <div class="hs-delta neu">media/notte</div>
-        <div class="hs-lbl">Sonno</div>
-      </div>` : ''}
-      ${s.fc_riposo_media != null ? `
-      <div class="hero-stat">
-        <div class="hs-val">${fmtNum(Math.round(s.fc_riposo_media))}<span class="hs-unit">bpm</span></div>
-        <div class="hs-delta neu">a riposo</div>
-        <div class="hs-lbl">Freq. cardiaca</div>
-      </div>` : ''}
-    </div>
-  </div>`;
+function getFilteredWeeks(n) {
+  if (!n) return gSettimane;
+  return gSettimane.slice(-n);
 }
 
-function buildChartGrid(settimane, ultima) {
-  const hasStoricoLen = settimane.length > 1;
-  const hasPeso       = settimane.some(s => s.peso?.ultimo_kg != null);
-  const hasPassi      = settimane.some(s => s.passi?.totale != null);
-  const hasKcal       = settimane.some(s => s.calorie_attive?.totale != null);
-  const hasSonno      = settimane.some(s => s.sonno?.media_ore != null);
-  const hasFC         = settimane.some(s => s.fc_riposo_media != null);
-  const hasAllen      = (ultima.allenamenti || []).length > 0;
-  const hasAllenStoric= settimane.some(s => (s.allenamenti || []).length > 0);
-
-  let html = '';
-
-  // — Peso storico —
-  if (hasPeso) {
-    html += `
-    <div class="sl">Peso corporeo</div>
-    <div class="chart-card">
-      <div class="chart-title">Andamento peso</div>
-      <div class="chart-wrap${!hasStoricoLen ? ' tall' : ''}">
-        <canvas id="chart-peso"></canvas>
-      </div>
-    </div>`;
-  }
-
-  // — Passi + calorie (2 col) —
-  if (hasPassi || hasKcal) {
-    html += `<div class="sl">Attività</div><div class="health-grid">`;
-    if (hasPassi) html += `
-      <div class="chart-card">
-        <div class="chart-title">Passi settimanali</div>
-        <div class="chart-wrap"><canvas id="chart-passi"></canvas></div>
-      </div>`;
-    if (hasKcal) html += `
-      <div class="chart-card">
-        <div class="chart-title">Calorie attive</div>
-        <div class="chart-wrap"><canvas id="chart-kcal"></canvas></div>
-      </div>`;
-    html += `</div>`;
-  }
-
-  // — Allenamenti ultima settimana —
-  if (hasAllen) {
-    html += `
-    <div class="sl">Allenamenti · ${fmtWeek(ultima.settimana)}</div>
-    <div class="chart-card">
-      ${buildWorkoutList(ultima.allenamenti)}
-    </div>`;
-  }
-
-  // — Volume allenamenti storico —
-  if (hasAllenStoric && hasStoricoLen) {
-    html += `
-    <div class="health-grid">
-      <div class="chart-card">
-        <div class="chart-title">Sessioni/settimana</div>
-        <div class="chart-wrap"><canvas id="chart-sessions"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">Durata totale (min)</div>
-        <div class="chart-wrap"><canvas id="chart-durata"></canvas></div>
-      </div>
-    </div>`;
-  }
-
-  // — Sonno + FC (2 col) —
-  if (hasSonno || hasFC) {
-    html += `<div class="sl">Recupero</div><div class="health-grid">`;
-    if (hasSonno) html += `
-      <div class="chart-card">
-        <div class="chart-title">Ore di sonno (media/notte)</div>
-        <div class="chart-wrap"><canvas id="chart-sonno"></canvas></div>
-      </div>`;
-    if (hasFC) html += `
-      <div class="chart-card">
-        <div class="chart-title">FC a riposo (bpm)</div>
-        <div class="chart-wrap"><canvas id="chart-fc"></canvas></div>
-      </div>`;
-    html += `</div>`;
-  }
-
-  return html;
+function uniqueTypes(workouts) {
+  const seen = new Set();
+  return workouts.filter(w => { const ok = !seen.has(w.tipo); seen.add(w.tipo); return ok; })
+    .map(w => w.tipo).sort();
 }
 
-function buildWorkoutList(allenamenti) {
-  if (!allenamenti || !allenamenti.length) return '<p style="color:var(--grey);font-size:13px">Nessun allenamento registrato.</p>';
-  return `<ul class="workout-list">` +
-    allenamenti.map(a => `
-      <li class="workout-item">
-        <div class="workout-ic">${workoutIcon(a.tipo)}</div>
-        <div class="workout-info">
-          <div class="workout-tipo">${a.tipo || 'Allenamento'}</div>
-          <div class="workout-meta">${a.data ? fmtDate(a.data) : ''}${a.durata_min != null ? ` · ${a.durata_min} min` : ''}</div>
-        </div>
-        ${a.kcal != null ? `<div class="workout-kcal">${fmtNum(Math.round(a.kcal))} kcal</div>` : ''}
-      </li>`).join('') +
-    `</ul>`;
-}
+// ── CHART DEFAULTS ────────────────────────────────────────
+Chart.defaults.font.family = "'DM Sans', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#8a8680';
+Chart.defaults.plugins.legend.display = false;
 
-// ── RENDER CHARTS ──────────────────────────────────────────────────
-function renderCharts(settimane, ultima) {
-  const labels = settimane.map(s => {
+const gridLine = { color: '#f0ece6', lineWidth: 1 };
+const tickOpts = { color: '#8a8680', font: { size: 10 } };
+
+// ── RENDER CHARTS ─────────────────────────────────────────
+function renderCharts(filtered) {
+  // destroy existing
+  Object.values(chartInstances).forEach(c => { try { c.destroy(); } catch(e){} });
+  chartInstances = {};
+
+  const labels = filtered.map(s => {
     const [, wPart] = (s.settimana || '').split('-W');
     return `W${wPart}`;
   });
+  const sparse = filtered.length > 52; // show fewer tick labels
+  const tickMaxRot = 0;
 
-  const gridLine = { color: '#f0ece6', lineWidth: 1 };
-  const tickOpts = { color: '#8a8680', font: { size: 10 } };
-  const noTick   = { display: false };
+  function makeXTicks() {
+    return {
+      ...tickOpts,
+      maxRotation: tickMaxRot,
+      autoSkip: true,
+      autoSkipPadding: sparse ? 20 : 6,
+    };
+  }
 
-  // ── PESO ──
-  const pesoData = settimane.map(s => s.peso?.ultimo_kg ?? null);
-  if (document.getElementById('chart-peso')) {
-    const pMin = Math.min(...pesoData.filter(Boolean)) - 2;
-    const pMax = Math.max(...pesoData.filter(Boolean)) + 2;
-    new Chart(document.getElementById('chart-peso'), {
+  // PESO
+  const pesoData = filtered.map(s => s.peso?.ultimo_kg ?? null);
+  const pesoEl = document.getElementById('chart-peso');
+  if (pesoEl && pesoData.some(v => v != null)) {
+    const vals = pesoData.filter(Boolean);
+    const pMin = Math.min(...vals) - 1.5;
+    const pMax = Math.max(...vals) + 1.5;
+    chartInstances.peso = new Chart(pesoEl, {
       type: 'line',
       data: {
         labels,
@@ -499,47 +515,38 @@ function renderCharts(settimane, ultima) {
           borderColor: PALETTE.black,
           backgroundColor: 'rgba(15,15,15,.06)',
           borderWidth: 2,
-          pointRadius: 4,
+          pointRadius: filtered.length > 52 ? 0 : 3,
           pointBackgroundColor: PALETTE.black,
-          fill: true,
-          tension: 0.3,
-          spanGaps: true,
+          fill: true, tension: 0.3, spanGaps: true,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: gridLine, ticks: tickOpts },
-          y: {
-            min: pMin, max: pMax,
-            grid: gridLine, ticks: { ...tickOpts, callback: v => v + ' kg' }
-          }
+          x: { grid: gridLine, ticks: makeXTicks() },
+          y: { min: pMin, max: pMax, grid: gridLine, ticks: { ...tickOpts, callback: v => v + ' kg' } }
         },
-        plugins: {
-          tooltip: { callbacks: { label: ctx => `${ctx.raw} kg` } }
-        }
+        plugins: { tooltip: { callbacks: { label: ctx => ctx.raw ? `${ctx.raw} kg` : null } } }
       }
     });
   }
 
-  // ── PASSI ──
-  if (document.getElementById('chart-passi')) {
-    new Chart(document.getElementById('chart-passi'), {
+  // PASSI
+  const passiEl = document.getElementById('chart-passi');
+  if (passiEl) {
+    chartInstances.passi = new Chart(passiEl, {
       type: 'bar',
       data: {
         labels,
         datasets: [{
-          data: settimane.map(s => s.passi?.totale ?? null),
-          backgroundColor: PALETTE.blueL,
-          borderColor: PALETTE.blue,
-          borderWidth: 1.5,
-          borderRadius: 6,
+          data: filtered.map(s => s.passi?.totale ?? null),
+          backgroundColor: PALETTE.blueL, borderColor: PALETTE.blue, borderWidth: 1.5, borderRadius: 5,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: { display: false }, ticks: tickOpts },
+          x: { grid: { display: false }, ticks: makeXTicks() },
           y: { grid: gridLine, ticks: { ...tickOpts, callback: v => (v/1000).toFixed(0) + 'k' } }
         },
         plugins: { tooltip: { callbacks: { label: ctx => `${fmtNum(ctx.raw)} passi` } } }
@@ -547,49 +554,45 @@ function renderCharts(settimane, ultima) {
     });
   }
 
-  // ── CALORIE ATTIVE ──
-  if (document.getElementById('chart-kcal')) {
-    new Chart(document.getElementById('chart-kcal'), {
+  // CALORIE ATTIVE
+  const kcalEl = document.getElementById('chart-kcal');
+  if (kcalEl) {
+    chartInstances.kcal = new Chart(kcalEl, {
       type: 'bar',
       data: {
         labels,
         datasets: [{
-          data: settimane.map(s => s.calorie_attive?.totale ?? null),
-          backgroundColor: PALETTE.orangeL,
-          borderColor: PALETTE.orange,
-          borderWidth: 1.5,
-          borderRadius: 6,
+          data: filtered.map(s => s.calorie_attive?.totale ?? null),
+          backgroundColor: PALETTE.orangeL, borderColor: PALETTE.orange, borderWidth: 1.5, borderRadius: 5,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: { display: false }, ticks: tickOpts },
-          y: { grid: gridLine, ticks: { ...tickOpts, callback: v => v + ' kcal' } }
+          x: { grid: { display: false }, ticks: makeXTicks() },
+          y: { grid: gridLine, ticks: { ...tickOpts, callback: v => (v/1000).toFixed(0) + 'k' } }
         },
         plugins: { tooltip: { callbacks: { label: ctx => `${fmtNum(ctx.raw)} kcal` } } }
       }
     });
   }
 
-  // ── SESSIONI ALLENAMENTO ──
-  if (document.getElementById('chart-sessions')) {
-    new Chart(document.getElementById('chart-sessions'), {
+  // SESSIONI
+  const sessEl = document.getElementById('chart-sessions');
+  if (sessEl) {
+    chartInstances.sessions = new Chart(sessEl, {
       type: 'bar',
       data: {
         labels,
         datasets: [{
-          data: settimane.map(s => (s.allenamenti || []).length),
-          backgroundColor: PALETTE.purpleL,
-          borderColor: PALETTE.purple,
-          borderWidth: 1.5,
-          borderRadius: 6,
+          data: filtered.map(s => (s.allenamenti || []).length || null),
+          backgroundColor: PALETTE.purpleL, borderColor: PALETTE.purple, borderWidth: 1.5, borderRadius: 5,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: { display: false }, ticks: tickOpts },
+          x: { grid: { display: false }, ticks: makeXTicks() },
           y: { grid: gridLine, ticks: { ...tickOpts, stepSize: 1 }, min: 0 }
         },
         plugins: { tooltip: { callbacks: { label: ctx => `${ctx.raw} sessioni` } } }
@@ -597,24 +600,25 @@ function renderCharts(settimane, ultima) {
     });
   }
 
-  // ── DURATA ALLENAMENTO ──
-  if (document.getElementById('chart-durata')) {
-    new Chart(document.getElementById('chart-durata'), {
+  // DURATA
+  const durEl = document.getElementById('chart-durata');
+  if (durEl) {
+    chartInstances.durata = new Chart(durEl, {
       type: 'bar',
       data: {
         labels,
         datasets: [{
-          data: settimane.map(s => (s.allenamenti || []).reduce((sum, a) => sum + (a.durata_min || 0), 0) || null),
-          backgroundColor: PALETTE.greenL,
-          borderColor: PALETTE.green,
-          borderWidth: 1.5,
-          borderRadius: 6,
+          data: filtered.map(s => {
+            const tot = (s.allenamenti || []).reduce((sum, a) => sum + (a.durata_min || 0), 0);
+            return tot || null;
+          }),
+          backgroundColor: PALETTE.greenL, borderColor: PALETTE.green, borderWidth: 1.5, borderRadius: 5,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: { display: false }, ticks: tickOpts },
+          x: { grid: { display: false }, ticks: makeXTicks() },
           y: { grid: gridLine, ticks: { ...tickOpts, callback: v => v + ' min' }, min: 0 }
         },
         plugins: { tooltip: { callbacks: { label: ctx => `${ctx.raw} min` } } }
@@ -622,41 +626,28 @@ function renderCharts(settimane, ultima) {
     });
   }
 
-  // ── SONNO ──
-  if (document.getElementById('chart-sonno')) {
-    new Chart(document.getElementById('chart-sonno'), {
+  // SONNO
+  const sonnoEl = document.getElementById('chart-sonno');
+  if (sonnoEl) {
+    chartInstances.sonno = new Chart(sonnoEl, {
       type: 'line',
       data: {
         labels,
         datasets: [{
-          data: settimane.map(s => s.sonno?.media_ore ?? null),
-          borderColor: PALETTE.purple,
-          backgroundColor: 'rgba(96,32,160,.07)',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: PALETTE.purple,
-          fill: true,
-          tension: 0.3,
-          spanGaps: true,
+          data: filtered.map(s => s.sonno?.media_ore ?? null),
+          borderColor: PALETTE.purple, backgroundColor: 'rgba(96,32,160,.07)',
+          borderWidth: 2, pointRadius: filtered.length > 52 ? 0 : 3,
+          pointBackgroundColor: PALETTE.purple, fill: true, tension: 0.3, spanGaps: true,
         }, {
-          // linea di riferimento 8h
-          data: settimane.map(() => 8),
-          borderColor: PALETTE.mid,
-          borderWidth: 1,
-          borderDash: [4, 4],
-          pointRadius: 0,
-          fill: false,
+          data: filtered.map(() => 8),
+          borderColor: PALETTE.mid, borderWidth: 1, borderDash: [4,4], pointRadius: 0, fill: false,
         }]
       },
       options: {
         responsive: true, maintainAspectRatio: false,
         scales: {
-          x: { grid: gridLine, ticks: tickOpts },
-          y: {
-            min: 4, max: 10,
-            grid: gridLine,
-            ticks: { ...tickOpts, callback: v => v + 'h' }
-          }
+          x: { grid: gridLine, ticks: makeXTicks() },
+          y: { min: 3, max: 10, grid: gridLine, ticks: { ...tickOpts, callback: v => v + 'h' } }
         },
         plugins: {
           legend: { display: false },
@@ -665,38 +656,392 @@ function renderCharts(settimane, ultima) {
       }
     });
   }
+}
 
-  // ── FC ──
-  if (document.getElementById('chart-fc')) {
-    new Chart(document.getElementById('chart-fc'), {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          data: settimane.map(s => s.fc_riposo_media ?? null),
-          borderColor: PALETTE.red,
-          backgroundColor: 'rgba(156,42,82,.07)',
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: PALETTE.red,
-          fill: true,
-          tension: 0.3,
-          spanGaps: true,
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        scales: {
-          x: { grid: gridLine, ticks: tickOpts },
-          y: { grid: gridLine, ticks: { ...tickOpts, callback: v => v + ' bpm' } }
-        },
-        plugins: { tooltip: { callbacks: { label: ctx => `${Math.round(ctx.raw)} bpm` } } }
-      }
-    });
+// ── BUILD: RIEPILOGO ──────────────────────────────────────
+function buildRiepilogo(ultima, records, workouts) {
+  const p = ultima.peso || {};
+  const pa = ultima.passi || {};
+  const k  = ultima.calorie_attive || {};
+  const sn = ultima.sonno || {};
+  const al = ultima.allenamenti || [];
+
+  const pesoDelta = p.variazione_kg;
+  const deltaClass = pesoDelta == null ? 'neu' : (pesoDelta < 0 ? 'pos' : pesoDelta > 0 ? 'neg' : 'neu');
+  const deltaText  = pesoDelta == null ? '' : `${pesoDelta > 0 ? '+' : ''}${fmtNum(pesoDelta, 1)} kg`;
+
+  // Hero
+  let heroStats = '';
+  if (p.ultimo_kg != null) heroStats += `
+    <div class="hero-stat">
+      <div class="hs-val">${fmtNum(p.ultimo_kg,1)}<span class="hs-unit">kg</span></div>
+      ${deltaText ? `<div class="hs-delta ${deltaClass}">${deltaText} sett.</div>` : ''}
+      <div class="hs-lbl">Peso</div>
+    </div>`;
+  if (pa.media_giorno != null) heroStats += `
+    <div class="hero-stat">
+      <div class="hs-val">${fmtNum(Math.round(pa.media_giorno))}<span class="hs-unit">/g</span></div>
+      <div class="hs-delta neu">${fmtNum(pa.totale)} tot.</div>
+      <div class="hs-lbl">Passi</div>
+    </div>`;
+  if (k.media_giorno != null) heroStats += `
+    <div class="hero-stat">
+      <div class="hs-val">${fmtNum(Math.round(k.media_giorno))}<span class="hs-unit">kcal</span></div>
+      <div class="hs-delta neu">attive/giorno</div>
+      <div class="hs-lbl">Calorie</div>
+    </div>`;
+  if (al.length) heroStats += `
+    <div class="hero-stat">
+      <div class="hs-val">${al.length}<span class="hs-unit">sess.</span></div>
+      <div class="hs-delta neu">${[...new Set(al.map(a=>a.tipo))].slice(0,2).join(', ')}</div>
+      <div class="hs-lbl">Allenamenti</div>
+    </div>`;
+  if (sn.media_ore != null) heroStats += `
+    <div class="hero-stat">
+      <div class="hs-val">${fmtOre(sn.media_ore)}</div>
+      <div class="hs-delta neu">media/notte</div>
+      <div class="hs-lbl">Sonno</div>
+    </div>`;
+
+  // Records
+  let recCards = '';
+  if (records.pesoMin) recCards += `
+    <div class="record-card">
+      <div class="record-icon">⚖️</div>
+      <div class="record-val">${fmtNum(records.pesoMin.kg,1)}<span class="record-unit">kg</span></div>
+      <div class="record-lbl">Peso min.</div>
+      <div class="record-sub">${fmtDate(records.pesoMin.data)}</div>
+    </div>`;
+  if (records.bestPassi) recCards += `
+    <div class="record-card">
+      <div class="record-icon">👟</div>
+      <div class="record-val">${fmtNum(records.bestPassi.tot)}</div>
+      <div class="record-lbl">Record passi</div>
+      <div class="record-sub">${shortWeek(records.bestPassi.wk)}</div>
+    </div>`;
+  if (records.avgPassi4 != null) recCards += `
+    <div class="record-card">
+      <div class="record-icon">📊</div>
+      <div class="record-val">${fmtNum(records.avgPassi4)}</div>
+      <div class="record-lbl">Media passi/g</div>
+      <div class="record-sub">ultime 4 sett.</div>
+    </div>`;
+  if (records.longestWk) recCards += `
+    <div class="record-card">
+      <div class="record-icon">${workoutIcon(records.longestWk.tipo)}</div>
+      <div class="record-val">${fmtNum(records.longestWk.durata_min)}<span class="record-unit">min</span></div>
+      <div class="record-lbl">Sessione più lunga</div>
+      <div class="record-sub">${records.longestWk.tipo} · ${fmtDate(records.longestWk.data)}</div>
+    </div>`;
+  if (records.bestWeekMin) recCards += `
+    <div class="record-card">
+      <div class="record-icon">🏆</div>
+      <div class="record-val">${fmtNum(records.bestWeekMin.min)}<span class="record-unit">min</span></div>
+      <div class="record-lbl">Sett. più attiva</div>
+      <div class="record-sub">${shortWeek(records.bestWeekMin.wk)}</div>
+    </div>`;
+  if (records.avgSleep != null) recCards += `
+    <div class="record-card">
+      <div class="record-icon">😴</div>
+      <div class="record-val">${fmtOre(records.avgSleep)}</div>
+      <div class="record-lbl">Sonno medio</div>
+      <div class="record-sub">ultime 8 sett.</div>
+    </div>`;
+
+  // Workout list ultima settimana
+  const wkList = al.length ? `
+    <ul class="workout-list">
+      ${al.map(a => `
+        <li class="workout-item">
+          <div class="workout-ic">${workoutIcon(a.tipo)}</div>
+          <div class="workout-info">
+            <div class="workout-tipo">${a.tipo || 'Allenamento'}</div>
+            <div class="workout-meta">${fmtDate(a.data)}${a.durata_min != null ? ' · ' + a.durata_min + ' min' : ''}</div>
+          </div>
+          ${a.durata_min ? `<div class="workout-dur">${a.durata_min}<span style="font-size:10px;font-weight:300;color:var(--grey)"> min</span></div>` : ''}
+        </li>`).join('')}
+    </ul>` : '<p style="color:var(--grey);font-size:13px;padding:8px 0">Nessun allenamento questa settimana.</p>';
+
+  return `
+    <div class="week-hero">
+      <div class="hero-label">Ultima settimana</div>
+      <div class="hero-dates">${fmtWeek(ultima.settimana)}</div>
+      <div class="hero-stats">${heroStats}</div>
+    </div>
+    <div class="sl">Record & medie</div>
+    <div class="records-grid">${recCards}</div>
+    <div class="sl">Allenamenti · ${fmtWeek(ultima.settimana)}</div>
+    <div class="chart-card" style="padding:4px 16px 8px">${wkList}</div>`;
+}
+
+// ── BUILD: TREND ──────────────────────────────────────────
+function buildTrend() {
+  return `
+    <div class="sl">Intervallo</div>
+    <div class="range-tabs">
+      <button class="rtab" data-weeks="8">8 sett.</button>
+      <button class="rtab active" data-weeks="26">6 mesi</button>
+      <button class="rtab" data-weeks="52">1 anno</button>
+      <button class="rtab" data-weeks="0">Tutto</button>
+    </div>
+    <div class="range-label" id="range-label"></div>
+
+    <div class="sl">Peso</div>
+    <div class="chart-card">
+      <div class="chart-title">Andamento peso (kg)</div>
+      <div class="chart-wrap tall"><canvas id="chart-peso"></canvas></div>
+    </div>
+
+    <div class="sl">Attività</div>
+    <div class="health-grid">
+      <div class="chart-card">
+        <div class="chart-title">Passi settimanali</div>
+        <div class="chart-wrap"><canvas id="chart-passi"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Calorie attive (kcal)</div>
+        <div class="chart-wrap"><canvas id="chart-kcal"></canvas></div>
+      </div>
+    </div>
+
+    <div class="sl">Allenamenti</div>
+    <div class="health-grid">
+      <div class="chart-card">
+        <div class="chart-title">Sessioni / settimana</div>
+        <div class="chart-wrap"><canvas id="chart-sessions"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Minuti totali / settimana</div>
+        <div class="chart-wrap"><canvas id="chart-durata"></canvas></div>
+      </div>
+    </div>
+
+    <div class="sl">Recupero</div>
+    <div class="chart-card">
+      <div class="chart-title">Ore di sonno (media/notte) · linea tratteggiata = 8h</div>
+      <div class="chart-wrap"><canvas id="chart-sonno"></canvas></div>
+    </div>`;
+}
+
+// ── BUILD: SETTIMANE TABLE ────────────────────────────────
+function buildSettimane() {
+  const sorted = [...gSettimane].sort((a, b) => {
+    let av, bv;
+    switch (tableSortCol) {
+      case 'peso':     av = a.peso?.ultimo_kg ?? -Infinity; bv = b.peso?.ultimo_kg ?? -Infinity; break;
+      case 'passi':    av = a.passi?.media_giorno ?? -Infinity; bv = b.passi?.media_giorno ?? -Infinity; break;
+      case 'kcal':     av = a.calorie_attive?.media_giorno ?? -Infinity; bv = b.calorie_attive?.media_giorno ?? -Infinity; break;
+      case 'sonno':    av = a.sonno?.media_ore ?? -Infinity; bv = b.sonno?.media_ore ?? -Infinity; break;
+      case 'sessioni': av = (a.allenamenti||[]).length; bv = (b.allenamenti||[]).length; break;
+      case 'minuti':   av = (a.allenamenti||[]).reduce((s,x)=>s+(x.durata_min||0),0); bv = (b.allenamenti||[]).reduce((s,x)=>s+(x.durata_min||0),0); break;
+      default:         av = a.settimana; bv = b.settimana;
+    }
+    return av > bv ? tableSortDir : av < bv ? -tableSortDir : 0;
+  });
+
+  const rows = tableShowAll ? sorted : sorted.slice(0, TABLE_DEFAULT_ROWS);
+
+  function th(label, col) {
+    const isActive = tableSortCol === col;
+    const arrow = tableSortDir === -1 ? '▼' : '▲';
+    return `<th class="${isActive ? 'sorted' : ''}" onclick="sortTable('${col}')">${label}<span class="sort-arrow">${isActive ? arrow : '↕'}</span></th>`;
+  }
+
+  const rowsHtml = rows.map(s => {
+    const mins = (s.allenamenti || []).reduce((sum, a) => sum + (a.durata_min || 0), 0);
+    const delta = s.peso?.variazione_kg;
+    const deltaHtml = delta != null ? ` <span class="${delta < 0 ? 'delta-pos' : delta > 0 ? 'delta-neg' : ''}">${delta > 0 ? '+' : ''}${fmtNum(delta, 1)}</span>` : '';
+    const hasAl = (s.allenamenti || []).length > 0;
+    return `
+      <tr class="data-row ${expandedRow === s.settimana ? 'expanded' : ''}" onclick="toggleRow('${s.settimana}')">
+        <td>${shortWeek(s.settimana)} <span style="font-size:10px;color:var(--grey)">${s.settimana.split('-')[1]}</span></td>
+        <td>${s.peso?.ultimo_kg != null ? fmtNum(s.peso.ultimo_kg,1) + ' kg' + deltaHtml : '—'}</td>
+        <td>${s.passi?.media_giorno != null ? fmtNum(Math.round(s.passi.media_giorno)) : '—'}</td>
+        <td>${s.calorie_attive?.media_giorno != null ? fmtNum(Math.round(s.calorie_attive.media_giorno)) : '—'}</td>
+        <td>${s.sonno?.media_ore != null ? fmtOre(s.sonno.media_ore) : '—'}</td>
+        <td>${(s.allenamenti||[]).length || '—'}</td>
+        <td>${mins > 0 ? mins + ' min' : '—'}</td>
+      </tr>
+      ${expandedRow === s.settimana ? `
+      <tr class="expand-row">
+        <td colspan="7">
+          ${hasAl
+            ? `<div class="mini-workouts">${(s.allenamenti||[]).map(a =>
+                `<span class="mini-chip">${workoutIcon(a.tipo)} ${a.tipo} · ${a.durata_min} min</span>`
+              ).join('')}</div>`
+            : '<span class="no-workouts">Nessun allenamento registrato</span>'}
+        </td>
+      </tr>` : ''}`;
+  }).join('');
+
+  return `
+    <div class="sl">${gSettimane.length} settimane · ${gSettimane[0]?.settimana.split('-')[1]} ${gSettimane[0]?.settimana.split('-')[0]} → oggi &nbsp;·&nbsp; clicca una riga per gli allenamenti</div>
+    <div class="table-wrap">
+      <table class="weeks-table">
+        <thead>
+          <tr>
+            ${th('Settimana', 'settimana')}
+            ${th('Peso', 'peso')}
+            ${th('Passi/g', 'passi')}
+            ${th('Kcal att./g', 'kcal')}
+            ${th('Sonno', 'sonno')}
+            ${th('Sess.', 'sessioni')}
+            ${th('Min tot.', 'minuti')}
+          </tr>
+        </thead>
+        <tbody id="table-body">${rowsHtml}</tbody>
+      </table>
+    </div>
+    ${!tableShowAll && gSettimane.length > TABLE_DEFAULT_ROWS
+      ? `<button class="btn-more" onclick="showAllTable()">Mostra tutte le ${gSettimane.length} settimane</button>`
+      : ''}`;
+}
+
+// ── BUILD: ALLENAMENTI TAB ────────────────────────────────
+function buildAllenamenti() {
+  const types = uniqueTypes(gWorkouts);
+
+  // per-type stats
+  const typeStats = {};
+  for (const w of gWorkouts) {
+    if (!typeStats[w.tipo]) typeStats[w.tipo] = { count: 0, totalMin: 0 };
+    typeStats[w.tipo].count++;
+    typeStats[w.tipo].totalMin += (w.durata_min || 0);
+  }
+
+  const typeCards = [{ tipo: 'tutti', count: gWorkouts.length, totalMin: gWorkouts.reduce((s,w)=>s+(w.durata_min||0),0) }]
+    .concat(Object.entries(typeStats).map(([tipo, s]) => ({ tipo, ...s })).sort((a,b) => b.count - a.count))
+    .map(t => `
+      <div class="type-card ${filterTipo === t.tipo ? 'active' : ''}" onclick="filterByType('${t.tipo}')">
+        <div class="type-ic">${t.tipo === 'tutti' ? '🏅' : workoutIcon(t.tipo)}</div>
+        <div class="type-name">${t.tipo === 'tutti' ? 'Tutti' : t.tipo}</div>
+        <div class="type-meta">${t.count} sess. · ${t.totalMin} min</div>
+      </div>`).join('');
+
+  const filtered = filterTipo === 'tutti' ? gWorkouts : gWorkouts.filter(w => w.tipo === filterTipo);
+
+  const listItems = filtered.map(w => `
+    <li class="workout-item" data-tipo="${w.tipo}">
+      <div class="workout-ic">${workoutIcon(w.tipo)}</div>
+      <div class="workout-info">
+        <div class="workout-tipo">${w.tipo}</div>
+        <div class="workout-meta">${fmtDate(w.data)} · ${fmtWeek(w.settimana)}</div>
+      </div>
+      <div class="workout-dur">${w.durata_min != null ? w.durata_min : '—'}<span style="font-size:10px;font-weight:300;color:var(--grey)"> min</span></div>
+    </li>`).join('');
+
+  return `
+    <div class="sl">Per tipo</div>
+    <div class="types-grid">${typeCards}</div>
+    <div class="sl">${filtered.length} ${filterTipo === 'tutti' ? 'sessioni totali' : 'sessioni · ' + filterTipo} · dal più recente</div>
+    <div class="all-workouts-wrap">
+      ${filtered.length ? `<ul class="all-workouts">${listItems}</ul>` : `<div class="empty-filter">Nessun allenamento di tipo "${filterTipo}"</div>`}
+    </div>`;
+}
+
+// ── TAB SWITCHING ─────────────────────────────────────────
+function switchTab(view) {
+  document.querySelectorAll('.vtab').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+  el(`view-${view}`).classList.add('active');
+
+  if (view === 'trend') {
+    if (!chartsReady) {
+      const filtered = getFilteredWeeks(currentRange);
+      renderCharts(filtered);
+      updateRangeLabel(filtered);
+      chartsReady = true;
+    } else {
+      requestAnimationFrame(() => Object.values(chartInstances).forEach(c => c.resize && c.resize()));
+    }
   }
 }
 
-// ── BOOT ──────────────────────────────────────────────────────────
+function setRange(weeks) {
+  currentRange = weeks;
+  document.querySelectorAll('.rtab').forEach(b => b.classList.toggle('active', parseInt(b.dataset.weeks) === weeks));
+  const filtered = getFilteredWeeks(weeks);
+  updateRangeLabel(filtered);
+  chartsReady = false; // force full re-render (canvases same, data changes)
+  renderCharts(filtered);
+  chartsReady = true;
+}
+
+function updateRangeLabel(filtered) {
+  const lbl = el('range-label');
+  if (!lbl || !filtered.length) return;
+  const first = weekStart(filtered[0].settimana);
+  const last  = weekStart(filtered[filtered.length - 1].settimana);
+  const fmt = d => d ? d.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' }) : '';
+  lbl.textContent = `${filtered.length} settimane · ${fmt(first)} → ${fmt(last)}`;
+}
+
+function sortTable(col) {
+  if (tableSortCol === col) tableSortDir = -tableSortDir;
+  else { tableSortCol = col; tableSortDir = -1; }
+  el('view-settimane').innerHTML = buildSettimane();
+}
+
+function toggleRow(wk) {
+  expandedRow = expandedRow === wk ? null : wk;
+  el('view-settimane').innerHTML = buildSettimane();
+}
+
+function showAllTable() {
+  tableShowAll = true;
+  el('view-settimane').innerHTML = buildSettimane();
+}
+
+function filterByType(tipo) {
+  filterTipo = tipo;
+  el('view-allenamenti').innerHTML = buildAllenamenti();
+}
+
+// ── INIT ──────────────────────────────────────────────────
+async function init() {
+  try {
+    const data = await fetchData(CONFIG.paths.health_history);
+    gSettimane = (data.settimane || []).slice().sort((a, b) => a.settimana > b.settimana ? 1 : -1);
+
+    if (!gSettimane.length) {
+      el('loading').style.display = 'none';
+      el('empty').style.display = 'block';
+      return;
+    }
+
+    gWorkouts = extractWorkouts(gSettimane);
+    const ultima  = gSettimane[gSettimane.length - 1];
+    const records = computeRecords(gSettimane, gWorkouts);
+
+    el('header-sub').textContent = `Apple Health · ${fmtWeek(ultima.settimana)}`;
+
+    // Render all views
+    el('view-riepilogo').innerHTML  = buildRiepilogo(ultima, records, gWorkouts);
+    el('view-trend').innerHTML      = buildTrend();
+    el('view-settimane').innerHTML  = buildSettimane();
+    el('view-allenamenti').innerHTML = buildAllenamenti();
+
+    el('loading').style.display = 'none';
+    el('content').style.display = 'block';
+
+    // Tab buttons
+    document.querySelectorAll('.vtab').forEach(b => {
+      b.addEventListener('click', () => switchTab(b.dataset.view));
+    });
+
+    // Range buttons (delegated)
+    el('view-trend').addEventListener('click', e => {
+      const btn = e.target.closest('.rtab');
+      if (btn) setRange(parseInt(btn.dataset.weeks));
+    });
+
+  } catch (e) {
+    el('loading').style.display = 'none';
+    el('empty').style.display = 'block';
+    console.error(e);
+  }
+}
+
 init();
 </script>
 </body>
