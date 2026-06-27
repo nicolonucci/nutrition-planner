@@ -1,15 +1,13 @@
-// CONFIGURAZIONE — aggiorna con il tuo username e nome repo dopo la creazione su GitHub
+// CONFIGURAZIONE
 const CONFIG = {
-  github_user: 'nicolonucci',       // <-- aggiorna con username esatto
-  github_repo: 'nutrition-planner',   // <-- nome repo che creerai
+  github_user: 'nicolonucci',
+  github_repo: 'nutrition-planner',
   branch: 'main',
 
-  // URL base per leggere i file raw da GitHub
   get raw_base() {
     return `https://raw.githubusercontent.com/${this.github_user}/${this.github_repo}/${this.branch}`;
   },
 
-  // Percorsi dati
   paths: {
     dispensa:       'data/dispensa.json',
     settimane:      'data/settimane.json',
@@ -18,19 +16,19 @@ const CONFIG = {
   }
 };
 
-// Utility: fetcha un JSON dal repo
+// Fetch base: usa path relativo su GitHub Pages (CDN veloce), raw.githubusercontent come fallback
 async function fetchData(path) {
   const isGHPages = location.hostname.endsWith('github.io');
   const url = isGHPages
     ? `/${CONFIG.github_repo}/${path}`
     : `${CONFIG.raw_base}/${path}`;
-  const res = await fetch(url, { cache: 'no-cache' });
+  const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status} — ${path}`);
   return res.json();
 }
 
-// Utility: fetch con cache localStorage (ritorna dati subito, aggiorna in background)
-// TTL in secondi (default 30 min). Passa ttl=0 per forzare refresh.
+// Fetch con cache localStorage: ritorna dati subito alla seconda visita.
+// TTL predefinito: 30 minuti. La rete aggiorna silenziosamente in background.
 async function fetchCached(path, ttl = 1800) {
   const key = `_nh_${path}`;
   let cached = null;
@@ -38,27 +36,23 @@ async function fetchCached(path, ttl = 1800) {
     const raw = localStorage.getItem(key);
     if (raw) {
       const { ts, data } = JSON.parse(raw);
-      if (ttl > 0 && Date.now() - ts < ttl * 1000) cached = data;
+      if (Date.now() - ts < ttl * 1000) cached = data;
     }
   } catch (_) {}
 
-  // Fetch rete in background — aggiorna localStorage
   const netPromise = fetchData(path).then(data => {
     try { localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data })); } catch (_) {}
     return data;
   });
 
-  // Se abbiamo dati cached validi, mostrali subito (la rete aggiorna in silenzio)
   if (cached !== null) {
-    netPromise.catch(() => {});  // ignora errori background
+    netPromise.catch(() => {});
     return cached;
   }
-
-  // Prima visita o cache scaduta: aspetta la rete
   return netPromise;
 }
 
-// Utility: calcola settimana ISO corrente (YYYY-WNN)
+// Calcola settimana ISO corrente (YYYY-WNN)
 function getCurrentWeek() {
   const now = new Date();
   const jan4 = new Date(now.getFullYear(), 0, 4);
@@ -69,7 +63,7 @@ function getCurrentWeek() {
   return `${now.getFullYear()}-W${String(weekNum).padStart(2, '0')}`;
 }
 
-// Utility: da "YYYY-WNN" a stringa leggibile "25 mag – 31 mag 2026"
+// Da "YYYY-WNN" a stringa leggibile "25 mag – 31 mag 2026"
 function weekLabel(isoWeek) {
   const [year, wPart] = isoWeek.split('-W');
   const week = parseInt(wPart);
@@ -82,7 +76,7 @@ function weekLabel(isoWeek) {
   return `${fmt(start)} – ${fmt(end)} ${end.getFullYear()}`;
 }
 
-// Utility: nav link attivo
+// Nav link attivo
 function setActiveNav() {
   const page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav a').forEach(a => {

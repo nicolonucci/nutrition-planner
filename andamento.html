@@ -171,7 +171,7 @@
 <script src="js/config.js"></script>
 <script>
 // ─── GLOBALS ──────────────────────────────────────────────
-let gSettimane=[], gWorkouts=[], gTimelines=null, gMaxHR=175, gHeight=1.70;
+let gSettimane=[], gWorkouts=[], gMaxHR=175, gHeight=1.70;
 let chartInstances={}, chartsReady=false;
 let currentRange=26, expandedWeekRow=null, tableShowAll=false;
 let tableSortCol='settimana', tableSortDir=-1;
@@ -518,7 +518,7 @@ function buildWorkoutDetail(w){
 
   // HR timeline chart
   const canvasId='hrchart_'+w.id.replace(/[:.]/g,'_');
-  const hasTimeline=gTimelines&&(gTimelines[w.id]||[]).length>1;
+  const hasTimeline=(w.hr_timeline||[]).length>1;
   const chartHtml=hasTimeline?`<div style="margin-top:8px"><div class="chart-title">Frequenza cardiaca durante l'allenamento</div><div class="chart-wrap short"><canvas id="${canvasId}"></canvas></div></div>`:'';
 
   return`<div class="w-stats">${stats||'<span style="color:var(--grey);font-size:12px">Dati non disponibili</span>'}</div>${zonesHtml}${chartHtml}`;
@@ -526,7 +526,7 @@ function buildWorkoutDetail(w){
 
 function renderWorkoutChart(w){
   if(workoutChartInst){try{workoutChartInst.destroy()}catch(e){}}workoutChartInst=null;
-  const tl=(gTimelines&&gTimelines[w.id])||[];if(tl.length<2)return;
+  const tl=w.hr_timeline||[];if(tl.length<2)return;
   const canvasId='hrchart_'+w.id.replace(/[:.]/g,'_');
   const canvas=el(canvasId);if(!canvas)return;
   const labels=tl.map(p=>p.t+'m');
@@ -611,37 +611,23 @@ function toggleWorkoutDetail(wid){
   el('view-allenamenti').innerHTML=buildAllenamenti();
   if(openWorkoutId){
     const w=gWorkouts.find(x=>x.id===openWorkoutId);
-    if(w){
-      if(gTimelines){
-        requestAnimationFrame(()=>renderWorkoutChart(w));
-      }else{
-        fetchCached('data/workout_timelines.json').then(tl=>{
-          gTimelines=tl;
-          el('view-allenamenti').innerHTML=buildAllenamenti();
-          requestAnimationFrame(()=>renderWorkoutChart(w));
-        }).catch(()=>{gTimelines={};});
-      }
-    }
+    if(w)requestAnimationFrame(()=>renderWorkoutChart(w));
   }
 }
 
 // ─── INIT ─────────────────────────────────────────────────
 async function init(){
   try{
-    // health_history è essenziale; workout_details opzionale (non blocca il caricamento)
-    const healthData = await fetchCached(CONFIG.paths.health_history);
+    const[healthData,workoutData]=await Promise.all([
+      fetchCached(CONFIG.paths.health_history),
+      fetchCached('data/workout_details.json'),
+    ]);
     gSettimane=(healthData.settimane||[]).slice().sort((a,b)=>a.settimana>b.settimana?1:-1);
+    gWorkouts=workoutData.workouts||[];
+    gMaxHR=workoutData.max_hr_ref||175;
+    gHeight=workoutData.height_m||1.70;
 
     if(!gSettimane.length){el('loading').style.display='none';el('empty').style.display='block';return}
-
-    // Carica workout in parallelo ma non blocca il render se fallisce
-    fetchCached('data/workout_details.json').then(workoutData=>{
-      gWorkouts=workoutData.workouts||[];
-      gMaxHR=workoutData.max_hr_ref||175;
-      gHeight=workoutData.height_m||1.70;
-      el('view-allenamenti').innerHTML=buildAllenamenti();
-      el('view-settimane').innerHTML=buildSettimane();
-    }).catch(e=>console.warn('workout_details non disponibile:', e));
 
     const ultima=gSettimane[gSettimane.length-1];
     const records=computeRecords(gSettimane,gWorkouts);
