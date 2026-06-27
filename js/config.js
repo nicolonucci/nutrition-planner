@@ -19,9 +19,14 @@ const CONFIG = {
 };
 
 // Utility: fetcha un JSON dal repo
+// Usa path relativo se siamo su GitHub Pages (stesso origin), altrimenti raw.githubusercontent.com
 async function fetchData(path) {
-  const url = `${CONFIG.raw_base}/${path}?_=${Date.now()}`;
-  const res = await fetch(url);
+  // Prova prima con path relativo (GitHub Pages CDN, cache browser completa)
+  const isGHPages = location.hostname.includes('github.io') || location.hostname.includes('github.com');
+  const url = isGHPages
+    ? `/${CONFIG.github_repo}/${path}`
+    : `${CONFIG.raw_base}/${path}`;
+  const res = await fetch(url, { cache: 'default' }); // rispetta ETag / Last-Modified
   if (!res.ok) throw new Error(`HTTP ${res.status} — ${path}`);
   return res.json();
 }
