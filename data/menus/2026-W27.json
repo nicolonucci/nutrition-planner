@@ -1,0 +1,322 @@
+{
+  "settimana": "2026-W27",
+  "dal": "2026-06-29",
+  "al": "2026-07-05",
+  "giorni": [
+    {
+      "giorno": "Lunedì",
+      "data": "2026-06-29",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Toast GF avocado + salmone affumicato",
+          "calorie_stimate": 410,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": ["2 fette pane GF", "½ avocado maturo", "80g salmone affumicato", "succo di ½ limone", "pepe nero q.b."],
+            "preparazione": ["Tosta il pane GF.", "Schiaccia l'avocado con una forchetta e spalma sulle fette.", "Adagia il salmone affumicato e spremi il limone. Pepa a piacere."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine medie", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale, pepe"],
+            "preparazione": ["Cuoci il riso basmati in acqua salata (~12 min).", "Taglia il pollo a strisce e salta in padella con olio e curcuma 5-6 min.", "Aggiungi le zucchine a rondelle, poi il riso cotto. Salta 2 min a fuoco vivo."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Yogurt greco 150g + banana (1.5h prima del nuoto)",
+          "calorie_stimate": 190,
+          "proteine_g": 10
+        },
+        "cena": {
+          "descrizione": "Piadina GF con salmone, pomodori & rucola",
+          "calorie_stimate": 440,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
+            "preparazione": ["Scalda la piadina in padella 1 min per lato.", "Sgocciola il salmone e distribuisci sulla piadina.", "Aggiungi pomodori a fette e rucola. Condisci con olio e limone."]
+          }
+        },
+        "spuntini": [
+          "Post-nuoto: 6 crackers GF + tonno + pomodoro (~300 kcal, P:30g)",
+          "Mattina: 1 frutto di stagione (~80 kcal)"
+        ]
+      }
+    },
+    {
+      "giorno": "Martedì",
+      "data": "2026-06-30",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Pomeriggio",
+        "note": "Ciclismo pomeriggio — carboidrati pre-ride, proteico post"
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco + banana + noci + miele",
+          "calorie_stimate": 370,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate", "10g miele"],
+            "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Piadina GF con pollo, pomodori & rucola",
+          "calorie_stimate": 550,
+          "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["1 piadina GF (80g)", "160g petto di pollo", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale"],
+            "preparazione": ["Cuoci il pollo alla piastra 5-6 min per lato. Affetta.", "Scalda la piadina in padella.", "Componi con pollo, pomodori a fette e rucola. Condisci con olio e limone."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana + caffè (30-45 min prima del ciclismo)",
+          "calorie_stimate": 100,
+          "proteine_g": 1
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori & rucola",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["200g controfiletto di manzo", "2 pomodori", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
+            "preparazione": ["Griglia la bistecca 3-4 min per lato a fuoco alto.", "Prepara l'insalata con pomodori e rucola, condisci con olio e limone.", "Lascia riposare la bistecca 2 min prima di servire."]
+          }
+        },
+        "spuntini": [
+          "Post-ciclismo: 6 crackers GF + tonno + pomodoro (~300 kcal, P:30g)",
+          "Yogurt greco 150g + frutta (~180 kcal, P:12g)"
+        ]
+      }
+    },
+    {
+      "giorno": "Mercoledì",
+      "data": "2026-07-01",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+          "calorie_stimate": 330,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["200g yogurt greco 0%", "100g frutti di bosco misti", "10g semi di chia", "10g miele"],
+            "preparazione": ["Versa lo yogurt in una ciotola.", "Aggiungi i frutti di bosco, i semi di chia e il miele. Mescola leggermente."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Insalata tonno, pomodori & fagiolini",
+          "calorie_stimate": 480,
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": ["160g tonno al naturale", "200g fagiolini", "2 pomodori medi", "10g olive nere", "1 cucchiaio olio d'oliva", "sale, origano"],
+            "preparazione": ["Lessa i fagiolini in acqua salata 8-10 min, scola e raffredda.", "Unisci tonno sgocciolato, pomodori a pezzi, fagiolini e olive.", "Condisci con olio e origano."]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo al limone + zucchine grigliate",
+          "calorie_stimate": 380,
+          "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": ["220g petto di pollo", "2 zucchine medie", "succo di 1 limone", "1 cucchiaio olio d'oliva", "1 spicchio aglio", "sale, rosmarino"],
+            "preparazione": ["Marina il pollo con limone, aglio e rosmarino per 10 min.", "Griglia il pollo 5-6 min per lato a fuoco medio-alto.", "Griglia le zucchine a fette 3 min per lato. Servi insieme."]
+          }
+        },
+        "spuntini": [
+          "Metà mattina: 150g yogurt greco + 1 frutto (~180 kcal, P:12g)",
+          "Pomeriggio: 25g noci + 1 mela (~200 kcal, P:5g)"
+        ]
+      }
+    },
+    {
+      "giorno": "Giovedì",
+      "data": "2026-07-02",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Sera",
+        "note": "Ciclismo serale — pasto leggero pre-ride, recupero proteico post"
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Frullato cioccolato + banana + yogurt greco",
+          "calorie_stimate": 360,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["200g yogurt greco 0%", "1 banana", "15g cacao amaro", "10g miele", "100ml latte senza lattosio"],
+            "preparazione": ["Inserisci tutti gli ingredienti nel frullatore.", "Frulla 30 secondi fino a ottenere una consistenza liscia e cremosa."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Spaghetti di soia con salmone & piselli",
+          "calorie_stimate": 570,
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": ["80g spaghetti di soia", "180g salmone fresco a cubetti", "150g piselli", "1 spicchio aglio", "1 cucchiaio olio d'oliva", "prezzemolo, sale"],
+            "preparazione": ["Cuoci gli spaghetti di soia in acqua bollente salata 4-5 min.", "In padella, salta il salmone a cubetti con aglio per 3 min.", "Aggiungi i piselli e la pasta scolata. Salta 2 min. Servi con prezzemolo."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana (30 min prima del ciclismo serale)",
+          "calorie_stimate": 90,
+          "proteine_g": 1
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata pomodori & rucola (post-ciclismo)",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["200g controfiletto di manzo", "2 pomodori", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
+            "preparazione": ["Griglia la bistecca 3-4 min per lato.", "Prepara insalata con pomodori e rucola. Condisci con olio e limone.", "Servi con la bistecca."]
+          }
+        },
+        "spuntini": [
+          "Metà mattina: 200g yogurt greco + 20g mandorle (~280 kcal, P:20g)",
+          "Post-ciclismo: yogurt greco 150g + miele + noci (~260 kcal, P:20g)"
+        ]
+      }
+    },
+    {
+      "giorno": "Venerdì",
+      "data": "2026-07-03",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Philadelphia GF + salmone affumicato + pane GF + pomodoro",
+          "calorie_stimate": 400,
+          "proteine_g": 26,
+          "ricetta": {
+            "ingredienti": ["2 fette pane GF", "80g Philadelphia senza lattosio", "80g salmone affumicato", "1 pomodoro", "pepe nero q.b."],
+            "preparazione": ["Tosta il pane GF.", "Spalma la Philadelphia sulle fette.", "Adagia il salmone affumicato e le fette di pomodoro. Pepa a piacere."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Pad Thai GF con gamberetti",
+          "calorie_stimate": 560,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["80g noodles di riso GF", "200g gamberetti", "2 uova", "30g germogli di soia", "2 cucchiai salsa tamari", "1 cucchiaio olio di sesamo", "1 cipollotto", "1 lime"],
+            "preparazione": ["Ammollo i noodles in acqua calda 5 min, scola.", "In wok caldo, salta i gamberetti 2 min. Aggiungi le uova e strapazza.", "Unisci noodles, tamari, germogli e cipollotto. Salta 2 min. Servi con lime."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "4 datteri secchi (1h prima del nuoto)",
+          "calorie_stimate": 110,
+          "proteine_g": 1
+        },
+        "cena": {
+          "descrizione": "Piadina GF con gamberetti, pomodori & fagiolini",
+          "calorie_stimate": 440,
+          "proteine_g": 36,
+          "ricetta": {
+            "ingredienti": ["1 piadina GF (80g)", "180g gamberetti", "2 pomodori medi", "80g fagiolini lessi", "1 cucchiaio olio d'oliva", "succo di ½ limone", "prezzemolo"],
+            "preparazione": ["Salta i gamberetti in padella con olio per 2-3 min.", "Scalda la piadina in padella.", "Componi con gamberetti, fagiolini, pomodori. Condisci con limone e prezzemolo."]
+          }
+        },
+        "spuntini": [
+          "Post-nuoto: 6 crackers GF + tonno + pomodoro (~300 kcal, P:30g)",
+          "Frutta di stagione (~80 kcal)"
+        ]
+      }
+    },
+    {
+      "giorno": "Sabato",
+      "data": "2026-07-04",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": ["3 uova", "2 fette pane GF", "1 arancia", "1 cucchiaino olio d'oliva", "sale, pepe"],
+            "preparazione": ["Sbatti le uova con sale e pepe.", "Cuoci in padella antiaderente con olio a fuoco basso, mescolando dolcemente.", "Servi sulle fette di pane GF tostato, con l'arancia a spicchi."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Bowl riso venere, tonno & pomodorini",
+          "calorie_stimate": 500,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["80g riso venere", "160g tonno al naturale", "150g pomodorini ciliegia", "½ avocado", "succo di ½ limone", "1 cucchiaio olio d'oliva", "basilico fresco"],
+            "preparazione": ["Cuoci il riso venere in acqua salata ~35 min.", "Disponi il riso nella bowl. Aggiungi tonno, pomodorini tagliati e avocado a cubetti.", "Condisci con olio, limone e basilico fresco."]
+          }
+        },
+        "cena": {
+          "descrizione": "Salmone in padella + piselli & pomodorini",
+          "calorie_stimate": 470,
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": ["200g filetto di salmone", "150g piselli", "150g pomodorini ciliegia", "1 spicchio aglio", "1 cucchiaio olio d'oliva", "basilico, sale"],
+            "preparazione": ["Cuoci il salmone in padella con olio 4-5 min per lato.", "In altra padella, salta piselli e pomodorini con aglio per 4 min.", "Servi il salmone sopra le verdure con basilico fresco."]
+          }
+        },
+        "spuntini": [
+          "Metà mattina: 150g yogurt greco + 1 frutto + 20g noci (~280 kcal, P:17g)",
+          "Pomeriggio: 1 banana + 20g mandorle (~200 kcal, P:5g)"
+        ]
+      }
+    },
+    {
+      "giorno": "Domenica",
+      "data": "2026-07-05",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Tutto il giorno",
+        "note": "Ciclismo tutto il giorno — fabbisogno elevato. Porta snack in borsa."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Smoothie fragola + banana + yogurt greco (prima di partire)",
+          "calorie_stimate": 320,
+          "proteine_g": 20,
+          "ricetta": {
+            "ingredienti": ["200g yogurt greco 0%", "100g fragole", "1 banana", "10g miele"],
+            "preparazione": ["Inserisci tutto nel frullatore.", "Frulla 20-30 secondi. Consuma subito prima di partire."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine (al rientro o da portare)",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale"],
+            "preparazione": ["Cuoci il riso. Salta il pollo a strisce con curcuma 5-6 min.", "Aggiungi le zucchine a rondelle, poi il riso. Salta 2 min.", "Puoi preparare la sera prima e portarlo in contenitore."]
+          }
+        },
+        "cena": {
+          "descrizione": "Piadina GF con salmone, pomodori & rucola (cena di recupero)",
+          "calorie_stimate": 440,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
+            "preparazione": ["Scalda la piadina in padella.", "Sgocciola il salmone e distribuisci sulla piadina.", "Aggiungi pomodori e rucola. Condisci con olio e limone."]
+          }
+        },
+        "spuntini": [
+          "Durante la pedalata: 2 banane + 4 datteri (~280 kcal, P:3g) — porta in borsa",
+          "Mid-ride: 30g noci + 1 barretta GF (~300 kcal, P:8g)",
+          "Post-ride: yogurt greco 200g + banana + miele (~280 kcal, P:22g)"
+        ]
+      }
+    }
+  ]
+}
