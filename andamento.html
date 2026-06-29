@@ -121,6 +121,12 @@
     .bc-chart-row{display:flex;gap:12px}
     @media(max-width:500px){.bc-chart-row{flex-direction:column}}
     .h180{height:180px}
+
+    .main-tabs{display:flex;gap:4px;background:var(--bg);border-radius:14px;padding:4px;margin-bottom:16px}
+    .mtab{flex:1;padding:9px 6px;border:none;background:transparent;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--grey);cursor:pointer;transition:all .15s;white-space:nowrap}
+    .mtab.active{background:#fff;color:var(--black);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+    .tab-panel{animation:fadeIn .2s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
@@ -149,89 +155,104 @@
     <button class="upload-btn" onclick="showModal()">Come aggiornare</button>
   </div>
 
-  <div class="sl">Panoramica</div>
-  <div class="kpi-grid" id="kpiGrid"></div>
+  <!-- ── MAIN TAB NAV ─────────────────────────────── -->
+  <div class="main-tabs">
+    <button class="mtab active" onclick="setMainTab('riepilogo',this)">Riepilogo</button>
+    <button class="mtab" onclick="setMainTab('corpo',this)">Peso &amp; Corpo</button>
+    <button class="mtab" onclick="setMainTab('attivita',this)">Attività</button>
+  </div>
 
-  <div class="sl">Peso &amp; BMI</div>
-  <div class="chart-card">
-    <div class="chart-title">
-      ANDAMENTO PESO &amp; BMI
-      <div class="range-row">
-        <button class="rtab" onclick="setRange('3m',this)">3M</button>
-        <button class="rtab active" onclick="setRange('6m',this)">6M</button>
-        <button class="rtab" onclick="setRange('1a',this)">1A</button>
-        <button class="rtab" onclick="setRange('all',this)">Tutto</button>
+  <!-- ══ TAB 1: RIEPILOGO ══════════════════════════ -->
+  <div id="tab-riepilogo" class="tab-panel">
+    <div class="sl">Panoramica</div>
+    <div class="kpi-grid" id="kpiGrid"></div>
+
+    <div class="sl">Attività Settimanale</div>
+    <div class="chart-row">
+      <div class="chart-card half">
+        <div class="chart-title">PASSI</div>
+        <div class="chart-wrap h160"><canvas id="cSteps"></canvas></div>
+      </div>
+      <div class="chart-card half">
+        <div class="chart-title">CALORIE ATTIVE</div>
+        <div class="chart-wrap h160"><canvas id="cCal"></canvas></div>
       </div>
     </div>
-    <div id="bmiDisplay" style="margin-bottom:12px"></div>
-    <div class="chart-wrap h200"><canvas id="cBMI"></canvas></div>
-  </div>
 
-  <div class="sl">Attività Settimanale</div>
-  <div class="chart-row">
-    <div class="chart-card half">
-      <div class="chart-title">PASSI</div>
-      <div class="chart-wrap h160"><canvas id="cSteps"></canvas></div>
-    </div>
-    <div class="chart-card half">
-      <div class="chart-title">CALORIE ATTIVE</div>
-      <div class="chart-wrap h160"><canvas id="cCal"></canvas></div>
+    <div class="sl">Salute</div>
+    <div class="chart-row">
+      <div class="chart-card half">
+        <div class="chart-title">FC RIPOSO</div>
+        <div class="chart-wrap h160"><canvas id="cFC"></canvas></div>
+      </div>
+      <div class="chart-card half">
+        <div class="chart-title">SONNO</div>
+        <div class="chart-wrap h160"><canvas id="cSleep"></canvas></div>
+      </div>
     </div>
   </div>
 
-  <div class="sl">Salute</div>
-  <div class="chart-row">
-    <div class="chart-card half">
-      <div class="chart-title">FC RIPOSO</div>
-      <div class="chart-wrap h160"><canvas id="cFC"></canvas></div>
+  <!-- ══ TAB 2: PESO & CORPO ═══════════════════════ -->
+  <div id="tab-corpo" class="tab-panel" style="display:none">
+    <div class="sl">Peso &amp; BMI</div>
+    <div class="chart-card">
+      <div class="chart-title">
+        ANDAMENTO PESO &amp; BMI
+        <div class="range-row">
+          <button class="rtab" onclick="setRange('3m',this)">3M</button>
+          <button class="rtab active" onclick="setRange('6m',this)">6M</button>
+          <button class="rtab" onclick="setRange('1a',this)">1A</button>
+          <button class="rtab" onclick="setRange('all',this)">Tutto</button>
+        </div>
+      </div>
+      <div id="bmiDisplay" style="margin-bottom:12px"></div>
+      <div class="chart-wrap h200"><canvas id="cBMI"></canvas></div>
     </div>
-    <div class="chart-card half">
-      <div class="chart-title">SONNO</div>
-      <div class="chart-wrap h160"><canvas id="cSleep"></canvas></div>
+
+    <div class="sl">Composizione Corporea</div>
+    <div class="chart-card">
+      <div id="bodyCompContent">
+        <div style="color:var(--grey);font-size:12px">Caricamento...</div>
+      </div>
+    </div>
+
+    <div class="sl">VO2Max &amp; Capacità Aerobica</div>
+    <div class="chart-card">
+      <div id="vo2Header" style="margin-bottom:12px"></div>
+      <div class="chart-wrap h180"><canvas id="cVO2"></canvas></div>
+      <div style="font-size:10px;color:var(--grey);margin-top:8px">
+        Classificazione OMS: &lt;35 Scarso · 35–42 Nella media · 42–50 Buono · &gt;50 Eccellente (uomo 20–29 anni)
+      </div>
     </div>
   </div>
 
-
-  <div class="sl">Composizione Corporea</div>
-  <div class="chart-card">
-    <div id="bodyCompContent">
-      <div style="color:var(--grey);font-size:12px">Caricamento...</div>
+  <!-- ══ TAB 3: ATTIVITÀ ═══════════════════════════ -->
+  <div id="tab-attivita" class="tab-panel" style="display:none">
+    <div class="sl">Analisi per Tipo</div>
+    <div class="chart-card" style="padding-bottom:20px">
+      <div class="act-tabs" id="actTabs"></div>
+      <div id="actContent"></div>
     </div>
-  </div>
 
-  <div class="sl">VO2Max &amp; Capacità Aerobica</div>
-  <div class="chart-card">
-    <div id="vo2Header" style="margin-bottom:12px"></div>
-    <div class="chart-wrap h180"><canvas id="cVO2"></canvas></div>
-    <div style="font-size:10px;color:var(--grey);margin-top:8px">
-      Classificazione OMS: &lt;35 Scarso · 35–42 Nella media · 42–50 Buono · &gt;50 Eccellente (uomo 20–29 anni)
-    </div>
-  </div>
-
-  <div class="sl">Analisi Attività</div>
-  <div class="chart-card" style="padding-bottom:20px">
-    <div class="act-tabs" id="actTabs"></div>
-    <div id="actContent"></div>
-  </div>
-
-  <div class="sl">Tutti gli Allenamenti</div>
-  <div class="chart-card" style="padding:0;overflow:hidden">
-    <div class="wo-wrap">
-      <table class="wo-table" id="woTable">
-        <thead>
-          <tr>
-            <th onclick="sortBy('data')">Data</th>
-            <th onclick="sortBy('tipo')">Tipo</th>
-            <th onclick="sortBy('durata_min')" class="nr">Durata</th>
-            <th onclick="sortBy('distanza_km')" class="nr">km</th>
-            <th onclick="sortBy('vel')" class="nr">Vel / Passo</th>
-            <th onclick="sortBy('calorie')" class="nr">Cal</th>
-            <th onclick="sortBy('hr_avg')" class="nr">HR avg</th>
-            <th onclick="sortBy('hr_max')" class="nr">HR max</th>
-          </tr>
-        </thead>
-        <tbody id="woBody"></tbody>
-      </table>
+    <div class="sl">Tutti gli Allenamenti</div>
+    <div class="chart-card" style="padding:0;overflow:hidden">
+      <div class="wo-wrap">
+        <table class="wo-table" id="woTable">
+          <thead>
+            <tr>
+              <th onclick="sortBy('data')">Data</th>
+              <th onclick="sortBy('tipo')">Tipo</th>
+              <th onclick="sortBy('durata_min')" class="nr">Durata</th>
+              <th onclick="sortBy('distanza_km')" class="nr">km</th>
+              <th onclick="sortBy('vel')" class="nr">Vel / Passo</th>
+              <th onclick="sortBy('calorie')" class="nr">Cal</th>
+              <th onclick="sortBy('hr_avg')" class="nr">HR avg</th>
+              <th onclick="sortBy('hr_max')" class="nr">HR max</th>
+            </tr>
+          </thead>
+          <tbody id="woBody"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -322,6 +343,16 @@ const intensity  = hr => {
   if(p<90)return{label:'Soglia',    color:'#a03a00',bg:'#fff3ec'};
   return          {label:'Massimale',color:'#9c2a52',bg:'#fdf0f5'};
 };
+
+
+function setMainTab(tab, btn) {
+  document.querySelectorAll('.mtab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+  document.getElementById('tab-' + tab).style.display = '';
+  // Trigger chart resize when switching to a tab with charts
+  setTimeout(() => window.dispatchEvent(new Event('resize')), 50);
+}
 
 function weekStart(wk) {
   const [yr,w]=wk.split('-W').map(Number);
@@ -453,6 +484,7 @@ function renderHealth() {
 }
 
 function renderActTabs() {
+  // Deduplica i tipi di attività
   const types=[...new Set(W.workouts.map(w=>w.tipo))].sort((a,b)=>W.workouts.filter(w=>w.tipo===b).length-W.workouts.filter(w=>w.tipo===a).length);
   document.getElementById('actTabs').innerHTML=['tutti',...types].map(t=>{
     const c=t==='tutti'?{icon:'📊'}:cfg(t);
