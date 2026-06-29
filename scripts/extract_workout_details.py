@@ -3,7 +3,7 @@
 extract_workout_details.py — Aggiornamento incrementale di workout_details.json
 
 Uso:
-  python3 extract_workout_details.py <xml_path> <output_path> [--height-m 1.70] [--max-hr 175]
+  python3 extract_workout_details.py <xml_path> <output_path> [--height-m 1.70] [--max-hr 195]
 
 Logica incrementale:
   - Se output_path esiste, trova l'ultimo workout già salvato
@@ -19,7 +19,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('xml_path')
 ap.add_argument('output_path')
 ap.add_argument('--height-m', type=float, default=1.70)
-ap.add_argument('--max-hr',   type=int,   default=175)
+ap.add_argument('--max-hr',   type=int,   default=195)
 args = ap.parse_args()
 
 XML_PATH    = args.xml_path
