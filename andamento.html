@@ -680,7 +680,6 @@ function openDetail(id) {
 // ─────────────────────────────────────────────────────────────
 // BODY COMPOSITION
 // ─────────────────────────────────────────────────────────────
-let chartBCbar, chartBCpct;
 function renderBodyComp() {
   const bc = H.body_composition || [];
   const el = document.getElementById('bodyCompContent');
@@ -792,7 +791,6 @@ function renderBodyComp() {
 // ─────────────────────────────────────────────────────────────
 // VO2MAX
 // ─────────────────────────────────────────────────────────────
-let chartVO2;
 function renderVO2() {
   const vo2 = H.vo2max || [];
   if (!vo2.length) return;
