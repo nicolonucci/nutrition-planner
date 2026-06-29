@@ -439,8 +439,8 @@ function renderBMI() {
     plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,font:{family:'DM Sans',size:11},color:'#666'}}},
     scales:{
       x:{grid:{display:false},ticks:{font:{family:'DM Sans',size:10},color:'#bbb'}},
-      yP:{position:'left',grid:{color:'#f0ede8'},ticks:{font:{family:'DM Sans',size:10},color:'#2040a0',callback:v=>v+' kg'}},
-      yB:{position:'right',grid:{display:false},ticks:{font:{family:'DM Sans',size:10},color:'#c47c00'},min:18,max:32},
+      yP:{position:'left',grid:{color:'#f0ede8'},ticks:{font:{family:'DM Sans',size:10},color:'#2040a0',callback:v=>v+' kg'},min:Math.max(40,Math.min(...pesoArr)-2),max:Math.max(...pesoArr)+2},
+      yB:{position:'right',grid:{display:false},ticks:{font:{family:'DM Sans',size:10},color:'#c47c00'},min:Math.max(15,Math.min(...bmiArr)-1.5),max:Math.min(40,Math.max(...bmiArr)+1.5)},
     }
   }});
 }
