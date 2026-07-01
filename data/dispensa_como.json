@@ -254,7 +254,7 @@
     {
       "nome": "Fagiolini Fini",
       "categoria": "Verdure & Frutta",
-      "quantita": 220,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -274,7 +274,7 @@
     {
       "nome": "Tonno al Naturale",
       "categoria": "Proteine",
-      "quantita": 4,
+      "quantita": 3,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -304,7 +304,7 @@
     {
       "nome": "Pomodori Ciliegio",
       "categoria": "Verdure & Frutta",
-      "quantita": 500,
+      "quantita": 250,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
