@@ -9,7 +9,6 @@ const CONFIG = {
   },
 
   paths: {
-    dispensa:       'data/dispensa.json',
     dispensaLoc:    (loc) => `data/dispensa_${loc}.json`,
     settimane:      'data/settimane.json',
     menu:           (settimana) => `data/menus/${settimana}.json`,
