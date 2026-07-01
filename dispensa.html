@@ -130,6 +130,15 @@ function worstStatus(items) {
   return 'ok';
 }
 
+// Stato di un prodotto ignorando i lotti già esauriti: un lotto a 0 non deve
+// abbassare lo stato degli altri lotti dello stesso prodotto. Se non resta
+// nessun lotto disponibile, il prodotto è "out" nel suo complesso.
+function productStatus(items) {
+  const remaining = items.filter(a => getStatus(a) !== 'out');
+  if (remaining.length === 0) return 'out';
+  return worstStatus(remaining);
+}
+
 function statusPill(s) {
   const map = { ok:'ok ✓ Disponibile', low:'low ⚠ Esaurimento', out:'out ✗ Esaurito' };
   const [cls, ...rest] = map[s].split(' ');
@@ -248,21 +257,21 @@ function renderTable(alimenti) {
 }
 
 function filterTable() {
-  // Per il filtro, usa lo stato del gruppo (peggiore) per prodotti multipli
   let f;
-  if (activeFilter) {
-    // Includi prodotto se almeno un lotto corrisponde al filtro
+  if (activeFilter === 'out') {
+    // Mostra solo i singoli lotti esauriti
+    f = allAlimenti.filter(a => getStatus(a) === 'out');
+  } else if (activeFilter) {
+    // ok / low: i lotti esauriti non compaiono mai qui e non influenzano
+    // lo stato dei lotti superstiti dello stesso prodotto
+    const nonOut = allAlimenti.filter(a => getStatus(a) !== 'out');
     const nomiDaIncludere = new Set();
-    allAlimenti.forEach(a => { if (getStatus(a) === activeFilter) nomiDaIncludere.add(a.nome); });
-    f = allAlimenti.filter(a => nomiDaIncludere.has(a.nome));
+    nonOut.forEach(a => { if (getStatus(a) === activeFilter) nomiDaIncludere.add(a.nome); });
+    f = nonOut.filter(a => nomiDaIncludere.has(a.nome));
   } else {
-    // Default: escludi prodotti tutti esauriti
-    const nomiTuttiOut = new Set(
-      Object.entries(
-        allAlimenti.reduce((acc, a) => { (acc[a.nome] = acc[a.nome]||[]).push(a); return acc; }, {})
-      ).filter(([, items]) => items.every(a => getStatus(a) === 'out')).map(([n]) => n)
-    );
-    f = allAlimenti.filter(a => !nomiTuttiOut.has(a.nome));
+    // Default (Disponibili): nascondi ogni lotto esaurito; i lotti rimanenti
+    // dello stesso prodotto mantengono il proprio stato invariato
+    f = allAlimenti.filter(a => getStatus(a) !== 'out');
   }
   renderTable(f);
 }
@@ -288,12 +297,13 @@ async function init() {
     const locLabel = currentLocation === 'como' ? 'Como' : 'Milano';
     document.getElementById('header-sub').textContent = `${locLabel} — Aggiornata il ${d.ultimo_aggiornamento || '—'}`;
 
-    // Stats per prodotto unico (stato peggiore del gruppo)
+    // Stats per prodotto unico: i lotti esauriti non abbassano lo stato dei lotti
+    // rimanenti dello stesso prodotto (vedi productStatus)
     const grouped = allAlimenti.reduce((acc, a) => { (acc[a.nome] = acc[a.nome]||[]).push(a); return acc; }, {});
     const prodotti = Object.values(grouped);
-    const ok = prodotti.filter(g => worstStatus(g) === 'ok').length;
-    const low = prodotti.filter(g => worstStatus(g) === 'low').length;
-    const out = prodotti.filter(g => worstStatus(g) === 'out').length;
+    const ok = prodotti.filter(g => productStatus(g) === 'ok').length;
+    const low = prodotti.filter(g => productStatus(g) === 'low').length;
+    const out = prodotti.filter(g => productStatus(g) === 'out').length;
     document.getElementById('stat-tot').textContent = prodotti.length;
     document.getElementById('stat-ok').textContent = ok;
     document.getElementById('stat-low').textContent = low;
