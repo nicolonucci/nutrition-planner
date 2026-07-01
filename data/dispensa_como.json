@@ -294,7 +294,7 @@
     {
       "nome": "Rice Sticks",
       "categoria": "Cereali & Carboidrati",
-      "quantita": 90,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -314,7 +314,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 1000,
+      "quantita": 700,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -414,7 +414,7 @@
     {
       "nome": "Pollo",
       "categoria": "Proteine",
-      "quantita": 200,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
