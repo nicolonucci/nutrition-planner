@@ -17,12 +17,16 @@ const CONFIG = {
 };
 
 // Fetch base: usa path relativo su GitHub Pages (CDN veloce), raw.githubusercontent come fallback
+// Cache-buster (_=timestamp) + cache:'no-store' per evitare che il browser o la CDN
+// servano una copia cachata dei dati dopo un aggiornamento appena pushato.
 async function fetchData(path) {
   const isGHPages = location.hostname.endsWith('github.io');
-  const url = isGHPages
+  const base = isGHPages
     ? `/${CONFIG.github_repo}/${path}`
     : `${CONFIG.raw_base}/${path}`;
-  const res = await fetch(url);
+  const sep = base.includes('?') ? '&' : '?';
+  const url = `${base}${sep}_=${Date.now()}`;
+  const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) throw new Error(`HTTP ${res.status} — ${path}`);
   return res.json();
 }
