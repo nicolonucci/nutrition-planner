@@ -390,6 +390,106 @@
       "soglia_minima": 0,
       "scadenza": "",
       "note": "4x25g"
+    },
+    {
+      "nome": "Nasello",
+      "categoria": "Proteine",
+      "quantita": 450,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Merluzzo",
+      "categoria": "Proteine",
+      "quantita": 400,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Salmone",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Salmone",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Bistecca di Manzo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Piselli",
+      "categoria": "Verdure & Frutta",
+      "quantita": 750,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Trita di Manzo",
+      "categoria": "Proteine",
+      "quantita": 245,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
     }
   ]
 }
