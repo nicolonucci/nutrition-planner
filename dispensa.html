@@ -26,6 +26,11 @@
 
 <div class="container">
 
+  <div class="filter-bar" id="location-bar">
+    <button class="filter-btn" data-loc="milano" onclick="setLocation('milano')">Milano</button>
+    <button class="filter-btn" data-loc="como" onclick="setLocation('como')">Como</button>
+  </div>
+
   <div class="stats-row">
     <div class="stat"><div class="stat-value" id="stat-tot">—</div><div class="stat-label">Totale alimenti</div></div>
     <div class="stat"><div class="stat-value" id="stat-ok" style="color:var(--green)">—</div><div class="stat-label">Disponibili</div></div>
@@ -91,6 +96,24 @@
 <script>
 let allAlimenti = [];
 let activeFilter = null;
+let currentLocation = localStorage.getItem('_nh_dispensa_loc') || 'milano';
+
+function setLocation(loc) {
+  if (loc === currentLocation) return;
+  currentLocation = loc;
+  localStorage.setItem('_nh_dispensa_loc', loc);
+  updateLocationButtons();
+  document.getElementById('table-container').style.display = 'none';
+  document.getElementById('empty').style.display = 'none';
+  document.getElementById('loading').style.display = 'flex';
+  init();
+}
+
+function updateLocationButtons() {
+  document.querySelectorAll('#location-bar .filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.loc === currentLocation);
+  });
+}
 
 function getStatus(a) {
   const qty = parseFloat(a.quantita) || 0;
@@ -258,10 +281,12 @@ function setFilter(f, btn) {
 
 async function init() {
   try {
-    const d = await fetchData(CONFIG.paths.dispensa);
+    updateLocationButtons();
+    const d = await fetchData(CONFIG.paths.dispensaLoc(currentLocation));
     allAlimenti = d.alimenti || [];
     document.getElementById('loading').style.display = 'none';
-    document.getElementById('header-sub').textContent = `Aggiornata il ${d.ultimo_aggiornamento || '—'}`;
+    const locLabel = currentLocation === 'como' ? 'Como' : 'Milano';
+    document.getElementById('header-sub').textContent = `${locLabel} — Aggiornata il ${d.ultimo_aggiornamento || '—'}`;
 
     // Stats per prodotto unico (stato peggiore del gruppo)
     const grouped = allAlimenti.reduce((acc, a) => { (acc[a.nome] = acc[a.nome]||[]).push(a); return acc; }, {});

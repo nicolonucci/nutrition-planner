@@ -1,0 +1,377 @@
+{
+  "ultimo_aggiornamento": "2026-06-07",
+  "alimenti": [
+    {
+      "nome": "Patate gialle",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1532,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Patate dolci",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 613,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 257,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 128,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Carne trita",
+      "categoria": "Proteine",
+      "quantita": 242,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Salmone affumicato",
+      "categoria": "Proteine",
+      "quantita": 100,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Philadelphia light",
+      "categoria": "Latticini",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Mela Granny Smith",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Carote",
+      "categoria": "Verdure & Frutta",
+      "quantita": 930,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Banane",
+      "categoria": "Verdure & Frutta",
+      "quantita": 5,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Mele",
+      "categoria": "Verdure & Frutta",
+      "quantita": 4,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Zucchine",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1012,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodoro ciliegino",
+      "categoria": "Verdure & Frutta",
+      "quantita": 356,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodoro sardo",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1000,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 401,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Filetto di salmone",
+      "categoria": "Proteine",
+      "quantita": 216,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Yogurt greco",
+      "categoria": "Latticini",
+      "quantita": 3,
+      "unita": "pz",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": "150g a vasetto"
+    },
+    {
+      "nome": "Uova",
+      "categoria": "Proteine",
+      "quantita": 15,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Scottona",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Fettine di vitello",
+      "categoria": "Proteine",
+      "quantita": 180,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Nasello",
+      "categoria": "Proteine",
+      "quantita": 600,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "Cuori di nasello gratinati"
+    },
+    {
+      "nome": "Bistecca di manzo",
+      "categoria": "Proteine",
+      "quantita": 0,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Piselli",
+      "categoria": "Verdure & Frutta",
+      "quantita": 850,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Fagiolini",
+      "categoria": "Verdure & Frutta",
+      "quantita": 0,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Tonno naturale",
+      "categoria": "Proteine",
+      "quantita": 9,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": "Lattine al naturale"
+    },
+    {
+      "nome": "Yogurt Delta Bianco",
+      "categoria": "Latticini",
+      "quantita": 2,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Riso Basmati",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1000,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Udon Rice Noodles",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Cioccolato Excellence 78%",
+      "categoria": "Dolci",
+      "quantita": 1,
+      "unita": "pz",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "",
+      "note": "~100g"
+    },
+    {
+      "nome": "Rigatoni Rummo",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 800,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2029-01-12",
+      "note": ""
+    },
+    {
+      "nome": "Rigatoni Rummo",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 400,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2029-12-09",
+      "note": ""
+    },
+    {
+      "nome": "Crackers Mulino Bianco",
+      "categoria": "Snack & Altro",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-10-20",
+      "note": "6x33.4g"
+    },
+    {
+      "nome": "Pane Carasau",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 150,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-09-06",
+      "note": ""
+    },
+    {
+      "nome": "Lingue di Gatto",
+      "categoria": "Dolci",
+      "quantita": 110,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-10-16",
+      "note": ""
+    },
+    {
+      "nome": "Piadina Loriana",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 450,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-08-15",
+      "note": "2x225g"
+    },
+    {
+      "nome": "Cous Cous",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 375,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "2027-04-10",
+      "note": ""
+    },
+    {
+      "nome": "Pancarrè",
+      "categoria": "Cereali & Carboidrati",
+      "quantita": 330,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2026-06-26",
+      "note": ""
+    },
+    {
+      "nome": "Cacao amaro",
+      "categoria": "Condimenti & Spezie",
+      "quantita": 75,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
+      "scadenza": "2028-03-09",
+      "note": ""
+    }
+  ]
+}

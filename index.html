@@ -109,12 +109,13 @@ async function toggleRicettario(e) {
 <script>
 async function init() {
   try {
-    const [settimane, dispensa] = await Promise.all([
+    const [settimane, dispensaMilano, dispensaComo] = await Promise.all([
       fetchData(CONFIG.paths.settimane),
-      fetchData(CONFIG.paths.dispensa)
+      fetchData(CONFIG.paths.dispensaLoc('milano')),
+      fetchData(CONFIG.paths.dispensaLoc('como')).catch(() => ({ alimenti: [] }))
     ]);
     document.getElementById('stat-settimane').textContent = settimane.settimane.length;
-    document.getElementById('stat-dispensa').textContent = dispensa.alimenti.length;
+    document.getElementById('stat-dispensa').textContent = dispensaMilano.alimenti.length + dispensaComo.alimenti.length;
 
     const grid = document.getElementById('week-grid');
     document.getElementById('loading').style.display = 'none';
