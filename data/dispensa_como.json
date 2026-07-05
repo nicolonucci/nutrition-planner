@@ -1,5 +1,6 @@
 {
   "ultimo_aggiornamento": "2026-07-05",
+
   "alimenti": [
     {
       "nome": "Pasta Rummo Elicoidali",
@@ -444,7 +445,7 @@
     {
       "nome": "Bistecca di Manzo",
       "categoria": "Proteine",
-      "quantita": 200,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
