@@ -1,0 +1,328 @@
+{
+  "settimana": "2026-W28",
+  "dal": "2026-07-06",
+  "al": "2026-07-12",
+  "giorni": [
+    {
+      "giorno": "Lunedì",
+      "data": "2026-07-06",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Pomeriggio",
+        "note": "Fondo aerobico leggero 65-70' — orario reale ~19:00-21:00 (mappato su Pomeriggio 16-19 per limiti skill). Pre-workout spostato alle 18:00, la cena diventa il pasto di recupero post-pedalata verso le 21:15."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": ["3 uova intere (150 g)", "2 fette pane GF (~60 g)", "1 arancia (~150 g)", "5 g olio EVO", "sale, pepe q.b."],
+            "preparazione": ["Sbatti le uova con sale e pepe, cuoci a fuoco basso mescolando 2-3 min finché cremose.", "Tosta il pane GF e servi con l'arancia a parte."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & curcuma",
+          "calorie_stimate": 590,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90 g riso basmati (peso crudo)", "180 g petto di pollo", "100 g zucchine", "100 g carote", "15 ml tamari GF", "10 g olio EVO", "curcuma, zenzero q.b."],
+            "preparazione": ["Cuoci il riso 10-12 min. Rosola il pollo a cubetti con curcuma 4 min.", "Aggiungi le verdure a julienne 4 min, poi il riso e il tamari GF, salta 2 min."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Datteri secchi + mandorle, verso le 18:00 (uscita reale ore 19, energia pronta prima di partire)",
+          "calorie_stimate": 185,
+          "proteine_g": 4
+        },
+        "cena": {
+          "descrizione": "Merluzzo al vapore + carote & piselli — pasto di recupero post-pedalata",
+          "calorie_stimate": 380,
+          "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["220 g merluzzo fresco o surgelato", "150 g carote", "150 g piselli surgelati", "15 g olio EVO", "succo 1/2 limone", "prezzemolo, sale q.b."],
+            "preparazione": ["Merluzzo al vapore 10-12 min.", "Carote a rondelle e piselli saltati in padella con olio 5 min. Condisci tutto con olio, limone e prezzemolo."]
+          }
+        },
+        "spuntini": ["Subito dopo la pedalata (~21:00, prima della cena): 6 crackers riso GF + tonno + pomodoro (~300 kcal, P:30g)", "Mattina: 1 frutto di stagione (~80 kcal)"]
+      }
+    },
+    {
+      "giorno": "Martedì",
+      "data": "2026-07-07",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": "Ripetute/velocità — sessione più esigente della settimana in acqua. Orario reale ~19:00-21:00 (mappato su Pomeriggio). Pre-nuoto leggerissimo alle 17:30 (90 min prima). Cena fuori (sushi) verso le 21:45 dopo l'allenamento — vista la sessione dura, meglio ordinare pesante su sashimi/nigiri ed edamame e leggero su fritti, per non compromettere il recupero."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco + banana + noci + miele",
+          "calorie_stimate": 370,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150 g yogurt greco 0%", "1 banana (~120 g)", "20 g noci sgusciate", "10 g miele"],
+            "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo & zucchine",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["90 g riso basmati (peso crudo)", "180 g petto di pollo", "200 g zucchine", "1 spicchio aglio", "10 g olio EVO", "succo 1/2 limone", "sale, pepe q.b."],
+            "preparazione": ["Cuoci il riso. Rosola il pollo a strisce con aglio 5 min.", "Aggiungi le zucchine a rondelle 4 min. Servi con limone."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "4 crackers di riso GF + marmellata GF, verso le 17:30 (90 min prima del nuoto reale delle 19:00) — leggerissimo, zero grassi/fibre per evitare crampi",
+          "calorie_stimate": 170,
+          "proteine_g": 3
+        },
+        "post_workout": {
+          "descrizione": "2 uova sode + banana — subito dopo il nuoto (21:15)",
+          "calorie_stimate": 240,
+          "proteine_g": 16,
+          "ricetta": {
+            "ingredienti": ["2 uova sode (~100 g)", "1 banana matura (~120 g)"],
+            "preparazione": ["Bolli le uova la sera prima, conserva in frigo con il guscio.", "Porta in borsa con la banana — zero prep post-allenamento, da mangiare subito uscendo dalla piscina."]
+          }
+        },
+        "cena": {
+          "descrizione": "Sushi al ristorante — punta su nigiri/sashimi di pesce magro (tonno, salmone, branzino) ed edamame per le proteine; modera i roll fritti/tempura e la salsa di soia. Vista la sessione di nuoto intensa, ok qualche porzione di riso in più per i carboidrati di recupero.",
+          "calorie_stimate": 600,
+          "proteine_g": 35
+        },
+        "spuntini": ["Mattina: 1 frutto di stagione (~80 kcal)"]
+      }
+    },
+    {
+      "giorno": "Mercoledì",
+      "data": "2026-07-08",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": "Fondo aerobico easy, recupero attivo dopo le ripetute di martedì. Orario reale ~19:00-21:00 (mappato su Pomeriggio)."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": ["3 uova intere (150 g)", "2 fette pane GF (~60 g)", "1 arancia (~150 g)", "5 g olio EVO", "sale, pepe q.b."],
+            "preparazione": ["Sbatti le uova con sale e pepe, cuoci a fuoco basso mescolando 2-3 min finché cremose.", "Tosta il pane GF e servi con l'arancia a parte."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Pasta di riso al tonno & pomodoro",
+          "calorie_stimate": 580,
+          "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["90 g pasta di riso GF", "160 g tonno al naturale", "200 g passata di pomodoro", "1 spicchio aglio", "10 g olio EVO", "basilico, sale q.b."],
+            "preparazione": ["Cuoci la pasta GF (attenzione, scuoce facilmente). Prepara il sugo con aglio, olio e passata 5 min.", "Scola la pasta, aggiungi il tonno al sugo, condisci con basilico fresco."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "4 crackers di riso GF + marmellata GF, verso le 17:30 (90 min prima del nuoto reale delle 19:00)",
+          "calorie_stimate": 170,
+          "proteine_g": 3
+        },
+        "post_workout": {
+          "descrizione": "6 crackers riso GF + tonno + pomodoro — subito dopo il nuoto (21:15)",
+          "calorie_stimate": 300,
+          "proteine_g": 30,
+          "ricetta": {
+            "ingredienti": ["6 crackers di riso GF (~60 g)", "160 g tonno al naturale", "1 pomodoro (~120 g)", "5 g olio EVO"],
+            "preparazione": ["Porta i crackers in borsa. Apri la scatoletta di tonno, aggiungi pomodoro a fette e un filo d'olio.", "Mangia in spogliatoio subito dopo l'uscita dall'acqua."]
+          }
+        },
+        "cena": {
+          "descrizione": "Merluzzo al vapore + carote & piselli",
+          "calorie_stimate": 380,
+          "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": ["220 g merluzzo fresco o surgelato", "150 g carote", "150 g piselli surgelati", "15 g olio EVO", "succo 1/2 limone", "prezzemolo, sale q.b."],
+            "preparazione": ["Merluzzo al vapore 10-12 min.", "Carote a rondelle e piselli saltati in padella con olio 5 min. Condisci tutto con olio, limone e prezzemolo."]
+          }
+        },
+        "spuntini": ["Mattina: 1 frutto di stagione (~80 kcal)", "Sera: 30 g bresaola (~50 kcal, P:10g)"]
+      }
+    },
+    {
+      "giorno": "Giovedì",
+      "data": "2026-07-09",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Pomeriggio",
+        "note": "Ripetute in salita — sessione più dura della settimana in bici. Orario reale ~19:00-21:00 (mappato su Pomeriggio). Pre-uscita alle 18:00, cena come recupero post-pedalata verso le 21:15 con extra proteico vista l'intensità."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Philadelphia GF + tonno + pomodoro su pane GF",
+          "calorie_stimate": 400,
+          "proteine_g": 32,
+          "ricetta": {
+            "ingredienti": ["2 fette pane GF (~60 g)", "60 g philadelphia GF", "120 g tonno al naturale sgocciolato", "1 pomodoro (~120 g)", "pepe, erba cipollina q.b."],
+            "preparazione": ["Tosta il pane GF. Spalma il philadelphia.", "Aggiungi il tonno sgocciolato e il pomodoro a fette. Pepe ed erba cipollina."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con tonno, pomodori & olive",
+          "calorie_stimate": 550,
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": ["85 g riso basmati (peso crudo)", "160 g tonno al naturale", "150 g pomodorini", "50 g olive nere", "15 g olio EVO", "succo 1/2 limone", "basilico, sale q.b."],
+            "preparazione": ["Cuoci il riso 10-12 min, scola e intiepidisci.", "Mescola con tonno, pomodorini, olive, olio e limone. Si prepara in anticipo."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Datteri secchi + mandorle, verso le 18:00 (uscita reale ore 19, energia per la salita)",
+          "calorie_stimate": 185,
+          "proteine_g": 4
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori — pasto di recupero post-pedalata",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["200 g bistecca di manzo (controfiletto)", "200 g pomodori", "40 g rucola", "15 g olio EVO", "sale, pepe, rosmarino GF q.b."],
+            "preparazione": ["Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima 2-3 min per lato, riposa 3 min in carta stagnola.", "Servi con insalata di pomodori e rucola condita con olio e sale."]
+          }
+        },
+        "spuntini": ["Subito dopo le ripetute in salita (~21:00, prima della cena): 6 crackers riso GF + tonno + pomodoro (~300 kcal, P:30g)", "Mattina: 1 frutto di stagione (~80 kcal)"]
+      }
+    },
+    {
+      "giorno": "Venerdì",
+      "data": "2026-07-10",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": "Possibile tennis leggero non pianificato: se capita, trattalo come attività leggera, non come allenamento di qualità."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+          "calorie_stimate": 330,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": ["150 g yogurt greco 0%", "100 g frutti di bosco misti", "15 g semi di chia", "10 g miele", "cannella q.b."],
+            "preparazione": ["Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella.", "Prepara la sera prima: i semi si gonfiano durante la notte rendendola più saziante."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Insalata tonno, pomodori & fagiolini",
+          "calorie_stimate": 480,
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": ["160 g tonno al naturale", "200 g pomodorini", "150 g fagiolini", "50 g olive nere", "15 g olio EVO", "succo 1/2 limone", "basilico, sale q.b."],
+            "preparazione": ["Lessa i fagiolini 6 min, scola e raffredda sotto acqua fredda.", "Mescola tutto in una ciotola, condisci con olio, limone, sale e basilico."]
+          }
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori & rucola",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": ["200 g bistecca di manzo (controfiletto)", "200 g pomodori", "50 g rucola", "15 g olio EVO", "sale, pepe, rosmarino GF q.b."],
+            "preparazione": ["Bistecca a temperatura ambiente 10 min. Padella caldissima 2-3 min per lato, riposa 3 min avvolta in carta stagnola.", "Servi con insalata di pomodori e rucola condita con olio e sale."]
+          }
+        },
+        "spuntini": ["Metà mattina: 1 frutto di stagione (~80 kcal)", "Metà pomeriggio: 150g yogurt greco 0% + 20g noci + 10g miele (~280 kcal, P:20g)", "Sera: 30g grana padano GF + un pugno di noci (~200 kcal, P:14g)"]
+      }
+    },
+    {
+      "giorno": "Sabato",
+      "data": "2026-07-11",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": "Cuscinetto prima del lungo di domenica. Possibile tennis leggero non pianificato — se diventa intenso, va considerato come carico che riduce il recupero."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate al pomodoro + pane GF",
+          "calorie_stimate": 420,
+          "proteine_g": 26,
+          "ricetta": {
+            "ingredienti": ["3 uova intere (150 g)", "100 g passata di pomodoro", "1/2 cipolla (~40 g)", "2 fette pane GF (~60 g)", "10 g olio EVO", "prezzemolo, sale, pepe q.b."],
+            "preparazione": ["Soffriggi la cipolla in olio 2 min. Aggiungi la passata, cuoci 4 min.", "Sguscia le uova nel sugo, strapazza 2 min. Servi su pane GF tostato con prezzemolo."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Bowl riso venere, tonno & pomodorini",
+          "calorie_stimate": 500,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["70 g riso venere (peso crudo)", "160 g tonno al naturale", "150 g pomodorini", "50 g olive nere", "15 g olio EVO", "succo 1/2 limone", "basilico, sale q.b."],
+            "preparazione": ["Cuoci il riso venere 18 min, scola e intiepidisci.", "Mescola con tonno, pomodorini e olive. Condisci con olio, limone e basilico."]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo alla piastra + zucchine grigliate",
+          "calorie_stimate": 390,
+          "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": ["220 g petto di pollo", "250 g zucchine", "15 g olio EVO", "succo 1/2 limone", "origano GF, sale, pepe q.b."],
+            "preparazione": ["Marina il pollo con olio, limone e origano 5 min. Cuoci in padella grill 4-5 min per lato.", "Griglia le zucchine a fette 2-3 min per lato con l'olio rimasto."]
+          }
+        },
+        "spuntini": ["Metà mattina: 1 frutto di stagione (~80 kcal)", "Metà pomeriggio: 4 datteri + 15g mandorle (~185 kcal, P:4g)", "Sera: 150g yogurt greco 0% + 15g miele (~180 kcal, P:15g)"]
+      }
+    },
+    {
+      "giorno": "Domenica",
+      "data": "2026-07-12",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "Mattina",
+        "note": "Uscita lunga ~50km, stima 1h50-2h15."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Philadelphia GF + tonno + pomodoro su pane GF, ore 07:00",
+          "calorie_stimate": 400,
+          "proteine_g": 32,
+          "ricetta": {
+            "ingredienti": ["2 fette pane GF (~60 g)", "60 g philadelphia GF", "120 g tonno al naturale sgocciolato", "1 pomodoro (~120 g)", "pepe, erba cipollina q.b."],
+            "preparazione": ["Tosta il pane GF. Spalma il philadelphia.", "Aggiungi il tonno sgocciolato e il pomodoro a fette. Pepe ed erba cipollina."]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana + caffè, ore 08:00, prima di partire per il lungo",
+          "calorie_stimate": 100,
+          "proteine_g": 1
+        },
+        "post_workout": {
+          "descrizione": "6 crackers riso GF + tonno + pomodoro — subito al rientro",
+          "calorie_stimate": 300,
+          "proteine_g": 30,
+          "ricetta": {
+            "ingredienti": ["6 crackers di riso GF (~60 g)", "160 g tonno al naturale", "1 pomodoro (~120 g)", "5 g olio EVO"],
+            "preparazione": ["Porta i crackers pronti prima di uscire.", "Al rientro apri la scatoletta di tonno, aggiungi pomodoro a fette e un filo d'olio."]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Pad Thai GF con gamberetti, ore 13:00",
+          "calorie_stimate": 560,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": ["90 g tagliatelle di riso GF", "180 g gamberetti surgelati", "2 uova (~100 g)", "100 g fagiolini", "15 ml tamari GF", "10 ml succo di lime", "5 g olio di sesamo", "aglio, zenzero q.b."],
+            "preparazione": ["Ammolla le tagliatelle 5 min. In wok con olio di sesamo: aglio, gamberetti 2 min, uova strapazzate al centro.", "Unisci tagliatelle, tamari, lime e zenzero, salta 2 min. Aggiungi i fagiolini 1 min."]
+          }
+        },
+        "cena": {
+          "descrizione": "Frittata zucchine & carote al forno, ore 19:30",
+          "calorie_stimate": 420,
+          "proteine_g": 32,
+          "ricetta": {
+            "ingredienti": ["4 uova intere (200 g)", "150 g zucchine", "100 g carote", "40 g parmigiano GF grattugiato", "10 g olio EVO", "sale, pepe q.b."],
+            "preparazione": ["Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.", "Sbatti le uova con parmigiano, sale e pepe, unisci le verdure. Teglia oliata, forno 180°C 15-18 min."]
+          }
+        },
+        "spuntini": ["Durante l'uscita lunga: porta con te 2-3 datteri per il tratto centrale (energia rapida)", "Metà pomeriggio: 30g bresaola + 1 frutto di stagione (~130 kcal, P:10g)"]
+      }
+    }
+  ]
+}
