@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-07-01",
+  "ultimo_aggiornamento": "2026-07-05",
   "alimenti": [
     {
       "nome": "Pasta Rummo Elicoidali",
@@ -204,7 +204,7 @@
     {
       "nome": "Piadine Loriana",
       "categoria": "Snack & Altro",
-      "quantita": 1125,
+      "quantita": 900,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 0,
@@ -214,7 +214,7 @@
     {
       "nome": "Riso Venere",
       "categoria": "Cereali & Carboidrati",
-      "quantita": 430,
+      "quantita": 350,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -224,7 +224,7 @@
     {
       "nome": "Riso Basmati",
       "categoria": "Cereali & Carboidrati",
-      "quantita": 1000,
+      "quantita": 920,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -264,7 +264,7 @@
     {
       "nome": "Fagiolini Fini",
       "categoria": "Verdure & Frutta",
-      "quantita": 220,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -274,7 +274,7 @@
     {
       "nome": "Tonno al Naturale",
       "categoria": "Proteine",
-      "quantita": 3,
+      "quantita": 1,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -304,7 +304,7 @@
     {
       "nome": "Pomodori Ciliegio",
       "categoria": "Verdure & Frutta",
-      "quantita": 250,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -314,7 +314,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 700,
+      "quantita": 480,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -324,7 +324,7 @@
     {
       "nome": "Uova",
       "categoria": "Proteine",
-      "quantita": 6,
+      "quantita": 3,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -334,7 +334,7 @@
     {
       "nome": "Salmone Affumicato",
       "categoria": "Proteine",
-      "quantita": 150,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -344,7 +344,7 @@
     {
       "nome": "Yogurt Greco 0%",
       "categoria": "Latticini",
-      "quantita": 3,
+      "quantita": 2,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 1,
@@ -384,7 +384,7 @@
     {
       "nome": "Philadelphia Light",
       "categoria": "Latticini",
-      "quantita": 100,
+      "quantita": 50,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 0,
@@ -422,29 +422,9 @@
       "note": ""
     },
     {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
       "nome": "Salmone",
       "categoria": "Proteine",
-      "quantita": 200,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -474,7 +454,7 @@
     {
       "nome": "Piselli",
       "categoria": "Verdure & Frutta",
-      "quantita": 750,
+      "quantita": 550,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
