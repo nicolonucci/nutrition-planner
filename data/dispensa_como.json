@@ -415,7 +415,7 @@
     {
       "nome": "Pollo",
       "categoria": "Proteine",
-      "quantita": 0,
+      "quantita": 200,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
