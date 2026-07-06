@@ -345,7 +345,7 @@
     {
       "nome": "Yogurt Greco 0%",
       "categoria": "Latticini",
-      "quantita": 3,
+      "quantita": 4,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 1,
@@ -435,7 +435,7 @@
     {
       "nome": "Salmone",
       "categoria": "Proteine",
-      "quantita": 200,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
