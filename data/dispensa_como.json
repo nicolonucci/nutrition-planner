@@ -255,7 +255,7 @@
     {
       "nome": "Fagiolini Fini",
       "categoria": "Verdure & Frutta",
-      "quantita": 0,
+      "quantita": 220,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -315,7 +315,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 480,
+      "quantita": 1044,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -325,7 +325,7 @@
     {
       "nome": "Uova",
       "categoria": "Proteine",
-      "quantita": 0,
+      "quantita": 10,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -345,7 +345,7 @@
     {
       "nome": "Yogurt Greco 0%",
       "categoria": "Latticini",
-      "quantita": 2,
+      "quantita": 3,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 1,
@@ -355,7 +355,7 @@
     {
       "nome": "Banane",
       "categoria": "Verdure & Frutta",
-      "quantita": 5,
+      "quantita": 12,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -385,12 +385,12 @@
     {
       "nome": "Philadelphia Light",
       "categoria": "Latticini",
-      "quantita": 50,
+      "quantita": 200,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 0,
       "scadenza": "",
-      "note": "4x25g"
+      "note": "8x25g"
     },
     {
       "nome": "Nasello",
@@ -469,6 +469,96 @@
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 1000,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "5x200g"
+    },
+    {
+      "nome": "Fettine di Manzo",
+      "categoria": "Proteine",
+      "quantita": 400,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "2x200g"
+    },
+    {
+      "nome": "Gamberetti",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Tonno Naturale G160",
+      "categoria": "Proteine",
+      "quantita": 640,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "4x160g"
+    },
+    {
+      "nome": "Grana Padano DOP",
+      "categoria": "Latticini",
+      "quantita": 300,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 50,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Bresaola Valtellina IGP",
+      "categoria": "Proteine",
+      "quantita": 70,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 30,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodoro",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1500,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": "3x500g"
+    },
+    {
+      "nome": "Carote Vassoio",
+      "categoria": "Verdure & Frutta",
+      "quantita": 750,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Passata Cirio",
+      "categoria": "Condimenti & Spezie",
+      "quantita": 700,
+      "unita": "g",
+      "congelato": false,
+      "soglia_minima": 0,
       "scadenza": "",
       "note": ""
     }
