@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Menu — Health Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .week-selector{background:#fff;border-bottom:1px solid var(--mid);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .week-selector label{font-size:11px;font-weight:600;color:var(--grey);text-transform:uppercase;letter-spacing:1px}
+    .week-selector select{background:var(--bg);border:1.5px solid var(--mid);border-radius:8px;padding:6px 11px;color:var(--black);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
+    .week-selector select:focus{outline:none;border-color:var(--black)}
+    .day-tabs{display:flex;background:var(--bg);border-bottom:1px solid var(--mid);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:48px;z-index:99}
+    .day-tabs::-webkit-scrollbar{display:none}
+    .day-tab-inp{display:none !important}
+    .day-tab-lbl{padding:10px 14px;border-right:1px solid var(--mid);font-size:11px;font-weight:600;color:var(--grey);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s;-webkit-tap-highlight-color:transparent;border-bottom:2px solid transparent}
+    .day-tab-lbl:hover{background:#fff;color:var(--black)}
+    .day-tab-lbl span{display:block;font-size:9px;font-weight:400;color:var(--grey);margin-top:1px}
+    .day-panel{display:none}
+    #dt-0:checked~.day-tabs label[for="dt-0"],
+    #dt-1:checked~.day-tabs label[for="dt-1"],
+    #dt-2:checked~.day-tabs label[for="dt-2"],
+    #dt-3:checked~.day-tabs label[for="dt-3"],
+    #dt-4:checked~.day-tabs label[for="dt-4"],
+    #dt-5:checked~.day-tabs label[for="dt-5"],
+    #dt-6:checked~.day-tabs label[for="dt-6"]{background:#fff;color:var(--black);border-bottom-color:var(--black)}
+    #dt-0:checked~.day-panels #dp-0,
+    #dt-1:checked~.day-panels #dp-1,
+    #dt-2:checked~.day-panels #dp-2,
+    #dt-3:checked~.day-panels #dp-3,
+    #dt-4:checked~.day-panels #dp-4,
+    #dt-5:checked~.day-panels #dp-5,
+    #dt-6:checked~.day-panels #dp-6{display:block}
+
+    .meal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:14px 0}
+    .meal-box{background:#fff;border:1.5px solid var(--mid);border-radius:10px;padding:13px}
+    .meal-box-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+    .meal-box-desc{font-size:13px;font-weight:500;line-height:1.4;margin-bottom:6px}
+    .meal-box-meta{font-size:10px;color:var(--grey);margin-bottom:8px}
+    .meal-box-toggle{font-size:10px;font-weight:600;color:var(--black);cursor:pointer;border:none;background:none;padding:0;display:flex;align-items:center;gap:4px}
+    .meal-box-toggle::before{content:'▸';transition:transform .2s}
+    .meal-box-toggle.open::before{content:'▾'}
+    .meal-box-recipe{display:none;margin-top:10px;border-top:1px solid var(--mid);padding-top:10px}
+    .meal-box-recipe.open{display:block}
+    .recipe-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);margin:8px 0 4px}
+    .recipe-label:first-child{margin-top:0}
+    .chip-list{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px}
+    .chip-ing{font-size:10px;padding:3px 8px;border-radius:12px;background:#f0f0ec;border:1px solid var(--mid);color:#333}
+    .step-list{display:flex;flex-direction:column;gap:5px}
+    .step-row{display:flex;gap:7px;align-items:flex-start}
+    .step-num{width:18px;height:18px;border-radius:50%;background:var(--black);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .step-txt{font-size:11px;line-height:1.5;color:#444}
+    .day-totals{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+    .train-banner{background:var(--black);color:#fff;padding:10px 14px;font-size:11px;font-weight:600;display:flex;align-items:center;gap:8px;border-radius:8px;margin-bottom:10px}
+    .train-banner.rest{background:var(--bg);color:var(--grey);border:1.5px solid var(--mid)}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Meal plan</div>
+  <h1 class="header-title">Weekly <em>menu</em></h1>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Weeks</a>
+  <a href="menu.html" class="nav-link active">Menu</a>
+  <a href="pantry.html" class="nav-link">Pantry</a>
+  <a href="index.html?recipes=1" class="nav-link">Recipes</a>
+  <a href="progress.html" class="nav-link">Progress</a>
+</nav>
+
+<div class="week-selector">
+  <label for="week-select">Week</label>
+  <select id="week-select"></select>
+  <span id="week-label" style="font-size:11px;color:var(--grey)"></span>
+</div>
+
+<div id="loading" class="loader"><div class="spinner"></div> Loading menu...</div>
+<div id="menu-root" style="display:none"></div>
+<div id="empty" class="empty" style="display:none">
+  <div class="icon">🍽️</div>
+  <p>No menu found for this week.</p>
+</div>
+
+<div class="footer-note">Health Planner</div>
+
+<script src="js/config.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+let currentWeek = params.get('week') || getCurrentWeek();
+
+// Meal key mapping: new schema keys → display info
+const MEAL_KEYS = ['breakfast','pre_workout','lunch','post_workout','dinner','snacks'];
+const MEAL_ICONS = {breakfast:'🌅',pre_workout:'⚡',lunch:'☀️',post_workout:'💪',dinner:'🌙',snacks:'🍎'};
+const MEAL_LABELS = {breakfast:'Breakfast',pre_workout:'Pre-workout',lunch:'Lunch',post_workout:'Post-workout',dinner:'Dinner',snacks:'Snacks'};
+
+function workoutBanner(day) {
+  const t = day.workout?.type || '';
+  const h = day.workout?.timing || '';
+  const isRest = !t || /rest/i.test(t);
+  const icon = /gym|weight|strength/i.test(t) ? '🏋️' :
+               /swim/i.test(t) ? '🏊' :
+               /cardio|run/i.test(t) ? '🏃' :
+               /cycl|bike/i.test(t) ? '🚴' :
+               /yoga|pilates/i.test(t) ? '🧘' :
+               isRest ? '😴' : '💪';
+  return `<div class="train-banner${isRest?' rest':''}">${icon} ${t||'Rest'}${h?` <span style="opacity:.6;font-weight:400">· ${h}</span>`:''}</div>`;
+}
+
+async function loadWeekList() {
+  try {
+    const weeks = await fetchData(CONFIG.paths.weeks);
+    const list = Array.isArray(weeks) ? weeks : (weeks.weeks || []);
+    const sel = document.getElementById('week-select');
+    const sorted = [...list].sort((a,b) => b.id.localeCompare(a.id));
+    if (!sorted.find(w => w.id === currentWeek) && sorted.length) currentWeek = sorted[0].id;
+    sorted.forEach(w => {
+      const o = document.createElement('option');
+      o.value = w.id;
+      o.textContent = `Week ${w.id.split('-W')[1]} — ${weekLabel(w.id)}`;
+      if (w.id === currentWeek) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', () => {
+      currentWeek = sel.value;
+      history.replaceState(null,'',`?week=${currentWeek}`);
+      loadMenu();
+    });
+  } catch(e) {}
+}
+
+async function loadMenu() {
+  const root = document.getElementById('menu-root');
+  const loading = document.getElementById('loading');
+  const empty = document.getElementById('empty');
+  root.style.display = 'none'; root.innerHTML = '';
+  loading.style.display = 'flex'; empty.style.display = 'none';
+
+  try {
+    const menu = await fetchData(CONFIG.paths.menu(currentWeek));
+    document.getElementById('week-label').textContent = weekLabel(currentWeek);
+    loading.style.display = 'none';
+
+    // Support both new schema (days[].meals) and old schema (giorni[].pasti)
+    const days = menu.days || menu.giorni || [];
+    if (!days.length) { empty.style.display = 'block'; return; }
+    root.style.display = 'block';
+
+    let html = '';
+    days.forEach((_, i) => {
+      html += `<input type="radio" class="day-tab-inp" name="daytab" id="dt-${i}"${i===0?' checked':''}>`;
+    });
+
+    html += `<div class="day-tabs">`;
+    days.forEach((d, i) => {
+      const date = new Date((d.date || d.data) + 'T12:00:00');
+      const locale = LANG === 'en' ? 'en-GB' : LANG;
+      const dayShort = date.toLocaleDateString(locale, {weekday:'short'}).replace('.','');
+      const dayNum = date.toLocaleDateString(locale, {day:'numeric', month:'short'});
+      html += `<label for="dt-${i}" class="day-tab-lbl">${dayShort.charAt(0).toUpperCase()+dayShort.slice(1)}<span>${dayNum}</span></label>`;
+    });
+    html += `</div><div class="day-panels">`;
+
+    days.forEach((d, i) => {
+      // Support both schemas
+      const meals = d.meals || d.pasti || {};
+      const workout = d.workout || d.allenamento || {};
+
+      // Compute totals (handles both key naming conventions)
+      let cal = 0, prot = 0;
+      Object.entries(meals).forEach(([k, v]) => {
+        if (k !== 'snacks' && k !== 'spuntini' && v) {
+          cal += v.estimated_calories || v.calorie_stimate || 0;
+          prot += v.protein_g || v.proteine_g || 0;
+        }
+      });
+
+      html += `<div class="day-panel" id="dp-${i}"><div class="container" style="padding-top:16px">`;
+      html += workoutBanner({workout});
+
+      if (cal > 0) {
+        html += `<div class="day-totals">
+          <span class="macro-pill">~${cal} kcal <span>total</span></span>
+          <span class="macro-pill">${prot}g <span>protein</span></span>
+        </div>`;
+      }
+
+      html += `<div class="meal-grid">`;
+      // Try new keys first, fall back to old keys
+      const keyMap = {
+        breakfast:  meals.breakfast  || meals.colazione,
+        pre_workout: meals.pre_workout,
+        lunch:      meals.lunch      || meals.pranzo,
+        post_workout: meals.post_workout,
+        dinner:     meals.dinner     || meals.cena,
+        snacks:     meals.snacks     || meals.spuntini,
+      };
+
+      MEAL_KEYS.forEach((key, idx) => {
+        const v = keyMap[key];
+        if (!v) return;
+        if (key === 'snacks') {
+          const lista = Array.isArray(v) ? v.join(', ') : v;
+          if (!lista) return;
+          html += `<div class="meal-box">
+            <div class="meal-box-title">${MEAL_ICONS[key]} ${MEAL_LABELS[key]}</div>
+            <div class="meal-box-desc">${lista}</div>
+          </div>`;
+        } else {
+          const rid = `r-${i}-${idx}`;
+          const r = v.recipe || v.ricetta;
+          const ingredients = r?.ingredients || r?.ingredienti || [];
+          const steps = r?.steps || r?.preparazione || [];
+          const hasRecipe = ingredients.length || steps.length;
+          let recipeHtml = '';
+          if (hasRecipe) {
+            if (ingredients.length) {
+              recipeHtml += `<div class="recipe-label">Ingredients</div><div class="chip-list">`;
+              ingredients.forEach(ing => { recipeHtml += `<span class="chip-ing">${ing}</span>`; });
+              recipeHtml += `</div>`;
+            }
+            if (steps.length) {
+              recipeHtml += `<div class="recipe-label">Method</div><div class="step-list">`;
+              steps.forEach((s, n) => {
+                recipeHtml += `<div class="step-row"><span class="step-num">${n+1}</span><span class="step-txt">${s}</span></div>`;
+              });
+              recipeHtml += `</div>`;
+            }
+          }
+          const kcal = v.estimated_calories || v.calorie_stimate;
+          const protein = v.protein_g || v.proteine_g;
+          html += `<div class="meal-box">
+            <div class="meal-box-title">${MEAL_ICONS[key]||''} ${MEAL_LABELS[key]}</div>
+            <div class="meal-box-desc">${v.description||v.descrizione||'—'}</div>
+            <div class="meal-box-meta">${kcal?`${kcal} kcal`:''}${protein?` · ${protein}g protein`:''}</div>
+            ${hasRecipe ? `<button class="meal-box-toggle" onclick="toggleRecipe('${rid}',this)">Recipe</button><div class="meal-box-recipe" id="${rid}">${recipeHtml}</div>` : ''}
+          </div>`;
+        }
+      });
+      html += `</div>`;
+      if (d.notes || d.note) html += `<div class="note-wrap"><div class="note-inner nb">${d.notes||d.note}</div></div>`;
+      html += `</div></div>`;
+    });
+    html += `</div>`;
+    root.innerHTML = html;
+  } catch(e) {
+    loading.innerHTML = `<span style="color:#9c2a52">Menu not found for this week.</span>`;
+  }
+}
+
+function toggleRecipe(id, btn) {
+  document.getElementById(id).classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+async function init() {
+  await waitConfig();
+  await loadWeekList();
+  await loadMenu();
+}
+init();
+</script>
+</body>
+</html>

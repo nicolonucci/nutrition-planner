@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes — Health Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── TAB SYSTEM ── */
+    .p-tabs{display:flex;background:var(--bg);border-bottom:1px solid var(--mid);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:48px;z-index:99}
+    .p-tabs::-webkit-scrollbar{display:none}
+    .p-tab-inp{display:none!important}
+    .p-tab-lbl{padding:11px 16px;border-right:1px solid var(--mid);font-size:11px;font-weight:600;color:var(--grey);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s;-webkit-tap-highlight-color:transparent;border-bottom:2px solid transparent}
+    .p-tab-lbl:hover{background:#fff;color:var(--black)}
+    .p-panel{display:none}
+    #pt-0:checked~.p-tabs label[for="pt-0"],
+    #pt-1:checked~.p-tabs label[for="pt-1"],
+    #pt-2:checked~.p-tabs label[for="pt-2"],
+    #pt-3:checked~.p-tabs label[for="pt-3"]{background:#fff;color:var(--black);border-bottom-color:var(--black)}
+    #pt-0:checked~.p-panels #pp-0,
+    #pt-1:checked~.p-panels #pp-1,
+    #pt-2:checked~.p-panels #pp-2,
+    #pt-3:checked~.p-panels #pp-3{display:block}
+
+    /* ── SUB-TABS ── */
+    .s-tabs{display:flex;gap:6px;padding:12px 14px 8px;background:var(--bg);border-bottom:1px solid var(--mid);overflow-x:auto;scrollbar-width:none}
+    .s-tabs::-webkit-scrollbar{display:none}
+    .s-tab-inp{display:none!important}
+    .s-tab-lbl{padding:5px 14px;border-radius:20px;border:1.5px solid var(--mid);background:#fff;font-size:10px;font-weight:600;color:var(--grey);cursor:pointer;white-space:nowrap;transition:all .15s}
+    /* sub-tab activation: each meal panel uses its own set */
+    .s-panel{display:none;padding:10px 0}
+    .sct-0:checked~.s-tabs .sct-lbl-0,
+    .sct-1:checked~.s-tabs .sct-lbl-1,
+    .sct-2:checked~.s-tabs .sct-lbl-2{background:var(--black);color:#fff;border-color:var(--black)}
+    .sct-0:checked~.s-panels .scp-0,
+    .sct-1:checked~.s-panels .scp-1,
+    .sct-2:checked~.s-panels .scp-2{display:block}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Meal ideas</div>
+  <h1 class="header-title">My <em>recipes</em></h1>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Weeks</a>
+  <a href="menu.html" class="nav-link">Menu</a>
+  <a href="pantry.html" class="nav-link">Pantry</a>
+  <a href="index.html?recipes=1" class="nav-link active">Recipes</a>
+  <a href="progress.html" class="nav-link">Progress</a>
+</nav>
+
+<!-- Meal type tabs -->
+<input type="radio" class="p-tab-inp" name="ptab" id="pt-0" checked>
+<input type="radio" class="p-tab-inp" name="ptab" id="pt-1">
+<input type="radio" class="p-tab-inp" name="ptab" id="pt-2">
+<input type="radio" class="p-tab-inp" name="ptab" id="pt-3">
+
+<div class="p-tabs">
+  <label for="pt-0" class="p-tab-lbl">🌅 Breakfast</label>
+  <label for="pt-1" class="p-tab-lbl">☀️  Lunch</label>
+  <label for="pt-2" class="p-tab-lbl">🌙 Dinner</label>
+  <label for="pt-3" class="p-tab-lbl">🍎 Snacks</label>
+</div>
+
+<div class="p-panels">
+
+  <!-- BREAKFAST -->
+  <div class="p-panel" id="pp-0">
+    <div class="container">
+      <div class="empty" style="padding:40px 20px">
+        <div class="icon" style="font-size:2rem">🌅</div>
+        <p>No breakfast recipes yet.<br>Use the <strong>add-recipe</strong> skill to add your first one.</p>
+      </div>
+      <!-- Recipes added by the add-recipe skill will appear here -->
+    </div>
+  </div>
+
+  <!-- LUNCH -->
+  <div class="p-panel" id="pp-1">
+    <div class="container">
+      <div class="empty" style="padding:40px 20px">
+        <div class="icon" style="font-size:2rem">☀️</div>
+        <p>No lunch recipes yet.<br>Use the <strong>add-recipe</strong> skill to add your first one.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DINNER -->
+  <div class="p-panel" id="pp-2">
+    <div class="container">
+      <div class="empty" style="padding:40px 20px">
+        <div class="icon" style="font-size:2rem">🌙</div>
+        <p>No dinner recipes yet.<br>Use the <strong>add-recipe</strong> skill to add your first one.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNACKS -->
+  <div class="p-panel" id="pp-3">
+    <div class="container">
+      <div class="empty" style="padding:40px 20px">
+        <div class="icon" style="font-size:2rem">🍎</div>
+        <p>No snack recipes yet.<br>Use the <strong>add-recipe</strong> skill to add your first one.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-note">Health Planner</div>
+
+</body>
+</html>

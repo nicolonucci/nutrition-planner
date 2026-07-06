@@ -275,12 +275,12 @@
     {
       "nome": "Tonno al Naturale",
       "categoria": "Proteine",
-      "quantita": 1,
+      "quantita": 5,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
       "scadenza": "2030-03-31",
-      "note": "Lattine da 110g"
+      "note": ""
     },
     {
       "nome": "Udon Rice Noodles",
@@ -420,7 +420,7 @@
       "congelato": true,
       "soglia_minima": 200,
       "scadenza": "",
-      "note": ""
+      "note": "porzione 1/6"
     },
     {
       "nome": "Salmone",
@@ -436,16 +436,6 @@
       "nome": "Salmone",
       "categoria": "Proteine",
       "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Bistecca di Manzo",
-      "categoria": "Proteine",
-      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -475,22 +465,72 @@
     {
       "nome": "Pollo",
       "categoria": "Proteine",
-      "quantita": 1000,
+      "quantita": 200,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
       "scadenza": "",
-      "note": "5x200g"
+      "note": "porzione 2/6"
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "porzione 3/6"
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "porzione 4/6"
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "porzione 5/6"
+    },
+    {
+      "nome": "Pollo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "porzione 6/6"
     },
     {
       "nome": "Fettine di Manzo",
       "categoria": "Proteine",
-      "quantita": 400,
+      "quantita": 200,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
       "scadenza": "",
-      "note": "2x200g"
+      "note": "porzione 1/2"
+    },
+    {
+      "nome": "Fettine di Manzo",
+      "categoria": "Proteine",
+      "quantita": 200,
+      "unita": "g",
+      "congelato": true,
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "porzione 2/2"
     },
     {
       "nome": "Gamberetti",
@@ -501,16 +541,6 @@
       "soglia_minima": 100,
       "scadenza": "",
       "note": ""
-    },
-    {
-      "nome": "Tonno Naturale G160",
-      "categoria": "Proteine",
-      "quantita": 640,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "4x160g"
     },
     {
       "nome": "Grana Padano DOP",

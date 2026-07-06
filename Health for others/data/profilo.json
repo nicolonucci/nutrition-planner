@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "version": "1.0",
+    "created_on": null,
+    "updated_on": null,
+    "language": null,
+    "language_note": ""
+  },
+  "personal": {
+    "name": null,
+    "age": null,
+    "sex": null,
+    "height_cm": null,
+    "current_weight_kg": null,
+    "target_weight_kg": null
+  },
+  "goal": {
+    "type": null,
+    "timeline": null
+  },
+  "training": {
+    "activities": [],
+    "weekly_frequency": null,
+    "level": null,
+    "preferred_time": null,
+    "has_programme": false
+  },
+  "diet": {
+    "type": null,
+    "foods_to_avoid": [],
+    "preferred_cuisine": null,
+    "meals_per_day": null,
+    "cooks_at_home": null
+  },
+  "lifestyle": {
+    "work_type": null,
+    "avg_sleep_hours": null,
+    "stress_level": null,
+    "cooks_for": null,
+    "alcohol": null
+  },
+  "apple_health": {
+    "available": false,
+    "recent_weight_kg": null,
+    "avg_steps_per_day": null,
+    "avg_sleep_hours": null,
+    "workouts_detected": []
+  },
+  "nutritional_targets": {
+    "bmr": null,
+    "tdee": null,
+    "training_day": {
+      "calories": null,
+      "protein_g_min": null,
+      "protein_g_max": null,
+      "carbs_g": null,
+      "fat_g": null
+    },
+    "rest_day": {
+      "calories": null,
+      "protein_g_min": null,
+      "protein_g_max": null,
+      "carbs_g": null,
+      "fat_g": null
+    },
+    "difficult_day": {
+      "estimated_calories": null,
+      "minimum_protein_g": null
+    }
+  }
+}

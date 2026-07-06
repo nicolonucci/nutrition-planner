@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress — Health Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    .view-tabs{display:flex;background:#fff;border-radius:10px;padding:4px;border:1.5px solid var(--mid);margin-bottom:16px;gap:3px;position:sticky;top:44px;z-index:90;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+    .vtab{flex:1;padding:8px 4px;border:none;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--grey);border-radius:7px;transition:background .15s,color .15s;letter-spacing:.3px}
+    .vtab.active{background:var(--black);color:#fff}
+    .view-panel{display:none}.view-panel.active{display:block}
+
+    .health-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    @media(max-width:500px){.health-grid{grid-template-columns:1fr}}
+    .chart-card{background:#fff;border-radius:12px;box-shadow:0 1px 8px rgba(0,0,0,.07);border:1.5px solid var(--mid);padding:16px;overflow:hidden;margin-bottom:12px}
+    .chart-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+    .chart-wrap{position:relative;height:180px}.chart-wrap.tall{height:220px}.chart-wrap.short{height:130px}
+
+    .week-hero{background:var(--black);color:#fff;border-radius:12px;padding:20px;margin-bottom:12px;position:relative;overflow:hidden}
+    .week-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-55deg,transparent,transparent 44px,rgba(255,255,255,.015) 44px,rgba(255,255,255,.015) 45px);pointer-events:none}
+    .hero-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#555;margin-bottom:4px}
+    .hero-dates{font-family:'Fraunces',serif;font-size:clamp(14px,4vw,20px);font-weight:600;color:#fff;margin-bottom:16px}
+    .hero-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(85px,1fr));gap:12px}
+    .hero-stat .hs-val{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#fff;line-height:1.1}
+    .hero-stat .hs-unit{font-size:11px;font-weight:300;color:#aaa;margin-left:2px}
+    .hero-stat .hs-delta{font-size:10px;margin-top:1px}.hs-delta.pos{color:#6dbd94}.hs-delta.neg{color:#e88aaa}.hs-delta.neu{color:#777}
+    .hero-stat .hs-lbl{font-size:10px;color:#555;margin-top:2px;letter-spacing:.5px}
+
+    .records-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+    @media(max-width:420px){.records-grid{grid-template-columns:repeat(2,1fr)}}
+    .record-card{background:#fff;border:1.5px solid var(--mid);border-radius:12px;padding:12px 10px}
+    .record-icon{font-size:18px;margin-bottom:4px}
+    .record-val{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--black);line-height:1.1}
+    .record-unit{font-size:10px;font-weight:400;color:var(--grey);margin-left:2px}
+    .record-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);margin-top:4px}
+    .record-sub{font-size:10px;color:var(--grey);margin-top:2px}
+
+    .bmi-gauge-wrap{background:#fff;border:1.5px solid var(--mid);border-radius:12px;padding:16px;margin-bottom:12px}
+    .bmi-bar-track{height:10px;border-radius:5px;background:linear-gradient(to right,#8099e0 0% 20%,#6dbd94 20% 62%,#f0cc5a 62% 82%,#e88aaa 82% 100%);position:relative;margin:10px 0 4px}
+    .bmi-bar-marker{position:absolute;top:-3px;width:3px;height:16px;background:#0f0f0f;border-radius:2px;transform:translateX(-50%);transition:left .4s}
+    .bmi-labels{display:flex;justify-content:space-between;font-size:9px;color:var(--grey);font-weight:600;letter-spacing:.5px}
+    .bmi-current{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+    .bmi-val{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--black)}
+    .bmi-cat{font-size:12px;font-weight:600;padding:2px 10px;border-radius:20px}
+
+    .range-tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+    .rtab{padding:6px 14px;border:1.5px solid var(--mid);background:#fff;border-radius:20px;font-size:11px;font-weight:600;color:var(--grey);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+    .rtab.active{background:var(--black);color:#fff;border-color:var(--black)}
+    .range-label{font-size:11px;color:var(--grey);margin-bottom:12px}
+
+    .all-workouts-wrap{background:#fff;border:1.5px solid var(--mid);border-radius:12px;padding:0;margin-bottom:12px;overflow:hidden}
+    .workout-row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--mid);transition:background .1s}
+    .workout-row:last-child{border-bottom:none}
+    .workout-row:hover{background:#faf9f7}
+    .w-ic{width:38px;height:38px;border-radius:10px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .w-info{flex:1;min-width:0}
+    .w-tipo{font-weight:700;font-size:13px}
+    .w-meta{font-size:11px;color:var(--grey);margin-top:1px}
+    .w-right{text-align:right;flex-shrink:0}
+    .w-dur{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--black)}
+
+    .table-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid var(--mid);background:#fff;margin-bottom:12px}
+    .weeks-table{width:100%;border-collapse:collapse;font-size:12px;min-width:440px}
+    .weeks-table th{padding:10px 10px 8px;text-align:right;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);background:#faf9f7;border-bottom:1.5px solid var(--mid);cursor:pointer;white-space:nowrap;user-select:none}
+    .weeks-table th:first-child{text-align:left}
+    .weeks-table th .sa{margin-left:3px;opacity:.4}.weeks-table th.sorted .sa{opacity:1;color:var(--black)}
+    .weeks-table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--mid);white-space:nowrap}
+    .weeks-table td:first-child{text-align:left;font-weight:600}
+    .weeks-table tr:last-child td{border-bottom:none}
+    .weeks-table tr.data-row{cursor:pointer;transition:background .1s}
+    .weeks-table tr.data-row:hover{background:#faf9f7}
+    .delta-pos{color:#1a5c3a;font-size:11px}.delta-neg{color:#9c2a52;font-size:11px}
+    .btn-more{display:block;width:100%;margin-top:8px;padding:10px;background:#fff;border:1.5px solid var(--mid);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--grey);cursor:pointer;text-align:center;transition:border-color .15s,color .15s}
+    .btn-more:hover{border-color:var(--black);color:var(--black)}
+
+    .health-empty{text-align:center;padding:60px 20px;color:var(--grey)}
+    .health-empty .icon{font-size:48px;margin-bottom:16px}
+    .health-empty p{font-size:14px;line-height:1.6}
+    .health-empty strong{color:var(--black)}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Performance & wellbeing</div>
+  <h1 class="header-title">My <em>progress</em></h1>
+  <div class="header-sub" id="header-sub">Apple Health · updated data</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Weeks</a>
+  <a href="menu.html" class="nav-link">Menu</a>
+  <a href="pantry.html" class="nav-link">Pantry</a>
+  <a href="index.html?recipes=1" class="nav-link">Recipes</a>
+  <a href="progress.html" class="nav-link active">Progress</a>
+</nav>
+
+<div class="container" id="main-content">
+  <div id="loading" class="loader"><div class="spinner"></div> Loading health data...</div>
+  <div id="content" style="display:none">
+    <div class="view-tabs">
+      <button class="vtab active" data-view="summary">Summary</button>
+      <button class="vtab" data-view="trends">Trends</button>
+      <button class="vtab" data-view="weeks">Weeks</button>
+      <button class="vtab" data-view="workouts">Workouts</button>
+    </div>
+    <div id="view-summary"  class="view-panel active"></div>
+    <div id="view-trends"   class="view-panel"></div>
+    <div id="view-weeks"    class="view-panel"></div>
+    <div id="view-workouts" class="view-panel"></div>
+  </div>
+  <div id="empty" class="health-empty" style="display:none">
+    <div class="icon">❤️</div>
+    <p>No health data yet.<br>Upload your Apple Health export and run the <strong>apple-health</strong> skill.</p>
+  </div>
+</div>
+<div class="footer-note">Health Planner · data from Apple Health</div>
+
+<script src="js/config.js"></script>
+<script>
+// ── GLOBALS ───────────────────────────────────────────────
+let gWeeks = [], gAllWorkouts = [], gHeight = 1.70;
+let chartInstances = {}, chartsReady = false;
+let currentRange = 26, tableSortCol = 'week', tableSortDir = -1, tableShowAll = false;
+const TABLE_DEFAULT = 26;
+
+const C = {
+  black:'#0f0f0f',green:'#1a5c3a',greenL:'#6dbd94',
+  blue:'#2040a0',blueL:'#8099e0',red:'#9c2a52',redL:'#e88aaa',
+  gold:'#c47c00',goldL:'#f0cc5a',orange:'#a03a00',orangeL:'#f09060',
+  grey:'#8a8680',mid:'#e5e0d8',
+};
+const gridLine = {color:'#f0ece6',lineWidth:1};
+const tickOpts = {color:'#8a8680',font:{size:10}};
+
+// ── NORMALISE week entry (handles both old italian and new english keys) ───
+function w_week(s)    { return s.week || s.settimana; }
+function w_weight(s)  { return s.weight || s.peso || {}; }
+function w_steps(s)   { return s.steps || s.passi || {}; }
+function w_kcal(s)    { return s.active_kcal || s.calorie_attive || {}; }
+function w_sleep(s)   { return s.sleep || s.sonno || {}; }
+function w_wkts(s)    { return s.workouts || s.allenamenti || []; }
+
+function wt_endKg(s)  { return w_weight(s).end_kg ?? w_weight(s).ultimo_kg; }
+function wt_delta(s)  { return w_weight(s).delta_kg ?? w_weight(s).variazione_kg; }
+function st_total(s)  { return w_steps(s).total ?? w_steps(s).totale; }
+function st_avg(s)    { return w_steps(s).avg_per_day ?? w_steps(s).media_giorno; }
+function kc_avg(s)    { return w_kcal(s).avg_per_day ?? w_kcal(s).media_giorno; }
+function kc_total(s)  { return w_kcal(s).total ?? w_kcal(s).totale; }
+function sl_avg(s)    { return w_sleep(s).avg_hours ?? w_sleep(s).media_ore; }
+
+function wkt_type(w)  { return w.type || w.tipo || ''; }
+function wkt_date(w)  { return w.date || w.data || ''; }
+function wkt_dur(w)   { return w.duration_min || w.durata_min || 0; }
+
+// ── UTILS ─────────────────────────────────────────────────
+function calcBMI(kg) { if (!kg || !gHeight) return null; return Math.round(kg/(gHeight*gHeight)*10)/10; }
+function bmiCategory(bmi) {
+  if (!bmi) return {label:'—',color:C.grey};
+  if (bmi < 18.5) return {label:'Underweight',color:C.blue};
+  if (bmi < 25)   return {label:'Normal',color:C.green};
+  if (bmi < 30)   return {label:'Overweight',color:C.gold};
+  return {label:'Obese',color:C.red};
+}
+function bmiPct(bmi) { return Math.max(0,Math.min(100,((bmi-15)/20)*100)); }
+
+function workoutIcon(tipo) {
+  const t = (tipo||'').toLowerCase();
+  if (t.includes('swim'))   return '🏊';
+  if (t.includes('cycl') || t.includes('bike')) return '🚴';
+  if (t.includes('run'))    return '🏃';
+  if (t.includes('walk'))   return '🚶';
+  if (t.includes('weight') || t.includes('strength') || t.includes('gym')) return '🏋️';
+  if (t.includes('yoga'))   return '🧘';
+  if (t.includes('tennis')) return '🎾';
+  if (t.includes('surf'))   return '🏄';
+  return '💪';
+}
+
+const el = id => document.getElementById(id);
+
+// ── SUMMARY ───────────────────────────────────────────────
+function buildSummary(last, allWeeks) {
+  const bmi = calcBMI(wt_endKg(last));
+  const bmiCat = bmiCategory(bmi);
+  const delta = wt_delta(last);
+  const dc = delta == null ? 'neu' : delta < 0 ? 'pos' : 'neg';
+  const dt = delta == null ? '' : ` ${delta > 0 ? '+' : ''}${fmtNum(delta,1)} kg`;
+
+  let heroStats = '';
+  if (wt_endKg(last) != null) heroStats += `<div class="hero-stat"><div class="hs-val">${fmtNum(wt_endKg(last),1)}<span class="hs-unit">kg</span></div>${dt?`<div class="hs-delta ${dc}">${dt} this week</div>`:'<div class="hs-delta neu"> </div>'}<div class="hs-lbl">Weight</div></div>`;
+  if (bmi) heroStats += `<div class="hero-stat"><div class="hs-val">${fmtNum(bmi,1)}</div><div class="hs-delta neu">${bmiCat.label}</div><div class="hs-lbl">BMI</div></div>`;
+  if (st_avg(last) != null) heroStats += `<div class="hero-stat"><div class="hs-val">${fmtNum(Math.round(st_avg(last)))}<span class="hs-unit">/d</span></div><div class="hs-delta neu">${fmtNum(st_total(last))} total</div><div class="hs-lbl">Steps</div></div>`;
+  if (kc_avg(last) != null) heroStats += `<div class="hero-stat"><div class="hs-val">${fmtNum(Math.round(kc_avg(last)))}<span class="hs-unit">kcal</span></div><div class="hs-delta neu">active/day</div><div class="hs-lbl">Calories</div></div>`;
+  const wkts = w_wkts(last);
+  if (wkts.length) heroStats += `<div class="hero-stat"><div class="hs-val">${wkts.length}<span class="hs-unit">sess.</span></div><div class="hs-delta neu">${[...new Set(wkts.map(w=>wkt_type(w)))].slice(0,2).join(', ')}</div><div class="hs-lbl">Workouts</div></div>`;
+  if (sl_avg(last) != null) heroStats += `<div class="hero-stat"><div class="hs-val">${fmtHours(sl_avg(last))}</div><div class="hs-delta neu">avg/night</div><div class="hs-lbl">Sleep</div></div>`;
+
+  const bmiGauge = bmi ? `
+  <div class="sl">BMI · height ${Math.round(gHeight*100)} cm</div>
+  <div class="bmi-gauge-wrap">
+    <div class="bmi-current">
+      <span class="bmi-val">${fmtNum(bmi,1)}</span>
+      <span class="bmi-cat" style="background:${bmiCat.color}22;color:${bmiCat.color}">${bmiCat.label}</span>
+    </div>
+    <div class="bmi-bar-track"><div class="bmi-bar-marker" style="left:${bmiPct(bmi)}%"></div></div>
+    <div class="bmi-labels"><span>15</span><span>Under</span><span>Normal</span><span>Over</span><span>Obese</span><span>35</span></div>
+  </div>` : '';
+
+  // Records
+  const weightVals = allWeeks.filter(s => wt_endKg(s) != null).map(s => ({kg:wt_endKg(s), week:w_week(s)}));
+  const minWeight = weightVals.length ? weightVals.reduce((m,v) => v.kg < m.kg ? v : m) : null;
+  const stepVals = allWeeks.filter(s => st_total(s) != null).map(s => ({tot:st_total(s), week:w_week(s)}));
+  const bestSteps = stepVals.length ? stepVals.reduce((m,v) => v.tot > m.tot ? v : m) : null;
+  const last4Sleep = allWeeks.slice(-4).map(s => sl_avg(s)).filter(v => v != null);
+  const avgSleep = last4Sleep.length ? last4Sleep.reduce((a,b) => a+b) / last4Sleep.length : null;
+  const allWkts = allWeeks.flatMap(s => w_wkts(s));
+  const longestWkt = allWkts.length ? allWkts.reduce((m,w) => wkt_dur(w) > wkt_dur(m) ? w : m) : null;
+
+  let recCards = '';
+  if (minWeight) recCards += `<div class="record-card"><div class="record-icon">⚖️</div><div class="record-val">${fmtNum(minWeight.kg,1)}<span class="record-unit">kg</span></div><div class="record-lbl">Min weight</div><div class="record-sub">${shortWeekLabel(minWeight.week)}</div></div>`;
+  if (bestSteps) recCards += `<div class="record-card"><div class="record-icon">👟</div><div class="record-val">${fmtNum(bestSteps.tot)}</div><div class="record-lbl">Best steps</div><div class="record-sub">${shortWeekLabel(bestSteps.week)}</div></div>`;
+  if (avgSleep != null) recCards += `<div class="record-card"><div class="record-icon">😴</div><div class="record-val">${fmtHours(avgSleep)}</div><div class="record-lbl">Avg sleep</div><div class="record-sub">last 4 weeks</div></div>`;
+  if (longestWkt) recCards += `<div class="record-card"><div class="record-icon">${workoutIcon(wkt_type(longestWkt))}</div><div class="record-val">${fmtNum(wkt_dur(longestWkt))}<span class="record-unit">min</span></div><div class="record-lbl">Longest session</div><div class="record-sub">${wkt_type(longestWkt)} · ${fmtDate(wkt_date(longestWkt))}</div></div>`;
+
+  const wktList = wkts.length
+    ? `<ul style="list-style:none">${wkts.map(w=>`<li style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--mid)"><div class="w-ic">${workoutIcon(wkt_type(w))}</div><div class="w-info"><div class="w-tipo">${wkt_type(w)||'Workout'}</div><div class="w-meta">${fmtDate(wkt_date(w))}${wkt_dur(w)?' · '+wkt_dur(w)+' min':''}</div></div></li>`).join('')}</ul>`
+    : `<p style="color:var(--grey);font-size:13px;padding:8px 0">No workouts this week.</p>`;
+
+  return `<div class="week-hero"><div class="hero-label">Last week</div><div class="hero-dates">${weekLabel(w_week(last))}</div><div class="hero-stats">${heroStats}</div></div>${bmiGauge}<div class="sl">Records</div><div class="records-grid">${recCards}</div><div class="sl">Workouts · ${weekLabel(w_week(last))}</div><div class="chart-card" style="padding:4px 16px 8px">${wktList}</div>`;
+}
+
+// ── TRENDS ────────────────────────────────────────────────
+function buildTrends() {
+  return `
+  <div class="sl">Time range</div>
+  <div class="range-tabs">
+    <button class="rtab" data-weeks="8">8 wk</button>
+    <button class="rtab active" data-weeks="26">6 mo</button>
+    <button class="rtab" data-weeks="52">1 yr</button>
+    <button class="rtab" data-weeks="0">All</button>
+  </div>
+  <div class="range-label" id="range-label"></div>
+  <div class="sl">Weight & BMI</div>
+  <div class="chart-card"><div class="chart-title">Body weight (kg) — BMI on right axis</div><div class="chart-wrap tall"><canvas id="chart-weight"></canvas></div></div>
+  <div class="sl">Activity</div>
+  <div class="health-grid">
+    <div class="chart-card"><div class="chart-title">Weekly steps</div><div class="chart-wrap"><canvas id="chart-steps"></canvas></div></div>
+    <div class="chart-card"><div class="chart-title">Active calories (kcal)</div><div class="chart-wrap"><canvas id="chart-kcal"></canvas></div></div>
+  </div>
+  <div class="sl">Training</div>
+  <div class="health-grid">
+    <div class="chart-card"><div class="chart-title">Sessions / week</div><div class="chart-wrap"><canvas id="chart-sessions"></canvas></div></div>
+    <div class="chart-card"><div class="chart-title">Total minutes / week</div><div class="chart-wrap"><canvas id="chart-duration"></canvas></div></div>
+  </div>
+  <div class="sl">Recovery</div>
+  <div class="chart-card"><div class="chart-title">Sleep (avg hours/night) — dashed = 8h</div><div class="chart-wrap"><canvas id="chart-sleep"></canvas></div></div>`;
+}
+
+function getFiltered(n) { return n ? gWeeks.slice(-n) : gWeeks; }
+
+function renderCharts(filtered) {
+  Object.values(chartInstances).forEach(c => { try { c.destroy(); } catch(e) {} });
+  chartInstances = {};
+  const labels = filtered.map(s => { const [,w] = (w_week(s)||'').split('-W'); return `W${w}`; });
+  const sparse = filtered.length > 52;
+  const xTicks = {...tickOpts, maxRotation:0, autoSkip:true, autoSkipPadding:sparse?20:6};
+
+  // Weight + BMI
+  const weightEl = el('chart-weight');
+  if (weightEl) {
+    const wData = filtered.map(s => wt_endKg(s) ?? null);
+    const bmiData = filtered.map(s => calcBMI(wt_endKg(s)));
+    const wVals = wData.filter(Boolean);
+    if (wVals.length) {
+      chartInstances.weight = new Chart(weightEl, {
+        type:'line',
+        data:{labels, datasets:[
+          {data:wData, borderColor:C.black, backgroundColor:'rgba(15,15,15,.06)', borderWidth:2, pointRadius:sparse?0:3, pointBackgroundColor:C.black, fill:true, tension:.3, spanGaps:true, yAxisID:'yW', label:'Weight'},
+          {data:bmiData, borderColor:C.blue, backgroundColor:'transparent', borderWidth:1.5, pointRadius:0, tension:.3, spanGaps:true, borderDash:[5,3], yAxisID:'yB', label:'BMI'},
+        ]},
+        options:{responsive:true, maintainAspectRatio:false,
+          scales:{
+            x:{grid:gridLine, ticks:xTicks},
+            yW:{min:Math.min(...wVals)-2, max:Math.max(...wVals)+2, grid:gridLine, ticks:{...tickOpts,callback:v=>v+' kg'}, position:'left'},
+            yB:{grid:{display:false}, ticks:{...tickOpts,callback:v=>v.toFixed(1)}, position:'right'},
+          },
+          plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,font:{size:10}}}}
+        }
+      });
+    }
+  }
+
+  const barChart = (canvasId, data, bg, border, cb) => {
+    const canvas = el(canvasId);
+    if (!canvas) return;
+    chartInstances[canvasId] = new Chart(canvas, {
+      type:'bar',
+      data:{labels, datasets:[{data, backgroundColor:bg, borderColor:border, borderWidth:1.5, borderRadius:5}]},
+      options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:{display:false},ticks:xTicks}, y:{grid:gridLine, ticks:{...tickOpts, callback:cb}, min:0}},
+        plugins:{legend:{display:false}}
+      }
+    });
+  };
+
+  barChart('chart-steps',    filtered.map(s => st_total(s)??null),  C.blueL,   C.blue,   v=>(v/1000).toFixed(0)+'k');
+  barChart('chart-kcal',     filtered.map(s => kc_total(s)??null),  C.orangeL, C.orange, v=>(v/1000).toFixed(0)+'k');
+  barChart('chart-sessions', filtered.map(s => w_wkts(s).length||null), '#b080e0','#6020a0', v=>v);
+  barChart('chart-duration', filtered.map(s => { const t=w_wkts(s).reduce((s,w)=>s+wkt_dur(w),0); return t||null; }), C.greenL, C.green, v=>v+' m');
+
+  const sleepEl = el('chart-sleep');
+  if (sleepEl) {
+    chartInstances.sleep = new Chart(sleepEl, {
+      type:'line',
+      data:{labels, datasets:[
+        {data:filtered.map(s=>sl_avg(s)??null), borderColor:'#6020a0', backgroundColor:'rgba(96,32,160,.07)', borderWidth:2, pointRadius:sparse?0:3, pointBackgroundColor:'#6020a0', fill:true, tension:.3, spanGaps:true},
+        {data:filtered.map(()=>8), borderColor:C.mid, borderWidth:1, borderDash:[4,4], pointRadius:0, fill:false},
+      ]},
+      options:{responsive:true, maintainAspectRatio:false,
+        scales:{x:{grid:gridLine,ticks:xTicks}, y:{min:3,max:10, grid:gridLine, ticks:{...tickOpts,callback:v=>v+'h'}}},
+        plugins:{legend:{display:false}}
+      }
+    });
+  }
+}
+
+function updateRangeLabel(filtered) {
+  const lbl = el('range-label'); if (!lbl || !filtered.length) return;
+  const locale = LANG === 'en' ? 'en-GB' : LANG;
+  const fmt = d => d ? d.toLocaleDateString(locale, {month:'long',year:'numeric'}) : '';
+  lbl.textContent = `${filtered.length} weeks · ${fmt(weekStart(w_week(filtered[0])))} → ${fmt(weekStart(w_week(filtered[filtered.length-1])))}`;
+}
+
+// ── WEEKS TABLE ───────────────────────────────────────────
+function buildWeeksTable() {
+  const sorted = [...gWeeks].sort((a,b) => {
+    let av, bv;
+    switch(tableSortCol) {
+      case 'weight': av=wt_endKg(a)??-Infinity; bv=wt_endKg(b)??-Infinity; break;
+      case 'steps':  av=st_avg(a)??-Infinity;   bv=st_avg(b)??-Infinity;   break;
+      case 'kcal':   av=kc_avg(a)??-Infinity;   bv=kc_avg(b)??-Infinity;   break;
+      case 'sleep':  av=sl_avg(a)??-Infinity;   bv=sl_avg(b)??-Infinity;   break;
+      case 'sess':   av=w_wkts(a).length;        bv=w_wkts(b).length;        break;
+      default:       av=w_week(a);               bv=w_week(b);
+    }
+    return av>bv ? tableSortDir : av<bv ? -tableSortDir : 0;
+  });
+  const rows = tableShowAll ? sorted : sorted.slice(0, TABLE_DEFAULT);
+  const th = (l,col) => {
+    const act = tableSortCol===col, arr = tableSortDir===-1?'▼':'▲';
+    return `<th class="${act?'sorted':''}" onclick="sortTable('${col}')">${l}<span class="sa">${act?arr:'↕'}</span></th>`;
+  };
+  const rowsHtml = rows.map(s => {
+    const delta = wt_delta(s);
+    const dh = delta != null ? ` <span class="${delta<0?'delta-pos':delta>0?'delta-neg':''}">${delta>0?'+':''}${fmtNum(delta,1)}</span>` : '';
+    const bmi = calcBMI(wt_endKg(s));
+    const mins = w_wkts(s).reduce((sum,w)=>sum+wkt_dur(w),0);
+    return `<tr class="data-row">
+      <td>${shortWeekLabel(w_week(s))} <span style="font-size:10px;color:var(--grey)">${w_week(s)?.split('-')[1]}</span></td>
+      <td>${wt_endKg(s)!=null?fmtNum(wt_endKg(s),1)+' kg'+dh:'—'}</td>
+      <td>${bmi!=null?fmtNum(bmi,1):'—'}</td>
+      <td>${st_avg(s)!=null?fmtNum(Math.round(st_avg(s))):'—'}</td>
+      <td>${kc_avg(s)!=null?fmtNum(Math.round(kc_avg(s))):'—'}</td>
+      <td>${sl_avg(s)!=null?fmtHours(sl_avg(s)):'—'}</td>
+      <td>${w_wkts(s).length||'—'}</td>
+      <td>${mins>0?mins+' min':'—'}</td>
+    </tr>`;
+  }).join('');
+  return `<div class="sl">${gWeeks.length} weeks tracked</div>
+  <div class="table-wrap"><table class="weeks-table">
+    <thead><tr>${th('Week','week')}${th('Weight','weight')}${th('BMI','bmi')}${th('Steps/d','steps')}${th('Kcal/d','kcal')}${th('Sleep','sleep')}${th('Sess.','sess')}${th('Min','min')}</tr></thead>
+    <tbody>${rowsHtml}</tbody>
+  </table></div>
+  ${!tableShowAll && gWeeks.length>TABLE_DEFAULT?`<button class="btn-more" onclick="showAllTable()">Show all ${gWeeks.length} weeks</button>`:''}`;
+}
+
+// ── WORKOUTS TAB ──────────────────────────────────────────
+function buildWorkouts() {
+  if (!gAllWorkouts.length) return `<div class="health-empty"><div class="icon">🏋️</div><p>No workouts recorded yet.</p></div>`;
+  const listHtml = gAllWorkouts.map(w => `
+    <div class="workout-row">
+      <div class="w-ic">${workoutIcon(wkt_type(w))}</div>
+      <div class="w-info">
+        <div class="w-tipo">${wkt_type(w)||'Workout'}</div>
+        <div class="w-meta">${fmtDate(wkt_date(w))}</div>
+      </div>
+      <div class="w-right"><div class="w-dur">${wkt_dur(w)} min</div></div>
+    </div>`).join('');
+  return `<div class="sl">${gAllWorkouts.length} sessions recorded</div><div class="all-workouts-wrap">${listHtml}</div>`;
+}
+
+// ── INTERACTIVITY ─────────────────────────────────────────
+function switchTab(view) {
+  document.querySelectorAll('.vtab').forEach(b => b.classList.toggle('active', b.dataset.view===view));
+  document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+  el(`view-${view}`).classList.add('active');
+  if (view === 'trends') {
+    if (!chartsReady) { renderCharts(getFiltered(currentRange)); updateRangeLabel(getFiltered(currentRange)); chartsReady=true; }
+    else requestAnimationFrame(() => Object.values(chartInstances).forEach(c => c.resize && c.resize()));
+  }
+}
+
+function setRange(weeks) {
+  currentRange = weeks;
+  document.querySelectorAll('.rtab').forEach(b => b.classList.toggle('active', parseInt(b.dataset.weeks)===weeks));
+  const f = getFiltered(weeks); updateRangeLabel(f); renderCharts(f); chartsReady=true;
+}
+
+function sortTable(col) {
+  if (tableSortCol===col) tableSortDir=-tableSortDir; else { tableSortCol=col; tableSortDir=-1; }
+  el('view-weeks').innerHTML = buildWeeksTable();
+}
+
+function showAllTable() { tableShowAll=true; el('view-weeks').innerHTML=buildWeeksTable(); }
+
+// ── INIT ──────────────────────────────────────────────────
+async function init() {
+  await waitConfig();
+
+  // Height from profile
+  const heightCm = PROFILE?.personal?.height_cm;
+  if (heightCm) gHeight = heightCm / 100;
+
+  try {
+    const healthData = await fetchData(CONFIG.paths.health_history);
+
+    // health_history.json can be either an array or { settimane: [] }
+    gWeeks = (Array.isArray(healthData) ? healthData : (healthData.settimane || []));
+    gWeeks.sort((a,b) => (w_week(a)||'') > (w_week(b)||'') ? 1 : -1);
+
+    // Aggregate all workouts from weekly data
+    gAllWorkouts = gWeeks.flatMap(s => w_wkts(s)).reverse();
+
+    if (!gWeeks.length) {
+      el('loading').style.display = 'none';
+      el('empty').style.display = 'block';
+      return;
+    }
+
+    const last = gWeeks[gWeeks.length-1];
+    el('header-sub').textContent = `Apple Health · ${weekLabel(w_week(last))}`;
+
+    el('view-summary').innerHTML  = buildSummary(last, gWeeks);
+    el('view-trends').innerHTML   = buildTrends();
+    el('view-weeks').innerHTML    = buildWeeksTable();
+    el('view-workouts').innerHTML = buildWorkouts();
+
+    el('loading').style.display = 'none';
+    el('content').style.display = 'block';
+
+    document.querySelectorAll('.vtab').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.view)));
+    el('view-trends').addEventListener('click', e => {
+      const btn = e.target.closest('.rtab');
+      if (btn) setRange(parseInt(btn.dataset.weeks));
+    });
+  } catch(e) {
+    el('loading').style.display = 'none';
+    el('empty').style.display = 'block';
+    console.error(e);
+  }
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow" id="header-eyebrow">Personal meal plan</div>
+  <h1 class="header-title" id="header-title">Nutrition <em>&</em> Training</h1>
+  <div class="header-sub">Menu · Pantry · Planning</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link active">Weeks</a>
+  <a href="menu.html" class="nav-link">Menu</a>
+  <a href="pantry.html" class="nav-link">Pantry</a>
+  <a href="index.html?recipes=1" class="nav-link" id="nav-recipes" onclick="toggleRecipes(event)">Recipes</a>
+  <a href="progress.html" class="nav-link">Progress</a>
+</nav>
+
+<div class="container" id="main-content">
+
+  <div class="stats-row" id="stats-row">
+    <div class="stat">
+      <div class="stat-value" id="stat-weeks">—</div>
+      <div class="stat-label" id="stat-weeks-label">Archived weeks</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-pantry">—</div>
+      <div class="stat-label" id="stat-pantry-label">Items in pantry</div>
+    </div>
+  </div>
+
+  <div class="sl" id="all-weeks-label">All weeks</div>
+
+  <div id="loading" class="loader"><div class="spinner"></div> Loading...</div>
+  <div id="week-grid" class="card-grid" style="display:none"></div>
+  <div id="empty" class="empty" style="display:none">
+    <div class="icon">📅</div>
+    <p id="empty-msg">No menu planned yet.<br>Use the <strong>planning</strong> skill to create your first week.</p>
+  </div>
+
+</div>
+
+<div id="recipes-section" style="display:none"></div>
+
+<div class="footer-note">Health Planner · updated weekly</div>
+
+<script src="js/config.js"></script>
+<script>
+let recipesLoaded = false;
+
+async function toggleRecipes(e) {
+  e.preventDefault();
+  const section = document.getElementById('recipes-section');
+  const mainContent = document.getElementById('main-content');
+  const navRec = document.getElementById('nav-recipes');
+
+  const isVisible = section.style.display !== 'none';
+  if (isVisible) {
+    section.style.display = 'none';
+    mainContent.style.display = 'block';
+    navRec.classList.remove('active');
+    document.querySelector('a[href="index.html"]').classList.add('active');
+    return;
+  }
+  mainContent.style.display = 'none';
+  document.querySelector('a[href="index.html"]').classList.remove('active');
+  navRec.classList.add('active');
+  section.style.display = 'block';
+
+  if (!recipesLoaded) {
+    section.innerHTML = '<div class="loader" style="padding:40px 20px"><div class="spinner"></div> Loading recipes...</div>';
+    try {
+      const resp = await fetch('recipes.html');
+      const html = await resp.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const style = doc.querySelector('style');
+      if (style && !document.getElementById('recipes-styles')) {
+        const s = document.createElement('style');
+        s.id = 'recipes-styles';
+        s.textContent = style.textContent;
+        document.head.appendChild(s);
+      }
+      const body = doc.body;
+      const header = body.querySelector('.site-header');
+      if (header) header.remove();
+      section.innerHTML = body.innerHTML;
+      recipesLoaded = true;
+    } catch (err) {
+      section.innerHTML = '<div style="padding:40px;color:#9c2a52">Error loading recipes: ' + err.message + '</div>';
+    }
+  }
+}
+
+async function init() {
+  await waitConfig();
+
+  // Update header with user name if available
+  const name = PROFILE?.personal?.name;
+  if (name) {
+    document.getElementById('header-eyebrow').textContent = `${name}'s health plan`;
+  }
+
+  try {
+    const [weeks, pantry] = await Promise.all([
+      fetchData(CONFIG.paths.weeks),
+      fetchData(CONFIG.paths.pantry),
+    ]);
+
+    // weeks.json is an array
+    const weeksList = Array.isArray(weeks) ? weeks : (weeks.weeks || []);
+    const pantryItems = pantry.items || [];
+
+    document.getElementById('stat-weeks').textContent = weeksList.length;
+    document.getElementById('stat-pantry').textContent = pantryItems.length;
+
+    const grid = document.getElementById('week-grid');
+    document.getElementById('loading').style.display = 'none';
+    const currentWeek = getCurrentWeek();
+
+    if (!weeksList.length) {
+      document.getElementById('empty').style.display = 'block';
+      return;
+    }
+    grid.style.display = 'grid';
+    const sorted = [...weeksList].sort((a, b) => b.id.localeCompare(a.id));
+    sorted.forEach(s => {
+      const isCurrent = s.id === currentWeek;
+      const [yr, wPart] = s.id.split('-W');
+      const card = document.createElement('a');
+      card.href = `menu.html?week=${s.id}`;
+      card.className = `week-card${isCurrent ? ' current' : ''}`;
+      card.innerHTML = `
+        <div class="wk-num">Week ${wPart} · ${yr}</div>
+        <div class="wk-dates">${weekLabel(s.id)}</div>
+        <div class="wk-footer">
+          ${isCurrent ? '<span class="pill current">✦ Current</span>' : ''}
+          ${s.confirmed ? '<span class="pill ok">✓ Planned</span>' : '<span class="pill low">⚠ Draft</span>'}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  } catch (e) {
+    document.getElementById('loading').innerHTML = `<span style="color:#9c2a52">Error loading data: ${e.message}</span>`;
+  }
+}
+init();
+
+if (new URLSearchParams(location.search).get('recipes') === '1') {
+  window.addEventListener('load', () => toggleRecipes({ preventDefault: () => {} }));
+}
+</script>
+</body>
+</html>

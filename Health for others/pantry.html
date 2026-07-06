@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantry — Health Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .group-row td{cursor:pointer}
+    .group-row:hover td{background:rgba(0,0,0,0.03)}
+    .group-badge{display:inline-block;font-size:10px;font-weight:600;color:var(--grey);background:rgba(0,0,0,0.07);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle}
+    .expand-arrow{display:inline-block;font-size:10px;color:var(--grey);transition:transform 0.2s ease;user-select:none}
+    .expand-arrow.open{transform:rotate(90deg)}
+    .detail-row td{font-size:11px!important;color:var(--grey);background:rgba(0,0,0,0.015);border-top:none!important;padding-top:4px!important;padding-bottom:4px!important}
+    .detail-row td:first-child{padding-left:28px!important}
+    .detail-row td strong{color:var(--text);font-size:11px}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">Food inventory</div>
+  <h1 class="header-title">My <em>pantry</em></h1>
+  <div class="header-sub" id="header-sub">—</div>
+</header>
+
+<nav class="page-nav">
+  <a href="index.html" class="nav-link">Weeks</a>
+  <a href="menu.html" class="nav-link">Menu</a>
+  <a href="pantry.html" class="nav-link active">Pantry</a>
+  <a href="index.html?recipes=1" class="nav-link">Recipes</a>
+  <a href="progress.html" class="nav-link">Progress</a>
+</nav>
+
+<div class="container">
+
+  <div class="stats-row">
+    <div class="stat"><div class="stat-value" id="stat-tot">—</div><div class="stat-label">Total items</div></div>
+    <div class="stat"><div class="stat-value" id="stat-ok" style="color:var(--green)">—</div><div class="stat-label">Available</div></div>
+    <div class="stat"><div class="stat-value" id="stat-low" style="color:var(--gold)">—</div><div class="stat-label">Running low</div></div>
+    <div class="stat"><div class="stat-value" id="stat-out" style="color:var(--red)">—</div><div class="stat-label">Out of stock</div></div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn" onclick="setFilter('ok',this)">✓ Available</button>
+    <button class="filter-btn" onclick="setFilter('low',this)">⚠ Running low</button>
+    <button class="filter-btn" onclick="setFilter('out',this)">✗ Out of stock</button>
+  </div>
+
+  <div id="loading" class="loader"><div class="spinner"></div> Loading pantry...</div>
+  <div id="table-container" style="display:none"></div>
+  <div id="empty" class="empty" style="display:none">
+    <div class="icon">🥫</div>
+    <p>Pantry is empty.<br>Use the <strong>pantry</strong> skill to add your first items.</p>
+  </div>
+
+</div>
+
+<div class="footer-note">Health Planner</div>
+
+<script src="js/config.js"></script>
+<script>
+let allItems = [];
+let activeFilter = null;
+
+function getStatus(item) {
+  const qty = parseFloat(item.quantity ?? item.quantita) || 0;
+  const threshold = parseFloat(item.minimum_threshold ?? item.soglia_minima) || 0;
+  if (qty <= 0) return 'out';
+  if (threshold > 0 && qty <= threshold) return 'low';
+  return 'ok';
+}
+
+function worstStatus(items) {
+  const statuses = items.map(getStatus);
+  if (statuses.includes('out')) return 'out';
+  if (statuses.includes('low')) return 'low';
+  return 'ok';
+}
+
+function statusPill(s) {
+  const map = { ok:'ok ✓ Available', low:'low ⚠ Low', out:'out ✗ Out' };
+  const [cls, ...rest] = map[s].split(' ');
+  return `<span class="pill ${cls}">${rest.join(' ')}</span>`;
+}
+
+function itemName(item) { return item.name || item.nome || '—'; }
+function itemCategory(item) { return item.category || item.categoria || 'Other'; }
+function itemQty(item) { return item.quantity ?? item.quantita; }
+function itemUnit(item) { return item.unit || item.unita || ''; }
+function itemExpiry(item) { return item.expiry || item.scadenza || ''; }
+function itemNotes(item) { return item.notes || item.note || ''; }
+
+function toggleGroup(id) {
+  const rows = document.querySelectorAll(`.detail-row[data-group="${id}"]`);
+  const arrow = document.getElementById(`arrow_${id}`);
+  const isOpen = arrow.classList.contains('open');
+  rows.forEach(r => { r.style.display = isOpen ? 'none' : 'table-row'; });
+  arrow.classList.toggle('open', !isOpen);
+}
+
+function renderTable(items) {
+  const tc = document.getElementById('table-container');
+  tc.innerHTML = '';
+  if (!items.length) {
+    tc.innerHTML = `<p style="color:var(--grey);padding:20px 0;font-size:12px">No items found.</p>`;
+    return;
+  }
+
+  const cats = {};
+  items.forEach(item => {
+    const c = itemCategory(item);
+    const n = itemName(item);
+    if (!cats[c]) cats[c] = {};
+    if (!cats[c][n]) cats[c][n] = [];
+    cats[c][n].push(item);
+  });
+
+  Object.entries(cats).sort(([a],[b]) => a.localeCompare(b)).forEach(([cat, groups]) => {
+    const hdr = document.createElement('div');
+    hdr.className = 'cat-header';
+    hdr.textContent = cat;
+    tc.appendChild(hdr);
+
+    const table = document.createElement('table');
+    table.innerHTML = `<thead><tr><th>Item</th><th>Quantity</th><th>Status</th><th>Expiry</th></tr></thead>`;
+    const tbody = document.createElement('tbody');
+
+    Object.entries(groups).sort(([a],[b]) => a.localeCompare(b)).forEach(([name, groupItems]) => {
+      const multi = groupItems.length > 1;
+      const gid = name.replace(/\s+/g,'_') + '_' + Math.random().toString(36).substr(2,5);
+
+      if (multi) {
+        const totalQty = groupItems.reduce((s, a) => s + (parseFloat(itemQty(a)) || 0), 0);
+        const unit = itemUnit(groupItems[0]);
+        const ws = worstStatus(groupItems);
+        const expiries = groupItems.map(a => itemExpiry(a)).filter(Boolean).sort();
+        const expiryLabel = expiries.length ? expiries[0] + (expiries.length > 1 ? ' +' : '') : '—';
+
+        const tr = document.createElement('tr');
+        tr.className = 'group-row';
+        tr.onclick = () => toggleGroup(gid);
+        tr.innerHTML = `
+          <td><strong>${name}</strong><span class="group-badge">${groupItems.length} batches</span></td>
+          <td style="font-weight:600">${totalQty} <span style="color:var(--grey);font-weight:400">${unit}</span></td>
+          <td>${statusPill(ws)}</td>
+          <td style="font-size:11px;color:var(--grey)">
+            ${expiryLabel}&ensp;<span class="expand-arrow" id="arrow_${gid}">▶</span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+        groupItems.forEach((a, idx) => {
+          const s = getStatus(a);
+          const detailTr = document.createElement('tr');
+          detailTr.className = 'detail-row';
+          detailTr.setAttribute('data-group', gid);
+          detailTr.style.display = 'none';
+          const notes = itemNotes(a) ? ` — ${itemNotes(a)}` : '';
+          detailTr.innerHTML = `
+            <td><strong>Batch ${idx+1}${notes}</strong></td>
+            <td style="font-weight:600">${itemQty(a) ?? '—'} <span style="color:var(--grey);font-weight:400">${itemUnit(a)}</span></td>
+            <td>${statusPill(s)}</td>
+            <td>${itemExpiry(a) || '—'}</td>
+          `;
+          tbody.appendChild(detailTr);
+        });
+      } else {
+        const a = groupItems[0];
+        const s = getStatus(a);
+        const tr = document.createElement('tr');
+        const notes = itemNotes(a) ? `<br><span style="font-size:10px;color:var(--grey)">${itemNotes(a)}</span>` : '';
+        tr.innerHTML = `
+          <td><strong>${itemName(a)}</strong>${notes}</td>
+          <td style="font-weight:600">${itemQty(a) ?? '—'} <span style="color:var(--grey);font-weight:400">${itemUnit(a)}</span></td>
+          <td>${statusPill(s)}</td>
+          <td style="font-size:11px;color:var(--grey)">${itemExpiry(a) || '—'}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+    });
+
+    table.appendChild(tbody);
+    tc.appendChild(table);
+  });
+}
+
+function filterTable() {
+  let filtered;
+  if (activeFilter) {
+    const namesIncluded = new Set();
+    allItems.forEach(a => { if (getStatus(a) === activeFilter) namesIncluded.add(itemName(a)); });
+    filtered = allItems.filter(a => namesIncluded.has(itemName(a)));
+  } else {
+    const allOut = new Set(
+      Object.entries(
+        allItems.reduce((acc, a) => { (acc[itemName(a)] = acc[itemName(a)] || []).push(a); return acc; }, {})
+      ).filter(([, items]) => items.every(a => getStatus(a) === 'out')).map(([n]) => n)
+    );
+    filtered = allItems.filter(a => !allOut.has(itemName(a)));
+  }
+  renderTable(filtered);
+}
+
+function setFilter(f, btn) {
+  if (activeFilter === f) {
+    activeFilter = null;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  } else {
+    activeFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  filterTable();
+}
+
+async function init() {
+  await waitConfig();
+  try {
+    const d = await fetchData(CONFIG.paths.pantry);
+    allItems = d.items || d.alimenti || [];
+    document.getElementById('loading').style.display = 'none';
+    const updated = d.last_updated || d.ultimo_aggiornamento;
+    document.getElementById('header-sub').textContent = updated ? `Updated ${updated}` : 'Pantry';
+
+    const grouped = allItems.reduce((acc, a) => { (acc[itemName(a)] = acc[itemName(a)]||[]).push(a); return acc; }, {});
+    const products = Object.values(grouped);
+    document.getElementById('stat-tot').textContent = products.length;
+    document.getElementById('stat-ok').textContent = products.filter(g => worstStatus(g) === 'ok').length;
+    document.getElementById('stat-low').textContent = products.filter(g => worstStatus(g) === 'low').length;
+    document.getElementById('stat-out').textContent = products.filter(g => worstStatus(g) === 'out').length;
+
+    if (!allItems.length) { document.getElementById('empty').style.display = 'block'; return; }
+    document.getElementById('table-container').style.display = 'block';
+    filterTable();
+  } catch(e) {
+    document.getElementById('loading').innerHTML = `<span style="color:#9c2a52">Error: ${e.message}</span>`;
+  }
+}
+init();
+</script>
+</body>
+</html>
