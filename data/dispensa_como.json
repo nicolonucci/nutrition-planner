@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-07-05",
+  "ultimo_aggiornamento": "2026-07-06",
 
   "alimenti": [
     {
@@ -325,7 +325,7 @@
     {
       "nome": "Uova",
       "categoria": "Proteine",
-      "quantita": 3,
+      "quantita": 0,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
