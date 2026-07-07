@@ -205,12 +205,12 @@
     {
       "nome": "Piadine Loriana",
       "categoria": "Snack & Altro",
-      "quantita": 900,
+      "quantita": 675,
       "unita": "g",
       "congelato": false,
-      "soglia_minima": 0,
+      "soglia_minima": 2,
       "scadenza": "2026-10-12",
-      "note": "15x75g"
+      "note": "9x75g"
     },
     {
       "nome": "Riso Venere",
@@ -258,7 +258,7 @@
       "quantita": 220,
       "unita": "g",
       "congelato": false,
-      "soglia_minima": 100,
+      "soglia_minima": 220,
       "scadenza": "2028-08-31",
       "note": ""
     },
@@ -268,7 +268,7 @@
       "quantita": 0,
       "unita": "g",
       "congelato": false,
-      "soglia_minima": 100,
+      "soglia_minima": 220,
       "scadenza": "2028-12-31",
       "note": ""
     },
@@ -315,7 +315,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 822,
+      "quantita": 583,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -375,7 +375,7 @@
     {
       "nome": "Cioccolato Lindt 78%",
       "categoria": "Snack & Altro",
-      "quantita": 160,
+      "quantita": 120,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 0,
@@ -415,7 +415,7 @@
     {
       "nome": "Pollo",
       "categoria": "Proteine",
-      "quantita": 200,
+      "quantita": 0,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -445,7 +445,7 @@
     {
       "nome": "Piselli",
       "categoria": "Verdure & Frutta",
-      "quantita": 350,
+      "quantita": 120,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
