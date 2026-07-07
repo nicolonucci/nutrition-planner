@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-07-06",
+  "ultimo_aggiornamento": "2026-07-07",
 
   "alimenti": [
     {
@@ -315,7 +315,7 @@
     {
       "nome": "Zucchine",
       "categoria": "Verdure & Frutta",
-      "quantita": 1044,
+      "quantita": 822,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -345,7 +345,7 @@
     {
       "nome": "Yogurt Greco 0%",
       "categoria": "Latticini",
-      "quantita": 4,
+      "quantita": 3,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 1,
@@ -355,7 +355,7 @@
     {
       "nome": "Banane",
       "categoria": "Verdure & Frutta",
-      "quantita": 12,
+      "quantita": 7,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -395,7 +395,7 @@
     {
       "nome": "Nasello",
       "categoria": "Proteine",
-      "quantita": 450,
+      "quantita": 300,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -445,7 +445,7 @@
     {
       "nome": "Piselli",
       "categoria": "Verdure & Frutta",
-      "quantita": 550,
+      "quantita": 350,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
