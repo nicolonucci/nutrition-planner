@@ -315,9 +315,10 @@ let chartBMI,chartSteps,chartCal,chartFC,chartSleep,chartActFreq,chartActZone,dp
 
 async function init() {
   try {
+    const v = Date.now();
     [H,W] = await Promise.all([
-      fetch('data/health_history.json').then(r=>r.json()),
-      fetch('data/workout_details.json').then(r=>r.json()),
+      fetch('data/health_history.json?v='+v).then(r=>r.json()),
+      fetch('data/workout_details.json?v='+v).then(r=>r.json()),
     ]);
     renderLastUpdate(); renderKPIs(); renderBMI();
     renderWeekly(); renderHealth(); renderBodyComp(); renderVO2(); renderActTabs(); renderTable();
