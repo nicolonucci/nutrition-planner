@@ -1,0 +1,2851 @@
+{
+ "aggiornato_il": "2026-07-08",
+ "ricette": [
+  {
+   "id": "r-pac0",
+   "nome": "Yogurt greco + banana + noci + miele",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Colazione leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 370,
+   "proteine_g": 22,
+   "carboidrati_g": 42,
+   "grassi_g": 12,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "20 g noci sgusciate",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-pac1",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Colazione leggera",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado maturo (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Schiaccia l'avocado con limone, sale e pepe fino a crema rustica.",
+    "Spalma l'avocado, disponi il salmone, finisci con erba cipollina tritata."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-pac2",
+   "nome": "Philadelphia GF + salmone + pane GF + pomodoro",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Colazione leggera",
+   "tag": "🥗 Leggero",
+   "tempo": "5 min",
+   "kcal": 400,
+   "proteine_g": 26,
+   "carboidrati_g": 36,
+   "grassi_g": 16,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "60 g philadelphia GF",
+    "80 g salmone affumicato GF",
+    "1 pomodoro (~120 g)",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Spalma il philadelphia, aggiungi salmone e pomodoro a fette. Pepe e erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+salmone+philadelphia/"
+  },
+  {
+   "id": "r-pac3",
+   "nome": "Smoothie fragola + banana + yogurt greco",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Colazione leggera",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 320,
+   "proteine_g": 20,
+   "carboidrati_g": 44,
+   "grassi_g": 3,
+   "ingredienti": [
+    "150 g fragole fresche o surgelate",
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "80 ml latte parz. scremato",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+    "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+   ],
+   "link": "https://blog.giallozafferano.it/adattalaricetta/frullato-o-smoothie-fragola-e-banana-con-yogurt/"
+  },
+  {
+   "id": "r-pac4",
+   "nome": "Frullato cioccolato + banana + yogurt greco",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Colazione leggera",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 360,
+   "proteine_g": 22,
+   "carboidrati_g": 48,
+   "grassi_g": 5,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "150 ml latte parz. scremato",
+    "15 g cacao amaro GF in polvere",
+    "10 g miele",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+    "Frulla 1 min. Ottimo anche come post-allenamento in sostituzione allo yogurt classico."
+   ],
+   "link": "https://blog.giallozafferano.it/eatupyourlife/frullato-proteico-banane-e-cioccolato/"
+  },
+  {
+   "id": "r-pre-m0",
+   "nome": "Banana + caffè",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pre-Allenamento 08:30",
+   "tag": "⚡ Veloce",
+   "tempo": "0 min",
+   "kcal": 100,
+   "proteine_g": 1,
+   "carboidrati_g": 26,
+   "grassi_g": 0,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "1 caffè (opzionale)"
+   ],
+   "preparazione": [
+    "Mangia la banana mentre esci di casa. Zero prep. Il caffè migliora la performance — opzionale se lo tolleri a stomaco quasi vuoto."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/banana/"
+  },
+  {
+   "id": "r-pre-m1",
+   "nome": "Yogurt greco 150g + banana",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pre-Allenamento 08:30",
+   "tag": "✅ Classica",
+   "tempo": "1 min",
+   "kcal": 190,
+   "proteine_g": 10,
+   "carboidrati_g": 34,
+   "grassi_g": 1,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana media (~120 g)"
+   ],
+   "preparazione": [
+    "Porta in un contenitore. Mangia 30–45 min prima. La proteina dello yogurt dà energia più costante rispetto alla sola banana."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-pre-m2",
+   "nome": "4 datteri + 15 g mandorle",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pre-Allenamento 08:30",
+   "tag": "🥗 Leggero",
+   "tempo": "0 min",
+   "kcal": 185,
+   "proteine_g": 4,
+   "carboidrati_g": 30,
+   "grassi_g": 6,
+   "ingredienti": [
+    "4 datteri secchi (~40 g)",
+    "15 g mandorle intere"
+   ],
+   "preparazione": [
+    "Tienili in un sacchettino in borsa. Zero preparazione — ideale tra università e palestra."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/datteri+mandorle/"
+  },
+  {
+   "id": "r-pos-0",
+   "nome": "Yogurt greco 150g + banana + miele",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Post-Allenamento 12:15",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 255,
+   "proteine_g": 20,
+   "carboidrati_g": 36,
+   "grassi_g": 2,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana media (~120 g)",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Prepara in contenitore ermetico prima di uscire. Mangia in spogliatoio o mentre torni a casa."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-pos-1",
+   "nome": "2 uova sode + banana",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Post-Allenamento 12:15",
+   "tag": "💪 Post-All.",
+   "tempo": "0 min",
+   "kcal": 240,
+   "proteine_g": 16,
+   "carboidrati_g": 28,
+   "grassi_g": 10,
+   "ingredienti": [
+    "2 uova sode (~100 g)",
+    "1 banana matura (~120 g)"
+   ],
+   "preparazione": [
+    "Bolli le uova 9 min la sera prima. Conserva in frigo con il guscio. Porta in borsa con la banana — zero prep post-allenamento."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-pos-2",
+   "nome": "6 crackers GF + tonno + pomodoro",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Post-Allenamento 12:15",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 300,
+   "proteine_g": 30,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "6 crackers riso GF (~60 g)",
+    "160 g tonno al naturale",
+    "1 pomodoro (~120 g)",
+    "5 g olio EVO"
+   ],
+   "preparazione": [
+    "Porta i crackers in borsa. Apri la scatoletta, aggiungi il pomodoro a fette e un filo d'olio."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/crackers+riso+tonno/"
+  },
+  {
+   "id": "r-pra0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30 — Carbo abbondanti",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini (o germogli di soia)",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "10 g arachidi GF (opzionale)",
+    "aglio · zenzero in polvere q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle in acqua calda 5 min, scola. Scongela i gamberetti sotto l'acqua fredda.",
+    "In wok o padella con olio di sesamo: rosola l'aglio 30 sec, aggiungi gamberetti 2 min. Spingi ai lati, scramble le uova al centro.",
+    "Unisci le tagliatelle, tamari GF, lime e zenzero. Salta 2 min a fuoco vivo. Aggiungi i fagiolini 1 min. Finisci con arachidi."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-pra1",
+   "nome": "Riso basmati saltato con pollo & curcuma",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30 — Carbo abbondanti",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 590,
+   "proteine_g": 46,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g riso basmati (peso crudo)",
+    "180 g petto di pollo",
+    "100 g zucchine",
+    "100 g carote",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "curcuma · zenzero q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso 10–12 min in acqua salata. In parallelo rosola il pollo a cubetti con curcuma 4 min.",
+    "Aggiungi verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min a fuoco vivo."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+basmati+pollo+curcuma/"
+  },
+  {
+   "id": "r-pra2",
+   "nome": "Piadina GF con pollo, pomodori & rucola",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30 — Carbo abbondanti",
+   "tag": "🌮 Estivo",
+   "tempo": "12 min",
+   "kcal": 550,
+   "proteine_g": 42,
+   "carboidrati_g": 52,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "170 g petto di pollo",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "10 g olio EVO",
+    "origano · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
+    "Scalda la piadina GF in padella asciutta 1 min per lato. Spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+pollo+senza+glutine/"
+  },
+  {
+   "id": "r-pra3",
+   "nome": "Pasta di riso al tonno & pomodoro",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30 — Carbo abbondanti",
+   "tag": "🍝 Italiana",
+   "tempo": "15 min",
+   "kcal": 580,
+   "proteine_g": 42,
+   "carboidrati_g": 68,
+   "grassi_g": 10,
+   "ingredienti": [
+    "90 g pasta di riso GF",
+    "160 g tonno al naturale",
+    "200 g passata di pomodoro",
+    "1 spicchio aglio",
+    "10 g olio EVO",
+    "basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci la pasta GF (attento: tende a scuocersi, controlla spesso). In parallelo scalda olio e aglio, aggiungi passata, cuoci 5 min.",
+    "Scola la pasta, aggiungi tonno al sugo, condisci con basilico fresco."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pasta+tonno+pomodoro/"
+  },
+  {
+   "id": "r-pra4",
+   "nome": "Spaghetti di soia con salmone & piselli",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30 — Carbo abbondanti",
+   "tag": "🥗 Leggero",
+   "tempo": "15 min",
+   "kcal": 570,
+   "proteine_g": 44,
+   "carboidrati_g": 58,
+   "grassi_g": 14,
+   "ingredienti": [
+    "90 g spaghetti di soia GF",
+    "180 g salmone fresco a cubetti",
+    "150 g piselli surgelati",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Ammolla gli spaghetti di soia in acqua bollente 5 min, scola.",
+    "In padella con olio: rosola il salmone 3 min, aggiungi i piselli 2 min. Unisci gli spaghetti, tamari e limone, salta 1–2 min. Finisci con erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/spaghetti+soia+salmone/"
+  },
+  {
+   "id": "r-cen0",
+   "nome": "Pollo alla piastra + zucchine grigliate",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "⚡ Veloce",
+   "tempo": "15 min",
+   "kcal": 390,
+   "proteine_g": 48,
+   "carboidrati_g": 8,
+   "grassi_g": 16,
+   "ingredienti": [
+    "220 g petto di pollo",
+    "250 g zucchine",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "origano GF · sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Marina il pollo con 5 g olio, limone e origano 5 min. Cuoci in padella grill 4–5 min per lato.",
+    "Griglia le zucchine a fette con l'olio rimasto, 2–3 min per lato."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pollo+alla+piastra/"
+  },
+  {
+   "id": "r-cen1",
+   "nome": "Salmone al forno + carote & piselli",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "✅ Classica",
+   "tempo": "22 min",
+   "kcal": 480,
+   "proteine_g": 44,
+   "carboidrati_g": 18,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone fresco",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "rosmarino GF · sale q.b."
+   ],
+   "preparazione": [
+    "Forno 200°C. Salmone su carta forno con 10 g olio, limone e rosmarino → 12–14 min.",
+    "In parallelo: carote a rondelle + piselli in padella con 5 g olio, 8 min a fuoco medio."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-cen2",
+   "nome": "Bistecca di manzo + insalata di pomodori",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo (controfiletto)",
+    "200 g pomodori",
+    "40 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato (al sangue/media). Riposa 3 min avvolta in carta stagnola.",
+    "Insalata di pomodori e rucola condita con olio e sale."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-cen3",
+   "nome": "Piadina GF con gamberetti, pomodori & fagiolini",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "🌮 Estivo",
+   "tempo": "15 min",
+   "kcal": 440,
+   "proteine_g": 36,
+   "carboidrati_g": 48,
+   "grassi_g": 12,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "180 g gamberetti surgelati",
+    "150 g pomodorini",
+    "100 g fagiolini",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · prezzemolo q.b."
+   ],
+   "preparazione": [
+    "Lessa i fagiolini 6 min in acqua salata. In padella con olio e aglio: gamberetti 3 min.",
+    "Scalda la piadina GF in padella asciutta. Riempi con gamberetti, fagiolini, pomodorini e limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+gamberetti/"
+  },
+  {
+   "id": "r-cen4",
+   "nome": "Frittata zucchine & carote al forno",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "🥗 Leggero",
+   "tempo": "20 min",
+   "kcal": 420,
+   "proteine_g": 32,
+   "carboidrati_g": 10,
+   "grassi_g": 28,
+   "ingredienti": [
+    "4 uova intere (200 g)",
+    "150 g zucchine",
+    "100 g carote",
+    "40 g parmigiano GF grattugiato",
+    "10 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
+    "Sbatti uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/frittata+verdure+forno/"
+  },
+  {
+   "id": "r-cen5",
+   "nome": "Merluzzo al vapore + piselli & carote",
+   "attivita": "Palestra",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30 — Proteica",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "18 min",
+   "kcal": 370,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g piselli surgelati",
+    "150 g carote",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il merluzzo al vapore 10–12 min. In parallelo salta piselli e carote a rondelle con olio 5 min.",
+    "Condisci il merluzzo con limone e prezzemolo. Servi con le verdure saltate."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-pb-col0",
+   "nome": "Yogurt greco 150g + banana + noci + miele",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 370,
+   "proteine_g": 22,
+   "carboidrati_g": 42,
+   "grassi_g": 12,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "20 g noci sgusciate",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Yogurt in ciotola, banana a rondelle, noci e miele. Pronto in 3 minuti."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-pb-col1",
+   "nome": "Uova strapazzate + pane GF + arancia",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "✅ Classica",
+   "tempo": "10 min",
+   "kcal": 430,
+   "proteine_g": 28,
+   "carboidrati_g": 42,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "2 fette pane GF (~60 g)",
+    "1 arancia (~150 g)",
+    "5 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Sbatti le uova con sale e pepe. Cuoci in padella antiaderente con olio a fuoco basso, mescolando 2–3 min finché cremose.",
+    "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-pb-col2",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Schiaccia avocado con limone e pepe.",
+    "Spalma l'avocado, disponi il salmone, finisci con erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-pb-col3",
+   "nome": "Uova strapazzate al pomodoro + pane GF",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "🥗 Leggero",
+   "tempo": "12 min",
+   "kcal": 420,
+   "proteine_g": 26,
+   "carboidrati_g": 40,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "100 g passata di pomodoro",
+    "½ cipolla (~40 g)",
+    "2 fette pane GF (~60 g)",
+    "10 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Soffriggi la cipolla in olio 2 min. Aggiungi la passata, cuoci 4 min.",
+    "Sguscia le uova nel sugo, mescola strapazzando 2 min. Servi su pane GF tostato."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate-al-pomodoro.html"
+  },
+  {
+   "id": "r-pb-pra0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00 — Carbo abbondanti",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "10 g arachidi GF (opzionale)",
+    "aglio · zenzero q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle in acqua calda 5 min. Scongela i gamberetti.",
+    "In padella con olio di sesamo: aglio 30 sec, gamberetti 2 min. Spingi ai lati, scramble le uova al centro.",
+    "Unisci tagliatelle, tamari GF, lime, zenzero. Salta 2 min. Aggiungi fagiolini 1 min. Finisci con arachidi."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-pb-pra1",
+   "nome": "Riso basmati saltato con pollo & curcuma",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00 — Carbo abbondanti",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 590,
+   "proteine_g": 46,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g riso basmati (peso crudo)",
+    "180 g petto di pollo",
+    "100 g zucchine",
+    "100 g carote",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "curcuma · zenzero q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso 10–12 min. Rosola il pollo a cubetti con curcuma 4 min.",
+    "Aggiungi verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+basmati+pollo+curcuma/"
+  },
+  {
+   "id": "r-pb-pra2",
+   "nome": "Spaghetti di soia con salmone & piselli",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00 — Carbo abbondanti",
+   "tag": "🥗 Leggero",
+   "tempo": "15 min",
+   "kcal": 570,
+   "proteine_g": 44,
+   "carboidrati_g": 58,
+   "grassi_g": 14,
+   "ingredienti": [
+    "90 g spaghetti di soia GF",
+    "180 g salmone fresco a cubetti",
+    "150 g piselli surgelati",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Ammolla gli spaghetti di soia in acqua bollente 5 min, scola.",
+    "Rosola il salmone 3 min, aggiungi piselli 2 min, unisci spaghetti + tamari + limone, salta 1–2 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/spaghetti+soia+salmone/"
+  },
+  {
+   "id": "r-pb-pre0",
+   "nome": "Banana + yogurt greco 150g",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Allenamento 15:00",
+   "tag": "⚡ Veloce",
+   "tempo": "1 min",
+   "kcal": 190,
+   "proteine_g": 10,
+   "carboidrati_g": 34,
+   "grassi_g": 1,
+   "ingredienti": [
+    "1 banana media (~120 g)",
+    "150 g yogurt greco 0%"
+   ],
+   "preparazione": [
+    "Prepara in un contenitore la mattina e tienilo in frigo fino alle 15:00. Mangia 30–45 min prima di uscire per la palestra."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-pb-pre1",
+   "nome": "Riso soffiato GF + latte + miele",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Allenamento 15:00",
+   "tag": "✅ Classica",
+   "tempo": "2 min",
+   "kcal": 200,
+   "proteine_g": 6,
+   "carboidrati_g": 38,
+   "grassi_g": 3,
+   "ingredienti": [
+    "30 g riso soffiato GF",
+    "150 ml latte parz. scremato",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Versa il riso soffiato nel latte, aggiungi il miele. Leggero e digerisce bene prima dell'allenamento pomeridiano."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+soffiato/"
+  },
+  {
+   "id": "r-pb-pre2",
+   "nome": "3 datteri + 10 g noci",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Allenamento 15:00",
+   "tag": "🥗 Leggero",
+   "tempo": "0 min",
+   "kcal": 175,
+   "proteine_g": 2,
+   "carboidrati_g": 30,
+   "grassi_g": 5,
+   "ingredienti": [
+    "3 datteri secchi (~30 g)",
+    "10 g noci sgusciate"
+   ],
+   "preparazione": [
+    "Tienili in borsa. Zero prep — ideale se sei in università fino alle 15:30 e non hai tempo di tornare a casa."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/datteri+noci/"
+  },
+  {
+   "id": "r-pb-pos0",
+   "nome": "Yogurt greco 150g + banana + miele",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Allenamento 19:15",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 255,
+   "proteine_g": 20,
+   "carboidrati_g": 36,
+   "grassi_g": 2,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Prepara in contenitore prima di uscire. Mangia subito — in spogliatoio va benissimo. Non aspettare più di 30 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-pb-pos1",
+   "nome": "2 uova sode + banana",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Allenamento 19:15",
+   "tag": "💪 Post-All.",
+   "tempo": "0 min",
+   "kcal": 240,
+   "proteine_g": 16,
+   "carboidrati_g": 28,
+   "grassi_g": 10,
+   "ingredienti": [
+    "2 uova sode (~100 g)",
+    "1 banana (~120 g)"
+   ],
+   "preparazione": [
+    "Prepara le uova sode la sera prima. Porta in borsa dalla mattina. Zero prep dopo la palestra."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-pb-cen0",
+   "nome": "Salmone al forno + piselli & carote",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "20 min",
+   "kcal": 460,
+   "proteine_g": 44,
+   "carboidrati_g": 18,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "rosmarino GF · sale q.b."
+   ],
+   "preparazione": [
+    "Forno 200°C. Salmone su carta forno con olio, limone e rosmarino → 12–14 min. Carote + piselli in padella con olio 8 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-pb-cen1",
+   "nome": "Bistecca di manzo + insalata di pomodori",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "✅ Classica",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo",
+    "200 g pomodori",
+    "40 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Padella caldissima: 2–3 min per lato. Riposa 3 min in carta stagnola. Insalata di pomodori e rucola con olio."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-pb-cen2",
+   "nome": "Merluzzo al vapore + piselli & carote",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "18 min",
+   "kcal": 370,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g piselli surgelati",
+    "150 g carote",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. In parallelo: piselli e carote saltati in padella 5 min. Condisci con olio, limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-pb-cen3",
+   "nome": "Frittata zucchine & carote al forno",
+   "attivita": "Palestra",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "🥗 Leggero",
+   "tempo": "20 min",
+   "kcal": 420,
+   "proteine_g": 32,
+   "carboidrati_g": 10,
+   "grassi_g": 28,
+   "ingredienti": [
+    "4 uova intere (200 g)",
+    "150 g zucchine",
+    "100 g carote",
+    "40 g parmigiano GF",
+    "10 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Salta le verdure 4 min. Sbatti uova + parmigiano + sale + pepe. Unisci le verdure. Forno 180°C 15–18 min in teglia oliata."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/frittata+verdure+forno/"
+  },
+  {
+   "id": "r-np0",
+   "nome": "4 crackers di riso GF + marmellata GF",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pre-Nuoto 07:00 — Leggerissimo",
+   "tag": "⚡ Veloce",
+   "tempo": "1 min",
+   "kcal": 170,
+   "proteine_g": 3,
+   "carboidrati_g": 34,
+   "grassi_g": 2,
+   "ingredienti": [
+    "4 crackers di riso GF (~40 g)",
+    "20 g marmellata GF"
+   ],
+   "preparazione": [
+    "⚠️ Mangia almeno 90 min prima dell'entrata in acqua. Zero grassi e zero fibre = digestione rapida, nessun crampo in piscina.",
+    "Prepara in sacchettino la sera prima. Mangia mentre fai colazione leggerissima o mentre vai in piscina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/crackers+riso/"
+  },
+  {
+   "id": "r-np1",
+   "nome": "4 datteri secchi",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pre-Nuoto 07:00 — Leggerissimo",
+   "tag": "✅ Classica",
+   "tempo": "0 min",
+   "kcal": 110,
+   "proteine_g": 1,
+   "carboidrati_g": 28,
+   "grassi_g": 0,
+   "ingredienti": [
+    "4 datteri secchi (~40 g)"
+   ],
+   "preparazione": [
+    "Solo se hai meno di 60 min al tuffo. Mangiali mentre ti cambi in spogliatoio. Zero grassi, zero fibre, energia immediata."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/datteri/"
+  },
+  {
+   "id": "r-npos0",
+   "nome": "Yogurt greco 150g + banana + miele + granola GF",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Post-Nuoto 12:15 — Subito!",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 310,
+   "proteine_g": 22,
+   "carboidrati_g": 44,
+   "grassi_g": 4,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "10 g miele",
+    "15 g granola GF"
+   ],
+   "preparazione": [
+    "Prepara in contenitore ermetico prima di andare in piscina. Mangia in spogliatoio mentre ti asciughi — non aspettare!"
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-npos1",
+   "nome": "6 crackers GF + tonno + pomodoro",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Post-Nuoto 12:15 — Subito!",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 300,
+   "proteine_g": 30,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "6 crackers di riso GF (~60 g)",
+    "160 g tonno al naturale",
+    "1 pomodoro (~120 g)",
+    "5 g olio EVO"
+   ],
+   "preparazione": [
+    "Porta i crackers in borsa. Apri la scatoletta, aggiungi il pomodoro e un filo d'olio. Mangia in spogliatoio."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/tonno+crackers/"
+  },
+  {
+   "id": "r-nup0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "aglio · zenzero q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle 5 min. In wok con olio di sesamo: aglio, gamberetti 2 min, scramble uova.",
+    "Unisci tagliatelle + tamari GF + lime + zenzero, salta 2 min. Fagiolini 1 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-nup1",
+   "nome": "Riso basmati con pollo & zucchine",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 600,
+   "proteine_g": 46,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g riso basmati (peso crudo)",
+    "180 g petto di pollo",
+    "200 g zucchine",
+    "1 spicchio aglio",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso. Rosola il pollo a strisce con aglio e olio 5–6 min.",
+    "Aggiungi le zucchine a rondelle 4 min. Servi sul riso con limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+pollo+zucchine/"
+  },
+  {
+   "id": "r-nup2",
+   "nome": "Piadina GF con pollo, pomodori & rucola",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🌮 Estivo",
+   "tempo": "12 min",
+   "kcal": 550,
+   "proteine_g": 42,
+   "carboidrati_g": 52,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "170 g petto di pollo",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "10 g olio EVO",
+    "origano · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il pollo a striscioline con olio e origano 5–6 min.",
+    "Scalda la piadina GF 1 min per lato. Spalma il philadelphia, aggiungi pollo, pomodori e rucola."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+pollo+senza+glutine/"
+  },
+  {
+   "id": "r-nup3",
+   "nome": "Pasta di riso al tonno & pomodoro",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🍝 Italiana",
+   "tempo": "15 min",
+   "kcal": 580,
+   "proteine_g": 42,
+   "carboidrati_g": 68,
+   "grassi_g": 10,
+   "ingredienti": [
+    "90 g pasta di riso GF",
+    "160 g tonno al naturale",
+    "200 g passata di pomodoro",
+    "1 spicchio aglio",
+    "10 g olio EVO",
+    "basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci la pasta GF. In parallelo scalda olio + aglio + passata 5 min. Aggiungi tonno. Condisci con basilico."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pasta+tonno+pomodoro/"
+  },
+  {
+   "id": "r-nc0",
+   "nome": "Merluzzo al vapore + carote & piselli",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "⚡ Veloce",
+   "tempo": "18 min",
+   "kcal": 380,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. Carote + piselli saltati in padella con olio 5 min. Condisci con olio, limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-nc1",
+   "nome": "Salmone al forno + piselli & pomodorini",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 490,
+   "proteine_g": 44,
+   "carboidrati_g": 18,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone",
+    "150 g piselli surgelati",
+    "150 g pomodorini",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "timo GF · sale q.b."
+   ],
+   "preparazione": [
+    "Forno 200°C. Salmone su carta forno con olio, limone e timo → 12–14 min.",
+    "In padella: piselli + pomodorini 5 min con 5 g olio."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-nc2",
+   "nome": "Bistecca di manzo + insalata di pomodori",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo",
+    "200 g pomodori",
+    "40 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Padella caldissima 2–3 min per lato. Riposa 3 min in carta stagnola. Servi con insalata di pomodori e rucola."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-nc3",
+   "nome": "Piadina GF con salmone, pomodori & rucola",
+   "attivita": "Nuoto",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "🌮 Estivo",
+   "tempo": "10 min",
+   "kcal": 440,
+   "proteine_g": 38,
+   "carboidrati_g": 44,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "150 g salmone al naturale in scatola",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "succo ½ limone"
+   ],
+   "preparazione": [
+    "Scalda la piadina GF in padella asciutta 1 min per lato.",
+    "Spalma il philadelphia, aggiungi salmone sgocciolato, pomodori e rucola. Spremi il limone. Piega e servi."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+salmone/"
+  },
+  {
+   "id": "r-nb0",
+   "nome": "Yogurt greco 150g + banana + noci + miele",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 370,
+   "proteine_g": 22,
+   "carboidrati_g": 42,
+   "grassi_g": 12,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "20 g noci sgusciate",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Yogurt + banana a rondelle + noci + miele. Pronto in 3 minuti."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-nb1",
+   "nome": "Uova strapazzate + pane GF + arancia",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "✅ Classica",
+   "tempo": "10 min",
+   "kcal": 430,
+   "proteine_g": 28,
+   "carboidrati_g": 42,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "2 fette pane GF (~60 g)",
+    "1 arancia (~150 g)",
+    "5 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Sbatti le uova con sale e pepe. Cuoci a fuoco basso mescolando 2–3 min finché cremose. Tosta il pane GF. Arancia a parte."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-nb2",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Schiaccia l'avocado con limone e pepe. Spalma, disponi il salmone, finisci con erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-nbp0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "aglio · zenzero q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle 5 min. In wok: aglio, gamberetti 2 min, uova strapazzate. Unisci tagliatelle + tamari + lime + zenzero. Fagiolini 1 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-nbp1",
+   "nome": "Riso basmati con pollo & zucchine",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 600,
+   "proteine_g": 46,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g riso basmati (peso crudo)",
+    "180 g petto di pollo",
+    "200 g zucchine",
+    "1 spicchio aglio",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso. Rosola il pollo a strisce con aglio 5 min. Aggiungi le zucchine a rondelle 4 min. Servi con limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+pollo+zucchine/"
+  },
+  {
+   "id": "r-nbp2",
+   "nome": "Pasta di riso al tonno & pomodoro",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "🍝 Italiana",
+   "tempo": "15 min",
+   "kcal": 580,
+   "proteine_g": 42,
+   "carboidrati_g": 68,
+   "grassi_g": 10,
+   "ingredienti": [
+    "90 g pasta di riso GF",
+    "160 g tonno al naturale",
+    "200 g passata di pomodoro",
+    "10 g olio EVO",
+    "aglio · basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci la pasta GF. Prepara sugo aglio+olio+passata 5 min. Aggiungi tonno. Condisci la pasta e finisci con basilico."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pasta+tonno+pomodoro/"
+  },
+  {
+   "id": "r-nbpre0",
+   "nome": "4 crackers GF + marmellata GF",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Nuoto 14:00 — ⚠️ Leggerissimo",
+   "tag": "⚡ Veloce",
+   "tempo": "1 min",
+   "kcal": 170,
+   "proteine_g": null,
+   "carboidrati_g": null,
+   "grassi_g": null,
+   "ingredienti": [
+    "4 crackers di riso GF (~40 g)",
+    "20 g marmellata GF"
+   ],
+   "preparazione": [
+    "⚠️ Mangia alle 14:00 se vai in acqua alle 16:00. Zero grassi e fibre = digestione rapida, stomaco sgombro."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/crackers+riso/"
+  },
+  {
+   "id": "r-nbpre1",
+   "nome": "4 datteri secchi",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Nuoto 14:00 — ⚠️ Leggerissimo",
+   "tag": "✅ Classica",
+   "tempo": "0 min",
+   "kcal": 110,
+   "proteine_g": null,
+   "carboidrati_g": null,
+   "grassi_g": null,
+   "ingredienti": [
+    "4 datteri secchi (~40 g)"
+   ],
+   "preparazione": [
+    "Mangiali alle 15:00–15:30 massimo. Zero grassi, zero fibre, energia immediata. Portali in borsa dalla mattina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/datteri/"
+  },
+  {
+   "id": "r-nbpos0",
+   "nome": "Yogurt greco 150g + banana + miele + granola GF",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Nuoto 19:15 — Subito!",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 310,
+   "proteine_g": 22,
+   "carboidrati_g": 44,
+   "grassi_g": 4,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "10 g miele",
+    "15 g granola GF"
+   ],
+   "preparazione": [
+    "Prepara in contenitore prima di uscire di casa. Mangia in spogliatoio — il post-nuoto è fondamentale per il recupero."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-nbpos1",
+   "nome": "6 crackers GF + tonno + pomodoro",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Nuoto 19:15 — Subito!",
+   "tag": "💪 Post-All.",
+   "tempo": "2 min",
+   "kcal": 300,
+   "proteine_g": 30,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "6 crackers di riso GF (~60 g)",
+    "160 g tonno al naturale",
+    "1 pomodoro (~120 g)",
+    "5 g olio EVO"
+   ],
+   "preparazione": [
+    "Porta in borsa dalla mattina. Apri la scatoletta in spogliatoio, aggiungi pomodoro e olio."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/tonno+crackers/"
+  },
+  {
+   "id": "r-nbc0",
+   "nome": "Pollo alla piastra + zucchine grigliate",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "15 min",
+   "kcal": 390,
+   "proteine_g": 48,
+   "carboidrati_g": 8,
+   "grassi_g": 16,
+   "ingredienti": [
+    "220 g petto di pollo",
+    "250 g zucchine",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "origano GF · sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Marina il pollo con olio, limone e origano 5 min. Grill 4–5 min per lato. Griglia le zucchine 2–3 min per lato."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pollo+alla+piastra/"
+  },
+  {
+   "id": "r-nbc1",
+   "nome": "Merluzzo al vapore + carote & piselli",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "✅ Classica",
+   "tempo": "18 min",
+   "kcal": 380,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. Carote + piselli saltati 5 min. Condisci con olio, limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-nbc2",
+   "nome": "Piadina GF con salmone, pomodori & rucola",
+   "attivita": "Nuoto",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "🌮 Estivo",
+   "tempo": "10 min",
+   "kcal": 440,
+   "proteine_g": 38,
+   "carboidrati_g": 44,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "150 g salmone al naturale",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "succo ½ limone"
+   ],
+   "preparazione": [
+    "Scalda la piadina GF 1 min per lato. Spalma il philadelphia, aggiungi salmone, pomodori e rucola. Limone e piega."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+salmone/"
+  },
+  {
+   "id": "r-ca0",
+   "nome": "Yogurt greco 150g + banana + mandorle",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Colazione 07:30 — Leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 365,
+   "proteine_g": 22,
+   "carboidrati_g": 38,
+   "grassi_g": 12,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "20 g mandorle intere"
+   ],
+   "preparazione": [
+    "Yogurt + banana a rondelle + mandorle. Pronto in 3 minuti."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-ca1",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Colazione 07:30 — Leggera",
+   "tag": "✅ Classica",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Schiaccia l'avocado con limone e pepe. Spalma, disponi il salmone, erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-ca2",
+   "nome": "Philadelphia GF + salmone + pane GF + pomodoro",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Colazione 07:30 — Leggera",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 400,
+   "proteine_g": 26,
+   "carboidrati_g": 36,
+   "grassi_g": 16,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "60 g philadelphia GF",
+    "80 g salmone affumicato GF",
+    "1 pomodoro (~120 g)",
+    "pepe q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane, spalma il philadelphia, disponi salmone e pomodoro a fette. Pepe."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+salmone+philadelphia/"
+  },
+  {
+   "id": "r-cpre0",
+   "nome": "Banana + caffè",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pre-Cardio 08:30",
+   "tag": "⚡ Veloce",
+   "tempo": "0 min",
+   "kcal": 100,
+   "proteine_g": null,
+   "carboidrati_g": null,
+   "grassi_g": null,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "1 caffè (opzionale)"
+   ],
+   "preparazione": [
+    "Mangiali mentre esci di casa. La banana dà energia rapida + potassio anti-crampi. Il caffè migliora la performance aerobica."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/banana/"
+  },
+  {
+   "id": "r-cpre1",
+   "nome": "Yogurt greco 150g + banana",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pre-Cardio 08:30",
+   "tag": "✅ Classica",
+   "tempo": "1 min",
+   "kcal": 190,
+   "proteine_g": null,
+   "carboidrati_g": null,
+   "grassi_g": null,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana media (~120 g)"
+   ],
+   "preparazione": [
+    "La proteina dello yogurt rallenta l'assorbimento degli zuccheri — ideale se hai 45–60 min prima del cardio."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-cpos0",
+   "nome": "Yogurt greco 150g + miele + noci",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Post-Cardio 12:15",
+   "tag": "💪 Post-All.",
+   "tempo": "1 min",
+   "kcal": 260,
+   "proteine_g": 20,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "10 g miele",
+    "15 g noci sgusciate"
+   ],
+   "preparazione": [
+    "Mescola tutto in un contenitore. Porta in borsa dalla mattina con la borsa termica."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+miele/"
+  },
+  {
+   "id": "r-cpos1",
+   "nome": "2 uova sode + banana",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Post-Cardio 12:15",
+   "tag": "💪 Post-All.",
+   "tempo": "0 min",
+   "kcal": 240,
+   "proteine_g": 16,
+   "carboidrati_g": 28,
+   "grassi_g": 10,
+   "ingredienti": [
+    "2 uova sode (~100 g)",
+    "1 banana (~120 g)"
+   ],
+   "preparazione": [
+    "Bolli le uova la sera prima. Porta in borsa con la banana. Zero prep post-allenamento."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-cap0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "aglio · zenzero q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle 5 min. Wok: aglio, gamberetti 2 min, uova al centro. Unisci tagliatelle + tamari + lime + zenzero. Fagiolini 1 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-cap1",
+   "nome": "Riso basmati con tonno, pomodori & olive",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "✅ Classica",
+   "tempo": "15 min",
+   "kcal": 550,
+   "proteine_g": 40,
+   "carboidrati_g": 60,
+   "grassi_g": 12,
+   "ingredienti": [
+    "85 g riso basmati (peso crudo)",
+    "160 g tonno al naturale",
+    "150 g pomodorini",
+    "50 g olive nere",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso 10–12 min. Scola e intiepidisci. Mescola con tonno, pomodorini, olive, olio e limone. Si prepara in anticipo."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+tonno+olive/"
+  },
+  {
+   "id": "r-cap2",
+   "nome": "Piadina GF con pollo, pomodori & rucola",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🌮 Estivo",
+   "tempo": "12 min",
+   "kcal": 550,
+   "proteine_g": 42,
+   "carboidrati_g": 52,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "170 g petto di pollo",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "10 g olio EVO",
+    "origano · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il pollo 5–6 min con olio e origano. Scalda la piadina 1 min per lato. Philadelphia, pollo, pomodori, rucola."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+pollo+senza+glutine/"
+  },
+  {
+   "id": "r-cap3",
+   "nome": "Spaghetti di soia con salmone & piselli",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Pranzo 13:30",
+   "tag": "🥗 Leggero",
+   "tempo": "15 min",
+   "kcal": 570,
+   "proteine_g": 44,
+   "carboidrati_g": 58,
+   "grassi_g": 14,
+   "ingredienti": [
+    "90 g spaghetti di soia GF",
+    "180 g salmone fresco a cubetti",
+    "150 g piselli surgelati",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Ammolla gli spaghetti 5 min. Rosola il salmone 3 min, aggiungi piselli 2 min. Unisci spaghetti + tamari + limone, salta 1–2 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/spaghetti+soia+salmone/"
+  },
+  {
+   "id": "r-cac0",
+   "nome": "Pollo alla piastra + zucchine grigliate",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "⚡ Veloce",
+   "tempo": "15 min",
+   "kcal": 390,
+   "proteine_g": 48,
+   "carboidrati_g": 8,
+   "grassi_g": 16,
+   "ingredienti": [
+    "220 g petto di pollo",
+    "250 g zucchine",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "origano GF · sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Marina il pollo 5 min. Grill 4–5 min per lato. Griglia le zucchine 2–3 min per lato con l'olio rimasto."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pollo+alla+piastra/"
+  },
+  {
+   "id": "r-cac1",
+   "nome": "Salmone al forno + carote & piselli",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "✅ Classica",
+   "tempo": "22 min",
+   "kcal": 480,
+   "proteine_g": 44,
+   "carboidrati_g": 18,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone fresco",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "rosmarino GF · sale q.b."
+   ],
+   "preparazione": [
+    "Forno 200°C. Salmone su carta forno con 10 g olio, limone e rosmarino → 12–14 min. Carote + piselli saltati 8 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-cac2",
+   "nome": "Bistecca di manzo + insalata di pomodori",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo",
+    "200 g pomodori",
+    "40 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Padella caldissima: 2–3 min per lato. Riposa 3 min. Insalata di pomodori e rucola con olio."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-cac3",
+   "nome": "Piadina GF con gamberetti, pomodori & fagiolini",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "🌮 Estivo",
+   "tempo": "15 min",
+   "kcal": 440,
+   "proteine_g": 36,
+   "carboidrati_g": 48,
+   "grassi_g": 12,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "180 g gamberetti surgelati",
+    "150 g pomodorini",
+    "100 g fagiolini",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · prezzemolo q.b."
+   ],
+   "preparazione": [
+    "Lessa i fagiolini 6 min. Gamberetti in padella con aglio 3 min. Scalda la piadina 1 min per lato. Riempi con tutti gli ingredienti e limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+gamberetti/"
+  },
+  {
+   "id": "r-cac4",
+   "nome": "Merluzzo al vapore + piselli & carote",
+   "attivita": "Cardio",
+   "orario": "Mattina",
+   "pasto": "Cena 19:30",
+   "tag": "🥗 Leggero",
+   "tempo": "18 min",
+   "kcal": 370,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g piselli surgelati",
+    "150 g carote",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. Piselli + carote saltate 5 min. Condisci tutto con olio, limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-cbc0",
+   "nome": "Yogurt greco 150g + banana + noci + miele",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 370,
+   "proteine_g": 22,
+   "carboidrati_g": 42,
+   "grassi_g": 12,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "1 banana (~120 g)",
+    "20 g noci sgusciate",
+    "10 g miele"
+   ],
+   "preparazione": [
+    "Yogurt + banana a rondelle + noci spezzettate + miele. Pronto in 3 minuti."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+banana/"
+  },
+  {
+   "id": "r-cbc1",
+   "nome": "Uova strapazzate + pane GF + arancia",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "✅ Classica",
+   "tempo": "10 min",
+   "kcal": 430,
+   "proteine_g": 28,
+   "carboidrati_g": 42,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "2 fette pane GF (~60 g)",
+    "1 arancia (~150 g)",
+    "5 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Sbatti le uova, cuoci a fuoco basso mescolando 2–3 min finché cremose. Tosta il pane GF. Arancia a parte."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-cbc2",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane, schiaccia avocado con limone e pepe. Spalma, disponi il salmone, erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-cbc3",
+   "nome": "Smoothie fragola + banana + yogurt greco",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 320,
+   "proteine_g": 20,
+   "carboidrati_g": 44,
+   "grassi_g": 3,
+   "ingredienti": [
+    "150 g fragole fresche o surgelate",
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "80 ml latte parz. scremato",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+    "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+   ],
+   "link": "https://blog.giallozafferano.it/adattalaricetta/frullato-o-smoothie-fragola-e-banana-con-yogurt/"
+  },
+  {
+   "id": "r-cbc4",
+   "nome": "Frullato cioccolato + banana + yogurt greco",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Colazione 08:00 — Completa",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 360,
+   "proteine_g": 22,
+   "carboidrati_g": 48,
+   "grassi_g": 5,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "150 ml latte parz. scremato",
+    "15 g cacao amaro GF in polvere",
+    "10 g miele",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+    "Frulla 1 min. Ottimo anche come post-allenamento al posto dello yogurt classico."
+   ],
+   "link": "https://blog.giallozafferano.it/eatupyourlife/frullato-proteico-banane-e-cioccolato/"
+  },
+  {
+   "id": "r-cbp0",
+   "nome": "Pad Thai GF con gamberetti",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "🍜 Asian",
+   "tempo": "15 min",
+   "kcal": 560,
+   "proteine_g": 38,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g tagliatelle di riso GF",
+    "180 g gamberetti surgelati",
+    "2 uova (~100 g)",
+    "100 g fagiolini",
+    "15 ml tamari GF",
+    "10 ml succo di lime",
+    "5 g olio di sesamo",
+    "aglio · zenzero q.b."
+   ],
+   "preparazione": [
+    "Ammolla le tagliatelle 5 min. Wok: aglio, gamberetti 2 min, uova strapazzate. Unisci tagliatelle + tamari + lime + zenzero. Fagiolini 1 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Pad-thai.html"
+  },
+  {
+   "id": "r-cbp1",
+   "nome": "Riso basmati con pollo & curcuma",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "✅ Classica",
+   "tempo": "20 min",
+   "kcal": 590,
+   "proteine_g": 46,
+   "carboidrati_g": 64,
+   "grassi_g": 12,
+   "ingredienti": [
+    "90 g riso basmati (peso crudo)",
+    "180 g petto di pollo",
+    "100 g zucchine",
+    "100 g carote",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "curcuma · zenzero q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso. Rosola il pollo a cubetti con curcuma 4 min. Aggiungi verdure 4 min. Unisci riso + tamari GF, salta 2 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+basmati+pollo+curcuma/"
+  },
+  {
+   "id": "r-cbp2",
+   "nome": "Piadina GF con pollo, pomodori & rucola",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Pranzo 13:00",
+   "tag": "🌮 Estivo",
+   "tempo": "12 min",
+   "kcal": 550,
+   "proteine_g": 42,
+   "carboidrati_g": 52,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "170 g petto di pollo",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "10 g olio EVO",
+    "origano · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il pollo a striscioline 5–6 min. Scalda la piadina 1 min per lato. Philadelphia + pollo + pomodori + rucola."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+pollo+senza+glutine/"
+  },
+  {
+   "id": "r-cbpre0",
+   "nome": "Banana + yogurt greco 150g",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Cardio 15:00",
+   "tag": "⚡ Veloce",
+   "tempo": "1 min",
+   "kcal": 190,
+   "proteine_g": 10,
+   "carboidrati_g": 34,
+   "grassi_g": 1,
+   "ingredienti": [
+    "1 banana media (~120 g)",
+    "150 g yogurt greco 0%"
+   ],
+   "preparazione": [
+    "Tienilo in frigo e mangia alle 15:00 prima di uscire per il cardio. Mangia 30–45 min prima."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+banana/"
+  },
+  {
+   "id": "r-cbpre1",
+   "nome": "3 datteri + 10 g noci",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Pre-Cardio 15:00",
+   "tag": "✅ Classica",
+   "tempo": "0 min",
+   "kcal": 175,
+   "proteine_g": null,
+   "carboidrati_g": null,
+   "grassi_g": null,
+   "ingredienti": [
+    "3 datteri secchi (~30 g)",
+    "10 g noci sgusciate"
+   ],
+   "preparazione": [
+    "Tienili in borsa dalla mattina. Ideale se sei in università fino alle 15:30 e non passi da casa."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/datteri+noci/"
+  },
+  {
+   "id": "r-cbpos0",
+   "nome": "Yogurt greco 150g + miele + noci",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Cardio 19:15",
+   "tag": "💪 Post-All.",
+   "tempo": "1 min",
+   "kcal": 260,
+   "proteine_g": 20,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "10 g miele",
+    "15 g noci sgusciate"
+   ],
+   "preparazione": [
+    "Prepara in contenitore dalla mattina. Tienilo in frigorifero. Mangia subito dopo il cardio — in spogliatoio va bene."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+miele/"
+  },
+  {
+   "id": "r-cbpos1",
+   "nome": "2 uova sode + banana",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Post-Cardio 19:15",
+   "tag": "💪 Post-All.",
+   "tempo": "0 min",
+   "kcal": 240,
+   "proteine_g": 16,
+   "carboidrati_g": 28,
+   "grassi_g": 10,
+   "ingredienti": [
+    "2 uova sode (~100 g)",
+    "1 banana (~120 g)"
+   ],
+   "preparazione": [
+    "Bolli le uova la sera prima. Porta in borsa con la banana — pronto in borsa senza prep post-cardio."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-cbc-c0",
+   "nome": "Salmone al forno + carote & piselli",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "22 min",
+   "kcal": 480,
+   "proteine_g": 44,
+   "carboidrati_g": 18,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone fresco",
+    "150 g carote",
+    "150 g piselli surgelati",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "rosmarino GF · sale q.b."
+   ],
+   "preparazione": [
+    "Forno 200°C. Salmone con olio, limone e rosmarino → 12–14 min. Carote + piselli in padella 8 min."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-cbc-c1",
+   "nome": "Bistecca di manzo + insalata di pomodori",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "✅ Classica",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo",
+    "200 g pomodori",
+    "40 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Padella caldissima 2–3 min per lato. Riposa 3 min. Insalata di pomodori e rucola."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-cbc-c2",
+   "nome": "Merluzzo al vapore + piselli & carote",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "18 min",
+   "kcal": 370,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g piselli surgelati",
+    "150 g carote",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. Piselli + carote saltate 5 min. Condisci tutto con olio, limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-cbc-c3",
+   "nome": "Piadina GF con gamberetti, pomodori & fagiolini",
+   "attivita": "Cardio",
+   "orario": "Pomeriggio",
+   "pasto": "Cena 20:30 — Leggera",
+   "tag": "🌮 Estivo",
+   "tempo": "15 min",
+   "kcal": 440,
+   "proteine_g": 36,
+   "carboidrati_g": 48,
+   "grassi_g": 12,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "180 g gamberetti surgelati",
+    "150 g pomodorini",
+    "100 g fagiolini",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · prezzemolo q.b."
+   ],
+   "preparazione": [
+    "Lessa i fagiolini 6 min. Gamberetti con aglio 3 min. Scalda la piadina 1 min per lato. Riempi con tutti gli ingredienti e limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+gamberetti/"
+  },
+  {
+   "id": "r-rc0",
+   "nome": "Yogurt greco + frutti di bosco + semi di chia",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "⚡ Veloce",
+   "tempo": "3 min",
+   "kcal": 330,
+   "proteine_g": 22,
+   "carboidrati_g": 28,
+   "grassi_g": 8,
+   "ingredienti": [
+    "150 g yogurt greco 0%",
+    "100 g frutti di bosco misti",
+    "15 g semi di chia",
+    "10 g miele",
+    "cannella q.b."
+   ],
+   "preparazione": [
+    "Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella. Prepara la sera prima — i semi si gonfiano durante la notte e la rende più satiante."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/yogurt+greco+frutti+di+bosco/"
+  },
+  {
+   "id": "r-rc1",
+   "nome": "Uova strapazzate + pane GF + arancia",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "✅ Classica",
+   "tempo": "10 min",
+   "kcal": 430,
+   "proteine_g": 28,
+   "carboidrati_g": 42,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "2 fette pane GF (~60 g)",
+    "1 arancia (~150 g)",
+    "5 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Sbatti le uova con sale e pepe. Cuoci a fuoco basso mescolando 2–3 min finché cremose.",
+    "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate.html"
+  },
+  {
+   "id": "r-rc2",
+   "nome": "Toast GF avocado + salmone affumicato",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "5 min",
+   "kcal": 410,
+   "proteine_g": 28,
+   "carboidrati_g": 34,
+   "grassi_g": 18,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "½ avocado (~80 g)",
+    "80 g salmone affumicato GF",
+    "succo ½ limone",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane GF. Schiaccia l'avocado con limone e pepe. Spalma, disponi il salmone, erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+avocado+salmone/"
+  },
+  {
+   "id": "r-rc3",
+   "nome": "Philadelphia GF + salmone + pane GF + pomodoro",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "🥗 Leggero",
+   "tempo": "5 min",
+   "kcal": 400,
+   "proteine_g": 26,
+   "carboidrati_g": 36,
+   "grassi_g": 16,
+   "ingredienti": [
+    "2 fette pane GF (~60 g)",
+    "60 g philadelphia GF",
+    "80 g salmone affumicato GF",
+    "1 pomodoro (~120 g)",
+    "pepe · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Tosta il pane. Spalma il philadelphia. Aggiungi salmone e pomodoro a fette. Pepe e erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/toast+salmone+philadelphia/"
+  },
+  {
+   "id": "r-rc4",
+   "nome": "Uova strapazzate al pomodoro + pane GF",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "🥚 Proteico",
+   "tempo": "12 min",
+   "kcal": 420,
+   "proteine_g": 26,
+   "carboidrati_g": 40,
+   "grassi_g": 14,
+   "ingredienti": [
+    "3 uova intere (150 g)",
+    "100 g passata di pomodoro",
+    "½ cipolla (~40 g)",
+    "2 fette pane GF (~60 g)",
+    "10 g olio EVO",
+    "prezzemolo · sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Soffriggi la cipolla in olio 2 min. Aggiungi la passata, cuoci 4 min a fuoco medio.",
+    "Sguscia le uova nel sugo, mescola strapazzando 2 min. Servi su pane GF tostato con prezzemolo fresco."
+   ],
+   "link": "https://ricette.giallozafferano.it/Uova-strapazzate-al-pomodoro.html"
+  },
+  {
+   "id": "r-rc5",
+   "nome": "Smoothie fragola + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 320,
+   "proteine_g": 20,
+   "carboidrati_g": 44,
+   "grassi_g": 3,
+   "ingredienti": [
+    "150 g fragole fresche o surgelate",
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "80 ml latte parz. scremato",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+    "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+   ],
+   "link": "https://blog.giallozafferano.it/adattalaricetta/frullato-o-smoothie-fragola-e-banana-con-yogurt/"
+  },
+  {
+   "id": "r-rc6",
+   "nome": "Frullato cioccolato + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Colazione — Proteica & Saziante",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 360,
+   "proteine_g": 22,
+   "carboidrati_g": 48,
+   "grassi_g": 5,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "150 ml latte parz. scremato",
+    "15 g cacao amaro GF in polvere",
+    "10 g miele",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+    "Frulla 1 min. Ottimo anche come post-allenamento al posto dello yogurt classico."
+   ],
+   "link": "https://blog.giallozafferano.it/eatupyourlife/frullato-proteico-banane-e-cioccolato/"
+  },
+  {
+   "id": "r-rp0",
+   "nome": "Insalata tonno, pomodori & fagiolini",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "⚡ Veloce",
+   "tempo": "8 min",
+   "kcal": 480,
+   "proteine_g": 40,
+   "carboidrati_g": 36,
+   "grassi_g": 14,
+   "ingredienti": [
+    "160 g tonno al naturale",
+    "200 g pomodorini",
+    "150 g fagiolini",
+    "50 g olive nere",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
+    "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/insalata+tonno+fagiolini/"
+  },
+  {
+   "id": "r-rp1",
+   "nome": "Spaghetti di soia con salmone & piselli",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "✅ Classica",
+   "tempo": "15 min",
+   "kcal": 520,
+   "proteine_g": 44,
+   "carboidrati_g": 52,
+   "grassi_g": 14,
+   "ingredienti": [
+    "80 g spaghetti di soia GF",
+    "180 g salmone fresco a cubetti",
+    "150 g piselli surgelati",
+    "15 ml tamari GF",
+    "10 g olio EVO",
+    "succo ½ limone",
+    "aglio · erba cipollina q.b."
+   ],
+   "preparazione": [
+    "Ammolla gli spaghetti di soia 5 min. Rosola il salmone 3 min, aggiungi piselli 2 min.",
+    "Unisci spaghetti + tamari + limone, salta 1–2 min. Finisci con erba cipollina."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/spaghetti+soia+salmone/"
+  },
+  {
+   "id": "r-rp2",
+   "nome": "Bowl riso venere, tonno & pomodorini",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "🥗 Leggero",
+   "tempo": "20 min",
+   "kcal": 500,
+   "proteine_g": 38,
+   "carboidrati_g": 50,
+   "grassi_g": 12,
+   "ingredienti": [
+    "70 g riso venere (peso crudo)",
+    "160 g tonno al naturale",
+    "150 g pomodorini",
+    "50 g olive nere",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "basilico · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il riso venere 18 min. Scola e lascia intiepidire (oppure usa quello preparato domenica in meal prep).",
+    "Mescola tutto: riso, tonno, pomodorini, olive. Condisci con olio, limone e basilico."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/riso+venere+tonno/"
+  },
+  {
+   "id": "r-rp3",
+   "nome": "Piadina GF con pollo, pomodori & rucola",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "🌮 Estivo",
+   "tempo": "12 min",
+   "kcal": 510,
+   "proteine_g": 42,
+   "carboidrati_g": 48,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "170 g petto di pollo",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "10 g olio EVO",
+    "origano · sale q.b."
+   ],
+   "preparazione": [
+    "Cuoci il pollo a striscioline con olio e origano 5–6 min. Scalda la piadina 1 min per lato.",
+    "Spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+pollo+senza+glutine/"
+  },
+  {
+   "id": "r-nb3",
+   "nome": "Smoothie fragola + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 320,
+   "proteine_g": 20,
+   "carboidrati_g": 44,
+   "grassi_g": 3,
+   "ingredienti": [
+    "150 g fragole fresche o surgelate",
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "80 ml latte parz. scremato",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+    "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+   ],
+   "link": "https://blog.giallozafferano.it/adattalaricetta/frullato-o-smoothie-fragola-e-banana-con-yogurt/"
+  },
+  {
+   "id": "r-nb4",
+   "nome": "Frullato cioccolato + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Pranzo — Bilanciato",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 360,
+   "proteine_g": 22,
+   "carboidrati_g": 48,
+   "grassi_g": 5,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "150 ml latte parz. scremato",
+    "15 g cacao amaro GF in polvere",
+    "10 g miele",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+    "Frulla 1 min. Ottimo anche come post-allenamento al posto dello yogurt classico."
+   ],
+   "link": "https://blog.giallozafferano.it/eatupyourlife/frullato-proteico-banane-e-cioccolato/"
+  },
+  {
+   "id": "r-rce0",
+   "nome": "Pollo al limone + zucchine grigliate",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "⚡ Veloce",
+   "tempo": "15 min",
+   "kcal": 380,
+   "proteine_g": 48,
+   "carboidrati_g": 8,
+   "grassi_g": 14,
+   "ingredienti": [
+    "220 g petto di pollo",
+    "250 g zucchine",
+    "15 g olio EVO",
+    "succo 1 limone",
+    "origano GF · sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
+    "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/pollo+al+limone/"
+  },
+  {
+   "id": "r-rce1",
+   "nome": "Salmone in padella + piselli & pomodorini",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "✅ Classica",
+   "tempo": "15 min",
+   "kcal": 470,
+   "proteine_g": 44,
+   "carboidrati_g": 16,
+   "grassi_g": 22,
+   "ingredienti": [
+    "200 g filetto di salmone fresco",
+    "150 g piselli surgelati",
+    "150 g pomodorini",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "aglio · prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "In padella con olio e aglio: cuoci il salmone 3–4 min per lato. Togli e tieni da parte.",
+    "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
+   ],
+   "link": "https://ricette.giallozafferano.it/Salmone-al-forno.html"
+  },
+  {
+   "id": "r-rce2",
+   "nome": "Bistecca di manzo + insalata di pomodori & rucola",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "🥩 Proteico",
+   "tempo": "15 min",
+   "kcal": 450,
+   "proteine_g": 46,
+   "carboidrati_g": 6,
+   "grassi_g": 24,
+   "ingredienti": [
+    "200 g bistecca di manzo (controfiletto)",
+    "200 g pomodori",
+    "50 g rucola",
+    "15 g olio EVO",
+    "sale · pepe · rosmarino GF q.b."
+   ],
+   "preparazione": [
+    "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato. Riposa 3 min in carta stagnola.",
+    "Servi con insalata di pomodori e rucola condita con olio e sale."
+   ],
+   "link": "https://blog.giallozafferano.it/panesalame/ricetta-tagliata-di-manzo-alla-piastra/"
+  },
+  {
+   "id": "r-rce3",
+   "nome": "Frittata zucchine & carote al forno",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "🥗 Leggero",
+   "tempo": "20 min",
+   "kcal": 420,
+   "proteine_g": 32,
+   "carboidrati_g": 10,
+   "grassi_g": 28,
+   "ingredienti": [
+    "4 uova intere (200 g)",
+    "150 g zucchine",
+    "100 g carote",
+    "40 g parmigiano GF grattugiato",
+    "10 g olio EVO",
+    "sale · pepe q.b."
+   ],
+   "preparazione": [
+    "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
+    "Sbatti le uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/frittata+verdure+forno/"
+  },
+  {
+   "id": "r-rce4",
+   "nome": "Piadina GF con salmone, pomodori & rucola",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "🌮 Estivo",
+   "tempo": "10 min",
+   "kcal": 430,
+   "proteine_g": 38,
+   "carboidrati_g": 44,
+   "grassi_g": 14,
+   "ingredienti": [
+    "1 piadina GF (~80 g)",
+    "150 g salmone al naturale in scatola",
+    "2 pomodori (~160 g)",
+    "40 g rucola",
+    "30 g philadelphia GF",
+    "succo ½ limone"
+   ],
+   "preparazione": [
+    "Scalda la piadina GF in padella asciutta 1 min per lato.",
+    "Spalma il philadelphia, aggiungi salmone sgocciolato, pomodori a fette e rucola. Spremi il limone."
+   ],
+   "link": "https://www.giallozafferano.it/ricerca-ricette/piadina+salmone/"
+  },
+  {
+   "id": "r-rce5",
+   "nome": "Merluzzo al vapore + carote & piselli",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "👨‍🍳 Sfizioso",
+   "tempo": "18 min",
+   "kcal": 370,
+   "proteine_g": 42,
+   "carboidrati_g": 18,
+   "grassi_g": 12,
+   "ingredienti": [
+    "220 g merluzzo fresco o surgelato",
+    "150 g piselli surgelati",
+    "150 g carote",
+    "15 g olio EVO",
+    "succo ½ limone",
+    "prezzemolo · sale q.b."
+   ],
+   "preparazione": [
+    "Merluzzo al vapore 10–12 min. Piselli + carote saltate in padella con olio 5 min.",
+    "Condisci il merluzzo con limone e prezzemolo. Servi con le verdure."
+   ],
+   "link": "https://ricette.giallozafferano.it/Merluzzo-al-vapore-con-olive-verdi-e-pomodorini.html"
+  },
+  {
+   "id": "r-ca3",
+   "nome": "Smoothie fragola + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 320,
+   "proteine_g": 20,
+   "carboidrati_g": 44,
+   "grassi_g": 3,
+   "ingredienti": [
+    "150 g fragole fresche o surgelate",
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "80 ml latte parz. scremato",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Taglia fragole e banana a pezzi. Metti tutto nel frullatore con latte e ghiaccio.",
+    "Frulla 1 min alla massima velocità fino a crema liscia. Bevi subito o porta in bottiglietta."
+   ],
+   "link": "https://blog.giallozafferano.it/adattalaricetta/frullato-o-smoothie-fragola-e-banana-con-yogurt/"
+  },
+  {
+   "id": "r-ca4",
+   "nome": "Frullato cioccolato + banana + yogurt greco",
+   "attivita": "Riposo",
+   "orario": null,
+   "pasto": "Cena — Proteica & Leggera",
+   "tag": "🥤 Frullato",
+   "tempo": "3 min",
+   "kcal": 360,
+   "proteine_g": 22,
+   "carboidrati_g": 48,
+   "grassi_g": 5,
+   "ingredienti": [
+    "1 banana matura (~120 g)",
+    "150 g yogurt greco 0%",
+    "150 ml latte parz. scremato",
+    "15 g cacao amaro GF in polvere",
+    "10 g miele",
+    "cubetti di ghiaccio q.b."
+   ],
+   "preparazione": [
+    "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+    "Frulla 1 min. Ottimo anche come post-allenamento al posto dello yogurt classico."
+   ],
+   "link": "https://blog.giallozafferano.it/eatupyourlife/frullato-proteico-banane-e-cioccolato/"
+  }
+ ]
+}
