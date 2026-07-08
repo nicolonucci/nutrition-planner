@@ -1,596 +1,595 @@
 {
-  "ultimo_aggiornamento": "2026-07-08 21:39",
-
-  "alimenti": [
-    {
-      "nome": "Pasta Rummo Elicoidali",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 1200,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2029-01-12",
-      "note": "3x400g"
-    },
-    {
-      "nome": "Pasta Rummo Elicoidali",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 800,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-11-14",
-      "note": "2x400g"
-    },
-    {
-      "nome": "Pasta Rummo Elicoidali",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 400,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-12-09",
-      "note": ""
-    },
-    {
-      "nome": "Pasta Stelline Granoro",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 300,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2027-06-24",
-      "note": ""
-    },
-    {
-      "nome": "Focaccia Croccante Graziosi",
-      "categoria": "Snack & Altro",
-      "quantita": 210,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-09-22",
-      "note": "3x70g"
-    },
-    {
-      "nome": "Quadratini Mulino Bianco",
-      "categoria": "Snack & Altro",
-      "quantita": 198,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-08-31",
-      "note": "6x33g"
-    },
-    {
-      "nome": "Quadratini Mulino Bianco",
-      "categoria": "Snack & Altro",
-      "quantita": 132,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-10-20",
-      "note": "4x33g"
-    },
-    {
-      "nome": "Quadratini Mulino Bianco",
-      "categoria": "Snack & Altro",
-      "quantita": 396,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-10-20",
-      "note": "12x33g"
-    },
-    {
-      "nome": "Wafer Fondente Galbusera",
-      "categoria": "Snack & Altro",
-      "quantita": 360,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-10-26",
-      "note": "8x45g"
-    },
-    {
-      "nome": "Wafer Nocciola Galbusera",
-      "categoria": "Snack & Altro",
-      "quantita": 180,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-10-29",
-      "note": "4x45g"
-    },
-    {
-      "nome": "Grissini Veneziane",
-      "categoria": "Snack & Altro",
-      "quantita": 250,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-09-16",
-      "note": ""
-    },
-    {
-      "nome": "Sfogliatelle Graziosi",
-      "categoria": "Snack & Altro",
-      "quantita": 130.5,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-08-25",
-      "note": "9x14,5g"
-    },
-    {
-      "nome": "Biscotti Orosaiwa",
-      "categoria": "Snack & Altro",
-      "quantita": 198,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-10-31",
-      "note": "6x33g"
-    },
-    {
-      "nome": "Pane Carasau",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 150,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-09-08",
-      "note": ""
-    },
-    {
-      "nome": "Crostata Belli Freschi",
-      "categoria": "Snack & Altro",
-      "quantita": 400,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-08-18",
-      "note": ""
-    },
-    {
-      "nome": "Avena Probios",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 400,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-04-14",
-      "note": ""
-    },
-    {
-      "nome": "Avena",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 155,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2027-10-08",
-      "note": ""
-    },
-    {
-      "nome": "Biscotti del Mattino Luisanna",
-      "categoria": "Snack & Altro",
-      "quantita": 300,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-08-06",
-      "note": ""
-    },
-    {
-      "nome": "Muesli Graziosi",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 250,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2026-11-26",
-      "note": ""
-    },
-    {
-      "nome": "Cannoli Farciti Graziosi",
-      "categoria": "Snack & Altro",
-      "quantita": 150,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2026-08-24",
-      "note": ""
-    },
-    {
-      "nome": "Piadine Loriana",
-      "categoria": "Snack & Altro",
-      "quantita": 675,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 2,
-      "scadenza": "2026-10-12",
-      "note": "9x75g"
-    },
-    {
-      "nome": "Riso Venere",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 350,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-06",
-      "note": "scadenza approssimata: solo mese/anno"
-    },
-    {
-      "nome": "Riso Basmati",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 920,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-05-04",
-      "note": ""
-    },
-    {
-      "nome": "Riso Basmati",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 750,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2028-04-20",
-      "note": ""
-    },
-    {
-      "nome": "Polpa di Pomodoro",
-      "categoria": "Condimenti & Spezie",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "2028-09",
-      "note": "scadenza approssimata: solo mese/anno"
-    },
-    {
-      "nome": "Fagiolini Fini",
-      "categoria": "Verdure & Frutta",
-      "quantita": 220,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 220,
-      "scadenza": "2028-08-31",
-      "note": ""
-    },
-    {
-      "nome": "Fagiolini Fini",
-      "categoria": "Verdure & Frutta",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 220,
-      "scadenza": "2028-12-31",
-      "note": ""
-    },
-    {
-      "nome": "Tonno al Naturale",
-      "categoria": "Proteine",
-      "quantita": 4,
-      "unita": "pz",
-      "congelato": false,
-      "soglia_minima": 2,
-      "scadenza": "2030-03-31",
-      "note": ""
-    },
-    {
-      "nome": "Udon Rice Noodles",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 160,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2027-08",
-      "note": "scadenza approssimata: solo mese/anno"
-    },
-    {
-      "nome": "Rice Sticks",
-      "categoria": "Cereali & Carboidrati",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2027-01-13",
-      "note": ""
-    },
-    {
-      "nome": "Pomodori Ciliegio",
-      "categoria": "Verdure & Frutta",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": "2x250g"
-    },
-    {
-      "nome": "Zucchine",
-      "categoria": "Verdure & Frutta",
-      "quantita": 583,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Uova",
-      "categoria": "Proteine",
-      "quantita": 7,
-      "unita": "pz",
-      "congelato": false,
-      "soglia_minima": 2,
-      "scadenza": "2026-07-14",
-      "note": ""
-    },
-    {
-      "nome": "Salmone Affumicato",
-      "categoria": "Proteine",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "2026-07-24",
-      "note": ""
-    },
-    {
-      "nome": "Yogurt Greco 0%",
-      "categoria": "Latticini",
-      "quantita": 3,
-      "unita": "pz",
-      "congelato": false,
-      "soglia_minima": 1,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Banane",
-      "categoria": "Verdure & Frutta",
-      "quantita": 7,
-      "unita": "pz",
-      "congelato": false,
-      "soglia_minima": 2,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Avocado",
-      "categoria": "Verdure & Frutta",
-      "quantita": 1,
-      "unita": "pz",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Cioccolato Lindt 78%",
-      "categoria": "Snack & Altro",
-      "quantita": 110,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Philadelphia Light",
-      "categoria": "Latticini",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "",
-      "note": "8x25g"
-    },
-    {
-      "nome": "Nasello",
-      "categoria": "Proteine",
-      "quantita": 300,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Merluzzo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 1/6"
-    },
-    {
-      "nome": "Salmone",
-      "categoria": "Proteine",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Salmone",
-      "categoria": "Proteine",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Piselli",
-      "categoria": "Verdure & Frutta",
-      "quantita": 0,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Trita di Manzo",
-      "categoria": "Proteine",
-      "quantita": 245,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 2/6"
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 3/6"
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 4/6"
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 5/6"
-    },
-    {
-      "nome": "Pollo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 6/6"
-    },
-    {
-      "nome": "Fettine di Manzo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 1/2"
-    },
-    {
-      "nome": "Fettine di Manzo",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 200,
-      "scadenza": "",
-      "note": "porzione 2/2"
-    },
-    {
-      "nome": "Gamberetti",
-      "categoria": "Proteine",
-      "quantita": 200,
-      "unita": "g",
-      "congelato": true,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Grana Padano DOP",
-      "categoria": "Latticini",
-      "quantita": 300,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 50,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Bresaola Valtellina IGP",
-      "categoria": "Proteine",
-      "quantita": 70,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 30,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Pomodoro",
-      "categoria": "Verdure & Frutta",
-      "quantita": 1500,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": "3x500g"
-    },
-    {
-      "nome": "Carote Vassoio",
-      "categoria": "Verdure & Frutta",
-      "quantita": 500,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 100,
-      "scadenza": "",
-      "note": ""
-    },
-    {
-      "nome": "Passata Cirio",
-      "categoria": "Condimenti & Spezie",
-      "quantita": 700,
-      "unita": "g",
-      "congelato": false,
-      "soglia_minima": 0,
-      "scadenza": "",
-      "note": ""
-    }
-  ]
+ "ultimo_aggiornamento": "2026-07-08",
+ "alimenti": [
+  {
+   "nome": "Pasta Rummo Elicoidali",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 1200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2029-01-12",
+   "note": "3x400g"
+  },
+  {
+   "nome": "Pasta Rummo Elicoidali",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 800,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-11-14",
+   "note": "2x400g"
+  },
+  {
+   "nome": "Pasta Rummo Elicoidali",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 400,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-12-09",
+   "note": ""
+  },
+  {
+   "nome": "Pasta Stelline Granoro",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 300,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2027-06-24",
+   "note": ""
+  },
+  {
+   "nome": "Focaccia Croccante Graziosi",
+   "categoria": "Snack & Altro",
+   "quantita": 210,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-09-22",
+   "note": "3x70g"
+  },
+  {
+   "nome": "Quadratini Mulino Bianco",
+   "categoria": "Snack & Altro",
+   "quantita": 198,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-31",
+   "note": "6x33g"
+  },
+  {
+   "nome": "Quadratini Mulino Bianco",
+   "categoria": "Snack & Altro",
+   "quantita": 132,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-10-20",
+   "note": "4x33g"
+  },
+  {
+   "nome": "Quadratini Mulino Bianco",
+   "categoria": "Snack & Altro",
+   "quantita": 396,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-10-20",
+   "note": "12x33g"
+  },
+  {
+   "nome": "Wafer Fondente Galbusera",
+   "categoria": "Snack & Altro",
+   "quantita": 360,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-10-26",
+   "note": "8x45g"
+  },
+  {
+   "nome": "Wafer Nocciola Galbusera",
+   "categoria": "Snack & Altro",
+   "quantita": 180,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-10-29",
+   "note": "4x45g"
+  },
+  {
+   "nome": "Grissini Veneziane",
+   "categoria": "Snack & Altro",
+   "quantita": 250,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-09-16",
+   "note": ""
+  },
+  {
+   "nome": "Sfogliatelle Graziosi",
+   "categoria": "Snack & Altro",
+   "quantita": 130.5,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-25",
+   "note": "9x14,5g"
+  },
+  {
+   "nome": "Biscotti Orosaiwa",
+   "categoria": "Snack & Altro",
+   "quantita": 198,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-10-31",
+   "note": "6x33g"
+  },
+  {
+   "nome": "Pane Carasau",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 150,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-09-08",
+   "note": ""
+  },
+  {
+   "nome": "Crostata Belli Freschi",
+   "categoria": "Snack & Altro",
+   "quantita": 400,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-18",
+   "note": ""
+  },
+  {
+   "nome": "Avena Probios",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 400,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-04-14",
+   "note": ""
+  },
+  {
+   "nome": "Avena",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 155,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2027-10-08",
+   "note": ""
+  },
+  {
+   "nome": "Biscotti del Mattino Luisanna",
+   "categoria": "Snack & Altro",
+   "quantita": 300,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-06",
+   "note": ""
+  },
+  {
+   "nome": "Muesli Graziosi",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 250,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2026-11-26",
+   "note": ""
+  },
+  {
+   "nome": "Cannoli Farciti Graziosi",
+   "categoria": "Snack & Altro",
+   "quantita": 150,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-24",
+   "note": ""
+  },
+  {
+   "nome": "Piadine Loriana",
+   "categoria": "Snack & Altro",
+   "quantita": 675,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 2,
+   "scadenza": "2026-10-12",
+   "note": "9x75g"
+  },
+  {
+   "nome": "Riso Venere",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 350,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-06",
+   "note": "scadenza approssimata: solo mese/anno"
+  },
+  {
+   "nome": "Riso Basmati",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 920,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-05-04",
+   "note": ""
+  },
+  {
+   "nome": "Riso Basmati",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 750,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2028-04-20",
+   "note": ""
+  },
+  {
+   "nome": "Polpa di Pomodoro",
+   "categoria": "Condimenti & Spezie",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2028-09",
+   "note": "scadenza approssimata: solo mese/anno"
+  },
+  {
+   "nome": "Fagiolini Fini",
+   "categoria": "Verdure & Frutta",
+   "quantita": 220,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 220,
+   "scadenza": "2028-08-31",
+   "note": ""
+  },
+  {
+   "nome": "Fagiolini Fini",
+   "categoria": "Verdure & Frutta",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 220,
+   "scadenza": "2028-12-31",
+   "note": ""
+  },
+  {
+   "nome": "Tonno al Naturale",
+   "categoria": "Proteine",
+   "quantita": 4,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 2,
+   "scadenza": "2030-03-31",
+   "note": ""
+  },
+  {
+   "nome": "Udon Rice Noodles",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 160,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2027-08",
+   "note": "scadenza approssimata: solo mese/anno"
+  },
+  {
+   "nome": "Rice Sticks",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2027-01-13",
+   "note": ""
+  },
+  {
+   "nome": "Pomodori Ciliegio",
+   "categoria": "Verdure & Frutta",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": "2x250g"
+  },
+  {
+   "nome": "Zucchine",
+   "categoria": "Verdure & Frutta",
+   "quantita": 583,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Uova",
+   "categoria": "Proteine",
+   "quantita": 7,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 2,
+   "scadenza": "2026-07-14",
+   "note": ""
+  },
+  {
+   "nome": "Salmone Affumicato",
+   "categoria": "Proteine",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2026-07-24",
+   "note": ""
+  },
+  {
+   "nome": "Yogurt Greco 0%",
+   "categoria": "Latticini",
+   "quantita": 2,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 1,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Banane",
+   "categoria": "Verdure & Frutta",
+   "quantita": 7,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 2,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Avocado",
+   "categoria": "Verdure & Frutta",
+   "quantita": 1,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Cioccolato Lindt 78%",
+   "categoria": "Snack & Altro",
+   "quantita": 110,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Philadelphia Light",
+   "categoria": "Latticini",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "8x25g"
+  },
+  {
+   "nome": "Nasello",
+   "categoria": "Proteine",
+   "quantita": 300,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Merluzzo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 1/6"
+  },
+  {
+   "nome": "Salmone",
+   "categoria": "Proteine",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Salmone",
+   "categoria": "Proteine",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Piselli",
+   "categoria": "Verdure & Frutta",
+   "quantita": 0,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Trita di Manzo",
+   "categoria": "Proteine",
+   "quantita": 245,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 2/6"
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 3/6"
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 4/6"
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 5/6"
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 6/6"
+  },
+  {
+   "nome": "Fettine di Manzo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 1/2"
+  },
+  {
+   "nome": "Fettine di Manzo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "porzione 2/2"
+  },
+  {
+   "nome": "Gamberetti",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Grana Padano DOP",
+   "categoria": "Latticini",
+   "quantita": 300,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 50,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Bresaola Valtellina IGP",
+   "categoria": "Proteine",
+   "quantita": 70,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 30,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Pomodoro",
+   "categoria": "Verdure & Frutta",
+   "quantita": 1500,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": "3x500g"
+  },
+  {
+   "nome": "Carote Vassoio",
+   "categoria": "Verdure & Frutta",
+   "quantita": 500,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Passata Cirio",
+   "categoria": "Condimenti & Spezie",
+   "quantita": 700,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": ""
+  }
+ ]
 }
