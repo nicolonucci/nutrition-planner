@@ -330,20 +330,32 @@ async function preparaScalaggio(righe, titolo){
     if (!ing) continue;
     const matches = matchDispensa(ing, disp.alimenti);
     const { plan, mancante } = pianoScalaggio(ing.qty, matches);
-    items.push({ ing, plan, mancante, found: matches.length>0 });
+    items.push({ ing, matches, plan, mancante, found: matches.length>0 });
   }
   S._scala = { items, titolo };
-  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — verifica i prelievi, poi conferma.</p>`;
+  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — correggi le quantità davvero mangiate, poi conferma.</p>`;
   items.forEach((it, i) => {
-    const detail = it.found
-      ? it.plan.map(pl=>`${esc(pl.nome)} −${pl.prelievo}${esc(pl.unita)}${pl.congelato?' ❄️':''}`).join(' · ') + (it.mancante>0?` · <span style="color:var(--red)">manca ${it.mancante}${it.ing.unit}</span>`:'')
-      : '<span style="color:var(--grey)">non in dispensa — nessun prelievo</span>';
     h += `<div class="pick ${it.found&&it.plan.length?'on':''}">
-      <input type="checkbox" ${it.found&&it.plan.length?'checked':''} data-i="${i}" ${!it.plan.length?'disabled':''}>
-      <div class="pk-i"><div class="pk-n">${esc(it.ing.raw)}</div><div class="pk-m">${detail}</div></div></div>`;
+      <input type="checkbox" ${it.found&&it.plan.length?'checked':''} data-i="${i}" ${!it.found?'disabled':''}>
+      <div class="pk-i"><div class="pk-n">${esc(it.ing.nome)}</div><div class="pk-m" id="sc-d-${i}">${scalaDetail(it)}</div></div>
+      <input class="qty-in" id="sc-q-${i}" type="number" inputmode="decimal" step="any" value="${it.ing.qty}" oninput="aggiornaScala(${i})"><span style="font-size:12px;color:var(--grey)">${it.ing.unit}</span></div>`;
   });
   h += `<button class="btn green" onclick="confermaScalaggio()">Conferma e aggiorna dispensa</button>`;
   openSheet('✓ ' + titolo, h);
+}
+
+function scalaDetail(it){
+  if (!it.found) return '<span style="color:var(--grey)">non in dispensa — nessun prelievo</span>';
+  if (!it.plan.length) return '<span style="color:var(--grey)">nessun prelievo</span>' + (it.mancante>0?` · <span style="color:var(--red)">manca ${it.mancante}${it.ing.unit}</span>`:'');
+  return it.plan.map(pl=>`${esc(pl.nome)} −${pl.prelievo}${esc(pl.unita)}${pl.congelato?' ❄️':''}`).join(' · ')
+    + (it.mancante>0?` · <span style="color:var(--red)">manca ${it.mancante}${it.ing.unit}</span>`:'');
+}
+function aggiornaScala(i){
+  const it = S._scala.items[i];
+  const q = Number($('#sc-q-'+i).value) || 0;
+  const r = pianoScalaggio(q, it.matches);
+  it.plan = r.plan; it.mancante = r.mancante;
+  $('#sc-d-'+i).innerHTML = scalaDetail(it);
 }
 
 async function confermaScalaggio(){
@@ -371,7 +383,8 @@ async function vDispensa(){
   let h = `<div class="chiprow">
     <button class="wchip ${S.loc==='como'?'on':''}" onclick="cambiaLoc('como')">🏠 Como</button>
     <button class="wchip ${S.loc==='milano'?'on':''}" onclick="cambiaLoc('milano')">🏙️ Milano</button>
-    <button class="wchip" onclick="addAlimento()">＋ Aggiungi</button></div>`;
+    <button class="wchip" onclick="addAlimento()">＋ Aggiungi</button>
+    <button class="wchip" onclick="addLista()">📋 Lista</button></div>`;
   if (!disp.alimenti.length) h += '<div class="empty">📦 Dispensa vuota.<br>Aggiungi il primo alimento.</div>';
   const gruppi = {};
   disp.alimenti.forEach((a,i)=>{ (gruppi[a.categoria||'Snack & Altro'] ??= []).push([a,i]); });
@@ -443,6 +456,48 @@ function salvaAlimento(i){
   S.dispDirty = true; closeSheet(); render();
 }
 function delAlimento(i){ S.disp[S.loc].alimenti.splice(i,1); S.dispDirty=true; closeSheet(); render(); }
+
+/* ── aggiunta da lista testuale ── */
+function addLista(){
+  openSheet('📋 Aggiungi lista', `
+    <p style="font-size:13px;color:var(--grey);margin-bottom:10px">Un alimento per riga, con quantità (es. <em>petto di pollo 1 kg</em>).</p>
+    <div class="frow"><textarea id="bl-txt" placeholder="petto di pollo 1 kg&#10;broccoli 500 g&#10;uova 12 pz&#10;latte 1 l"></textarea></div>
+    <div class="frow"><label>Congelato?</label><select id="bl-cong"><option value="no">No, tutto fresco</option><option value="si">Sì, tutto in freezer ❄️</option></select></div>
+    <button class="btn" onclick="anteprimaLista()">Anteprima</button>
+    <div id="bl-prev"></div>`);
+}
+function anteprimaLista(){
+  const righe = $('#bl-txt').value.split(/\n/).map(s=>s.trim()).filter(Boolean);
+  const parsed = righe.map(r=>parseIngrediente(r)).filter(Boolean);
+  if (!parsed.length) return toast('Nessuna riga riconosciuta');
+  S._lista = parsed.map(ing => ({ nome: ing.nome.replace(/^./, c=>c.toUpperCase()), qty: ing.qty, unit: ing.unit, cat: guessCategoria(ing.nome) }));
+  let h = '<div class="sl">Verifica e correggi</div>';
+  S._lista.forEach((it,i)=>{ h += `<div class="pick on">
+    <div class="pk-i"><input id="bl-n-${i}" value="${esc(it.nome)}" style="width:100%;padding:7px 9px;border:1.5px solid var(--mid);border-radius:8px;font-weight:600">
+    <select id="bl-c-${i}" style="width:100%;margin-top:5px;padding:6px 9px;border:1.5px solid var(--mid);border-radius:8px;font-size:13px">${CATS.map(c=>`<option ${it.cat===c?'selected':''}>${c}</option>`).join('')}</select></div>
+    <input class="qty-in" id="bl-q-${i}" type="number" inputmode="decimal" step="any" value="${it.qty}">
+    <select id="bl-u-${i}" style="padding:8px 4px;border:1.5px solid var(--mid);border-radius:8px">${['g','ml','pz'].map(u=>`<option ${it.unit===u?'selected':''}>${u}</option>`).join('')}</select></div>`; });
+  h += `<button class="btn green" onclick="confermaLista()">Aggiungi ${S._lista.length} alimenti (${S.loc==='como'?'Como':'Milano'})</button>`;
+  $('#bl-prev').innerHTML = h;
+}
+async function confermaLista(){
+  const disp = await loadDisp();
+  const cong = $('#bl-cong').value === 'si';
+  let n = 0;
+  S._lista.forEach((it,i)=>{
+    const nome = $('#bl-n-'+i).value.trim(), qty = Number($('#bl-q-'+i).value)||0;
+    const unit = $('#bl-u-'+i).value, cat = $('#bl-c-'+i).value;
+    if (!nome || qty<=0) return;
+    const ex = disp.alimenti.find(a => !a.congelato && !cong && normText(a.nome)===normText(nome) && normDispUnit(a.unita)===unit);
+    if (ex) ex.quantita = Math.round((Number(ex.quantita)+qty)*100)/100;
+    else disp.alimenti.push({ nome, categoria:cat, quantita:qty, unita:unit, congelato:cong, soglia_minima:0, scadenza:'', note:'' });
+    n++;
+  });
+  if (!n) return toast('Niente da aggiungere');
+  disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
+  try { closeSheet(); toast('Salvataggio…',8000); await ghWrite(dispPath(), disp, `Dispensa ${S.loc}: +${n} da lista`); toast('✅ '+n+' alimenti aggiunti'); render(); }
+  catch(e){ toast('❌ '+e.message,5000); }
+}
 </script>
 <script>
 /* ═══════════ VISTA: SPESA ═══════════ */
@@ -517,12 +572,15 @@ async function vPianifica(){
   }
   let h = `<div class="card"><strong>Settimana prossima · ${nw.id}</strong><br>
     <span style="font-size:12px;color:var(--grey)">${nw.dal} → ${nw.al}${esiste?' · ⚠️ già pianificata (salvando la sovrascrivi)':''}</span></div>`;
+  h += `<button class="btn" onclick="proponiTutto()">🪄 Proponi menù per i giorni configurati</button>
+    <p style="font-size:11.5px;color:var(--grey);text-align:center;margin:6px 0 4px">Imposta il tipo di giornata, poi lascia proporre l'app: riempie solo i pasti vuoti, le tue scelte restano. Tocca un pasto per cambiarlo.</p>`;
   S.plan.giorni.forEach((d, di) => {
     const done = d.tipo && d.pasti.colazione && d.pasti.pranzo && d.pasti.cena;
     const kcal = Object.values(d.pasti).reduce((a,p)=>a+(p?.kcal||0),0);
     const prot = Object.values(d.pasti).reduce((a,p)=>a+(p?.proteine_g||0),0);
     h += `<div class="pl-day ${done?'done':''}">
-      <div class="pl-dh"><span>${d.giorno} <small>${d.data.slice(8)}/${d.data.slice(5,7)}</small></span>${done?'<span style="color:var(--green)">✓</span>':''}</div>
+      <div class="pl-dh"><span>${d.giorno} <small>${d.data.slice(8)}/${d.data.slice(5,7)}</small></span>
+        <span>${d.tipo?`<button class="btn-sm" style="padding:4px 10px" onclick="proponiGiorno(${di})">🪄</button>`:''}${done?' <span style="color:var(--green)">✓</span>':''}</span></div>
       <div class="seg">${TIPI.map(t=>`<button class="${d.tipo===t?'on':''}" onclick="setTipo(${di},'${t}')">${t==='Palestra'?'🏋️':t==='Nuoto'?'🏊':t==='Cardio'?'🚴':'😴'} ${t}</button>`).join('')}</div>
       ${d.tipo && d.tipo!=='Riposo' ? `<div class="seg"><button class="${d.orario==='Mattina'?'on':''}" onclick="setOrario(${di},'Mattina')">☀️ Mattina</button><button class="${d.orario==='Pomeriggio'?'on':''}" onclick="setOrario(${di},'Pomeriggio')">🌆 Pomeriggio</button></div>`:''}
       ${d.tipo ? slotsHtml(d, di) : ''}
@@ -548,6 +606,43 @@ function slotsHtml(d, di){
 function setTipo(di,t){ const d=S.plan.giorni[di]; d.tipo=t; if(t==='Riposo'){d.orario=null; delete d.pasti.pre_workout; delete d.pasti.post_workout;} savePlanLocal(); render(); }
 function setOrario(di,o){ S.plan.giorni[di].orario=o; savePlanLocal(); render(); }
 function savePlanLocal(){ localStorage.setItem('nh_plan_'+S.plan.id, JSON.stringify(S.plan)); }
+
+/* ── proposta automatica: varietà nella settimana + preferenza proteica ── */
+function poolPerSlot(d, sl){
+  const slotKw = { colazione:'colazione', pranzo:'pranzo', cena:'cena', pre_workout:'pre', post_workout:'post' }[sl];
+  let pool = S.ricette.ricette.filter(r => r.attivita===d.tipo && (!r.orario || !d.orario || r.orario===d.orario) && normText(r.pasto||'').includes(slotKw));
+  if (!pool.length) pool = S.ricette.ricette.filter(r => normText(r.pasto||'').includes(slotKw));
+  return pool;
+}
+function nomiUsati(){
+  const s = new Set();
+  for (const d of S.plan.giorni) for (const p of Object.values(d.pasti)) if (p) s.add(p.nome);
+  return s;
+}
+function proponiGiorno(di, silent){
+  const d = S.plan.giorni[di];
+  if (!d.tipo) return toast('Prima scegli il tipo di giornata');
+  if (d.tipo!=='Riposo' && !d.orario) d.orario = 'Pomeriggio'; // default sensato, modificabile
+  const slots = d.tipo==='Riposo' ? ['colazione','pranzo','cena'] : SLOTS_ALL;
+  const used = nomiUsati();
+  for (const sl of slots) {
+    if (d.pasti[sl]) continue; // le scelte fatte a mano non si toccano
+    const pool = poolPerSlot(d, sl);
+    if (!pool.length) continue;
+    const freschi = pool.filter(r => !used.has(r.nome));
+    const cand = [...(freschi.length ? freschi : pool)].sort((a,b)=>(b.proteine_g||0)-(a.proteine_g||0));
+    const r = cand[Math.floor(Math.random()*Math.min(3,cand.length))];
+    d.pasti[sl] = { nome:r.nome, kcal:r.kcal, proteine_g:r.proteine_g, ingredienti:r.ingredienti, preparazione:r.preparazione };
+    used.add(r.nome);
+  }
+  savePlanLocal();
+  if (!silent) render();
+}
+function proponiTutto(){
+  if (!S.plan.giorni.some(d=>d.tipo)) return toast('Imposta prima il tipo di giornata (Palestra, Nuoto, …)');
+  S.plan.giorni.forEach((d,di)=>{ if (d.tipo) proponiGiorno(di, true); });
+  render(); toast('🪄 Menù proposto — tocca un pasto per cambiarlo');
+}
 
 function apriPicker(di, sl){
   const d = S.plan.giorni[di];
