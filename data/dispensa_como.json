@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-07-08",
+  "ultimo_aggiornamento": "2026-07-08 21:39",
 
   "alimenti": [
     {
@@ -245,7 +245,7 @@
     {
       "nome": "Polpa di Pomodoro",
       "categoria": "Condimenti & Spezie",
-      "quantita": 210,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 0,
@@ -275,7 +275,7 @@
     {
       "nome": "Tonno al Naturale",
       "categoria": "Proteine",
-      "quantita": 5,
+      "quantita": 4,
       "unita": "pz",
       "congelato": false,
       "soglia_minima": 2,
@@ -285,7 +285,7 @@
     {
       "nome": "Udon Rice Noodles",
       "categoria": "Cereali & Carboidrati",
-      "quantita": 250,
+      "quantita": 160,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -405,7 +405,7 @@
     {
       "nome": "Merluzzo",
       "categoria": "Proteine",
-      "quantita": 400,
+      "quantita": 200,
       "unita": "g",
       "congelato": true,
       "soglia_minima": 200,
@@ -445,7 +445,7 @@
     {
       "nome": "Piselli",
       "categoria": "Verdure & Frutta",
-      "quantita": 120,
+      "quantita": 0,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
@@ -575,7 +575,7 @@
     {
       "nome": "Carote Vassoio",
       "categoria": "Verdure & Frutta",
-      "quantita": 750,
+      "quantita": 500,
       "unita": "g",
       "congelato": false,
       "soglia_minima": 100,
