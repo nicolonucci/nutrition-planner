@@ -284,11 +284,11 @@
   {
    "nome": "Udon Rice Noodles",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 160,
+   "quantita": 60,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
-   "scadenza": "2027-08",
+   "scadenza": "",
    "note": "scadenza approssimata: solo mese/anno"
   },
   {
