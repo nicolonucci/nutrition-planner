@@ -354,7 +354,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 7,
+   "quantita": 6,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
