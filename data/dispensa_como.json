@@ -454,7 +454,7 @@
   {
    "nome": "Trita di Manzo",
    "categoria": "Proteine",
-   "quantita": 245,
+   "quantita": 45,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -564,7 +564,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1500,
+   "quantita": 1300,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
