@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 920,
+   "quantita": 830,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -564,7 +564,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1500,
+   "quantita": 1350,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
