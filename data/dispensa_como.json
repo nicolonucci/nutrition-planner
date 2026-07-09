@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-08",
+ "ultimo_aggiornamento": "2026-07-09",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -344,7 +344,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 3,
+   "quantita": 2,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
