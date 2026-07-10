@@ -63,6 +63,8 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .mini-btn{flex:1;padding:8px;border-radius:9px;border:1.5px solid var(--mid);background:#fff;font-size:12px;font-weight:600;color:#444;cursor:pointer}
 .mini-btn.primary{background:var(--green);border-color:var(--green);color:#fff}
 .ing-list{margin-top:8px;font-size:12.5px;color:#333;line-height:1.7;border-top:1px dashed var(--mid);padding-top:8px}
+.meal.eaten{border-color:var(--green-b);background:var(--green-l)}
+.meal.eaten .meal-desc{color:var(--green)}
 
 /* dispensa */
 .disp-item{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--mid);border-radius:12px;padding:10px 12px;margin-bottom:7px}
@@ -287,14 +289,18 @@ async function vMenu(){
     for (const [slot, p] of Object.entries(g.pasti||{})) {
       if (!p) continue;
       const hasRic = p.ricetta && p.ricetta.ingredienti;
-      h += `<div class="meal">
+      const eaten = !!p.consumato;
+      const oraCons = eaten ? String(p.consumato).slice(11,16) : '';
+      h += `<div class="meal ${eaten?'eaten':''}">
         <div class="meal-top"><span class="meal-slot">${esc(SLOT_LABEL[slot]||slot)}</span>
         <span class="meal-meta">${p.calorie_stimate?'~'+p.calorie_stimate+' kcal':''}${p.proteine_g?' · P '+p.proteine_g+'g':''}</span></div>
-        <div class="meal-desc">${esc(p.descrizione||'')}</div>
+        <div class="meal-desc">${eaten?'✓ ':''}${esc(p.descrizione||'')}</div>
         ${hasRic?`<div class="ing-list" style="display:none" id="ing-${gi}-${slot}">${p.ricetta.ingredienti.map(esc).join('<br>')}${p.ricetta.preparazione?'<br><em style="color:var(--grey)">'+p.ricetta.preparazione.map(esc).join(' ') +'</em>':''}</div>`:''}
         <div class="meal-actions">
           ${hasRic?`<button class="mini-btn" onclick="const e=$('#ing-${gi}-${slot}');e.style.display=e.style.display==='none'?'block':'none'">Ricetta</button>`:''}
-          ${hasRic?`<button class="mini-btn primary" onclick="registraPasto('${S.week}',${gi},'${slot}')">✓ Mangiato</button>`:''}
+          ${hasRic ? (eaten
+            ? `<button class="mini-btn" style="color:var(--green);border-color:var(--green-b)" onclick="annullaConsumato('${S.week}',${gi},'${slot}')">✓ Registrato${oraCons?' '+oraCons:''}</button>`
+            : `<button class="mini-btn primary" onclick="registraPasto('${S.week}',${gi},'${slot}')">✓ Mangiato</button>`) : ''}
         </div></div>`;
     }
     h += `</div>`;
@@ -307,8 +313,9 @@ async function vMenu(){
 async function registraPasto(weekId, gi, slot){
   const menu = await loadMenu(weekId);
   const p = menu.giorni[gi].pasti[slot];
+  if (p.consumato) return toast('Già registrato — tocca "✓ Registrato" per annullare');
   const righe = p.ricetta.ingredienti;
-  await preparaScalaggio(righe, `${SLOT_LABEL[slot]||slot} — ${p.descrizione}`);
+  await preparaScalaggio(righe, `${SLOT_LABEL[slot]||slot} — ${p.descrizione}`, { weekId, gi, slot });
 }
 async function pastoLibero(){
   openSheet('Pasto libero', `
@@ -322,7 +329,25 @@ async function pastoLiberoGo(){
   await preparaScalaggio(righe, 'Pasto libero');
 }
 
-async function preparaScalaggio(righe, titolo){
+async function annullaConsumato(weekId, gi, slot){
+  const menu = await loadMenu(weekId);
+  const p = menu.giorni[gi].pasti[slot];
+  openSheet('Annulla registrazione', `
+    <p style="font-size:14px;margin-bottom:6px"><strong>${esc(p.descrizione||'')}</strong></p>
+    <p style="font-size:13px;color:var(--grey)">Registrato ${esc(String(p.consumato).replace('T',' alle '))}.</p>
+    <div class="warn">⚠️ Annullare NON ripristina la dispensa: gli ingredienti già scalati restano scalati. Se hai sbagliato, correggi le quantità a mano in Dispensa.</div>
+    <button class="btn" onclick="annullaConsumatoGo('${weekId}',${gi},'${slot}')">Segna come non mangiato</button>`);
+}
+async function annullaConsumatoGo(weekId, gi, slot){
+  const menu = await loadMenu(weekId);
+  delete menu.giorni[gi].pasti[slot].consumato;
+  try { closeSheet(); toast('Salvataggio…',8000);
+    await ghWrite(`data/menus/${weekId}.json`, menu, `Annullata registrazione pasto (${weekId})`);
+    toast('↩️ Registrazione annullata'); render();
+  } catch(e){ toast('❌ '+e.message,5000); }
+}
+
+async function preparaScalaggio(righe, titolo, ctx){
   const disp = await loadDisp();
   const items = [];
   for (const r of righe) {
@@ -332,7 +357,7 @@ async function preparaScalaggio(righe, titolo){
     const { plan, mancante } = pianoScalaggio(ing.qty, matches);
     items.push({ ing, matches, plan, mancante, found: matches.length>0 });
   }
-  S._scala = { items, titolo };
+  S._scala = { items, titolo, ctx: ctx || null };
   let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — correggi le quantità davvero mangiate, poi conferma.</p>`;
   items.forEach((it, i) => {
     h += `<div class="pick ${it.found&&it.plan.length?'on':''}">
@@ -372,7 +397,14 @@ async function confermaScalaggio(){
   try {
     closeSheet(); toast('Salvataggio…', 8000);
     await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`);
-    toast('✅ Dispensa aggiornata'); if (S.view==='dispensa') render();
+    const ctx = S._scala.ctx;
+    if (ctx) {
+      const menu = await loadMenu(ctx.weekId);
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato = new Date().toISOString().slice(0,16);
+      await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${S._scala.titolo}`);
+    }
+    toast('✅ Registrato — dispensa aggiornata');
+    if (S.view==='dispensa' || S.view==='menu') render();
   } catch(e){ toast('❌ '+e.message, 5000); }
 }
 
