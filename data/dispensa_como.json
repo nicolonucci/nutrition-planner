@@ -214,7 +214,7 @@
   {
    "nome": "Riso Venere",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 350,
+   "quantita": 280,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -564,7 +564,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1300,
+   "quantita": 1150,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
