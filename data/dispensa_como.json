@@ -314,7 +314,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 333,
+   "quantita": 183,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -324,7 +324,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 4,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
