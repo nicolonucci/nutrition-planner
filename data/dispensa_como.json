@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-11",
+ "ultimo_aggiornamento": "2026-07-12",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -534,7 +534,7 @@
   {
    "nome": "Gamberetti",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 100,
