@@ -314,7 +314,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 183,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -354,7 +354,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 6,
+   "quantita": 4,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -474,7 +474,7 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -514,7 +514,7 @@
   {
    "nome": "Fettine di Manzo",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
