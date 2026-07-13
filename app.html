@@ -516,6 +516,7 @@ function formAlimento(a, i){
   <div class="frow"><label>Categoria</label><select id="fa-cat">${CATS.map(c=>`<option ${a.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
   <div class="f2"><div class="frow"><label>Congelato</label><select id="fa-cong"><option value="no" ${!a.congelato?'selected':''}>No</option><option value="si" ${a.congelato?'selected':''}>Sì ❄️</option></select></div>
   <div class="frow"><label>Soglia minima</label><input id="fa-soglia" type="number" inputmode="decimal" value="${a.soglia_minima??0}"></div></div>
+  <div class="frow"><label>Monoporzione (a pezzi, richiede nota NxG es. 6x25g)</label><select id="fa-mono"><option value="no" ${!a.monoporzione?'selected':''}>No — gestisci in grammi</option><option value="si" ${a.monoporzione?'selected':''}>Sì — gestisci a pezzi</option></select></div>
   <div class="f2"><div class="frow"><label>Scadenza</label><input id="fa-scad" type="date" value="${esc(a.scadenza||'')}"></div>
   <div class="frow"><label>Note</label><input id="fa-note" value="${esc(a.note||'')}"></div></div>
   <button class="btn green" onclick="salvaAlimento(${i})">${i<0?'Aggiungi':'Salva modifiche'}</button>
@@ -529,6 +530,7 @@ function salvaAlimento(i){
     nome: $('#fa-nome').value.trim(), categoria: $('#fa-cat').value,
     quantita: Number($('#fa-qty').value)||0, unita: $('#fa-unit').value,
     congelato: $('#fa-cong').value==='si', soglia_minima: Number($('#fa-soglia').value)||0,
+    monoporzione: $('#fa-mono').value==='si',
     scadenza: $('#fa-scad').value||'', note: $('#fa-note').value.trim(),
   };
   if (!a.nome) return toast('Nome mancante');
@@ -578,10 +580,10 @@ async function confermaLista(){
     const ex = disp.alimenti.find(a => !!a.congelato===cong && normText(a.nome)===normText(nome) && normDispUnit(a.unita)===unit);
     if (ex) {
       ex.quantita = Math.round((Number(ex.quantita)+qty)*100)/100;
-      if (it.gramm && !portionInfo(ex)) ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:'');
+      if (it.gramm && !portionInfo(ex)) { ex.monoporzione = true; ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:''); }
       else syncNotePorzioni(ex);
     }
-    else disp.alimenti.push({ nome, categoria:cat, quantita:qty, unita:unit, congelato:cong, soglia_minima:0, scadenza:'', note: it.gramm?noteLabelPorzioni(qty,it.gramm):'' });
+    else disp.alimenti.push({ nome, categoria:cat, quantita:qty, unita:unit, congelato:cong, soglia_minima:0, scadenza:'', monoporzione: !!it.gramm, note: it.gramm?noteLabelPorzioni(qty,it.gramm):'' });
     n++;
   });
   if (!n) return toast('Niente da aggiungere');
@@ -702,10 +704,10 @@ async function confermaVerificaSpesa(){
     const ex = disp.alimenti.find(a => !!a.congelato===cong && normText(a.nome)===normText(it.nome) && normDispUnit(a.unita)===it.unit);
     if (ex) {
       ex.quantita = Math.round((Number(ex.quantita)+q)*100)/100;
-      if (it.gramm && !portionInfo(ex)) ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:'');
+      if (it.gramm && !portionInfo(ex)) { ex.monoporzione = true; ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:''); }
       else syncNotePorzioni(ex);
     }
-    else disp.alimenti.push({ nome: it.nome.replace(/\b\w/, c=>c.toUpperCase()), categoria: it.categoria, quantita: q, unita: it.unit, congelato: cong, soglia_minima: 0, scadenza: '',
+    else disp.alimenti.push({ nome: it.nome.replace(/\b\w/, c=>c.toUpperCase()), categoria: it.categoria, quantita: q, unita: it.unit, congelato: cong, soglia_minima: 0, scadenza: '', monoporzione: !!it.gramm,
       note: it.gramm ? noteLabelPorzioni(q, it.gramm) : 'da app '+new Date().toISOString().slice(0,10) });
   });
   disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);

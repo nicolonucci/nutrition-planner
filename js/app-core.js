@@ -107,6 +107,7 @@ function parseIngrediente(riga) {
 const NXG_RE = /(\d+(?:[.,]\d+)?)\s*[xX×]\s*(\d+(?:[.,]\d+)?)\s*(g|gr|kg|ml|l)\b/;
 
 function portionInfo(a) {
+  if (!a.monoporzione) return null; // NxG in nota senza flag = confezioni multiple (es. pasta 3x400g), resta in grammi
   const m = String(a.note || '').match(NXG_RE);
   if (!m) return null;
   let gramm = parseFloat(m[2].replace(',', '.'));

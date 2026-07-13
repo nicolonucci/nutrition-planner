@@ -9,7 +9,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2029-01-12",
-   "note": "3x400g"
+   "note": "3x400g",
+   "monoporzione": false
   },
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -19,7 +20,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-11-14",
-   "note": "2x400g"
+   "note": "2x400g",
+   "monoporzione": false
   },
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -29,7 +31,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-12-09",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Pasta Stelline Granoro",
@@ -39,7 +42,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2027-06-24",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Focaccia Croccante Graziosi",
@@ -49,7 +53,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-09-22",
-   "note": "3x70g"
+   "note": "3x70g",
+   "monoporzione": true
   },
   {
    "nome": "Quadratini Mulino Bianco",
@@ -59,7 +64,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-08-31",
-   "note": "6x33g"
+   "note": "6x33g",
+   "monoporzione": true
   },
   {
    "nome": "Quadratini Mulino Bianco",
@@ -69,7 +75,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-10-20",
-   "note": "4x33g"
+   "note": "4x33g",
+   "monoporzione": true
   },
   {
    "nome": "Quadratini Mulino Bianco",
@@ -79,7 +86,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-10-20",
-   "note": "12x33g"
+   "note": "12x33g",
+   "monoporzione": true
   },
   {
    "nome": "Wafer Fondente Galbusera",
@@ -89,7 +97,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-10-26",
-   "note": "8x45g"
+   "note": "8x45g",
+   "monoporzione": true
   },
   {
    "nome": "Wafer Nocciola Galbusera",
@@ -99,7 +108,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-10-29",
-   "note": "4x45g"
+   "note": "4x45g",
+   "monoporzione": true
   },
   {
    "nome": "Grissini Veneziane",
@@ -109,7 +119,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-09-16",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Sfogliatelle Graziosi",
@@ -119,7 +130,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-08-25",
-   "note": "9x14,5g"
+   "note": "9x14,5g",
+   "monoporzione": true
   },
   {
    "nome": "Biscotti Orosaiwa",
@@ -129,7 +141,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-10-31",
-   "note": "6x33g"
+   "note": "6x33g",
+   "monoporzione": true
   },
   {
    "nome": "Pane Carasau",
@@ -139,7 +152,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-09-08",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Avena Probios",
@@ -149,7 +163,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-04-14",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Avena",
@@ -159,17 +174,19 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2027-10-08",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Biscotti del Mattino Luisanna",
    "categoria": "Snack & Altro",
-   "quantita": 225,
+   "quantita": 300,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "2026-08-06",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Muesli Graziosi",
@@ -179,7 +196,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2026-11-26",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Piadine Loriana",
@@ -189,7 +207,8 @@
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2026-10-12",
-   "note": "9x75g"
+   "note": "9x75g",
+   "monoporzione": true
   },
   {
    "nome": "Riso Venere",
@@ -199,7 +218,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-06",
-   "note": "scadenza approssimata: solo mese/anno"
+   "note": "scadenza approssimata: solo mese/anno",
+   "monoporzione": false
   },
   {
    "nome": "Riso Basmati",
@@ -209,7 +229,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-05-04",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Riso Basmati",
@@ -219,7 +240,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2028-04-20",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Fagiolini Fini",
@@ -229,7 +251,8 @@
    "congelato": false,
    "soglia_minima": 220,
    "scadenza": "2028-08-31",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Tonno al Naturale",
@@ -239,7 +262,8 @@
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2030-03-31",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Udon Rice Noodles",
@@ -249,7 +273,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "scadenza approssimata: solo mese/anno"
+   "note": "scadenza approssimata: solo mese/anno",
+   "monoporzione": false
   },
   {
    "nome": "Yogurt Greco 0%",
@@ -259,7 +284,8 @@
    "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Banane",
@@ -269,7 +295,8 @@
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Avocado",
@@ -279,7 +306,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Cioccolato Lindt 78%",
@@ -289,7 +317,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Philadelphia Light",
@@ -299,7 +328,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "6x25g"
+   "note": "6x25g",
+   "monoporzione": true
   },
   {
    "nome": "Nasello",
@@ -309,7 +339,8 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "2x150g"
+   "note": "2x150g",
+   "monoporzione": true
   },
   {
    "nome": "Merluzzo",
@@ -319,7 +350,8 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "1x200g"
+   "note": "1x200g",
+   "monoporzione": true
   },
   {
    "nome": "Trita di Manzo",
@@ -329,7 +361,8 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Grana Padano DOP",
@@ -339,7 +372,8 @@
    "congelato": false,
    "soglia_minima": 50,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Bresaola Valtellina IGP",
@@ -349,7 +383,8 @@
    "congelato": false,
    "soglia_minima": 30,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Pomodoro",
@@ -359,7 +394,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "2x500g"
+   "note": "2x500g",
+   "monoporzione": false
   },
   {
    "nome": "Carote Vassoio",
@@ -369,7 +405,8 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Passata Cirio",
@@ -379,7 +416,8 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Pollo",
@@ -389,7 +427,8 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "5x200g"
+   "note": "5x200g",
+   "monoporzione": true
   },
   {
    "nome": "Fettine di Manzo",
@@ -399,7 +438,8 @@
    "congelato": true,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "1x200g"
+   "note": "1x200g",
+   "monoporzione": true
   }
  ]
 }
