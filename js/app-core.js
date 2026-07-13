@@ -102,6 +102,47 @@ function parseIngrediente(riga) {
   return { raw: riga, nome, qty: Math.round(nu.qty * 100) / 100, unit: nu.unit, tokens: tokensOf(nome) };
 }
 
+// ── Monoporzione: prodotti con nota "NxMg" (es. "6x25g") ──
+// La grammatura (M) è il dato stabile; N viene ricalcolato da quantita.
+const NXG_RE = /(\d+(?:[.,]\d+)?)\s*[xX×]\s*(\d+(?:[.,]\d+)?)\s*(g|gr|kg|ml|l)\b/;
+
+function portionInfo(a) {
+  const m = String(a.note || '').match(NXG_RE);
+  if (!m) return null;
+  let gramm = parseFloat(m[2].replace(',', '.'));
+  const u = (m[3] || 'g').toLowerCase();
+  if (u === 'kg') gramm *= 1000; else if (u === 'l') gramm *= 1000;
+  if (!gramm || normDispUnit(a.unita) === 'pz') return null;
+  return { gramm, pezzi: Math.round((Number(a.quantita) / gramm) * 10) / 10 };
+}
+
+function noteLabelPorzioni(qta, gramm) {
+  const n = Math.round((Number(qta) / gramm) * 10) / 10;
+  return `${String(n % 1 ? n.toFixed(1) : n).replace('.', ',')}x${String(gramm).replace('.', ',')}g`;
+}
+
+// riscrive la parte NxMg della nota in base alla quantità attuale
+function syncNotePorzioni(a) {
+  const pi = portionInfo(a);
+  if (!pi) return;
+  a.note = String(a.note).replace(NXG_RE, noteLabelPorzioni(a.quantita, pi.gramm));
+}
+
+// parse riga "philadelphia 6x25g" / "pollo 5x200g" → {nome, n, gramm, qty, unit}
+function parseNxG(riga) {
+  const m = String(riga).match(NXG_RE);
+  if (!m) return null;
+  const n = parseFloat(m[1].replace(',', '.'));
+  let gramm = parseFloat(m[2].replace(',', '.'));
+  let unit = m[3].toLowerCase();
+  if (unit === 'kg') { gramm *= 1000; unit = 'g'; }
+  else if (unit === 'l') { gramm *= 1000; unit = 'ml'; }
+  else if (unit === 'gr') unit = 'g';
+  const nome = String(riga).replace(m[0], ' ').replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!nome || !n || !gramm) return null;
+  return { nome, n, gramm, qty: Math.round(n * gramm * 100) / 100, unit };
+}
+
 // ── Matching con dispensa ──
 function matchScore(tokA, tokB) {
   if (!tokA.length || !tokB.length) return 0;
@@ -243,5 +284,6 @@ const GIORNI_IT = ['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Saba
 
 if (typeof module !== 'undefined') module.exports = {
   normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio,
-  ingredientiSettimana, calcolaSpesa, guessCategoria, isoWeekOf, prossimaSettimana, GIORNI_IT
+  ingredientiSettimana, calcolaSpesa, guessCategoria, isoWeekOf, prossimaSettimana, GIORNI_IT,
+  portionInfo, syncNotePorzioni, noteLabelPorzioni, parseNxG
 };

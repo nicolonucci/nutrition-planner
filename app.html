@@ -390,6 +390,7 @@ async function confermaScalaggio(){
   for (const i of checked) for (const pl of S._scala.items[i].plan) {
     const al = disp.alimenti[pl.index];
     al.quantita = Math.max(0, Math.round((Number(al.quantita)-pl.prelievo)*100)/100);
+    syncNotePorzioni(al);
     n++;
   }
   if (!n) return toast('Niente da scalare');
@@ -417,9 +418,10 @@ async function vDispensa(){
     <button class="wchip ${S.loc==='milano'?'on':''}" onclick="cambiaLoc('milano')">🏙️ Milano</button>
     <button class="wchip" onclick="addAlimento()">＋ Aggiungi</button>
     <button class="wchip" onclick="addLista()">📋 Lista</button></div>`;
-  if (!disp.alimenti.length) h += '<div class="empty">📦 Dispensa vuota.<br>Aggiungi il primo alimento.</div>';
+  const visibili = disp.alimenti.filter(a=>Number(a.quantita)>0);
+  if (!visibili.length) h += '<div class="empty">📦 Dispensa vuota.<br>Aggiungi il primo alimento.</div>';
   const gruppi = {};
-  disp.alimenti.forEach((a,i)=>{ (gruppi[a.categoria||'Snack & Altro'] ??= []).push([a,i]); });
+  disp.alimenti.forEach((a,i)=>{ if(Number(a.quantita)<=0) return; (gruppi[a.categoria||'Snack & Altro'] ??= []).push([a,i]); });
   for (const cat of [...CATS, ...Object.keys(gruppi).filter(c=>!CATS.includes(c))]) {
     if (!gruppi[cat]) continue;
     h += `<div class="sl">${esc(cat)} · ${gruppi[cat].length}</div>`;
@@ -428,9 +430,9 @@ async function vDispensa(){
       h += `<div class="disp-item ${low?'low':''}">
         <div class="di-info" onclick="editAlimento(${i})">
           <div class="di-nome">${esc(a.nome)} ${a.congelato?'<span class="tag-cong">❄️ CONG</span>':''}</div>
-          <div class="di-meta">${a.scadenza?'scad. '+esc(a.scadenza):''}${a.note?' · '+esc(a.note):''}${low?' · ⚠️ sotto soglia':''}</div>
+          <div class="di-meta" id="m-${i}">${metaLabel(a)}</div>
         </div>
-        <span class="di-qty" id="q-${i}">${a.quantita}${esc(a.unita)}</span>
+        <span class="di-qty" id="q-${i}" style="border-bottom:1.5px dashed var(--grey);cursor:pointer" onclick="editQty(${i})">${qtyLabel(a)}</span>
         <div class="stepper">
           <button onclick="stepQty(${i},-1)">−</button>
           <button onclick="stepQty(${i},1)">＋</button>
@@ -442,10 +444,56 @@ async function vDispensa(){
 }
 function cambiaLoc(l){ if (S.dispDirty) return toast('Salva prima le modifiche'); S.loc=l; localStorage.setItem('nh_loc',l); render(); }
 function stepOf(u){ u=String(u||'').toLowerCase(); return (u==='g')?50:(u==='ml')?100:1; }
+function qtyLabel(a){
+  const pi = portionInfo(a);
+  if (pi) return `${pi.pezzi % 1 ? pi.pezzi.toFixed(1) : pi.pezzi} pz`;
+  return a.quantita + esc(a.unita);
+}
+function metaLabel(a){
+  const low = a.soglia_minima && Number(a.quantita) <= Number(a.soglia_minima);
+  const pi = portionInfo(a);
+  const parts = [];
+  if (pi) parts.push(`porzioni da ${pi.gramm}${esc(normDispUnit(a.unita))} · tot ${a.quantita}${esc(a.unita)}`);
+  if (a.scadenza) parts.push('scad. '+esc(a.scadenza));
+  if (a.note && !pi) parts.push(esc(a.note));
+  if (low) parts.push('⚠️ sotto soglia');
+  return parts.join(' · ');
+}
+function refreshRow(i){
+  const a = S.disp[S.loc].alimenti[i];
+  const q = $('#q-'+i), m = $('#m-'+i);
+  if (q) q.innerHTML = qtyLabel(a);
+  if (m) m.innerHTML = metaLabel(a);
+}
 function stepQty(i, dir){
   const a = S.disp[S.loc].alimenti[i];
-  a.quantita = Math.max(0, Math.round((Number(a.quantita) + dir*stepOf(a.unita))*100)/100);
-  $('#q-'+i).textContent = a.quantita + a.unita;
+  const pi = portionInfo(a);
+  const step = pi ? pi.gramm : stepOf(a.unita);
+  a.quantita = Math.max(0, Math.round((Number(a.quantita) + dir*step)*100)/100);
+  syncNotePorzioni(a);
+  refreshRow(i);
+  S.dispDirty = true; refreshSavebar();
+}
+/* modifica manuale: tap sulla quantità → input. Monoporzione si edita in pezzi, il resto in g/ml/pz */
+function editQty(i){
+  const a = S.disp[S.loc].alimenti[i];
+  const el = $('#q-'+i);
+  if (el.querySelector('input')) return;
+  const pi = portionInfo(a);
+  const val = pi ? pi.pezzi : a.quantita;
+  el.innerHTML = `<input type="number" inputmode="decimal" step="any" min="0" value="${val}"
+    style="width:70px;padding:7px 4px;border:1.5px solid var(--gold);border-radius:8px;text-align:center;font-weight:700;font-size:14px"
+    onclick="event.stopPropagation()" onblur="setQty(${i},this.value)"
+    onkeydown="if(event.key==='Enter')this.blur()">`;
+  const inp = el.querySelector('input'); inp.focus(); inp.select();
+}
+function setQty(i, v){
+  const a = S.disp[S.loc].alimenti[i];
+  const pi = portionInfo(a);
+  const q = Math.max(0, Number(String(v).replace(',','.')) || 0);
+  a.quantita = Math.round((pi ? q*pi.gramm : q)*100)/100;
+  syncNotePorzioni(a);
+  refreshRow(i);
   S.dispDirty = true; refreshSavebar();
 }
 function refreshSavebar(){
@@ -492,20 +540,26 @@ function delAlimento(i){ S.disp[S.loc].alimenti.splice(i,1); S.dispDirty=true; c
 /* ── aggiunta da lista testuale ── */
 function addLista(){
   openSheet('📋 Aggiungi lista', `
-    <p style="font-size:13px;color:var(--grey);margin-bottom:10px">Un alimento per riga, con quantità (es. <em>petto di pollo 1 kg</em>).</p>
-    <div class="frow"><textarea id="bl-txt" placeholder="petto di pollo 1 kg&#10;broccoli 500 g&#10;uova 12 pz&#10;latte 1 l"></textarea></div>
+    <p style="font-size:13px;color:var(--grey);margin-bottom:10px">Un alimento per riga, con quantità (es. <em>petto di pollo 1 kg</em>). Per le monoporzioni usa <em>NxG</em> (es. <em>philadelphia 6x25g</em>, <em>pollo 5x200g</em>).</p>
+    <div class="frow"><textarea id="bl-txt" placeholder="petto di pollo 5x200g&#10;philadelphia 6x25g&#10;broccoli 500 g&#10;uova 12 pz"></textarea></div>
     <div class="frow"><label>Congelato?</label><select id="bl-cong"><option value="no">No, tutto fresco</option><option value="si">Sì, tutto in freezer ❄️</option></select></div>
     <button class="btn" onclick="anteprimaLista()">Anteprima</button>
     <div id="bl-prev"></div>`);
 }
 function anteprimaLista(){
   const righe = $('#bl-txt').value.split(/\n/).map(s=>s.trim()).filter(Boolean);
-  const parsed = righe.map(r=>parseIngrediente(r)).filter(Boolean);
+  const parsed = righe.map(r=>{
+    const nx = parseNxG(r);
+    if (nx) return { nome: nx.nome, qty: nx.qty, unit: nx.unit, gramm: nx.gramm };
+    const ing = parseIngrediente(r);
+    return ing ? { nome: ing.nome, qty: ing.qty, unit: ing.unit } : null;
+  }).filter(Boolean);
   if (!parsed.length) return toast('Nessuna riga riconosciuta');
-  S._lista = parsed.map(ing => ({ nome: ing.nome.replace(/^./, c=>c.toUpperCase()), qty: ing.qty, unit: ing.unit, cat: guessCategoria(ing.nome) }));
+  S._lista = parsed.map(it => ({ ...it, nome: it.nome.replace(/^./, c=>c.toUpperCase()), cat: guessCategoria(it.nome) }));
   let h = '<div class="sl">Verifica e correggi</div>';
   S._lista.forEach((it,i)=>{ h += `<div class="pick on">
     <div class="pk-i"><input id="bl-n-${i}" value="${esc(it.nome)}" style="width:100%;padding:7px 9px;border:1.5px solid var(--mid);border-radius:8px;font-weight:600">
+    ${it.gramm?`<div style="font-size:11px;color:var(--gold);font-weight:600;margin-top:3px">monoporzione · ${noteLabelPorzioni(it.qty,it.gramm)}</div>`:''}
     <select id="bl-c-${i}" style="width:100%;margin-top:5px;padding:6px 9px;border:1.5px solid var(--mid);border-radius:8px;font-size:13px">${CATS.map(c=>`<option ${it.cat===c?'selected':''}>${c}</option>`).join('')}</select></div>
     <input class="qty-in" id="bl-q-${i}" type="number" inputmode="decimal" step="any" value="${it.qty}">
     <select id="bl-u-${i}" style="padding:8px 4px;border:1.5px solid var(--mid);border-radius:8px">${['g','ml','pz'].map(u=>`<option ${it.unit===u?'selected':''}>${u}</option>`).join('')}</select></div>`; });
@@ -520,9 +574,14 @@ async function confermaLista(){
     const nome = $('#bl-n-'+i).value.trim(), qty = Number($('#bl-q-'+i).value)||0;
     const unit = $('#bl-u-'+i).value, cat = $('#bl-c-'+i).value;
     if (!nome || qty<=0) return;
-    const ex = disp.alimenti.find(a => !a.congelato && !cong && normText(a.nome)===normText(nome) && normDispUnit(a.unita)===unit);
-    if (ex) ex.quantita = Math.round((Number(ex.quantita)+qty)*100)/100;
-    else disp.alimenti.push({ nome, categoria:cat, quantita:qty, unita:unit, congelato:cong, soglia_minima:0, scadenza:'', note:'' });
+    // merge su voce esistente con stesso nome/unità/stato congelato (anche freezer: pollo, pesce…)
+    const ex = disp.alimenti.find(a => !!a.congelato===cong && normText(a.nome)===normText(nome) && normDispUnit(a.unita)===unit);
+    if (ex) {
+      ex.quantita = Math.round((Number(ex.quantita)+qty)*100)/100;
+      if (it.gramm && !portionInfo(ex)) ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:'');
+      else syncNotePorzioni(ex);
+    }
+    else disp.alimenti.push({ nome, categoria:cat, quantita:qty, unita:unit, congelato:cong, soglia_minima:0, scadenza:'', note: it.gramm?noteLabelPorzioni(qty,it.gramm):'' });
     n++;
   });
   if (!n) return toast('Niente da aggiungere');
@@ -533,6 +592,8 @@ async function confermaLista(){
 </script>
 <script>
 /* ═══════════ VISTA: SPESA ═══════════ */
+async function loadSpesaExtra(){ if(!S.spesaExtra) S.spesaExtra = await ghRead('data/spesa_extra.json') || {como:[],milano:[]}; return S.spesaExtra; }
+
 async function vSpesa(){
   const [setts, disp] = [await loadSettimane(), await loadDisp()];
   const ids = (setts.settimane||[]).map(s=>s.id).sort().reverse();
@@ -541,24 +602,78 @@ async function vSpesa(){
     `<button class="wchip ${id===S.week?'on':''}" onclick="S.week='${id}';render()">${id.replace('20','')}</button>`).join('') + `</div>
     <div class="chiprow">
     <button class="wchip ${S.loc==='como'?'on':''}" onclick="S.loc='como';localStorage.setItem('nh_loc','como');S.disp={};render()">🏠 Como</button>
-    <button class="wchip ${S.loc==='milano'?'on':''}" onclick="S.loc='milano';localStorage.setItem('nh_loc','milano');S.disp={};render()">🏙️ Milano</button></div>`;
+    <button class="wchip ${S.loc==='milano'?'on':''}" onclick="S.loc='milano';localStorage.setItem('nh_loc','milano');S.disp={};render()">🏙️ Milano</button>
+    <button class="wchip" onclick="addSpesaManuale()">＋ Aggiungi voci</button></div>`;
   const menu = await loadMenu(S.week);
-  if (!menu) { $('#view').innerHTML = h + '<div class="empty">Nessun menù per questa settimana.</div>'; return; }
-  const lista = calcolaSpesa(menu, disp.alimenti);
-  S._spesa = lista;
-  if (!lista.length) { $('#view').innerHTML = h + '<div class="okbox">✅ La dispensa copre tutto il menù della settimana. Niente da comprare.</div>'; return; }
-  h += `<div class="sl">Da comprare · ${lista.length} voci</div><p style="font-size:12px;color:var(--grey);margin-bottom:8px">Quantità stimate dal menù ${esc(S.week)}, al netto di ciò che è già in dispensa (${S.loc}). Spunta ciò che compri.</p>`;
-  let cat = '';
-  lista.forEach((it, i) => {
-    if (it.categoria !== cat) { cat = it.categoria; h += `<div class="sl">${esc(cat)}</div>`; }
-    h += `<div class="pick" onclick="event.target.tagName!=='INPUT'&&this.querySelector('input').click()">
-      <input type="checkbox" data-i="${i}" onclick="event.stopPropagation()">
-      <div class="pk-i"><div class="pk-n">${esc(it.nome)}</div>
-      <div class="pk-m">${it.qty}${esc(it.unit)}${it.inDispensa?' · già in casa: '+it.inDispensa:''} · ${it.giorni.map(g=>g.slice(0,3)).join(', ')}</div></div></div>`;
-  });
+  const lista = menu ? calcolaSpesa(menu, disp.alimenti) : [];
+  const extra = ((await loadSpesaExtra())[S.loc] || []).map((it,ei)=>({ ...it, manuale:true, ei }));
+  S._spesa = [...extra, ...lista];
+  if (!S._spesa.length) {
+    $('#view').innerHTML = h + (menu
+      ? '<div class="okbox">✅ La dispensa copre tutto il menù della settimana. Niente da comprare.</div>'
+      : '<div class="empty">Nessun menù per questa settimana.<br>Puoi comunque aggiungere voci manuali con ＋.</div>');
+    return;
+  }
+  if (extra.length) {
+    h += `<div class="sl">✎ Aggiunte manuali · ${extra.length}</div>`;
+    extra.forEach((it, i) => {
+      h += `<div class="pick" onclick="event.target.tagName!=='INPUT'&&event.target.tagName!=='BUTTON'&&this.querySelector('input').click()">
+        <input type="checkbox" data-i="${i}" onclick="event.stopPropagation()">
+        <div class="pk-i"><div class="pk-n">${esc(it.nome)}</div>
+        <div class="pk-m">${it.gramm?noteLabelPorzioni(it.qty,it.gramm)+' · ':''}${it.qty}${esc(it.unit)} · ${esc(it.categoria)}</div></div>
+        <button class="btn-sm" style="color:var(--red);border-color:var(--red-b);padding:6px 10px" onclick="event.stopPropagation();rimuoviSpesaExtra(${it.ei})">✕</button></div>`;
+    });
+  }
+  if (!menu) h += '<div class="empty" style="padding:16px">Nessun menù per questa settimana.</div>';
+  else if (lista.length) {
+    h += `<div class="sl">Da comprare per il menù · ${lista.length} voci</div><p style="font-size:12px;color:var(--grey);margin-bottom:8px">Quantità stimate dal menù ${esc(S.week)}, al netto di ciò che è già in dispensa (${S.loc}). Spunta ciò che compri.</p>`;
+    let cat = '';
+    lista.forEach((it, li) => {
+      const i = extra.length + li;
+      if (it.categoria !== cat) { cat = it.categoria; h += `<div class="sl">${esc(cat)}</div>`; }
+      h += `<div class="pick" onclick="event.target.tagName!=='INPUT'&&this.querySelector('input').click()">
+        <input type="checkbox" data-i="${i}" onclick="event.stopPropagation()">
+        <div class="pk-i"><div class="pk-n">${esc(it.nome)}</div>
+        <div class="pk-m">${it.qty}${esc(it.unit)}${it.inDispensa?' · già in casa: '+it.inDispensa:''} · ${it.giorni.map(g=>g.slice(0,3)).join(', ')}</div></div></div>`;
+    });
+  } else h += '<div class="okbox">✅ Il menù della settimana è coperto dalla dispensa.</div>';
   h += `<button class="btn green" onclick="verificaSpesa()">🛒 Ho fatto la spesa</button>
         <p style="font-size:11.5px;color:var(--grey);margin-top:8px;text-align:center">Le voci spuntate verranno aggiunte alla dispensa di ${S.loc==='como'?'Como':'Milano'}.</p>`;
   $('#view').innerHTML = h;
+}
+
+/* ── voci manuali ── */
+function addSpesaManuale(){
+  openSheet('＋ Voci manuali', `
+    <p style="font-size:13px;color:var(--grey);margin-bottom:10px">Una voce per riga. Per le monoporzioni usa <em>NxG</em> (es. <em>philadelphia 6x25g</em>, <em>pollo 5x200g</em>).</p>
+    <div class="frow"><textarea id="sm-txt" placeholder="philadelphia 6x25g&#10;pollo 5x200g&#10;banane 6 pz&#10;latte 500 ml"></textarea></div>
+    <button class="btn green" onclick="salvaSpesaManuale()">Aggiungi alla lista (${S.loc==='como'?'Como':'Milano'})</button>`);
+}
+async function salvaSpesaManuale(){
+  const righe = $('#sm-txt').value.split(/\n/).map(s=>s.trim()).filter(Boolean);
+  const ex = await loadSpesaExtra();
+  ex[S.loc] ??= [];
+  let n = 0;
+  for (const r of righe) {
+    const nx = parseNxG(r);
+    if (nx) { ex[S.loc].push({ nome: nx.nome.replace(/^./, c=>c.toUpperCase()), qty: nx.qty, unit: nx.unit, gramm: nx.gramm, categoria: guessCategoria(nx.nome) }); n++; continue; }
+    const ing = parseIngrediente(r);
+    if (!ing) continue;
+    ex[S.loc].push({ nome: ing.nome.replace(/^./, c=>c.toUpperCase()), qty: ing.qty, unit: ing.unit, categoria: guessCategoria(ing.nome) }); n++;
+  }
+  if (!n) return toast('Nessuna voce riconosciuta');
+  try { closeSheet(); toast('Salvataggio…',8000);
+    await ghWrite('data/spesa_extra.json', ex, `Spesa manuale ${S.loc}: +${n} voci`);
+    toast('✅ '+n+' voci aggiunte alla lista'); render();
+  } catch(e){ toast('❌ '+e.message,5000); }
+}
+async function rimuoviSpesaExtra(ei){
+  const ex = await loadSpesaExtra();
+  const rem = (ex[S.loc]||[]).splice(ei,1);
+  try { toast('Salvataggio…',8000);
+    await ghWrite('data/spesa_extra.json', ex, `Spesa manuale ${S.loc}: rimossa ${rem[0]?rem[0].nome:'voce'}`);
+    render();
+  } catch(e){ toast('❌ '+e.message,5000); }
 }
 
 function verificaSpesa(){
@@ -566,7 +681,7 @@ function verificaSpesa(){
   if (!sel.length) return toast('Spunta prima ciò che hai comprato');
   let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Conferma le quantità effettivamente acquistate:</p>`;
   sel.forEach((it,i)=>{ h += `<div class="pick on">
-    <div class="pk-i"><div class="pk-n">${esc(it.nome)}</div><div class="pk-m">${esc(it.categoria)}</div></div>
+    <div class="pk-i"><div class="pk-n">${esc(it.nome)}</div><div class="pk-m">${esc(it.categoria)}${it.gramm?' · monoporzione '+noteLabelPorzioni(it.qty,it.gramm):''}</div></div>
     <input class="qty-in" id="vs-${i}" type="number" inputmode="decimal" value="${it.qty}"> <span style="font-size:12px">${esc(it.unit)}</span>
     </div>`; });
   h += `<div class="frow" style="margin-top:10px"><label>Congelato?</label><select id="vs-cong"><option value="no">No, tutto fresco</option><option value="si">Sì, tutto in freezer ❄️</option></select></div>
@@ -578,17 +693,34 @@ function verificaSpesa(){
 async function confermaVerificaSpesa(){
   const disp = await loadDisp();
   const cong = $('#vs-cong').value === 'si';
+  const comprate = [];
   S._spesaSel.forEach((it,i)=>{
     const q = Number($('#vs-'+i).value)||0;
     if (q<=0) return;
-    // merge su voce esistente (stesso nome, stessa unità, stesso stato congelato)
-    const ex = disp.alimenti.find(a => !a.congelato===!cong && normText(a.nome)===normText(it.nome) && normDispUnit(a.unita)===it.unit);
-    if (ex && !cong) ex.quantita = Math.round((Number(ex.quantita)+q)*100)/100;
-    else disp.alimenti.push({ nome: it.nome.replace(/\b\w/, c=>c.toUpperCase()), categoria: it.categoria, quantita: q, unita: it.unit, congelato: cong, soglia_minima: 0, scadenza: '', note: 'da app '+new Date().toISOString().slice(0,10) });
+    comprate.push(it);
+    // merge su voce esistente (stesso nome, stessa unità, stesso stato congelato — anche freezer)
+    const ex = disp.alimenti.find(a => !!a.congelato===cong && normText(a.nome)===normText(it.nome) && normDispUnit(a.unita)===it.unit);
+    if (ex) {
+      ex.quantita = Math.round((Number(ex.quantita)+q)*100)/100;
+      if (it.gramm && !portionInfo(ex)) ex.note = noteLabelPorzioni(ex.quantita, it.gramm) + (ex.note?' · '+ex.note:'');
+      else syncNotePorzioni(ex);
+    }
+    else disp.alimenti.push({ nome: it.nome.replace(/\b\w/, c=>c.toUpperCase()), categoria: it.categoria, quantita: q, unita: it.unit, congelato: cong, soglia_minima: 0, scadenza: '',
+      note: it.gramm ? noteLabelPorzioni(q, it.gramm) : 'da app '+new Date().toISOString().slice(0,10) });
   });
   disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
-  try { closeSheet(); toast('Salvataggio…',8000); await ghWrite(dispPath(), disp, `Verifica spesa (${S.loc})`); toast('✅ Dispensa aggiornata'); render(); }
-  catch(e){ toast('❌ '+e.message,5000); }
+  try { closeSheet(); toast('Salvataggio…',8000);
+    await ghWrite(dispPath(), disp, `Verifica spesa (${S.loc})`);
+    // le voci manuali acquistate escono dalla lista extra
+    const manAcq = comprate.filter(x=>x.manuale);
+    if (manAcq.length) {
+      const ex = await loadSpesaExtra();
+      const eis = new Set(manAcq.map(x=>x.ei));
+      ex[S.loc] = (ex[S.loc]||[]).filter((_,i)=>!eis.has(i));
+      await ghWrite('data/spesa_extra.json', ex, `Spesa manuale ${S.loc}: acquistate ${manAcq.length}`);
+    }
+    toast('✅ Dispensa aggiornata'); render();
+  } catch(e){ toast('❌ '+e.message,5000); }
 }
 
 /* ═══════════ VISTA: PIANIFICA ═══════════ */

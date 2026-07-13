@@ -142,16 +142,6 @@
    "note": ""
   },
   {
-   "nome": "Crostata Belli Freschi",
-   "categoria": "Snack & Altro",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 0,
-   "scadenza": "2026-08-18",
-   "note": ""
-  },
-  {
    "nome": "Avena Probios",
    "categoria": "Cereali & Carboidrati",
    "quantita": 400,
@@ -189,16 +179,6 @@
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "2026-11-26",
-   "note": ""
-  },
-  {
-   "nome": "Cannoli Farciti Graziosi",
-   "categoria": "Snack & Altro",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 0,
-   "scadenza": "2026-08-24",
    "note": ""
   },
   {
@@ -242,16 +222,6 @@
    "note": ""
   },
   {
-   "nome": "Polpa di Pomodoro",
-   "categoria": "Condimenti & Spezie",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 0,
-   "scadenza": "2028-09",
-   "note": "scadenza approssimata: solo mese/anno"
-  },
-  {
    "nome": "Fagiolini Fini",
    "categoria": "Verdure & Frutta",
    "quantita": 220,
@@ -259,16 +229,6 @@
    "congelato": false,
    "soglia_minima": 220,
    "scadenza": "2028-08-31",
-   "note": ""
-  },
-  {
-   "nome": "Fagiolini Fini",
-   "categoria": "Verdure & Frutta",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 220,
-   "scadenza": "2028-12-31",
    "note": ""
   },
   {
@@ -292,59 +252,9 @@
    "note": "scadenza approssimata: solo mese/anno"
   },
   {
-   "nome": "Rice Sticks",
-   "categoria": "Cereali & Carboidrati",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 100,
-   "scadenza": "2027-01-13",
-   "note": ""
-  },
-  {
-   "nome": "Pomodori Ciliegio",
-   "categoria": "Verdure & Frutta",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 100,
-   "scadenza": "",
-   "note": "2x250g"
-  },
-  {
-   "nome": "Zucchine",
-   "categoria": "Verdure & Frutta",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 100,
-   "scadenza": "",
-   "note": ""
-  },
-  {
-   "nome": "Uova",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "pz",
-   "congelato": false,
-   "soglia_minima": 2,
-   "scadenza": "2026-07-14",
-   "note": ""
-  },
-  {
-   "nome": "Salmone Affumicato",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 100,
-   "scadenza": "2026-07-24",
-   "note": ""
-  },
-  {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 0,
+   "quantita": 1,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -354,7 +264,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 3,
+   "quantita": 4,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -389,7 +299,7 @@
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "8x25g"
+   "note": "6x25g"
   },
   {
    "nome": "Nasello",
@@ -399,7 +309,7 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": ""
+   "note": "2x150g"
   },
   {
    "nome": "Merluzzo",
@@ -409,47 +319,7 @@
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": ""
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 1/6"
-  },
-  {
-   "nome": "Salmone",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": ""
-  },
-  {
-   "nome": "Salmone",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": ""
-  },
-  {
-   "nome": "Piselli",
-   "categoria": "Verdure & Frutta",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": false,
-   "soglia_minima": 100,
-   "scadenza": "",
-   "note": ""
+   "note": "1x200g"
   },
   {
    "nome": "Trita di Manzo",
@@ -458,86 +328,6 @@
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
-   "scadenza": "",
-   "note": ""
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 2/6"
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 3/6"
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 200,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 4/6"
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 200,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 5/6"
-  },
-  {
-   "nome": "Pollo",
-   "categoria": "Proteine",
-   "quantita": 200,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 6/6"
-  },
-  {
-   "nome": "Fettine di Manzo",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 1/2"
-  },
-  {
-   "nome": "Fettine di Manzo",
-   "categoria": "Proteine",
-   "quantita": 200,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 200,
-   "scadenza": "",
-   "note": "porzione 2/2"
-  },
-  {
-   "nome": "Gamberetti",
-   "categoria": "Proteine",
-   "quantita": 0,
-   "unita": "g",
-   "congelato": true,
-   "soglia_minima": 100,
    "scadenza": "",
    "note": ""
   },
@@ -590,6 +380,26 @@
    "soglia_minima": 0,
    "scadenza": "",
    "note": ""
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 1000,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "5x200g"
+  },
+  {
+   "nome": "Fettine di Manzo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "1x200g"
   }
  ]
 }
