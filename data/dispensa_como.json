@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 500,
+   "quantita": 285,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -455,7 +455,7 @@
   {
    "nome": "Petto di Pollo Fresco",
    "categoria": "Proteine",
-   "quantita": 220,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 850,
+   "quantita": 673,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
