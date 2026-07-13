@@ -224,7 +224,7 @@
   {
    "nome": "Fagiolini Fini",
    "categoria": "Verdure & Frutta",
-   "quantita": 220,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 220,
@@ -234,7 +234,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 2,
+   "quantita": 1,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -254,7 +254,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 1,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -264,7 +264,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 4,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -354,12 +354,12 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1150,
+   "quantita": 1000,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "3x500g"
+   "note": "2x500g"
   },
   {
    "nome": "Carote Vassoio",
