@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-12",
+ "ultimo_aggiornamento": "2026-07-13",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -354,7 +354,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 4,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
