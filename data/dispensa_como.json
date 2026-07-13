@@ -279,13 +279,13 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 0,
+   "quantita": 5,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": "",
-   "monoporzione": false
+   "note": "5x150g",
+   "monoporzione": true
   },
   {
    "nome": "Banane",
@@ -312,7 +312,7 @@
   {
    "nome": "Cioccolato Lindt 78%",
    "categoria": "Snack & Altro",
-   "quantita": 100,
+   "quantita": 180,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -440,6 +440,72 @@
    "scadenza": "",
    "note": "1x200g",
    "monoporzione": true
+  },
+  {
+   "nome": "Uova",
+   "categoria": "Proteine",
+   "quantita": 10,
+   "unita": "pz",
+   "congelato": false,
+   "soglia_minima": 4,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Petto di Pollo Fresco",
+   "categoria": "Proteine",
+   "quantita": 220,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "1 porzione, per lunedi cena",
+   "monoporzione": true
+  },
+  {
+   "nome": "Gamberetti",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "per sabato",
+   "monoporzione": false
+  },
+  {
+   "nome": "Salmone Affumicato GF",
+   "categoria": "Proteine",
+   "quantita": 280,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Piselli",
+   "categoria": "Verdure & Frutta",
+   "quantita": 1000,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Zucchine",
+   "categoria": "Verdure & Frutta",
+   "quantita": 850,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
   }
  ]
 }
