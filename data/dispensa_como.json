@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 285,
+   "quantita": 135,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -477,7 +477,7 @@
   {
    "nome": "Salmone Affumicato GF",
    "categoria": "Proteine",
-   "quantita": 190,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 1000,
+   "quantita": 850,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
