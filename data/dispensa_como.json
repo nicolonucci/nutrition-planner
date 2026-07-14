@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-13",
+ "ultimo_aggiornamento": "2026-07-14",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 150,
+   "quantita": 125,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "6x25g",
+   "note": "5x25g",
    "monoporzione": true
   },
   {
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1000,
+   "quantita": 833,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -477,7 +477,7 @@
   {
    "nome": "Salmone Affumicato GF",
    "categoria": "Proteine",
-   "quantita": 280,
+   "quantita": 190,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
