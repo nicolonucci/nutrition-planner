@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 200,
+   "quantita": 130,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -378,7 +378,7 @@
   {
    "nome": "Bresaola Valtellina IGP",
    "categoria": "Proteine",
-   "quantita": 70,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 30,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 833,
+   "quantita": 683,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
