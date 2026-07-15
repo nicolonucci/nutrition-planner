@@ -19,7 +19,7 @@
           "ricetta": {
             "ingredienti": [
               "200g yogurt greco 0%",
-              "1 banana",
+              "1 banana (~120 g)",
               "30g noci",
               "1 cucchiaino miele"
             ],
@@ -93,10 +93,10 @@
           "ricetta": {
             "ingredienti": [
               "200g yogurt greco 0%",
-              "1 banana",
+              "1 banana (~120 g)",
               "150ml latte parzialmente scremato",
               "30g granola GF",
-              "2 uova intere",
+              "2 uova intere (~100 g)",
               "olio EVO q.b."
             ],
             "preparazione": [
@@ -167,7 +167,7 @@
           "proteine_g": 35,
           "ricetta": {
             "ingredienti": [
-              "3 uova intere",
+              "3 uova intere (150 g)",
               "1 fetta pane GF",
               "150g yogurt greco 0%",
               "sale, pepe, erba cipollina"
@@ -187,7 +187,7 @@
               "80g riso venere",
               "160g tonno al naturale",
               "150g pomodorini",
-              "½ avocado",
+              "½ avocado (~80 g)",
               "lime, coriandolo, olio EVO"
             ],
             "preparazione": [
@@ -205,7 +205,7 @@
               "200g filetto di salmone",
               "60g rucola",
               "150g pomodori",
-              "1 cetriolo",
+              "1 cetriolo (~200 g)",
               "2 fette pane GF",
               "olio EVO, limone, sale"
             ],
@@ -242,7 +242,7 @@
           "ricetta": {
             "ingredienti": [
               "200g yogurt greco 0%",
-              "1 banana",
+              "1 banana (~120 g)",
               "25g noci",
               "1 cucchiaino miele"
             ],

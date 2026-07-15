@@ -432,7 +432,7 @@ async function vDispensa(){
           <div class="di-nome">${esc(a.nome)} ${a.congelato?'<span class="tag-cong">❄️ CONG</span>':''}</div>
           <div class="di-meta" id="m-${i}">${metaLabel(a)}</div>
         </div>
-        <span class="di-qty" id="q-${i}" style="border-bottom:1.5px dashed var(--grey);cursor:pointer" onclick="editQty(${i})">${qtyLabel(a)}</span>
+        <span class="di-qty" id="q-${i}" style="cursor:pointer" onclick="editQty(${i})">${qtyLabel(a)}</span>
         <div class="stepper">
           <button onclick="stepQty(${i},-1)">−</button>
           <button onclick="stepQty(${i},1)">＋</button>

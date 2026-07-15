@@ -17,7 +17,7 @@
           "calorie_stimate": 410,
           "proteine_g": 28,
           "ricetta": {
-            "ingredienti": ["2 fette pane GF", "½ avocado maturo", "80g salmone affumicato", "succo di ½ limone", "pepe nero q.b."],
+            "ingredienti": ["2 fette pane GF", "½ avocado maturo (~80 g)", "80g salmone affumicato", "succo di ½ limone", "pepe nero q.b."],
             "preparazione": ["Tosta il pane GF.", "Schiaccia l'avocado con una forchetta e spalma sulle fette.", "Adagia il salmone affumicato e spremi il limone. Pepa a piacere."]
           }
         },
@@ -26,7 +26,7 @@
           "calorie_stimate": 600,
           "proteine_g": 46,
           "ricetta": {
-            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine medie", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale, pepe"],
+            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine medie (~300 g)", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale, pepe"],
             "preparazione": ["Cuoci il riso basmati in acqua salata (~12 min).", "Taglia il pollo a strisce e salta in padella con olio e curcuma 5-6 min.", "Aggiungi le zucchine a rondelle, poi il riso cotto. Salta 2 min a fuoco vivo."]
           }
         },
@@ -40,7 +40,7 @@
           "calorie_stimate": 440,
           "proteine_g": 38,
           "ricetta": {
-            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
+            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi (~240 g)", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
             "preparazione": ["Scalda la piadina in padella 1 min per lato.", "Sgocciola il salmone e distribuisci sulla piadina.", "Aggiungi pomodori a fette e rucola. Condisci con olio e limone."]
           }
         },
@@ -73,7 +73,7 @@
           "calorie_stimate": 550,
           "proteine_g": 42,
           "ricetta": {
-            "ingredienti": ["1 piadina GF (80g)", "160g petto di pollo", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale"],
+            "ingredienti": ["1 piadina GF (80g)", "160g petto di pollo", "2 pomodori medi (~240 g)", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale"],
             "preparazione": ["Cuoci il pollo alla piastra 5-6 min per lato. Affetta.", "Scalda la piadina in padella.", "Componi con pollo, pomodori a fette e rucola. Condisci con olio e limone."]
           }
         },
@@ -87,7 +87,7 @@
           "calorie_stimate": 450,
           "proteine_g": 46,
           "ricetta": {
-            "ingredienti": ["200g controfiletto di manzo", "2 pomodori", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
+            "ingredienti": ["200g controfiletto di manzo", "2 pomodori (~240 g)", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
             "preparazione": ["Griglia la bistecca 3-4 min per lato a fuoco alto.", "Prepara l'insalata con pomodori e rucola, condisci con olio e limone.", "Lascia riposare la bistecca 2 min prima di servire."]
           }
         },
@@ -120,7 +120,7 @@
           "calorie_stimate": 480,
           "proteine_g": 40,
           "ricetta": {
-            "ingredienti": ["160g tonno al naturale", "200g fagiolini", "2 pomodori medi", "10g olive nere", "1 cucchiaio olio d'oliva", "sale, origano"],
+            "ingredienti": ["160g tonno al naturale", "200g fagiolini", "2 pomodori medi (~240 g)", "10g olive nere", "1 cucchiaio olio d'oliva", "sale, origano"],
             "preparazione": ["Lessa i fagiolini in acqua salata 8-10 min, scola e raffredda.", "Unisci tonno sgocciolato, pomodori a pezzi, fagiolini e olive.", "Condisci con olio e origano."]
           }
         },
@@ -129,7 +129,7 @@
           "calorie_stimate": 380,
           "proteine_g": 48,
           "ricetta": {
-            "ingredienti": ["220g petto di pollo", "2 zucchine medie", "succo di 1 limone", "1 cucchiaio olio d'oliva", "1 spicchio aglio", "sale, rosmarino"],
+            "ingredienti": ["220g petto di pollo", "2 zucchine medie (~300 g)", "succo di 1 limone", "1 cucchiaio olio d'oliva", "1 spicchio aglio", "sale, rosmarino"],
             "preparazione": ["Marina il pollo con limone, aglio e rosmarino per 10 min.", "Griglia il pollo 5-6 min per lato a fuoco medio-alto.", "Griglia le zucchine a fette 3 min per lato. Servi insieme."]
           }
         },
@@ -153,7 +153,7 @@
           "calorie_stimate": 360,
           "proteine_g": 22,
           "ricetta": {
-            "ingredienti": ["200g yogurt greco 0%", "1 banana", "15g cacao amaro", "10g miele", "100ml latte senza lattosio"],
+            "ingredienti": ["200g yogurt greco 0%", "1 banana (~120 g)", "15g cacao amaro", "10g miele", "100ml latte senza lattosio"],
             "preparazione": ["Inserisci tutti gli ingredienti nel frullatore.", "Frulla 30 secondi fino a ottenere una consistenza liscia e cremosa."]
           }
         },
@@ -176,7 +176,7 @@
           "calorie_stimate": 450,
           "proteine_g": 46,
           "ricetta": {
-            "ingredienti": ["200g controfiletto di manzo", "2 pomodori", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
+            "ingredienti": ["200g controfiletto di manzo", "2 pomodori (~240 g)", "30g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone", "sale, pepe"],
             "preparazione": ["Griglia la bistecca 3-4 min per lato.", "Prepara insalata con pomodori e rucola. Condisci con olio e limone.", "Servi con la bistecca."]
           }
         },
@@ -200,7 +200,7 @@
           "calorie_stimate": 400,
           "proteine_g": 26,
           "ricetta": {
-            "ingredienti": ["2 fette pane GF", "80g Philadelphia senza lattosio", "80g salmone affumicato", "1 pomodoro", "pepe nero q.b."],
+            "ingredienti": ["2 fette pane GF", "80g Philadelphia senza lattosio", "80g salmone affumicato", "1 pomodoro (~120 g)", "pepe nero q.b."],
             "preparazione": ["Tosta il pane GF.", "Spalma la Philadelphia sulle fette.", "Adagia il salmone affumicato e le fette di pomodoro. Pepa a piacere."]
           }
         },
@@ -209,7 +209,7 @@
           "calorie_stimate": 560,
           "proteine_g": 38,
           "ricetta": {
-            "ingredienti": ["80g noodles di riso GF", "200g gamberetti", "2 uova", "30g germogli di soia", "2 cucchiai salsa tamari", "1 cucchiaio olio di sesamo", "1 cipollotto", "1 lime"],
+            "ingredienti": ["80g noodles di riso GF", "200g gamberetti", "2 uova (~100 g)", "30g germogli di soia", "2 cucchiai salsa tamari", "1 cucchiaio olio di sesamo", "1 cipollotto (~20 g)", "1 lime (~60 g)"],
             "preparazione": ["Ammollo i noodles in acqua calda 5 min, scola.", "In wok caldo, salta i gamberetti 2 min. Aggiungi le uova e strapazza.", "Unisci noodles, tamari, germogli e cipollotto. Salta 2 min. Servi con lime."]
           }
         },
@@ -223,7 +223,7 @@
           "calorie_stimate": 440,
           "proteine_g": 36,
           "ricetta": {
-            "ingredienti": ["1 piadina GF (80g)", "180g gamberetti", "2 pomodori medi", "80g fagiolini lessi", "1 cucchiaio olio d'oliva", "succo di ½ limone", "prezzemolo"],
+            "ingredienti": ["1 piadina GF (80g)", "180g gamberetti", "2 pomodori medi (~240 g)", "80g fagiolini lessi", "1 cucchiaio olio d'oliva", "succo di ½ limone", "prezzemolo"],
             "preparazione": ["Salta i gamberetti in padella con olio per 2-3 min.", "Scalda la piadina in padella.", "Componi con gamberetti, fagiolini, pomodori. Condisci con limone e prezzemolo."]
           }
         },
@@ -247,7 +247,7 @@
           "calorie_stimate": 430,
           "proteine_g": 28,
           "ricetta": {
-            "ingredienti": ["3 uova", "2 fette pane GF", "1 arancia", "1 cucchiaino olio d'oliva", "sale, pepe"],
+            "ingredienti": ["3 uova (150 g)", "2 fette pane GF", "1 arancia (~150 g)", "1 cucchiaino olio d'oliva", "sale, pepe"],
             "preparazione": ["Sbatti le uova con sale e pepe.", "Cuoci in padella antiaderente con olio a fuoco basso, mescolando dolcemente.", "Servi sulle fette di pane GF tostato, con l'arancia a spicchi."]
           }
         },
@@ -256,7 +256,7 @@
           "calorie_stimate": 500,
           "proteine_g": 38,
           "ricetta": {
-            "ingredienti": ["80g riso venere", "160g tonno al naturale", "150g pomodorini ciliegia", "½ avocado", "succo di ½ limone", "1 cucchiaio olio d'oliva", "basilico fresco"],
+            "ingredienti": ["80g riso venere", "160g tonno al naturale", "150g pomodorini ciliegia", "½ avocado (~80 g)", "succo di ½ limone", "1 cucchiaio olio d'oliva", "basilico fresco"],
             "preparazione": ["Cuoci il riso venere in acqua salata ~35 min.", "Disponi il riso nella bowl. Aggiungi tonno, pomodorini tagliati e avocado a cubetti.", "Condisci con olio, limone e basilico fresco."]
           }
         },
@@ -289,7 +289,7 @@
           "calorie_stimate": 320,
           "proteine_g": 20,
           "ricetta": {
-            "ingredienti": ["200g yogurt greco 0%", "100g fragole", "1 banana", "10g miele"],
+            "ingredienti": ["200g yogurt greco 0%", "100g fragole", "1 banana (~120 g)", "10g miele"],
             "preparazione": ["Inserisci tutto nel frullatore.", "Frulla 20-30 secondi. Consuma subito prima di partire."]
           }
         },
@@ -298,7 +298,7 @@
           "calorie_stimate": 600,
           "proteine_g": 46,
           "ricetta": {
-            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale"],
+            "ingredienti": ["90g riso basmati", "200g petto di pollo", "2 zucchine (~300 g)", "1 cucchiaio olio d'oliva", "1 cucchiaino curcuma", "sale"],
             "preparazione": ["Cuoci il riso. Salta il pollo a strisce con curcuma 5-6 min.", "Aggiungi le zucchine a rondelle, poi il riso. Salta 2 min.", "Puoi preparare la sera prima e portarlo in contenitore."]
           }
         },
@@ -307,7 +307,7 @@
           "calorie_stimate": 440,
           "proteine_g": 38,
           "ricetta": {
-            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
+            "ingredienti": ["1 piadina GF (80g)", "150g salmone al naturale", "2 pomodori medi (~240 g)", "40g rucola", "1 cucchiaio olio d'oliva", "succo di ½ limone"],
             "preparazione": ["Scalda la piadina in padella.", "Sgocciola il salmone e distribuisci sulla piadina.", "Aggiungi pomodori e rucola. Condisci con olio e limone."]
           }
         },

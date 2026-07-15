@@ -79,7 +79,7 @@
      "proteine_g": 3,
      "ricetta": {
       "ingredienti": [
-       "1 banana",
+       "1 banana (~120 g)",
        "10g noci sgusciate"
       ],
       "preparazione": [
@@ -201,9 +201,9 @@
      "proteine_g": 28,
      "ricetta": {
       "ingredienti": [
-       "3 uova",
+       "3 uova (150 g)",
        "2 fette pane GF (~60g)",
-       "1 arancia",
+       "1 arancia (~150 g)",
        "5g burro o olio",
        "sale, pepe"
       ],
@@ -300,7 +300,7 @@
        "1 piadina Loriana (75g, dispensa)",
        "180g petto di pollo",
        "insalata mista",
-       "1 pomodoro",
+       "1 pomodoro (~120 g)",
        "10g olio EVO"
       ],
       "preparazione": [
@@ -424,7 +424,7 @@
      "proteine_g": 30,
      "ricetta": {
       "ingredienti": [
-       "2 uova",
+       "2 uova (~100 g)",
        "40g avena (dispensa)",
        "100g yogurt greco 0%",
        "80g mirtilli",
@@ -472,7 +472,7 @@
       "ingredienti": [
        "200g fettine di manzo (dispensa, congelate)",
        "insalata mista",
-       "1 pomodoro",
+       "1 pomodoro (~120 g)",
        "15g olio EVO",
        "sale, pepe"
       ],
@@ -517,7 +517,7 @@
      "ricetta": {
       "ingredienti": [
        "2 fette pane GF (~60g)",
-       "1 uovo",
+       "1 uovo (~50 g)",
        "100ml latte parz. scremato",
        "80g frutti di bosco",
        "80g yogurt greco 0%",
@@ -537,7 +537,7 @@
      "ricetta": {
       "ingredienti": [
        "200g petto di pollo",
-       "1/2 avocado",
+       "1/2 avocado (~80 g)",
        "150g pomodorini",
        "insalata mista",
        "15g olio EVO",
