@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-14",
+ "ultimo_aggiornamento": "2026-07-15",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 10,
+   "quantita": 7,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
