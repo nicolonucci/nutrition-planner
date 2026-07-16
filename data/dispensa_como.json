@@ -202,12 +202,12 @@
   {
    "nome": "Piadine Loriana",
    "categoria": "Snack & Altro",
-   "quantita": 675,
+   "quantita": 525,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2026-10-12",
-   "note": "9x75g",
+   "note": "7x75g",
    "monoporzione": true
   },
   {
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 683,
+   "quantita": 563,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 800,
+   "quantita": 600,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "4x200g",
+   "note": "3x200g",
    "monoporzione": true
   },
   {
