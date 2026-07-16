@@ -345,12 +345,12 @@
   {
    "nome": "Merluzzo",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "1x200g",
+   "note": "0x200g",
    "monoporzione": true
   },
   {
@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 135,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 850,
+   "quantita": 650,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
