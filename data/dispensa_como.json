@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 130,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
