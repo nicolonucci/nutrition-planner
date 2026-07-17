@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 125,
+   "quantita": 100,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "5x25g",
+   "note": "4x25g",
    "monoporzione": true
   },
   {
