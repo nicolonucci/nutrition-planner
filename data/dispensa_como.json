@@ -4,7 +4,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 1120,
+   "quantita": 400,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -26,7 +26,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 400,
+   "quantita": 313,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
