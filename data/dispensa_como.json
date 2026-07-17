@@ -1,10 +1,10 @@
 {
- "ultimo_aggiornamento": "2026-07-16",
+ "ultimo_aggiornamento": "2026-07-17",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 1200,
+   "quantita": 1120,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 563,
+   "quantita": 400,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
