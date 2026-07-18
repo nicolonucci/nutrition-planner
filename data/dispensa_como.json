@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-17",
+ "ultimo_aggiornamento": "2026-07-18",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 400,
+   "quantita": 192,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -433,12 +433,12 @@
   {
    "nome": "Fettine di Manzo",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "1x200g",
+   "note": "0x200g",
    "monoporzione": true
   },
   {
