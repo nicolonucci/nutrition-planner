@@ -213,7 +213,7 @@
   {
    "nome": "Riso Venere",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 280,
+   "quantita": 200,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 192,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -466,7 +466,7 @@
   {
    "nome": "Gamberetti",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
