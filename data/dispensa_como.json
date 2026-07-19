@@ -26,7 +26,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 313,
+   "quantita": 223,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -411,7 +411,7 @@
   {
    "nome": "Passata Cirio",
    "categoria": "Condimenti & Spezie",
-   "quantita": 700,
+   "quantita": 494,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
