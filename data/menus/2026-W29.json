@@ -575,7 +575,15 @@
        "Forno 200°C: nasello con olio, limone e prezzemolo 15-18 min.",
        "Carote al vapore o saltate in padella 10 min."
       ]
-     }
+     },
+     "consumato": "2026-07-19T14:04",
+     "consumato_dettaglio": [
+      "150 g nasello",
+      "250 g carote",
+      "15 g olio EVO",
+      "0.5 pz limone",
+      "1 pz prezzemolo, sale"
+     ]
     },
     "spuntini": [
      "30g grana padano + 15g noci (~200 kcal, 12g prot)",
