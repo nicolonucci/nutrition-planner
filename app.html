@@ -293,14 +293,15 @@ async function vMenu(){
       const hasRic = p.ricetta && p.ricetta.ingredienti;
       const eaten = !!p.consumato;
       const oraCons = eaten ? String(p.consumato).slice(11,16) : '';
-      const hasCons = eaten && Array.isArray(p.consumato_dettaglio) && p.consumato_dettaglio.length;
-      if (hasCons) { S._cons = S._cons||{}; S._cons[gi+'-'+slot] = p.consumato_dettaglio.join('\n'); }
+      const consLines = eaten ? ((Array.isArray(p.consumato_dettaglio)&&p.consumato_dettaglio.length) ? p.consumato_dettaglio : (hasRic ? p.ricetta.ingredienti : null)) : null;
+      const hasCons = !!(consLines && consLines.length);
+      if (hasCons) { S._cons = S._cons||{}; S._cons[gi+'-'+slot] = consLines.join('\n'); }
       h += `<div class="meal ${eaten?'eaten':''}">
         <div class="meal-top"><span class="meal-slot">${esc(SLOT_LABEL[slot]||slot)}</span>
         <span class="meal-meta">${p.calorie_stimate?'~'+p.calorie_stimate+' kcal':''}${p.proteine_g?' · P '+p.proteine_g+'g':''}</span></div>
         <div class="meal-desc">${eaten?'✓ ':''}${esc(p.descrizione||'')}</div>
         ${hasRic?`<div class="ing-list" style="display:none" id="ing-${gi}-${slot}">${p.ricetta.ingredienti.map(esc).join('<br>')}${p.ricetta.preparazione?'<br><em style="color:var(--grey)">'+p.ricetta.preparazione.map(esc).join(' ') +'</em>':''}</div>`:''}
-        ${hasCons?`<div class="ing-list" style="display:none" id="cons-${gi}-${slot}">${p.consumato_dettaglio.map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${gi}-${slot}')">📋 Copia</button></div>`:''}
+        ${hasCons?`<div class="ing-list" style="display:none" id="cons-${gi}-${slot}">${consLines.map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${gi}-${slot}')">📋 Copia</button></div>`:''}
         <div class="meal-actions">
           ${hasRic?`<button class="mini-btn" onclick="const e=$('#ing-${gi}-${slot}');e.style.display=e.style.display==='none'?'block':'none'">Ricetta</button>`:''}
           ${hasCons?`<button class="mini-btn" onclick="const e=$('#cons-${gi}-${slot}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button>`:''}
@@ -309,6 +310,16 @@ async function vMenu(){
             : `<button class="mini-btn primary" onclick="registraPasto('${S.week}',${gi},'${slot}')">✓ Mangiato</button>`) : ''}
         </div></div>`;
     }
+    (g.pasti_liberi||[]).forEach((pl, j) => {
+      const key = gi+'-lib'+j;
+      S._cons = S._cons||{}; S._cons[key] = (pl.dettaglio||[]).join('\n');
+      const ora = pl.consumato ? String(pl.consumato).slice(11,16) : '';
+      h += `<div class="meal eaten">
+        <div class="meal-top"><span class="meal-slot">Pasto libero</span><span class="meal-meta">${ora?'✓ '+ora:''}</span></div>
+        <div class="meal-desc">✓ ${esc(pl.descrizione||'Pasto libero')}</div>
+        <div class="ing-list" style="display:none" id="cons-${key}">${(pl.dettaglio||[]).map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${key}')">📋 Copia</button></div>
+        <div class="meal-actions"><button class="mini-btn" onclick="const e=$('#cons-${key}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button></div></div>`;
+    });
     h += `</div>`;
   });
   h += `<button class="btn ghost" onclick="pastoLibero()">＋ Registra pasto libero</button>`;
@@ -338,7 +349,7 @@ async function pastoLibero(){
 async function pastoLiberoGo(){
   const righe = $('#pl-txt').value.split(/\n|,(?![^(]*\))/).map(s=>s.trim()).filter(Boolean);
   if (!righe.length) return toast('Scrivi almeno un ingrediente');
-  await preparaScalaggio(righe, 'Pasto libero');
+  await preparaScalaggio(righe, 'Pasto libero', { libero:true });
 }
 
 async function annullaConsumato(weekId, gi, slot){
@@ -416,7 +427,15 @@ async function confermaScalaggio(){
     closeSheet(); toast('Salvataggio…', 8000);
     await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`);
     const ctx = S._scala.ctx;
-    if (ctx) {
+    if (ctx && ctx.libero) {
+      const wk = currentWeekId();
+      const menu = await loadMenu(wk);
+      const g = menu && menu.giorni.find(x=>x.data===todayRome());
+      if (g) {
+        (g.pasti_liberi = g.pasti_liberi||[]).push({ descrizione: dettaglio.join(', '), consumato: nowRome(), dettaglio });
+        await ghWrite(`data/menus/${wk}.json`, menu, `Pasto libero registrato`);
+      }
+    } else if (ctx) {
       const menu = await loadMenu(ctx.weekId);
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato = nowRome();
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_dettaglio = dettaglio;
