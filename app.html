@@ -382,7 +382,7 @@ async function preparaScalaggio(righe, titolo, ctx){
     items.push({ ing, matches, plan, mancante, found: matches.length>0 });
   }
   S._scala = { items, titolo, ctx: ctx || null };
-  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — spunta ciò che hai mangiato davvero e correggi le quantità. Solo le righe spuntate finiscono nel testo copiabile.</p>
+  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — spunta ciò che hai mangiato davvero e correggi le quantità. Nel testo copiabile finiscono le righe spuntate e i fuori menù.</p>
     <div id="sc-rows">${items.map((it,i)=>scalaRowHtml(it,i)).join('')}</div>
     <div class="frow" style="margin-top:10px"><label>Fuori menù</label><textarea id="sc-extra" style="min-height:52px" placeholder="Extra non previsti, uno per riga (es. 30 g parmigiano)"></textarea></div>
     <button class="btn ghost" style="margin-bottom:10px" onclick="aggiungiFuoriMenu()">＋ Aggiungi fuori menù</button>
@@ -432,9 +432,10 @@ function aggiornaScala(i){
 
 async function confermaScalaggio(){
   const disp = await loadDisp();
-  const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i).sort((a,b)=>a-b);
-  const dettaglio = checked.map(i=>{
-    const it = S._scala.items[i];
+  const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i);
+  const checkedSet = new Set(checked);
+  const dettaglio = S._scala.items.map((it,i)=>{
+    if (!checkedSet.has(i) && !it.extra) return null;
     const el = $('#sc-q-'+i); const q = el ? (Number(el.value)||0) : it.ing.qty;
     return q>0 ? `${q}${it.ing.unit?' '+it.ing.unit:''} ${it.ing.nome}` : null;
   }).filter(Boolean);
@@ -445,11 +446,10 @@ async function confermaScalaggio(){
     syncNotePorzioni(al);
     n++;
   }
-  if (!n) return toast('Niente da scalare');
-  disp.ultimo_aggiornamento = todayRome();
+  if (!n && !dettaglio.length) return toast('Niente da registrare');
   try {
     closeSheet(); toast('Salvataggio…', 8000);
-    await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`);
+    if (n) { disp.ultimo_aggiornamento = todayRome(); await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`); }
     const ctx = S._scala.ctx;
     if (ctx && ctx.libero) {
       const wk = currentWeekId();
@@ -465,7 +465,7 @@ async function confermaScalaggio(){
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_dettaglio = dettaglio;
       await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${S._scala.titolo}`);
     }
-    toast('✅ Registrato — dispensa aggiornata');
+    toast(n ? '✅ Registrato — dispensa aggiornata' : '✅ Registrato');
     if (S.view==='dispensa' || S.view==='menu') render();
   } catch(e){ toast('❌ '+e.message, 5000); }
 }
