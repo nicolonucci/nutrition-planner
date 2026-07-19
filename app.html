@@ -242,6 +242,8 @@ async function loadMenu(id){ if(!(id in S.menus)) S.menus[id] = await ghRead(`da
 async function loadDisp(){ if(!S.disp[S.loc]) S.disp[S.loc] = await ghRead(dispPath()) || {ultimo_aggiornamento:'',alimenti:[]}; return S.disp[S.loc]; }
 async function loadRicette(){ if(!S.ricette) S.ricette = await ghRead('data/ricette.json') || {ricette:[]}; return S.ricette; }
 function currentWeekId(){ return isoWeekOf(new Date()); }
+function todayRome(){ return new Date().toLocaleDateString('sv-SE',{timeZone:'Europe/Rome'}); }
+function nowRome(){ return new Date().toLocaleString('sv-SE',{timeZone:'Europe/Rome'}).slice(0,16).replace(' ','T'); }
 function weekLabelIt(id, s){ const e=(s.settimane||[]).find(x=>x.id===id); if(!e) return id; const f=d=>new Date(d+'T12:00').toLocaleDateString('it-IT',{day:'numeric',month:'short'}); return `${f(e.dal)} – ${f(e.al)}`; }
 
 /* ═══════════ ROUTER ═══════════ */
@@ -272,7 +274,7 @@ async function vMenu(){
   if (!S.week) S.week = ids.includes(currentWeekId()) ? currentWeekId() : ids[0];
   if (!ids.length) { $('#view').innerHTML = '<div class="empty">📅 Nessuna settimana pianificata.<br>Usa la tab <strong>Pianifica</strong>.</div>'; return; }
   const menu = await loadMenu(S.week);
-  const todayISO = new Date().toLocaleDateString('sv-SE');
+  const todayISO = todayRome();
   let h = `<div class="chiprow">` + ids.map(id =>
     `<button class="wchip ${id===S.week?'on':''}" onclick="S.week='${id}';render()">${id===currentWeekId()?'⭐ ':''}${id.replace('20','')}</button>`).join('') + `</div>
     <div class="sl">${esc(weekLabelIt(S.week, setts))}</div>`;
@@ -291,13 +293,17 @@ async function vMenu(){
       const hasRic = p.ricetta && p.ricetta.ingredienti;
       const eaten = !!p.consumato;
       const oraCons = eaten ? String(p.consumato).slice(11,16) : '';
+      const hasCons = eaten && Array.isArray(p.consumato_dettaglio) && p.consumato_dettaglio.length;
+      if (hasCons) { S._cons = S._cons||{}; S._cons[gi+'-'+slot] = p.consumato_dettaglio.join('\n'); }
       h += `<div class="meal ${eaten?'eaten':''}">
         <div class="meal-top"><span class="meal-slot">${esc(SLOT_LABEL[slot]||slot)}</span>
         <span class="meal-meta">${p.calorie_stimate?'~'+p.calorie_stimate+' kcal':''}${p.proteine_g?' · P '+p.proteine_g+'g':''}</span></div>
         <div class="meal-desc">${eaten?'✓ ':''}${esc(p.descrizione||'')}</div>
         ${hasRic?`<div class="ing-list" style="display:none" id="ing-${gi}-${slot}">${p.ricetta.ingredienti.map(esc).join('<br>')}${p.ricetta.preparazione?'<br><em style="color:var(--grey)">'+p.ricetta.preparazione.map(esc).join(' ') +'</em>':''}</div>`:''}
+        ${hasCons?`<div class="ing-list" style="display:none" id="cons-${gi}-${slot}">${p.consumato_dettaglio.map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${gi}-${slot}')">📋 Copia</button></div>`:''}
         <div class="meal-actions">
           ${hasRic?`<button class="mini-btn" onclick="const e=$('#ing-${gi}-${slot}');e.style.display=e.style.display==='none'?'block':'none'">Ricetta</button>`:''}
+          ${hasCons?`<button class="mini-btn" onclick="const e=$('#cons-${gi}-${slot}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button>`:''}
           ${hasRic ? (eaten
             ? `<button class="mini-btn" style="color:var(--green);border-color:var(--green-b)" onclick="annullaConsumato('${S.week}',${gi},'${slot}')">✓ Registrato${oraCons?' '+oraCons:''}</button>`
             : `<button class="mini-btn primary" onclick="registraPasto('${S.week}',${gi},'${slot}')">✓ Mangiato</button>`) : ''}
@@ -307,6 +313,12 @@ async function vMenu(){
   });
   h += `<button class="btn ghost" onclick="pastoLibero()">＋ Registra pasto libero</button>`;
   $('#view').innerHTML = h;
+}
+
+function copiaCons(key){
+  const txt = (S._cons||{})[key]; if(!txt) return;
+  const fb = () => { const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); toast('📋 Copiato');}catch(e){toast('❌ Copia non riuscita');} ta.remove(); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(()=>toast('📋 Copiato')).catch(fb); else fb();
 }
 
 /* ═══════════ REGISTRA PASTO (scala dispensa) ═══════════ */
@@ -341,6 +353,7 @@ async function annullaConsumato(weekId, gi, slot){
 async function annullaConsumatoGo(weekId, gi, slot){
   const menu = await loadMenu(weekId);
   delete menu.giorni[gi].pasti[slot].consumato;
+  delete menu.giorni[gi].pasti[slot].consumato_dettaglio;
   try { closeSheet(); toast('Salvataggio…',8000);
     await ghWrite(`data/menus/${weekId}.json`, menu, `Annullata registrazione pasto (${weekId})`);
     toast('↩️ Registrazione annullata'); render();
@@ -386,6 +399,10 @@ function aggiornaScala(i){
 async function confermaScalaggio(){
   const disp = await loadDisp();
   const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i);
+  const dettaglio = S._scala.items.map((it,i)=>{
+    const el = $('#sc-q-'+i); const q = el ? (Number(el.value)||0) : it.ing.qty;
+    return q>0 ? `${q}${it.ing.unit?' '+it.ing.unit:''} ${it.ing.nome}` : null;
+  }).filter(Boolean);
   let n = 0;
   for (const i of checked) for (const pl of S._scala.items[i].plan) {
     const al = disp.alimenti[pl.index];
@@ -394,14 +411,15 @@ async function confermaScalaggio(){
     n++;
   }
   if (!n) return toast('Niente da scalare');
-  disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
+  disp.ultimo_aggiornamento = todayRome();
   try {
     closeSheet(); toast('Salvataggio…', 8000);
     await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`);
     const ctx = S._scala.ctx;
     if (ctx) {
       const menu = await loadMenu(ctx.weekId);
-      menu.giorni[ctx.gi].pasti[ctx.slot].consumato = new Date().toISOString().slice(0,16);
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato = nowRome();
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato_dettaglio = dettaglio;
       await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${S._scala.titolo}`);
     }
     toast('✅ Registrato — dispensa aggiornata');
@@ -504,7 +522,7 @@ function refreshSavebar(){
 async function salvaDispensa(){
   const disp = S.disp[S.loc];
   disp.alimenti = disp.alimenti.filter(a=>!a._del);
-  disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
+  disp.ultimo_aggiornamento = todayRome();
   try { toast('Salvataggio…',8000); await ghWrite(dispPath(), disp, `Dispensa ${S.loc}: aggiornamento da app`); S.dispDirty=false; toast('✅ Salvata'); render(); }
   catch(e){ toast('❌ '+e.message,5000); }
 }
@@ -587,7 +605,7 @@ async function confermaLista(){
     n++;
   });
   if (!n) return toast('Niente da aggiungere');
-  disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
+  disp.ultimo_aggiornamento = todayRome();
   try { closeSheet(); toast('Salvataggio…',8000); await ghWrite(dispPath(), disp, `Dispensa ${S.loc}: +${n} da lista`); toast('✅ '+n+' alimenti aggiunti'); render(); }
   catch(e){ toast('❌ '+e.message,5000); }
 }
@@ -708,9 +726,9 @@ async function confermaVerificaSpesa(){
       else syncNotePorzioni(ex);
     }
     else disp.alimenti.push({ nome: it.nome.replace(/\b\w/, c=>c.toUpperCase()), categoria: it.categoria, quantita: q, unita: it.unit, congelato: cong, soglia_minima: 0, scadenza: '', monoporzione: !!it.gramm,
-      note: it.gramm ? noteLabelPorzioni(q, it.gramm) : 'da app '+new Date().toISOString().slice(0,10) });
+      note: it.gramm ? noteLabelPorzioni(q, it.gramm) : 'da app '+todayRome() });
   });
-  disp.ultimo_aggiornamento = new Date().toISOString().slice(0,10);
+  disp.ultimo_aggiornamento = todayRome();
   try { closeSheet(); toast('Salvataggio…',8000);
     await ghWrite(dispPath(), disp, `Verifica spesa (${S.loc})`);
     // le voci manuali acquistate escono dalla lista extra
@@ -865,7 +883,7 @@ function rimuoviSlot(){ delete S.plan.giorni[S._pick.di].pasti[S._pick.sl]; save
 
 async function salvaPiano(){
   const p = S.plan;
-  const menu = { settimana:p.id, dal:p.dal, al:p.al, creato_il:new Date().toISOString().slice(0,10),
+  const menu = { settimana:p.id, dal:p.dal, al:p.al, creato_il:todayRome(),
     note_generali:'Pianificato da app iPhone', giorni: p.giorni.map(d => ({
       giorno:d.giorno, data:d.data,
       allenamento:{ tipo:d.tipo, orario:d.orario||'', note:'' },
@@ -1033,7 +1051,7 @@ async function salvaRicetta(){
   if (!r.nome || !r.ingredienti.length) return toast('Servono nome e ingredienti');
   await loadRicette();
   S.ricette.ricette.push(r);
-  S.ricette.aggiornato_il = new Date().toISOString().slice(0,10);
+  S.ricette.aggiornato_il = todayRome();
   try { closeSheet(); toast('Salvataggio…',8000);
     await ghWrite('data/ricette.json', S.ricette, `Ricetta: ${r.nome} (da app)`);
     toast('✅ Ricetta salvata — disponibile in Pianifica');

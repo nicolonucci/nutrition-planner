@@ -1,5 +1,5 @@
 // Service worker — shell dell'app in cache, dati sempre dalla rete (fallback cache)
-const VER = 'nh-v1';
+const VER = 'nh-v2';
 const SHELL = ['app.html', 'js/app-core.js', 'manifest.webmanifest', 'icons/icon-192.png'];
 
 self.addEventListener('install', e => {
