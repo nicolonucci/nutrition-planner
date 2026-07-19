@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-18",
+ "ultimo_aggiornamento": "2026-07-19",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -334,12 +334,12 @@
   {
    "nome": "Nasello",
    "categoria": "Proteine",
-   "quantita": 300,
+   "quantita": 150,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "2x150g",
+   "note": "1x150g",
    "monoporzione": true
   },
   {
