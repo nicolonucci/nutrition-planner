@@ -382,15 +382,38 @@ async function preparaScalaggio(righe, titolo, ctx){
     items.push({ ing, matches, plan, mancante, found: matches.length>0 });
   }
   S._scala = { items, titolo, ctx: ctx || null };
-  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — correggi le quantità davvero mangiate, poi conferma.</p>`;
-  items.forEach((it, i) => {
-    h += `<div class="pick ${it.found&&it.plan.length?'on':''}">
-      <input type="checkbox" ${it.found&&it.plan.length?'checked':''} data-i="${i}" ${!it.found?'disabled':''}>
-      <div class="pk-i"><div class="pk-n">${esc(it.ing.nome)}</div><div class="pk-m" id="sc-d-${i}">${scalaDetail(it)}</div></div>
-      <input class="qty-in" id="sc-q-${i}" type="number" inputmode="decimal" step="any" value="${it.ing.qty}" oninput="aggiornaScala(${i})"><span style="font-size:12px;color:var(--grey)">${it.ing.unit}</span></div>`;
-  });
-  h += `<button class="btn green" onclick="confermaScalaggio()">Conferma e aggiorna dispensa</button>`;
+  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — spunta ciò che hai mangiato davvero e correggi le quantità. Solo le righe spuntate finiscono nel testo copiabile.</p>
+    <div id="sc-rows">${items.map((it,i)=>scalaRowHtml(it,i)).join('')}</div>
+    <div class="frow" style="margin-top:10px"><label>Fuori menù</label><textarea id="sc-extra" style="min-height:52px" placeholder="Extra non previsti, uno per riga (es. 30 g parmigiano)"></textarea></div>
+    <button class="btn ghost" style="margin-bottom:10px" onclick="aggiungiFuoriMenu()">＋ Aggiungi fuori menù</button>
+    <button class="btn green" onclick="confermaScalaggio()">Conferma e aggiorna dispensa</button>`;
   openSheet('✓ ' + titolo, h);
+}
+
+function scalaRowHtml(it, i){
+  return `<div class="pick ${it.found&&it.plan.length?'on':''}">
+      <input type="checkbox" ${it.found&&it.plan.length?'checked':''} data-i="${i}" ${!it.found?'disabled':''}>
+      <div class="pk-i"><div class="pk-n">${esc(it.ing.nome)}${it.extra?' <span style="font-size:10px;font-weight:700;color:var(--grey)">FUORI MENÙ</span>':''}</div><div class="pk-m" id="sc-d-${i}">${scalaDetail(it)}</div></div>
+      <input class="qty-in" id="sc-q-${i}" type="number" inputmode="decimal" step="any" value="${it.ing.qty}" oninput="aggiornaScala(${i})"><span style="font-size:12px;color:var(--grey)">${it.ing.unit}</span></div>`;
+}
+
+async function aggiungiFuoriMenu(){
+  const righe = $('#sc-extra').value.split(/\n|,(?![^(]*\))/).map(s=>s.trim()).filter(Boolean);
+  if (!righe.length) return toast('Scrivi cosa hai aggiunto (es. 30 g parmigiano)');
+  const disp = await loadDisp();
+  let added = 0;
+  for (const r of righe) {
+    const ing = parseIngrediente(r);
+    if (!ing) continue;
+    const matches = matchDispensa(ing, disp.alimenti);
+    const { plan, mancante } = pianoScalaggio(ing.qty, matches);
+    const it = { ing, matches, plan, mancante, found: matches.length>0, extra: true };
+    const i = S._scala.items.push(it) - 1;
+    $('#sc-rows').insertAdjacentHTML('beforeend', scalaRowHtml(it, i));
+    added++;
+  }
+  $('#sc-extra').value = '';
+  if (!added) toast('Non ho capito — scrivi "quantità unità nome", uno per riga');
 }
 
 function scalaDetail(it){
@@ -409,8 +432,9 @@ function aggiornaScala(i){
 
 async function confermaScalaggio(){
   const disp = await loadDisp();
-  const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i);
-  const dettaglio = S._scala.items.map((it,i)=>{
+  const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i).sort((a,b)=>a-b);
+  const dettaglio = checked.map(i=>{
+    const it = S._scala.items[i];
     const el = $('#sc-q-'+i); const q = el ? (Number(el.value)||0) : it.ing.qty;
     return q>0 ? `${q}${it.ing.unit?' '+it.ing.unit:''} ${it.ing.nome}` : null;
   }).filter(Boolean);
