@@ -1,0 +1,575 @@
+{
+ "settimana": "2026-W30",
+ "dal": "2026-07-20",
+ "al": "2026-07-26",
+ "giorni": [
+  {
+   "giorno": "Lunedì",
+   "data": "2026-07-20",
+   "allenamento": {
+    "tipo": "Wingfoil",
+    "orario": "Pomeriggio",
+    "note": "12:00-15:00"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Philadelphia + salmone affumicato 90g + pane GF + pomodoro",
+     "calorie_stimate": 420,
+     "proteine_g": 29,
+     "ricetta": {
+      "ingredienti": [
+       "2 fette pane GF (~60g)",
+       "60g philadelphia GF",
+       "90g salmone affumicato GF",
+       "1 pomodoro (~120g)",
+       "pepe"
+      ],
+      "preparazione": [
+       "Tosta il pane, spalma il philadelphia, disponi salmone e pomodoro a fette. Pepe."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Bowl riso venere, tonno & pomodorini — pasto leggero e digeribile prima del wingfoil",
+     "calorie_stimate": 500,
+     "proteine_g": 38,
+     "ricetta": {
+      "ingredienti": [
+       "70g riso venere (peso crudo)",
+       "160g tonno al naturale",
+       "150g pomodorini",
+       "50g olive nere",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "basilico, sale"
+      ],
+      "preparazione": [
+       "Cuoci il riso venere 18 min, scola e lascia intiepidire.",
+       "Mescola con tonno, pomodorini e olive.",
+       "Condisci con olio, limone e basilico."
+      ]
+     }
+    },
+    "post_workout": {
+     "descrizione": "Frullato fragola + banana + yogurt greco (~15:15)",
+     "calorie_stimate": 320,
+     "proteine_g": 20,
+     "ricetta": {
+      "ingredienti": [
+       "150g fragole fresche o surgelate",
+       "1 banana matura (~120g)",
+       "150g yogurt greco 0%",
+       "80ml latte parz. scremato",
+       "ghiaccio q.b."
+      ],
+      "preparazione": [
+       "Frulla fragole e banana a pezzi con yogurt, latte e ghiaccio 1 minuto.",
+       "Bevi subito dopo l'uscita dall'acqua."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo alla piastra + zucchine grigliate",
+     "calorie_stimate": 390,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220g petto di pollo",
+       "250g zucchine",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "origano, sale, pepe"
+      ],
+      "preparazione": [
+       "Marina il pollo con olio, limone e origano 5 min.",
+       "Griglia 4-5 min per lato.",
+       "Griglia le zucchine a fette 2-3 min per lato."
+      ]
+     }
+    },
+    "spuntini": [
+     "30g Grana Padano + 50g Bresaola (~230 kcal, 25g prot)",
+     "40g Pane Carasau (~150 kcal, 5g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Martedì",
+   "data": "2026-07-21",
+   "allenamento": {
+    "tipo": "Bici",
+    "orario": "Sera",
+    "note": "18:00-19:00"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Frullato cioccolato + banana + yogurt greco",
+     "calorie_stimate": 360,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "1 banana matura (~120g)",
+       "150g yogurt greco 0%",
+       "150ml latte parz. scremato",
+       "15g cacao amaro GF in polvere",
+       "10g miele",
+       "ghiaccio q.b."
+      ],
+      "preparazione": [
+       "Frulla banana, yogurt, latte, cacao, miele e ghiaccio 1 minuto."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Pasta di riso al tonno & pomodoro",
+     "calorie_stimate": 580,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "90g pasta di riso GF",
+       "160g tonno al naturale",
+       "200g passata di pomodoro",
+       "1 spicchio aglio",
+       "10g olio EVO",
+       "basilico, sale"
+      ],
+      "preparazione": [
+       "Cuoci la pasta GF (attenzione, scuoce facilmente: controlla spesso).",
+       "In parallelo scalda olio e aglio, aggiungi passata, cuoci 5 min.",
+       "Scola la pasta, aggiungi tonno al sugo, condisci con basilico fresco."
+      ]
+     }
+    },
+    "pre_workout": {
+     "descrizione": "1 banana (~17:00, ridotto)",
+     "calorie_stimate": 105,
+     "proteine_g": 1
+    },
+    "cena": {
+     "descrizione": "Salmone al forno + carote & piselli",
+     "calorie_stimate": 480,
+     "proteine_g": 44,
+     "ricetta": {
+      "ingredienti": [
+       "200g filetto di salmone fresco",
+       "150g carote",
+       "150g piselli surgelati",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "rosmarino, sale"
+      ],
+      "preparazione": [
+       "Forno 200°C: salmone con olio, limone, rosmarino 12-14 min.",
+       "Carote e piselli in padella 8 min."
+      ]
+     }
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 100g + miele (~20:15, ridotto)",
+     "calorie_stimate": 110,
+     "proteine_g": 10,
+     "ricetta": {
+      "ingredienti": [
+       "100g yogurt greco 0%",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Mescola e consuma subito dopo la bici."
+      ]
+     }
+    },
+    "spuntini": [
+     "2 uova sode + 15g mandorle (~230 kcal, 15g prot)",
+     "50g Bresaola (~90 kcal, 18g prot)",
+     "30g Grana Padano (~110 kcal, 8g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Mercoledì",
+   "data": "2026-07-22",
+   "allenamento": {
+    "tipo": "Nuoto",
+    "orario": "Mattina",
+    "note": "9:00"
+   },
+   "pasti": {
+    "pre_workout": {
+     "descrizione": "Banana + caffè (~8:30, ridotto)",
+     "calorie_stimate": 100,
+     "proteine_g": 0
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 150g + miele (~10:15)",
+     "calorie_stimate": 150,
+     "proteine_g": 15,
+     "ricetta": {
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Mescola e consuma subito dopo il nuoto."
+      ]
+     }
+    },
+    "colazione": {
+     "descrizione": "Uova strapazzate + pane GF + arancia (~11:00)",
+     "calorie_stimate": 430,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova (~150g)",
+       "2 fette pane GF (~60g)",
+       "1 arancia (~150g)",
+       "5g burro o olio",
+       "sale, pepe"
+      ],
+      "preparazione": [
+       "Strapazza le uova in padella con un filo di burro/olio.",
+       "Servi con pane GF tostato e arancia."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Piadina con pollo e verdure",
+     "calorie_stimate": 520,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "1 piadina Loriana (75g)",
+       "180g petto di pollo",
+       "insalata mista",
+       "1 pomodoro (~120g)",
+       "10g olio EVO"
+      ],
+      "preparazione": [
+       "Griglia il pollo a listarelle 6-8 min.",
+       "Scalda la piadina, farcisci con pollo, insalata e pomodoro."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Merluzzo al vapore + carote & piselli",
+     "calorie_stimate": 380,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "220g merluzzo fresco o surgelato",
+       "150g carote",
+       "150g piselli surgelati",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "prezzemolo, sale"
+      ],
+      "preparazione": [
+       "Cuoci il merluzzo al vapore 10-12 min.",
+       "Salta carote e piselli in padella con olio 5 min.",
+       "Condisci il merluzzo con olio, limone e prezzemolo."
+      ]
+     }
+    },
+    "spuntini": [
+     "100g yogurt greco + banana (~170 kcal, 12g prot)",
+     "40g Pane Carasau + 30g formaggio (~200 kcal, 10g prot)",
+     "50g Bresaola (~90 kcal, 18g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Giovedì",
+   "data": "2026-07-23",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Yogurt greco 200g + frutti di bosco + miele + noci",
+     "calorie_stimate": 350,
+     "proteine_g": 24,
+     "ricetta": {
+      "ingredienti": [
+       "200g yogurt greco 0%",
+       "80g frutti di bosco",
+       "10g miele",
+       "15g noci sgusciate"
+      ],
+      "preparazione": [
+       "Componi in una ciotola: yogurt, frutti di bosco, miele e noci."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Bresaola, grana padano, rucola, pomodorini",
+     "calorie_stimate": 600,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "100g bresaola",
+       "70g grana padano DOP",
+       "50g rucola",
+       "150g pomodorini",
+       "15g olio EVO",
+       "succo 1/2 limone"
+      ],
+      "preparazione": [
+       "Componi il piatto con bresaola, scaglie di grana, rucola e pomodorini.",
+       "Condisci con olio e limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo al limone + zucchine grigliate — cena leggera, niente pasta o riso (riposo)",
+     "calorie_stimate": 380,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220g petto di pollo",
+       "250g zucchine",
+       "15g olio EVO",
+       "succo 1 limone",
+       "origano, sale, pepe"
+      ],
+      "preparazione": [
+       "Marina il pollo con limone, olio e origano 10 min.",
+       "Cuoci in padella grill 4-5 min per lato.",
+       "Griglia le zucchine a fette 2-3 min per lato."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco + mirtilli (~200 kcal, 18g prot)",
+     "15g mandorle + 1 quadratino cioccolato fondente (~100 kcal, 3g prot)",
+     "30g grana padano + 15g noci (~200 kcal, 12g prot)",
+     "1 banana + 10g noci (~145 kcal, 3g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Venerdì",
+   "data": "2026-07-24",
+   "allenamento": {
+    "tipo": "Bici",
+    "orario": "Mattina presto",
+    "note": "6:00-9:00"
+   },
+   "pasti": {
+    "pre_workout": {
+     "descrizione": "Banana + caffè (6:00, ridotto)",
+     "calorie_stimate": 100,
+     "proteine_g": 0
+    },
+    "colazione": {
+     "descrizione": "Uova strapazzate + avocado + pane GF (post-bici, ~9:15)",
+     "calorie_stimate": 450,
+     "proteine_g": 30,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova (~150g)",
+       "1/2 avocado (~80g)",
+       "2 fette pane GF (~60g)",
+       "sale, pepe"
+      ],
+      "preparazione": [
+       "Strapazza le uova in padella.",
+       "Tosta il pane e schiaccia l'avocado sopra.",
+       "Servi insieme, sala e pepa."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Riso basmati con tonno, pomodori & olive",
+     "calorie_stimate": 550,
+     "proteine_g": 40,
+     "ricetta": {
+      "ingredienti": [
+       "85g riso basmati (peso crudo)",
+       "160g tonno al naturale",
+       "150g pomodorini",
+       "50g olive nere",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "basilico, sale"
+      ],
+      "preparazione": [
+       "Cuoci il riso 10-12 min. Scola e intiepidisci.",
+       "Mescola con tonno, pomodorini, olive, olio e limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo alla piastra + zucchine grigliate",
+     "calorie_stimate": 460,
+     "proteine_g": 56,
+     "ricetta": {
+      "ingredienti": [
+       "250g petto di pollo",
+       "250g zucchine",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "origano, sale, pepe"
+      ],
+      "preparazione": [
+       "Marina il pollo con olio, limone e origano 5 min.",
+       "Griglia 4-5 min per lato.",
+       "Griglia le zucchine 2-3 min per lato."
+      ]
+     }
+    },
+    "spuntini": [
+     "100g yogurt greco + 15g mandorle (~190 kcal, 13g prot)",
+     "1 banana (~105 kcal, 1g prot)",
+     "50g Bresaola (~90 kcal, 18g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Sabato",
+   "data": "2026-07-25",
+   "allenamento": {
+    "tipo": "Attività da definire",
+    "orario": "",
+    "note": "Da decidere in giornata — menù flessibile stile Cardio"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Pancake proteici ai mirtilli (weekend, colazione più elaborata)",
+     "calorie_stimate": 480,
+     "proteine_g": 30,
+     "ricetta": {
+      "ingredienti": [
+       "2 uova (~100g)",
+       "40g avena",
+       "100g yogurt greco 0%",
+       "80g mirtilli",
+       "10g sciroppo d'acero o miele",
+       "1/2 cucchiaino lievito GF"
+      ],
+      "preparazione": [
+       "Frulla uova, avena, yogurt e lievito fino a ottenere una pastella.",
+       "Cuoci in padella antiaderente 2-3 min per lato, 4-5 pancake.",
+       "Servi con mirtilli e sciroppo."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Insalata di pollo, avocado e pomodorini",
+     "calorie_stimate": 520,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "200g petto di pollo",
+       "1/2 avocado (~80g)",
+       "150g pomodorini",
+       "insalata mista",
+       "15g olio EVO",
+       "succo 1/2 limone"
+      ],
+      "preparazione": [
+       "Griglia il pollo a listarelle 6-8 min.",
+       "Componi con avocado a fette, pomodorini e insalata.",
+       "Condisci con olio e limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Fettine di manzo ai ferri + insalata mista",
+     "calorie_stimate": 490,
+     "proteine_g": 59,
+     "ricetta": {
+      "ingredienti": [
+       "250g fettine di manzo",
+       "insalata mista",
+       "1 pomodoro (~120g)",
+       "15g olio EVO",
+       "sale, pepe"
+      ],
+      "preparazione": [
+       "Cuoci le fettine in padella ben calda 2-3 min per lato.",
+       "Servi con insalata mista condita con olio e limone."
+      ]
+     }
+    },
+    "spuntini": [
+     "3 datteri + 10g noci (~175 kcal, 1g prot)",
+     "30g grana padano (~110 kcal, 8g prot)",
+     "20g cioccolato fondente 78% + 10g mandorle (~170 kcal, 3g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Domenica",
+   "data": "2026-07-26",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": "Weekend, colazione più elaborata"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Yogurt greco bowl con granola GF, frutti di bosco, miele e noci",
+     "calorie_stimate": 420,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "200g yogurt greco 0%",
+       "40g granola GF",
+       "80g frutti di bosco",
+       "10g miele",
+       "15g noci sgusciate"
+      ],
+      "preparazione": [
+       "Componi in una ciotola: yogurt, granola, frutti di bosco.",
+       "Completa con miele e noci."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Pollo grigliato con avocado, insalata e pomodorini",
+     "calorie_stimate": 520,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "200g petto di pollo",
+       "1/2 avocado (~80g)",
+       "150g pomodorini",
+       "insalata mista",
+       "15g olio EVO",
+       "succo 1/2 limone"
+      ],
+      "preparazione": [
+       "Griglia il pollo a listarelle 6-8 min.",
+       "Componi con avocado a fette, pomodorini e insalata.",
+       "Condisci con olio e limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Nasello al forno + carote — cena leggera, niente pasta o riso (riposo)",
+     "calorie_stimate": 458,
+     "proteine_g": 56,
+     "ricetta": {
+      "ingredienti": [
+       "350g nasello",
+       "250g carote",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "prezzemolo, sale"
+      ],
+      "preparazione": [
+       "Forno 200°C: nasello con olio, limone e prezzemolo 15-18 min.",
+       "Carote al vapore o saltate in padella 10 min."
+      ]
+     }
+    },
+    "spuntini": [
+     "1 banana + 10g noci (~145 kcal, 3g prot)",
+     "30g grana padano + 15g noci (~200 kcal, 12g prot)",
+     "50g Bresaola (~90 kcal, 18g prot)"
+    ]
+   }
+  }
+ ]
+}
