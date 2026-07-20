@@ -455,7 +455,7 @@
   {
    "nome": "Petto di Pollo Fresco",
    "categoria": "Proteine",
-   "quantita": 100,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 998,
+   "quantita": 898,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
