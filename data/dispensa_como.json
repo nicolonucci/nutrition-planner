@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 1,
+   "quantita": 4,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 3,
+   "quantita": 6,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 0,
+   "quantita": 300,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -378,29 +378,29 @@
   {
    "nome": "Bresaola Valtellina IGP",
    "categoria": "Proteine",
-   "quantita": 0,
+   "quantita": 200,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 30,
    "scadenza": "",
-   "note": "",
+   "note": "2x100g",
    "monoporzione": false
   },
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 0,
+   "quantita": 1250,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "2x500g",
+   "note": "2x500g + datterino 250g",
    "monoporzione": false
   },
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 0,
+   "quantita": 750,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -422,23 +422,23 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 380,
+   "quantita": 1200,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "1,9x200g",
+   "note": "6x200g",
    "monoporzione": true
   },
   {
    "nome": "Fettine di Manzo",
    "categoria": "Proteine",
-   "quantita": 0,
+   "quantita": 414,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "0x200g",
+   "note": "2x207g",
    "monoporzione": true
   },
   {
@@ -455,7 +455,7 @@
   {
    "nome": "Petto di Pollo Fresco",
    "categoria": "Proteine",
-   "quantita": 0,
+   "quantita": 100,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -499,10 +499,54 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 170,
+   "quantita": 998,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Guanciale",
+   "categoria": "Proteine",
+   "quantita": 140,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 30,
+   "scadenza": "",
+   "note": "2x70g",
+   "monoporzione": true
+  },
+  {
+   "nome": "Fragole",
+   "categoria": "Verdure & Frutta",
+   "quantita": 250,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Limoni",
+   "categoria": "Verdure & Frutta",
+   "quantita": 500,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Gotan Rice Sticks",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
    "scadenza": "",
    "note": "",
    "monoporzione": false
