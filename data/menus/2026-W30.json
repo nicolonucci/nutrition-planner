@@ -99,7 +99,14 @@
        "Griglia 4-5 min per lato.",
        "Griglia le zucchine a fette 2-3 min per lato."
       ]
-     }
+     },
+     "consumato": "2026-07-20T23:30",
+     "consumato_dettaglio": [
+      "100 g petto di pollo",
+      "100 g zucchine"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false
     },
     "spuntini": [
      "30g Grana Padano + 50g Bresaola (~230 kcal, 25g prot)",
