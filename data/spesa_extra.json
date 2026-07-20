@@ -1,11 +1,4 @@
 {
- "como": [
-  {
-   "nome": "Pollo",
-   "qty": 100,
-   "unit": "g",
-   "categoria": "Proteine"
-  }
- ],
+ "como": [],
  "milano": []
 }
