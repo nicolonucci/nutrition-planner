@@ -131,6 +131,97 @@
    "giorno": "Martedì",
    "data": "2026-07-21",
    "allenamento": {
+    "tipo": "Nuoto",
+    "orario": "Mattina",
+    "note": "9:00"
+   },
+   "pasti": {
+    "pre_workout": {
+     "descrizione": "Banana + caffè (~8:30, ridotto)",
+     "calorie_stimate": 100,
+     "proteine_g": 0
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 150g + miele (~10:15)",
+     "calorie_stimate": 150,
+     "proteine_g": 15,
+     "ricetta": {
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Mescola e consuma subito dopo il nuoto."
+      ]
+     }
+    },
+    "colazione": {
+     "descrizione": "Uova strapazzate + pane GF + arancia (~11:00)",
+     "calorie_stimate": 430,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova (~150g)",
+       "2 fette pane GF (~60g)",
+       "1 arancia (~150g)",
+       "5g burro o olio",
+       "sale, pepe"
+      ],
+      "preparazione": [
+       "Strapazza le uova in padella con un filo di burro/olio.",
+       "Servi con pane GF tostato e arancia."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Piadina con pollo e verdure",
+     "calorie_stimate": 520,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "1 piadina Loriana (75g)",
+       "180g petto di pollo",
+       "insalata mista",
+       "1 pomodoro (~120g)",
+       "10g olio EVO"
+      ],
+      "preparazione": [
+       "Griglia il pollo a listarelle 6-8 min.",
+       "Scalda la piadina, farcisci con pollo, insalata e pomodoro."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Merluzzo al vapore + carote & piselli",
+     "calorie_stimate": 380,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "220g merluzzo fresco o surgelato",
+       "150g carote",
+       "150g piselli surgelati",
+       "15g olio EVO",
+       "succo 1/2 limone",
+       "prezzemolo, sale"
+      ],
+      "preparazione": [
+       "Cuoci il merluzzo al vapore 10-12 min.",
+       "Salta carote e piselli in padella con olio 5 min.",
+       "Condisci il merluzzo con olio, limone e prezzemolo."
+      ]
+     }
+    },
+    "spuntini": [
+     "100g yogurt greco + banana (~170 kcal, 12g prot)",
+     "40g Pane Carasau + 30g formaggio (~200 kcal, 10g prot)",
+     "50g Bresaola (~90 kcal, 18g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Mercoledì",
+   "data": "2026-07-22",
+   "allenamento": {
     "tipo": "Bici",
     "orario": "Sera",
     "note": "18:00-19:00"
@@ -216,97 +307,6 @@
      "2 uova sode + 15g mandorle (~230 kcal, 15g prot)",
      "50g Bresaola (~90 kcal, 18g prot)",
      "30g Grana Padano (~110 kcal, 8g prot)"
-    ]
-   }
-  },
-  {
-   "giorno": "Mercoledì",
-   "data": "2026-07-22",
-   "allenamento": {
-    "tipo": "Nuoto",
-    "orario": "Mattina",
-    "note": "9:00"
-   },
-   "pasti": {
-    "pre_workout": {
-     "descrizione": "Banana + caffè (~8:30, ridotto)",
-     "calorie_stimate": 100,
-     "proteine_g": 0
-    },
-    "post_workout": {
-     "descrizione": "Yogurt greco 150g + miele (~10:15)",
-     "calorie_stimate": 150,
-     "proteine_g": 15,
-     "ricetta": {
-      "ingredienti": [
-       "150g yogurt greco 0%",
-       "10g miele"
-      ],
-      "preparazione": [
-       "Mescola e consuma subito dopo il nuoto."
-      ]
-     }
-    },
-    "colazione": {
-     "descrizione": "Uova strapazzate + pane GF + arancia (~11:00)",
-     "calorie_stimate": 430,
-     "proteine_g": 28,
-     "ricetta": {
-      "ingredienti": [
-       "3 uova (~150g)",
-       "2 fette pane GF (~60g)",
-       "1 arancia (~150g)",
-       "5g burro o olio",
-       "sale, pepe"
-      ],
-      "preparazione": [
-       "Strapazza le uova in padella con un filo di burro/olio.",
-       "Servi con pane GF tostato e arancia."
-      ]
-     }
-    },
-    "pranzo": {
-     "descrizione": "Piadina con pollo e verdure",
-     "calorie_stimate": 520,
-     "proteine_g": 42,
-     "ricetta": {
-      "ingredienti": [
-       "1 piadina Loriana (75g)",
-       "180g petto di pollo",
-       "insalata mista",
-       "1 pomodoro (~120g)",
-       "10g olio EVO"
-      ],
-      "preparazione": [
-       "Griglia il pollo a listarelle 6-8 min.",
-       "Scalda la piadina, farcisci con pollo, insalata e pomodoro."
-      ]
-     }
-    },
-    "cena": {
-     "descrizione": "Merluzzo al vapore + carote & piselli",
-     "calorie_stimate": 380,
-     "proteine_g": 42,
-     "ricetta": {
-      "ingredienti": [
-       "220g merluzzo fresco o surgelato",
-       "150g carote",
-       "150g piselli surgelati",
-       "15g olio EVO",
-       "succo 1/2 limone",
-       "prezzemolo, sale"
-      ],
-      "preparazione": [
-       "Cuoci il merluzzo al vapore 10-12 min.",
-       "Salta carote e piselli in padella con olio 5 min.",
-       "Condisci il merluzzo con olio, limone e prezzemolo."
-      ]
-     }
-    },
-    "spuntini": [
-     "100g yogurt greco + banana (~170 kcal, 12g prot)",
-     "40g Pane Carasau + 30g formaggio (~200 kcal, 10g prot)",
-     "50g Bresaola (~90 kcal, 18g prot)"
     ]
    }
   },
