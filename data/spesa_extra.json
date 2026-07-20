@@ -1,4 +1,11 @@
 {
- "como": [],
+ "como": [
+  {
+   "nome": "Pollo",
+   "qty": 100,
+   "unit": "g",
+   "categoria": "Proteine"
+  }
+ ],
  "milano": []
 }
