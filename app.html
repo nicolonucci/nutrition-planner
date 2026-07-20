@@ -364,7 +364,7 @@ async function pastoLiberoGo(){
 }
 
 function ripristinoHtml(scalato, sede){
-  if (!scalato.length) return '<div class="warn">⚠️ Questo pasto non ha un dettaglio di prelievo salvato (registrato prima di questa funzione) — la dispensa NON verrà ripristinata automaticamente. Correggi a mano in Dispensa se serve.</div>';
+  if (!scalato.length) return '';
   return `<p style="font-size:13px;color:var(--grey);margin:8px 0 6px">Verranno ri-aggiunti alla dispensa di <strong>${sede==='como'?'Como':'Milano'}</strong>:</p>
     <div class="chips">${scalato.map(r=>`<span class="chip g">+${r.prelievo}${esc(r.unita)} ${esc(r.nome)}${r.congelato?' ❄️':''}</span>`).join('')}</div>`;
 }
@@ -390,7 +390,7 @@ async function annullaConsumato(weekId, gi, slot){
   openSheet('Annulla registrazione', `
     <p style="font-size:14px;margin-bottom:6px"><strong>${esc(p.descrizione||'')}</strong></p>
     <p style="font-size:13px;color:var(--grey)">Registrato ${esc(String(p.consumato).replace('T',' alle '))}.</p>
-    ${p.consumato_no_scala ? '<div class="warn">🚫 Registrato senza scalare la dispensa — non c\'è nulla da ripristinare.</div>' : ripristinoHtml(scalato, sede)}
+    ${p.consumato_no_scala ? '' : ripristinoHtml(scalato, sede)}
     <button class="btn" onclick="annullaConsumatoGo('${weekId}',${gi},'${slot}')">${scalato.length && !p.consumato_no_scala ? 'Ripristina dispensa e annulla' : 'Segna come non mangiato'}</button>`);
 }
 async function annullaConsumatoGo(weekId, gi, slot){
@@ -424,7 +424,7 @@ async function annullaPastoLibero(gi, j){
   const sede = pl.consumato_sede || S.loc;
   openSheet('Elimina pasto libero', `
     <p style="font-size:14px;margin-bottom:6px"><strong>${esc(pl.descrizione||'Pasto libero')}</strong></p>
-    ${pl.consumato_no_scala ? '<div class="warn">🚫 Registrato senza scalare la dispensa — non c\'è nulla da ripristinare.</div>' : ripristinoHtml(scalato, sede)}
+    ${pl.consumato_no_scala ? '' : ripristinoHtml(scalato, sede)}
     <button class="btn" style="border-color:var(--red);color:var(--red)" onclick="annullaPastoLiberoGo(${gi},${j})">${scalato.length && !pl.consumato_no_scala ? 'Ripristina dispensa ed elimina' : 'Elimina pasto'}</button>`);
 }
 async function annullaPastoLiberoGo(gi, j){
@@ -539,6 +539,7 @@ function aggiornaScala(i){
 }
 
 async function confermaScalaggio(){
+  if ($('#sc-extra') && $('#sc-extra').value.trim()) await aggiungiFuoriMenu();
   const scala = S._scala;
   const loc = scala.loc || S.loc;
   const noScala = !!scala.noScala;
