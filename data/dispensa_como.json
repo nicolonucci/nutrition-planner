@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-19",
+ "ultimo_aggiornamento": "2026-07-20",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 100,
+   "quantita": 40,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "4x25g",
+   "note": "1,6x25g",
    "monoporzione": true
   },
   {
