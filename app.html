@@ -59,6 +59,9 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .meal-slot{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
 .meal-desc{font-size:14px;font-weight:600;margin:3px 0}
 .meal-meta{font-size:11px;color:var(--grey)}
+.flag-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:5px;vertical-align:middle;white-space:nowrap}
+.flag-badge.gold{background:var(--gold-l);border:1px solid var(--gold-b);color:#5a3c00}
+.flag-badge.blue{background:var(--blue-l);border:1px solid var(--blue-b);color:var(--blue)}
 .meal-actions{display:flex;gap:8px;margin-top:8px}
 .mini-btn{flex:1;padding:8px;border-radius:9px;border:1.5px solid var(--mid);background:#fff;font-size:12px;font-weight:600;color:#444;cursor:pointer}
 .mini-btn.primary{background:var(--green);border-color:var(--green);color:#fff}
@@ -236,10 +239,10 @@ async function ghWrite(path, obj, message){
 }
 
 /* ═══════════ DATI ═══════════ */
-const dispPath = () => `data/dispensa_${S.loc}.json`;
+const dispPath = (loc) => `data/dispensa_${loc||S.loc}.json`;
 async function loadSettimane(){ if(!S.settimane) S.settimane = await ghRead('data/settimane.json') || {settimane:[]}; return S.settimane; }
 async function loadMenu(id){ if(!(id in S.menus)) S.menus[id] = await ghRead(`data/menus/${id}.json`); return S.menus[id]; }
-async function loadDisp(){ if(!S.disp[S.loc]) S.disp[S.loc] = await ghRead(dispPath()) || {ultimo_aggiornamento:'',alimenti:[]}; return S.disp[S.loc]; }
+async function loadDisp(loc){ loc = loc||S.loc; if(!S.disp[loc]) S.disp[loc] = await ghRead(dispPath(loc)) || {ultimo_aggiornamento:'',alimenti:[]}; return S.disp[loc]; }
 async function loadRicette(){ if(!S.ricette) S.ricette = await ghRead('data/ricette.json') || {ricette:[]}; return S.ricette; }
 function currentWeekId(){ return isoWeekOf(new Date()); }
 function todayRome(){ return new Date().toLocaleDateString('sv-SE',{timeZone:'Europe/Rome'}); }
@@ -296,10 +299,14 @@ async function vMenu(){
       const consLines = eaten ? ((Array.isArray(p.consumato_dettaglio)&&p.consumato_dettaglio.length) ? p.consumato_dettaglio : (hasRic ? p.ricetta.ingredienti : null)) : null;
       const hasCons = !!(consLines && consLines.length);
       if (hasCons) { S._cons = S._cons||{}; S._cons[gi+'-'+slot] = consLines.join('\n'); }
+      const flags = eaten ? [
+        p.consumato_no_scala ? '<span class="flag-badge gold" title="Registrato senza scalare la dispensa">🚫 dispensa</span>' : '',
+        (p.consumato_sede ? `<span class="flag-badge blue" title="Scalato dalla dispensa di ${p.consumato_sede==='como'?'Como':'Milano'}">📍${p.consumato_sede==='como'?'Como':'Milano'}</span>` : '')
+      ].filter(Boolean).join('') : '';
       h += `<div class="meal ${eaten?'eaten':''}">
         <div class="meal-top"><span class="meal-slot">${esc(SLOT_LABEL[slot]||slot)}</span>
         <span class="meal-meta">${p.calorie_stimate?'~'+p.calorie_stimate+' kcal':''}${p.proteine_g?' · P '+p.proteine_g+'g':''}</span></div>
-        <div class="meal-desc">${eaten?'✓ ':''}${esc(p.descrizione||'')}</div>
+        <div class="meal-desc">${eaten?'✓ ':''}${esc(p.descrizione||'')}${flags}</div>
         ${hasRic?`<div class="ing-list" style="display:none" id="ing-${gi}-${slot}">${p.ricetta.ingredienti.map(esc).join('<br>')}${p.ricetta.preparazione?'<br><em style="color:var(--grey)">'+p.ricetta.preparazione.map(esc).join(' ') +'</em>':''}</div>`:''}
         ${hasCons?`<div class="ing-list" style="display:none" id="cons-${gi}-${slot}">${consLines.map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${gi}-${slot}')">📋 Copia</button></div>`:''}
         <div class="meal-actions">
@@ -314,9 +321,13 @@ async function vMenu(){
       const key = gi+'-lib'+j;
       S._cons = S._cons||{}; S._cons[key] = (pl.dettaglio||[]).join('\n');
       const ora = pl.consumato ? String(pl.consumato).slice(11,16) : '';
+      const flagsLib = [
+        pl.consumato_no_scala ? '<span class="flag-badge gold" title="Registrato senza scalare la dispensa">🚫 dispensa</span>' : '',
+        (pl.consumato_sede ? `<span class="flag-badge blue" title="Scalato dalla dispensa di ${pl.consumato_sede==='como'?'Como':'Milano'}">📍${pl.consumato_sede==='como'?'Como':'Milano'}</span>` : '')
+      ].filter(Boolean).join('');
       h += `<div class="meal eaten">
         <div class="meal-top"><span class="meal-slot">Pasto libero</span><span class="meal-meta">${ora?'✓ '+ora:''}</span></div>
-        <div class="meal-desc">✓ ${esc(pl.descrizione||'Pasto libero')}</div>
+        <div class="meal-desc">✓ ${esc(pl.descrizione||'Pasto libero')}${flagsLib}</div>
         <div class="ing-list" style="display:none" id="cons-${key}">${(pl.dettaglio||[]).map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${key}')">📋 Copia</button></div>
         <div class="meal-actions"><button class="mini-btn" onclick="const e=$('#cons-${key}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button></div></div>`;
     });
@@ -372,7 +383,8 @@ async function annullaConsumatoGo(weekId, gi, slot){
 }
 
 async function preparaScalaggio(righe, titolo, ctx){
-  const disp = await loadDisp();
+  const loc = S.loc;
+  const disp = await loadDisp(loc);
   const items = [];
   for (const r of righe) {
     const ing = parseIngrediente(r);
@@ -381,13 +393,44 @@ async function preparaScalaggio(righe, titolo, ctx){
     const { plan, mancante } = pianoScalaggio(ing.qty, matches);
     items.push({ ing, matches, plan, mancante, found: matches.length>0 });
   }
-  S._scala = { items, titolo, ctx: ctx || null };
-  let h = `<p style="font-size:13px;color:var(--grey);margin-bottom:10px">Sede: <strong>${S.loc==='como'?'Como':'Milano'}</strong> — spunta ciò che hai mangiato davvero e correggi le quantità. Nel testo copiabile finiscono le righe spuntate e i fuori menù.</p>
+  S._scala = { items, titolo, ctx: ctx || null, loc, noScala: false };
+  let h = `<div class="frow"><label>Dispensa da aggiornare</label>
+      <select id="sc-loc" onchange="cambiaSedeScalaggio(this.value)">
+        <option value="como" ${loc==='como'?'selected':''}>Como</option>
+        <option value="milano" ${loc==='milano'?'selected':''}>Milano</option>
+      </select></div>
+    <label class="pick" for="sc-noscala" style="cursor:pointer">
+      <input type="checkbox" id="sc-noscala" onchange="toggleNoScala()">
+      <div class="pk-i"><div class="pk-n">🚫 Non aggiornare la dispensa</div><div class="pk-m">Registra il pasto senza scalare gli ingredienti</div></div>
+    </label>
+    <p style="font-size:13px;color:var(--grey);margin:10px 0">Spunta ciò che hai mangiato davvero e correggi le quantità. Nel testo copiabile finiscono le righe spuntate e i fuori menù.</p>
     <div id="sc-rows">${items.map((it,i)=>scalaRowHtml(it,i)).join('')}</div>
     <div class="frow" style="margin-top:10px"><label>Fuori menù</label><textarea id="sc-extra" style="min-height:52px" placeholder="Extra non previsti, uno per riga (es. 30 g parmigiano)"></textarea></div>
     <button class="btn ghost" style="margin-bottom:10px" onclick="aggiungiFuoriMenu()">＋ Aggiungi fuori menù</button>
-    <button class="btn green" onclick="confermaScalaggio()">Conferma e aggiorna dispensa</button>`;
+    <button class="btn green" onclick="confermaScalaggio()">Conferma</button>`;
   openSheet('✓ ' + titolo, h);
+}
+
+async function cambiaSedeScalaggio(loc){
+  // preserva le quantità eventualmente modificate dall'utente prima di ricaricare la dispensa scelta
+  S._scala.items.forEach((it,i)=>{ const el=$('#sc-q-'+i); if (el) it.ing.qty = Number(el.value)||0; });
+  S._scala.loc = loc;
+  const disp = await loadDisp(loc);
+  S._scala.items.forEach(it=>{
+    const matches = matchDispensa(it.ing, disp.alimenti);
+    const r = pianoScalaggio(it.ing.qty, matches);
+    it.matches = matches; it.plan = r.plan; it.mancante = r.mancante; it.found = matches.length>0;
+  });
+  $('#sc-rows').innerHTML = S._scala.items.map((it,i)=>scalaRowHtml(it,i)).join('');
+}
+
+function toggleNoScala(){
+  const el = $('#sc-noscala');
+  S._scala.noScala = el.checked;
+  const pick = el.closest('.pick'); if (pick) pick.classList.toggle('on', el.checked);
+  const rows = $('#sc-rows');
+  rows.style.opacity = el.checked ? '.4' : '1';
+  rows.style.pointerEvents = el.checked ? 'none' : 'auto';
 }
 
 function scalaRowHtml(it, i){
@@ -400,7 +443,7 @@ function scalaRowHtml(it, i){
 async function aggiungiFuoriMenu(){
   const righe = $('#sc-extra').value.split(/\n|,(?![^(]*\))/).map(s=>s.trim()).filter(Boolean);
   if (!righe.length) return toast('Scrivi cosa hai aggiunto (es. 30 g parmigiano)');
-  const disp = await loadDisp();
+  const disp = await loadDisp(S._scala.loc);
   let added = 0;
   for (const r of righe) {
     const ing = parseIngrediente(r);
@@ -431,41 +474,48 @@ function aggiornaScala(i){
 }
 
 async function confermaScalaggio(){
-  const disp = await loadDisp();
-  const checked = [...document.querySelectorAll('#sh-body input[type=checkbox]:checked')].map(c=>+c.dataset.i);
+  const scala = S._scala;
+  const loc = scala.loc || S.loc;
+  const noScala = !!scala.noScala;
+  const disp = noScala ? null : await loadDisp(loc);
+  const checked = [...document.querySelectorAll('#sc-rows input[type=checkbox]:checked')].map(c=>+c.dataset.i);
   const checkedSet = new Set(checked);
-  const dettaglio = S._scala.items.map((it,i)=>{
+  const dettaglio = scala.items.map((it,i)=>{
     if (!checkedSet.has(i) && !it.extra) return null;
     const el = $('#sc-q-'+i); const q = el ? (Number(el.value)||0) : it.ing.qty;
     return q>0 ? `${q}${it.ing.unit?' '+it.ing.unit:''} ${it.ing.nome}` : null;
   }).filter(Boolean);
   let n = 0;
-  for (const i of checked) for (const pl of S._scala.items[i].plan) {
-    const al = disp.alimenti[pl.index];
-    al.quantita = Math.max(0, Math.round((Number(al.quantita)-pl.prelievo)*100)/100);
-    syncNotePorzioni(al);
-    n++;
+  if (!noScala) {
+    for (const i of checked) for (const pl of scala.items[i].plan) {
+      const al = disp.alimenti[pl.index];
+      al.quantita = Math.max(0, Math.round((Number(al.quantita)-pl.prelievo)*100)/100);
+      syncNotePorzioni(al);
+      n++;
+    }
   }
-  if (!n && !dettaglio.length) return toast('Niente da registrare');
+  if (!dettaglio.length) return toast('Niente da registrare');
   try {
     closeSheet(); toast('Salvataggio…', 8000);
-    if (n) { disp.ultimo_aggiornamento = todayRome(); await ghWrite(dispPath(), disp, `Pasto: ${S._scala.titolo} (${S.loc})`); }
-    const ctx = S._scala.ctx;
+    if (n) { disp.ultimo_aggiornamento = todayRome(); await ghWrite(dispPath(loc), disp, `Pasto: ${scala.titolo} (${loc})`); }
+    const ctx = scala.ctx;
     if (ctx && ctx.libero) {
       const wk = currentWeekId();
       const menu = await loadMenu(wk);
       const g = menu && menu.giorni.find(x=>x.data===todayRome());
       if (g) {
-        (g.pasti_liberi = g.pasti_liberi||[]).push({ descrizione: dettaglio.join(', '), consumato: nowRome(), dettaglio });
+        (g.pasti_liberi = g.pasti_liberi||[]).push({ descrizione: dettaglio.join(', '), consumato: nowRome(), dettaglio, consumato_sede: loc, consumato_no_scala: noScala });
         await ghWrite(`data/menus/${wk}.json`, menu, `Pasto libero registrato`);
       }
     } else if (ctx) {
       const menu = await loadMenu(ctx.weekId);
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato = nowRome();
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_dettaglio = dettaglio;
-      await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${S._scala.titolo}`);
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato_sede = loc;
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato_no_scala = noScala;
+      await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${scala.titolo}`);
     }
-    toast(n ? '✅ Registrato — dispensa aggiornata' : '✅ Registrato');
+    toast(noScala ? '✅ Registrato — dispensa non modificata' : (n ? '✅ Registrato — dispensa aggiornata' : '✅ Registrato'));
     if (S.view==='dispensa' || S.view==='menu') render();
   } catch(e){ toast('❌ '+e.message, 5000); }
 }
