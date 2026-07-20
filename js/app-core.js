@@ -299,7 +299,7 @@ function prossimaSettimana(today) {
 const GIORNI_IT = ['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica'];
 
 if (typeof module !== 'undefined') module.exports = {
-  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio, convertiPesoAPezzi,
+  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio, convertiPesoAPezzi, normDispUnit,
   ingredientiSettimana, calcolaSpesa, guessCategoria, isoWeekOf, prossimaSettimana, GIORNI_IT,
   portionInfo, syncNotePorzioni, noteLabelPorzioni, parseNxG
 };

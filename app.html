@@ -329,7 +329,7 @@ async function vMenu(){
         <div class="meal-top"><span class="meal-slot">Pasto libero</span><span class="meal-meta">${ora?'✓ '+ora:''}</span></div>
         <div class="meal-desc">✓ ${esc(pl.descrizione||'Pasto libero')}${flagsLib}</div>
         <div class="ing-list" style="display:none" id="cons-${key}">${(pl.dettaglio||[]).map(esc).join('<br>')}<br><button class="mini-btn" style="margin-top:6px" onclick="copiaCons('${key}')">📋 Copia</button></div>
-        <div class="meal-actions"><button class="mini-btn" onclick="const e=$('#cons-${key}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button></div></div>`;
+        <div class="meal-actions"><button class="mini-btn" onclick="const e=$('#cons-${key}');e.style.display=e.style.display==='none'?'block':'none'">🍽 Mangiato</button><button class="mini-btn" style="color:var(--red);border-color:var(--red-b)" onclick="annullaPastoLibero(${gi},${j})">✕ Elimina</button></div></div>`;
     });
     h += `</div>`;
   });
@@ -363,22 +363,87 @@ async function pastoLiberoGo(){
   await preparaScalaggio(righe, 'Pasto libero', { libero:true });
 }
 
+function ripristinoHtml(scalato, sede){
+  if (!scalato.length) return '<div class="warn">⚠️ Questo pasto non ha un dettaglio di prelievo salvato (registrato prima di questa funzione) — la dispensa NON verrà ripristinata automaticamente. Correggi a mano in Dispensa se serve.</div>';
+  return `<p style="font-size:13px;color:var(--grey);margin:8px 0 6px">Verranno ri-aggiunti alla dispensa di <strong>${sede==='como'?'Como':'Milano'}</strong>:</p>
+    <div class="chips">${scalato.map(r=>`<span class="chip g">+${r.prelievo}${esc(r.unita)} ${esc(r.nome)}${r.congelato?' ❄️':''}</span>`).join('')}</div>`;
+}
+
+// Ritrova in dispensa la voce da cui era stato prelevato un ingrediente (per nome+unità,
+// preferendo la stessa voce fresco/congelato) e vi riaggiunge la quantità. Ritorna true se riuscito.
+function ripristinaVoceDispensa(disp, rec){
+  const ing = { nome: rec.nome, unit: normDispUnit(rec.unita), tokens: tokensOf(rec.nome) };
+  const matches = matchDispensa(ing, disp.alimenti);
+  if (!matches.length) return false;
+  const m = matches.find(x => !!x.al.congelato === !!rec.congelato) || matches[0];
+  const al = disp.alimenti[m.i];
+  al.quantita = Math.round((Number(al.quantita) + Number(rec.prelievo)) * 100) / 100;
+  syncNotePorzioni(al);
+  return true;
+}
+
 async function annullaConsumato(weekId, gi, slot){
   const menu = await loadMenu(weekId);
   const p = menu.giorni[gi].pasti[slot];
+  const scalato = Array.isArray(p.consumato_scalato) ? p.consumato_scalato : [];
+  const sede = p.consumato_sede || S.loc;
   openSheet('Annulla registrazione', `
     <p style="font-size:14px;margin-bottom:6px"><strong>${esc(p.descrizione||'')}</strong></p>
     <p style="font-size:13px;color:var(--grey)">Registrato ${esc(String(p.consumato).replace('T',' alle '))}.</p>
-    <div class="warn">⚠️ Annullare NON ripristina la dispensa: gli ingredienti già scalati restano scalati. Se hai sbagliato, correggi le quantità a mano in Dispensa.</div>
-    <button class="btn" onclick="annullaConsumatoGo('${weekId}',${gi},'${slot}')">Segna come non mangiato</button>`);
+    ${p.consumato_no_scala ? '<div class="warn">🚫 Registrato senza scalare la dispensa — non c\'è nulla da ripristinare.</div>' : ripristinoHtml(scalato, sede)}
+    <button class="btn" onclick="annullaConsumatoGo('${weekId}',${gi},'${slot}')">${scalato.length && !p.consumato_no_scala ? 'Ripristina dispensa e annulla' : 'Segna come non mangiato'}</button>`);
 }
 async function annullaConsumatoGo(weekId, gi, slot){
   const menu = await loadMenu(weekId);
-  delete menu.giorni[gi].pasti[slot].consumato;
-  delete menu.giorni[gi].pasti[slot].consumato_dettaglio;
-  try { closeSheet(); toast('Salvataggio…',8000);
+  const p = menu.giorni[gi].pasti[slot];
+  const scalato = Array.isArray(p.consumato_scalato) ? p.consumato_scalato : [];
+  const sede = p.consumato_sede || S.loc;
+  let disp = null, dispChanged = false, nonTrovati = 0;
+  if (scalato.length) {
+    disp = await loadDisp(sede);
+    for (const rec of scalato) { if (ripristinaVoceDispensa(disp, rec)) dispChanged = true; else nonTrovati++; }
+  }
+  delete p.consumato;
+  delete p.consumato_dettaglio;
+  delete p.consumato_sede;
+  delete p.consumato_no_scala;
+  delete p.consumato_scalato;
+  try {
+    closeSheet(); toast('Salvataggio…',8000);
+    if (dispChanged) { disp.ultimo_aggiornamento = todayRome(); await ghWrite(dispPath(sede), disp, `Ripristino dispensa dopo annullamento pasto (${sede})`); }
     await ghWrite(`data/menus/${weekId}.json`, menu, `Annullata registrazione pasto (${weekId})`);
-    toast('↩️ Registrazione annullata'); render();
+    toast(nonTrovati ? `↩️ Annullato — ${nonTrovati} ingrediente/i non ripristinati (non trovati in dispensa)` : (dispChanged ? '↩️ Annullato — dispensa ripristinata' : '↩️ Registrazione annullata'), nonTrovati?6000:undefined);
+    render();
+  } catch(e){ toast('❌ '+e.message,5000); }
+}
+
+async function annullaPastoLibero(gi, j){
+  const menu = await loadMenu(S.week);
+  const pl = menu.giorni[gi].pasti_liberi[j];
+  const scalato = Array.isArray(pl.consumato_scalato) ? pl.consumato_scalato : [];
+  const sede = pl.consumato_sede || S.loc;
+  openSheet('Elimina pasto libero', `
+    <p style="font-size:14px;margin-bottom:6px"><strong>${esc(pl.descrizione||'Pasto libero')}</strong></p>
+    ${pl.consumato_no_scala ? '<div class="warn">🚫 Registrato senza scalare la dispensa — non c\'è nulla da ripristinare.</div>' : ripristinoHtml(scalato, sede)}
+    <button class="btn" style="border-color:var(--red);color:var(--red)" onclick="annullaPastoLiberoGo(${gi},${j})">${scalato.length && !pl.consumato_no_scala ? 'Ripristina dispensa ed elimina' : 'Elimina pasto'}</button>`);
+}
+async function annullaPastoLiberoGo(gi, j){
+  const menu = await loadMenu(S.week);
+  const pl = menu.giorni[gi].pasti_liberi[j];
+  const scalato = Array.isArray(pl.consumato_scalato) ? pl.consumato_scalato : [];
+  const sede = pl.consumato_sede || S.loc;
+  let disp = null, dispChanged = false, nonTrovati = 0;
+  if (scalato.length) {
+    disp = await loadDisp(sede);
+    for (const rec of scalato) { if (ripristinaVoceDispensa(disp, rec)) dispChanged = true; else nonTrovati++; }
+  }
+  menu.giorni[gi].pasti_liberi.splice(j,1);
+  try {
+    closeSheet(); toast('Salvataggio…',8000);
+    if (dispChanged) { disp.ultimo_aggiornamento = todayRome(); await ghWrite(dispPath(sede), disp, `Ripristino dispensa dopo eliminazione pasto libero (${sede})`); }
+    await ghWrite(`data/menus/${S.week}.json`, menu, `Pasto libero eliminato`);
+    toast(nonTrovati ? `🗑️ Eliminato — ${nonTrovati} ingrediente/i non ripristinati` : (dispChanged ? '🗑️ Eliminato — dispensa ripristinata' : '🗑️ Pasto eliminato'));
+    render();
   } catch(e){ toast('❌ '+e.message,5000); }
 }
 
@@ -486,12 +551,14 @@ async function confermaScalaggio(){
     return q>0 ? `${q}${it.ing.unit?' '+it.ing.unit:''} ${it.ing.nome}` : null;
   }).filter(Boolean);
   let n = 0;
+  const scalatoRec = [];
   if (!noScala) {
     for (const i of checked) for (const pl of scala.items[i].plan) {
       const al = disp.alimenti[pl.index];
       al.quantita = Math.max(0, Math.round((Number(al.quantita)-pl.prelievo)*100)/100);
       syncNotePorzioni(al);
       n++;
+      scalatoRec.push({ nome: pl.nome, unita: pl.unita, prelievo: pl.prelievo, congelato: !!pl.congelato });
     }
   }
   if (!dettaglio.length) return toast('Niente da registrare');
@@ -504,7 +571,7 @@ async function confermaScalaggio(){
       const menu = await loadMenu(wk);
       const g = menu && menu.giorni.find(x=>x.data===todayRome());
       if (g) {
-        (g.pasti_liberi = g.pasti_liberi||[]).push({ descrizione: dettaglio.join(', '), consumato: nowRome(), dettaglio, consumato_sede: loc, consumato_no_scala: noScala });
+        (g.pasti_liberi = g.pasti_liberi||[]).push({ descrizione: dettaglio.join(', '), consumato: nowRome(), dettaglio, consumato_sede: loc, consumato_no_scala: noScala, consumato_scalato: scalatoRec });
         await ghWrite(`data/menus/${wk}.json`, menu, `Pasto libero registrato`);
       }
     } else if (ctx) {
@@ -513,6 +580,7 @@ async function confermaScalaggio(){
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_dettaglio = dettaglio;
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_sede = loc;
       menu.giorni[ctx.gi].pasti[ctx.slot].consumato_no_scala = noScala;
+      menu.giorni[ctx.gi].pasti[ctx.slot].consumato_scalato = scalatoRec;
       await ghWrite(`data/menus/${ctx.weekId}.json`, menu, `Consumato: ${scala.titolo}`);
     }
     toast(noScala ? '✅ Registrato — dispensa non modificata' : (n ? '✅ Registrato — dispensa aggiornata' : '✅ Registrato'));
