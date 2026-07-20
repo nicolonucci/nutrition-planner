@@ -61,6 +61,19 @@ function normUnit(u, qty) {
   return { unit: 'pz', qty }; // fette, vasetti, pezzi…
 }
 
+// ── Alimenti che nelle ricette si esprimono a peso ma in dispensa si contano a pezzi ──
+// (es. scatolette): converte grammi→pezzi con la grammatura di una confezione standard.
+const GRAMMI_PER_PEZZO = [
+  { re: /\btonno\b/i, gramm: 160 }, // 1 scatoletta tonno al naturale = 160 g
+];
+
+function convertiPesoAPezzi(nome, unit, qty) {
+  if (unit !== 'g') return null;
+  const hit = GRAMMI_PER_PEZZO.find(c => c.re.test(nome));
+  if (!hit) return null;
+  return Math.round((qty / hit.gramm) * 100) / 100;
+}
+
 function parseIngrediente(riga) {
   let s = String(riga).trim();
   if (!s || /q\.?\s?b\.?/i.test(s)) return null;           // sale, spezie q.b. → non scalare
@@ -99,6 +112,8 @@ function parseIngrediente(riga) {
 
   if (qty == null) { qty = 1; unit = 'pz'; }
   const nu = normUnit(unit, qty);
+  const pz = convertiPesoAPezzi(nome, nu.unit, nu.qty);
+  if (pz != null) return { raw: riga, nome, qty: pz, unit: 'pz', tokens: tokensOf(nome) };
   return { raw: riga, nome, qty: Math.round(nu.qty * 100) / 100, unit: nu.unit, tokens: tokensOf(nome) };
 }
 
@@ -284,7 +299,7 @@ function prossimaSettimana(today) {
 const GIORNI_IT = ['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica'];
 
 if (typeof module !== 'undefined') module.exports = {
-  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio,
+  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio, convertiPesoAPezzi,
   ingredientiSettimana, calcolaSpesa, guessCategoria, isoWeekOf, prossimaSettimana, GIORNI_IT,
   portionInfo, syncNotePorzioni, noteLabelPorzioni, parseNxG
 };
