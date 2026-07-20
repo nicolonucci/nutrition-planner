@@ -27,7 +27,23 @@
       "preparazione": [
        "Tosta il pane, spalma il philadelphia, disponi salmone e pomodoro a fette. Pepe."
       ]
-     }
+     },
+     "consumato": "2026-07-20T23:51",
+     "consumato_dettaglio": [
+      "100 g pane GF",
+      "25 g philadelphia GF",
+      "100 g salmone affumicato GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Philadelphia Light",
+       "unita": "g",
+       "prelievo": 25,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Bowl riso venere, tonno & pomodorini — pasto leggero e digeribile prima del wingfoil",
