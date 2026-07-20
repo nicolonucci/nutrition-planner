@@ -550,6 +550,17 @@
    "scadenza": "",
    "note": "",
    "monoporzione": false
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 100,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "monoporzione": false,
+   "scadenza": "",
+   "note": ""
   }
  ]
 }
