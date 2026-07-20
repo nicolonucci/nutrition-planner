@@ -54,7 +54,15 @@
        "Mescola con tonno, pomodorini e olive.",
        "Condisci con olio, limone e basilico."
       ]
-     }
+     },
+     "consumato": "2026-07-20T23:30",
+     "consumato_dettaglio": [
+      "70 g riso venere",
+      "1 pz tonno al naturale",
+      "150 g pomodorini"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false
     },
     "post_workout": {
      "descrizione": "Frullato fragola + banana + yogurt greco (~15:15)",
