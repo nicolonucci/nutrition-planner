@@ -213,7 +213,7 @@
   {
    "nome": "Riso Venere",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 200,
+   "quantita": 130,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 4,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1250,
+   "quantita": 1100,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
