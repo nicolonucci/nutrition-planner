@@ -62,9 +62,13 @@ function normUnit(u, qty) {
 }
 
 // ── Alimenti che nelle ricette si esprimono a peso ma in dispensa si contano a pezzi ──
-// (es. scatolette): converte grammi→pezzi con la grammatura di una confezione standard.
+// (es. scatolette, vasetti): converte grammi→pezzi con la grammatura di una confezione standard.
+// ⚠️ Questi valori vanno tenuti sincronizzati con la nota dell'alimento in dispensa
+// (es. "5x150g"). Se cambi marca/formato, aggiorna sia qui sia la nota — altrimenti
+// lo scalaggio dopo un pasto risulta silenziosamente sbagliato pur trovando il match.
 const GRAMMI_PER_PEZZO = [
-  { re: /\btonno\b/i, gramm: 160 }, // 1 scatoletta tonno al naturale = 160 g
+  { re: /\btonno\b/i, gramm: 160 }, // 1 scatoletta tonno al naturale = 160 g (confermato da Nicolò 2026-07-20)
+  { re: /\byogurt\b/i, gramm: 150 }, // 1 vasetto yogurt greco = 150 g (confermato da Nicolò 2026-07-22)
 ];
 
 function convertiPesoAPezzi(nome, unit, qty) {
@@ -72,6 +76,19 @@ function convertiPesoAPezzi(nome, unit, qty) {
   const hit = GRAMMI_PER_PEZZO.find(c => c.re.test(nome));
   if (!hit) return null;
   return Math.round((qty / hit.gramm) * 100) / 100;
+}
+
+// ── Direzione opposta: alimenti che nelle ricette si esprimono a pezzi ma in dispensa
+// si pesano in grammi (es. "succo di ½ limone" vs "Limoni: 500g" in dispensa) ──
+const GRAMMI_PER_PEZZO_INVERSO = [
+  { re: /\blimon/i, gramm: 100 }, // 1 limone intero ≈ 100 g (confermato da Nicolò 2026-07-22)
+];
+
+function convertiPezziAPeso(nome, unit, qty) {
+  if (unit !== 'pz') return null;
+  const hit = GRAMMI_PER_PEZZO_INVERSO.find(c => c.re.test(nome));
+  if (!hit) return null;
+  return Math.round(qty * hit.gramm * 100) / 100;
 }
 
 function parseIngrediente(riga) {
@@ -93,7 +110,7 @@ function parseIngrediente(riga) {
   //    non c'è un'unità di peso/volume E il nome non è "contabile" (uova, banana…)
   const par = s.match(new RegExp(`\\(\\s*~?\\s*(${NUMPAT})\\s*(g|gr|ml|kg|l)\\b[^)]*\\)`, 'i'));
   // "contabili": in dispensa stanno a pezzi → preferisci il conteggio ai grammi
-  const contabile = /\buov|banana|arancia|mela\b|mele\b|limone|limoni|kiwi|pera\b|pere\b|pesca\b|pesche\b/i.test(noPar);
+  const contabile = /\buov|banana|avocad|arancia|mela\b|mele\b|limone|limoni|kiwi|pera\b|pere\b|pesca\b|pesche\b/i.test(noPar);
   const leadPeso = lead && lead[2] && /^(g|gr|kg|ml|l|lt)$/i.test(lead[2]); // unità di misura vera in testa
   if (par && !leadPeso && !(lead && contabile)) { qty = parseNum(par[1]); unit = par[2]; }
 
@@ -176,14 +193,31 @@ function normDispUnit(u) {
 }
 
 // ritorna indici delle voci dispensa che corrispondono all'ingrediente
-// (stessa unità: mai scalare grammi da voci a pezzi o viceversa)
-function matchDispensa(ing, alimenti) {
+// (stessa unità: mai scalare grammi da voci a pezzi o viceversa, salvo conversione nota — v. sotto)
+function matchByUnit(ing, alimenti, unit) {
   const out = [];
   alimenti.forEach((al, i) => {
-    if (ing.unit && normDispUnit(al.unita) !== ing.unit) return;
+    if (normDispUnit(al.unita) !== unit) return;
     const score = matchScore(ing.tokens, tokensOf(al.nome));
     if (score >= 0.5) out.push({ i, score, al });
   });
+  return out;
+}
+
+function matchDispensa(ing, alimenti) {
+  let out = ing.unit ? matchByUnit(ing, alimenti, ing.unit) : [];
+  if (!out.length && ing.unit) {
+    // Nessun match nell'unità "naturale" del parsing: prova la conversione nota
+    // nell'altra direzione (es. "succo ½ limone" è pz, ma in dispensa i limoni sono a peso).
+    const altQty = ing.unit === 'g' ? convertiPesoAPezzi(ing.nome, ing.unit, ing.qty)
+      : ing.unit === 'pz' ? convertiPezziAPeso(ing.nome, ing.unit, ing.qty)
+      : null;
+    if (altQty != null) {
+      const altUnit = ing.unit === 'g' ? 'pz' : 'g';
+      const altOut = matchByUnit(ing, alimenti, altUnit);
+      if (altOut.length) { ing.unit = altUnit; ing.qty = altQty; out = altOut; }
+    }
+  }
   out.sort((a, b) => b.score - a.score);
   const best = out.length ? out[0].score : 0;
   return out.filter(o => o.score >= best - 0.01); // tutte le voci con lo stesso nome
@@ -299,7 +333,7 @@ function prossimaSettimana(today) {
 const GIORNI_IT = ['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica'];
 
 if (typeof module !== 'undefined') module.exports = {
-  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio, convertiPesoAPezzi, normDispUnit,
+  normText, tokensOf, parseIngrediente, matchDispensa, pianoScalaggio, convertiPesoAPezzi, convertiPezziAPeso, normDispUnit,
   ingredientiSettimana, calcolaSpesa, guessCategoria, isoWeekOf, prossimaSettimana, GIORNI_IT,
   portionInfo, syncNotePorzioni, noteLabelPorzioni, parseNxG
 };
