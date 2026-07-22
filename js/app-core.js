@@ -130,8 +130,20 @@ function parseIngrediente(riga) {
   if (qty == null) { qty = 1; unit = 'pz'; }
   const nu = normUnit(unit, qty);
   const pz = convertiPesoAPezzi(nome, nu.unit, nu.qty);
-  if (pz != null) return { raw: riga, nome, qty: pz, unit: 'pz', tokens: tokensOf(nome) };
-  return { raw: riga, nome, qty: Math.round(nu.qty * 100) / 100, unit: nu.unit, tokens: tokensOf(nome) };
+  const tok = tokensIngrediente(nome);
+  if (pz != null) return { raw: riga, nome, qty: pz, unit: 'pz', tokens: tok };
+  return { raw: riga, nome, qty: Math.round(nu.qty * 100) / 100, unit: nu.unit, tokens: tok };
+}
+
+// "pasta/tagliatelle di riso": è un noodle di riso, non pasta di grano né riso in chicchi.
+// Il token generico "past"/"tagli" farebbe matchare la pasta di grano (es. "Pasta Rummo"),
+// mentre il solo "riso" farebbe matchare anche il riso in chicchi (Basmati, Venere).
+// Alias fisso verso i prodotti in dispensa con nome inglese che sono davvero noodle di riso
+// (es. "Gotan Rice Sticks", "Udon Rice Noodles") — esclude sia la pasta di grano sia il riso in chicchi.
+const RISO_PASTA_RE = /(pasta|tagliatelle|spaghetti).*\briso\b|\briso\b.*(pasta|tagliatelle|spaghetti)/i;
+function tokensIngrediente(nome) {
+  if (RISO_PASTA_RE.test(nome)) return ['rice', 'noodl', 'stick'];
+  return tokensOf(nome);
 }
 
 // ── Monoporzione: prodotti con nota "NxMg" (es. "6x25g") ──
