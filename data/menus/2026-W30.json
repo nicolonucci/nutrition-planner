@@ -293,7 +293,36 @@
        "In parallelo scalda olio e aglio, aggiungi passata, cuoci 5 min.",
        "Scola la pasta, aggiungi tonno al sugo, condisci con basilico fresco."
       ]
-     }
+     },
+     "consumato": "2026-07-22T13:45",
+     "consumato_dettaglio": [
+      "1 pz tonno al naturale",
+      "200 g passata di pomodoro",
+      "60 g Udon Rice Noodles",
+      "30 g GOTAM"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Tonno al Naturale",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": false
+      },
+      {
+       "nome": "Udon Rice Noodles",
+       "unita": "g",
+       "prelievo": 60,
+       "congelato": false
+      }
+     ]
     },
     "pre_workout": {
      "descrizione": "1 banana (~17:00, ridotto)",
