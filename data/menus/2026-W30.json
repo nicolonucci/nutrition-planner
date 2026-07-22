@@ -346,7 +346,37 @@
        "Forno 200°C: salmone con olio, limone, rosmarino 12-14 min.",
        "Carote e piselli in padella 8 min."
       ]
-     }
+     },
+     "consumato": "2026-07-22T21:38",
+     "consumato_dettaglio": [
+      "200 g filetto di salmone fresco",
+      "150 g carote",
+      "150 g piselli surgelati",
+      "50 g limone",
+      "45 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Carote Vassoio",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Piselli",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": true
+      },
+      {
+       "nome": "Limoni",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
     },
     "post_workout": {
      "descrizione": "Yogurt greco 100g + miele (~20:15, ridotto)",
