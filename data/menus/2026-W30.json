@@ -243,7 +243,37 @@
       "preparazione": [
        "Frulla banana, yogurt, latte, cacao, miele e ghiaccio 1 minuto."
       ]
-     }
+     },
+     "consumato": "2026-07-22T13:02",
+     "consumato_dettaglio": [
+      "1 pz banana matura",
+      "1 pz yogurt greco 0%",
+      "10 g miele",
+      "80 g fragole",
+      "70 ml latte"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Fragole",
+       "unita": "g",
+       "prelievo": 80,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Pasta di riso al tonno & pomodoro",
