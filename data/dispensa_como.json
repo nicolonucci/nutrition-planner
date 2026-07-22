@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 750,
+   "quantita": 600,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 650,
+   "quantita": 500,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -532,7 +532,7 @@
   {
    "nome": "Limoni",
    "categoria": "Verdure & Frutta",
-   "quantita": 500,
+   "quantita": 450,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
