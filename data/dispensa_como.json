@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 3,
+   "quantita": 2,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -268,7 +268,7 @@
   {
    "nome": "Udon Rice Noodles",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 60,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1250,
+   "quantita": 1050,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
