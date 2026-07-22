@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-20",
+ "ultimo_aggiornamento": "2026-07-22",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 5,
+   "quantita": 4,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 6,
+   "quantita": 5,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -521,7 +521,7 @@
   {
    "nome": "Fragole",
    "categoria": "Verdure & Frutta",
-   "quantita": 250,
+   "quantita": 170,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
