@@ -511,7 +511,42 @@
        "Cuoci in padella grill 4-5 min per lato.",
        "Griglia le zucchine a fette 2-3 min per lato."
       ]
-     }
+     },
+     "consumato": "2026-07-23T20:58",
+     "consumato_dettaglio": [
+      "300 g petto di pollo",
+      "270 g zucchine",
+      "100 g limone",
+      "15 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 270,
+       "congelato": false
+      },
+      {
+       "nome": "Limoni",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "150g yogurt greco + mirtilli (~200 kcal, 18g prot)",
