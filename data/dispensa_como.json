@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 1200,
+   "quantita": 1000,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "6x200g",
+   "note": "5x200g",
    "monoporzione": true
   },
   {
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 998,
+   "quantita": 728,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -532,7 +532,7 @@
   {
    "nome": "Limoni",
    "categoria": "Verdure & Frutta",
-   "quantita": 450,
+   "quantita": 350,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -554,7 +554,7 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 100,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
