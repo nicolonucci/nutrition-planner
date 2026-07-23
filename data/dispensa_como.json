@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-22",
+ "ultimo_aggiornamento": "2026-07-23",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 4,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -312,7 +312,7 @@
   {
    "nome": "Cioccolato Lindt 78%",
    "categoria": "Snack & Altro",
-   "quantita": 190,
+   "quantita": 175,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
