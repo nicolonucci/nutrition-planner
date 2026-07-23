@@ -422,7 +422,30 @@
       "preparazione": [
        "Componi in una ciotola: yogurt, frutti di bosco, miele e noci."
       ]
-     }
+     },
+     "consumato": "2026-07-23T09:40",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "10 g miele",
+      "20 g noci",
+      "15 g gocce di cioccolato"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Cioccolato Lindt 78%",
+       "unita": "g",
+       "prelievo": 15,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Bresaola, grana padano, rucola, pomodorini",
