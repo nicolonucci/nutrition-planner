@@ -464,7 +464,35 @@
        "Componi il piatto con bresaola, scaglie di grana, rucola e pomodorini.",
        "Condisci con olio e limone."
       ]
-     }
+     },
+     "consumato": "2026-07-23T12:49",
+     "consumato_dettaglio": [
+      "100 g bresaola",
+      "70 g grana padano DOP",
+      "150 g pomodorini"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Bresaola Valtellina IGP",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Grana Padano DOP",
+       "unita": "g",
+       "prelievo": 70,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Pollo al limone + zucchine grigliate — cena leggera, niente pasta o riso (riposo)",
