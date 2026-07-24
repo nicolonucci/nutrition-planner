@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-23",
+ "ultimo_aggiornamento": "2026-07-24",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 830,
+   "quantita": 730,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 2,
+   "quantita": 1,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 5,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 900,
+   "quantita": 750,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
