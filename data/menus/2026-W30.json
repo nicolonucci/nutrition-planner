@@ -606,7 +606,42 @@
        "Cuoci il riso 10-12 min. Scola e intiepidisci.",
        "Mescola con tonno, pomodorini, olive, olio e limone."
       ]
-     }
+     },
+     "consumato": "2026-07-24T13:09",
+     "consumato_dettaglio": [
+      "100 g riso basmati",
+      "1 pz tonno al naturale",
+      "150 g pomodorini",
+      "2 pz banane"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Riso Basmati",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Tonno al Naturale",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 2,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Pollo alla piastra + zucchine grigliate",
