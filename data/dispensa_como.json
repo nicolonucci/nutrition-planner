@@ -301,7 +301,7 @@
   {
    "nome": "Avocado",
    "categoria": "Verdure & Frutta",
-   "quantita": 1,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 0,
