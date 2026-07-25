@@ -792,7 +792,30 @@
        "Cuoci le fettine in padella ben calda 2-3 min per lato.",
        "Servi con insalata mista condita con olio e limone."
       ]
-     }
+     },
+     "consumato": "2026-07-25T21:53",
+     "consumato_dettaglio": [
+      "250 g fettine di manzo",
+      "184 g pomodoro",
+      "25 g pane carasau",
+      "45 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Fettine di Manzo",
+       "unita": "g",
+       "prelievo": 250,
+       "congelato": true
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 184,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "3 datteri + 10g noci (~175 kcal, 1g prot)",
