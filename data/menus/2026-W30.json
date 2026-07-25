@@ -696,7 +696,42 @@
        "Cuoci in padella antiaderente 2-3 min per lato, 4-5 pancake.",
        "Servi con mirtilli e sciroppo."
       ]
-     }
+     },
+     "consumato": "2026-07-25T09:29",
+     "consumato_dettaglio": [
+      "2 pz uova",
+      "40 g avena",
+      "1 pz yogurt greco 0%",
+      "170 g fragole"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 2,
+       "congelato": false
+      },
+      {
+       "nome": "Avena Probios",
+       "unita": "g",
+       "prelievo": 40,
+       "congelato": false
+      },
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Fragole",
+       "unita": "g",
+       "prelievo": 170,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Insalata di pollo, avocado e pomodorini",
