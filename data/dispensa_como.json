@@ -26,7 +26,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 223,
+   "quantita": 110,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 50,
+   "quantita": 75,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "2x25g",
+   "note": "3x25g",
    "monoporzione": true
   },
   {
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 230,
+   "quantita": 200,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -411,7 +411,7 @@
   {
    "nome": "Passata Cirio",
    "categoria": "Condimenti & Spezie",
-   "quantita": 494,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
