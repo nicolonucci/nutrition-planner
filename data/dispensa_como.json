@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-24",
+ "ultimo_aggiornamento": "2026-07-25",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -158,7 +158,7 @@
   {
    "nome": "Avena Probios",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 400,
+   "quantita": 360,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 3,
+   "quantita": 2,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 7,
+   "quantita": 5,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
@@ -521,7 +521,7 @@
   {
    "nome": "Fragole",
    "categoria": "Verdure & Frutta",
-   "quantita": 170,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
