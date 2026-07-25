@@ -751,7 +751,30 @@
        "Componi con avocado a fette, pomodorini e insalata.",
        "Condisci con olio e limone."
       ]
-     }
+     },
+     "consumato": "2026-07-25T14:22",
+     "consumato_dettaglio": [
+      "200 g petto di pollo",
+      "150 g pomodorini",
+      "45 ml olio",
+      "30 g pane carasau"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Fettine di manzo ai ferri + insalata mista",
