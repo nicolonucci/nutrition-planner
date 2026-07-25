@@ -510,12 +510,12 @@
   {
    "nome": "Guanciale",
    "categoria": "Proteine",
-   "quantita": 140,
+   "quantita": 70,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 30,
    "scadenza": "",
-   "note": "2x70g",
+   "note": "1x70g",
    "monoporzione": true
   },
   {
