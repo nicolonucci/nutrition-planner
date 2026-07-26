@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 450,
+   "quantita": 400,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 0.67,
+   "quantita": 1,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 200,
+   "quantita": 180,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
