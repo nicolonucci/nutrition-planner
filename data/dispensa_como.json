@@ -433,12 +433,12 @@
   {
    "nome": "Fettine di Manzo",
    "categoria": "Proteine",
-   "quantita": 164,
+   "quantita": 207,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "0,8x207g",
+   "note": "1x207g",
    "monoporzione": true
   },
   {
