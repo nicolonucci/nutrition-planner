@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 0,
+   "quantita": 450,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -202,12 +202,12 @@
   {
    "nome": "Piadine Loriana",
    "categoria": "Snack & Altro",
-   "quantita": 525,
+   "quantita": 1200,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2026-10-12",
-   "note": "7x75g",
+   "note": "16x75g",
    "monoporzione": true
   },
   {
@@ -561,6 +561,94 @@
    "monoporzione": false,
    "scadenza": "",
    "note": ""
+  },
+  {
+   "nome": "Biscotti Orosaiwa",
+   "categoria": "Snack & Altro",
+   "quantita": 198,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2027-03-31",
+   "note": "6x33g",
+   "monoporzione": true
+  },
+  {
+   "nome": "Pasta Rummo Elicoidali",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 800,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2029-05-15",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Pasta Rummo Mezzi Rigatoni",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 1200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "2029-02-23",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Barrette Special Flakes",
+   "categoria": "Snack & Altro",
+   "quantita": 223.2,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2027-01-08",
+   "note": "9x24,8g",
+   "monoporzione": true
+  },
+  {
+   "nome": "Biscotti Inglesi",
+   "categoria": "Snack & Altro",
+   "quantita": 100,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2027-06",
+   "note": "5x20g - scadenza approssimata: solo mese/anno",
+   "monoporzione": true
+  },
+  {
+   "nome": "Gocce al Caramello Salato",
+   "categoria": "Snack & Altro",
+   "quantita": 400,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2027-06",
+   "note": "scadenza approssimata: solo mese/anno",
+   "monoporzione": false
+  },
+  {
+   "nome": "Pizzetta",
+   "categoria": "Snack & Altro",
+   "quantita": 70,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2026-08-07",
+   "note": "",
+   "monoporzione": true
+  },
+  {
+   "nome": "Cookies",
+   "categoria": "Snack & Altro",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "2027-05",
+   "note": "scadenza approssimata: solo mese/anno",
+   "monoporzione": false
   }
  ]
 }
