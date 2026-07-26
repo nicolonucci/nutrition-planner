@@ -849,7 +849,28 @@
        "Componi in una ciotola: yogurt, granola, frutti di bosco.",
        "Completa con miele e noci."
       ]
-     }
+     },
+     "consumato": "2026-07-26T10:18",
+     "consumato_dettaglio": [
+      "1.33 pz yogurt greco 0%",
+      "40 g granola GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1.33,
+       "congelato": false
+      },
+      {
+       "nome": "Pasta Stelline Granoro",
+       "unita": "g",
+       "prelievo": 40,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Pollo grigliato con avocado, insalata e pomodorini",
