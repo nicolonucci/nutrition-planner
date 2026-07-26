@@ -930,7 +930,36 @@
        "Forno 200°C: nasello con olio, limone e prezzemolo 15-18 min.",
        "Carote al vapore o saltate in padella 10 min."
       ]
-     }
+     },
+     "consumato": "2026-07-26T20:10",
+     "consumato_dettaglio": [
+      "150 g nasello",
+      "186 g carote",
+      "294 g zucchine",
+      "30 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Nasello",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": true
+      },
+      {
+       "nome": "Carote Vassoio",
+       "unita": "g",
+       "prelievo": 186,
+       "congelato": false
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 294,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "1 banana + 10g noci (~145 kcal, 3g prot)",
