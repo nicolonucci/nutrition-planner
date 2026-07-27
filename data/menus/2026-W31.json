@@ -98,7 +98,43 @@
        "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
        "Scalda la piadina GF in padella asciutta 1 min per lato. Spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
       ]
-     }
+     },
+     "consumato": "2026-07-27T14:20",
+     "consumato_dettaglio": [
+      "150 g piadina GF",
+      "200 g petto di pollo",
+      "154 g pomodori",
+      "25 g philadelphia GF",
+      "15 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Piadine Loriana",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 154,
+       "congelato": false
+      },
+      {
+       "nome": "Philadelphia Light",
+       "unita": "g",
+       "prelievo": 25,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Bistecca di manzo + insalata di pomodori",
