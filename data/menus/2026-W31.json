@@ -28,7 +28,28 @@
        "Sbatti le uova con sale e pepe. Cuoci in padella antiaderente con olio a fuoco basso, mescolando 2–3 min finché cremose.",
        "Tosta le fette di pane GF. Servi con arancia pelata a parte."
       ]
-     }
+     },
+     "consumato": "2026-07-27T09:17",
+     "consumato_dettaglio": [
+      "3 pz uova intere",
+      "30 g pane GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 3,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
     },
     "pre_workout": {
      "descrizione": "4 datteri + 15 g mandorle",
