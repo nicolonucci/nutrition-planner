@@ -1,0 +1,636 @@
+{
+ "settimana": "2026-W31",
+ "dal": "2026-07-27",
+ "al": "2026-08-02",
+ "giorni": [
+  {
+   "giorno": "Lunedì",
+   "data": "2026-07-27",
+   "allenamento": {
+    "tipo": "Nuoto",
+    "orario": "Da confermare",
+    "note": "9:00 mattina oppure 18:00 sera — pasti pre/post adattabili a entrambi gli scenari"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Uova strapazzate + pane GF + arancia",
+     "calorie_stimate": 430,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova intere (150 g)",
+       "2 fette pane GF (~60 g)",
+       "1 arancia (~150 g)",
+       "5 g olio EVO",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Sbatti le uova con sale e pepe. Cuoci in padella antiaderente con olio a fuoco basso, mescolando 2–3 min finché cremose.",
+       "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+      ]
+     },
+     "consumato": "2026-07-27T09:17",
+     "consumato_dettaglio": [
+      "3 pz uova intere",
+      "30 g pane GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 3,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
+    },
+    "pre_workout": {
+     "descrizione": "4 datteri + 15 g mandorle",
+     "calorie_stimate": 185,
+     "proteine_g": 4,
+     "ricetta": {
+      "ingredienti": [
+       "4 datteri secchi (~40 g)",
+       "15 g mandorle intere"
+      ],
+      "preparazione": [
+       "Tienili in un sacchettino in borsa. Zero preparazione — ideale tra università e palestra."
+      ]
+     }
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 150g + banana + miele",
+     "calorie_stimate": 255,
+     "proteine_g": 20,
+     "ricetta": {
+      "ingredienti": [
+       "150 g yogurt greco 0%",
+       "1 banana media (~120 g)",
+       "10 g miele"
+      ],
+      "preparazione": [
+       "Prepara in contenitore ermetico prima di uscire. Mangia in spogliatoio o mentre torni a casa."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Piadina GF con pollo, pomodori & rucola",
+     "calorie_stimate": 550,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "1 piadina GF (~80 g)",
+       "170 g petto di pollo",
+       "2 pomodori (~160 g)",
+       "40 g rucola",
+       "30 g philadelphia GF",
+       "10 g olio EVO",
+       "origano · sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
+       "Scalda la piadina GF in padella asciutta 1 min per lato. Spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
+      ]
+     },
+     "consumato": "2026-07-27T14:20",
+     "consumato_dettaglio": [
+      "150 g piadina GF",
+      "200 g petto di pollo",
+      "154 g pomodori",
+      "25 g philadelphia GF",
+      "15 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Piadine Loriana",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 154,
+       "congelato": false
+      },
+      {
+       "nome": "Philadelphia Light",
+       "unita": "g",
+       "prelievo": 25,
+       "congelato": false
+      }
+     ]
+    },
+    "cena": {
+     "descrizione": "Bistecca di manzo + insalata di pomodori",
+     "calorie_stimate": 450,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "200 g bistecca di manzo (controfiletto)",
+       "200 g pomodori",
+       "40 g rucola",
+       "15 g olio EVO",
+       "sale · pepe · rosmarino GF q.b."
+      ],
+      "preparazione": [
+       "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato (al sangue/media). Riposa 3 min avvolta in carta stagnola.",
+       "Insalata di pomodori e rucola condita con olio e sale."
+      ]
+     }
+    },
+    "spuntini": []
+   }
+  },
+  {
+   "giorno": "Martedì",
+   "data": "2026-07-28",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Riso soffiato GF + latte + miele",
+     "calorie_stimate": 200,
+     "proteine_g": 6,
+     "ricetta": {
+      "ingredienti": [
+       "30 g riso soffiato GF",
+       "150 ml latte parz. scremato",
+       "10 g miele"
+      ],
+      "preparazione": [
+       "Versa il riso soffiato nel latte, aggiungi il miele. Leggero e digerisce bene prima dell'allenamento pomeridiano."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Pollo alla piastra + zucchine grigliate",
+     "calorie_stimate": 390,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220 g petto di pollo",
+       "250 g zucchine",
+       "15 g olio EVO",
+       "succo ½ limone",
+       "origano GF · sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Marina il pollo con 5 g olio, limone e origano 5 min. Cuoci in padella grill 4–5 min per lato.",
+       "Griglia le zucchine a fette con l'olio rimasto, 2–3 min per lato."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Frittata zucchine & carote al forno",
+     "calorie_stimate": 420,
+     "proteine_g": 32,
+     "ricetta": {
+      "ingredienti": [
+       "4 uova intere (200 g)",
+       "150 g zucchine",
+       "100 g carote",
+       "40 g parmigiano GF grattugiato",
+       "10 g olio EVO",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
+       "Sbatti uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
+      ]
+     }
+    },
+    "spuntini": [
+     "Yogurt greco 150g + miele + noci (~260 kcal, 20g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Mercoledì",
+   "data": "2026-07-29",
+   "allenamento": {
+    "tipo": "Ciclismo",
+    "orario": "Mattina",
+    "note": "6:00-9:00, uscita lunga — solo banana prima di partire, pasto pieno al rientro"
+   },
+   "pasti": {
+    "pre_workout": {
+     "descrizione": "1 banana — regola pre-bici mattutina, nient'altro prima di partire",
+     "calorie_stimate": 105,
+     "proteine_g": 1
+    },
+    "colazione": {
+     "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+     "calorie_stimate": 330,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "150 g yogurt greco 0%",
+       "100 g frutti di bosco misti",
+       "15 g semi di chia",
+       "10 g miele",
+       "cannella q.b."
+      ],
+      "preparazione": [
+       "Yogurt in ciotola, aggiungi frutti di bosco, semi di chia, miele e cannella. Prepara la sera prima — i semi si gonfiano durante la notte e la rende più satiante."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Riso basmati con pollo & zucchine",
+     "calorie_stimate": 600,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "90 g riso basmati (peso crudo)",
+       "180 g petto di pollo",
+       "200 g zucchine",
+       "1 spicchio aglio",
+       "10 g olio EVO",
+       "succo ½ limone",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Cuoci il riso. Rosola il pollo a strisce con aglio e olio 5–6 min.",
+       "Aggiungi le zucchine a rondelle 4 min. Servi sul riso con limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Salmone in padella + piselli & pomodorini",
+     "calorie_stimate": 470,
+     "proteine_g": 44,
+     "ricetta": {
+      "ingredienti": [
+       "200 g filetto di salmone fresco",
+       "150 g piselli surgelati",
+       "150 g pomodorini",
+       "15 g olio EVO",
+       "succo ½ limone",
+       "aglio · prezzemolo · sale q.b."
+      ],
+      "preparazione": [
+       "In padella con olio e aglio: cuoci il salmone 3–4 min per lato. Togli e tieni da parte.",
+       "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
+      ]
+     }
+    },
+    "spuntini": []
+   }
+  },
+  {
+   "giorno": "Giovedì",
+   "data": "2026-07-30",
+   "allenamento": {
+    "tipo": "Ciclismo",
+    "orario": "Sera",
+    "note": "Giro serale, orario da definire"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Uova strapazzate al pomodoro + pane GF",
+     "calorie_stimate": 420,
+     "proteine_g": 26,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova intere (150 g)",
+       "100 g passata di pomodoro",
+       "½ cipolla (~40 g)",
+       "2 fette pane GF (~60 g)",
+       "10 g olio EVO",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Soffriggi la cipolla in olio 2 min. Aggiungi la passata, cuoci 4 min.",
+       "Sguscia le uova nel sugo, mescola strapazzando 2 min. Servi su pane GF tostato."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Riso basmati saltato con pollo & curcuma",
+     "calorie_stimate": 590,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "90 g riso basmati (peso crudo)",
+       "180 g petto di pollo",
+       "100 g zucchine",
+       "100 g carote",
+       "15 ml tamari GF",
+       "10 g olio EVO",
+       "curcuma · zenzero q.b."
+      ],
+      "preparazione": [
+       "Cuoci il riso 10–12 min in acqua salata. In parallelo rosola il pollo a cubetti con curcuma 4 min.",
+       "Aggiungi verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min a fuoco vivo."
+      ]
+     }
+    },
+    "pre_workout": {
+     "descrizione": "4 crackers di riso GF + marmellata GF",
+     "calorie_stimate": 170,
+     "proteine_g": 3,
+     "ricetta": {
+      "ingredienti": [
+       "4 crackers di riso GF (~40 g)",
+       "20 g marmellata GF"
+      ],
+      "preparazione": [
+       "⚠️ Mangia almeno 90 min prima dell'entrata in acqua. Zero grassi e zero fibre = digestione rapida, nessun crampo in piscina.",
+       "Prepara in sacchettino la sera prima. Mangia mentre fai colazione leggerissima o mentre vai in piscina."
+      ]
+     }
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 150g + banana + miele + granola GF",
+     "calorie_stimate": 310,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "150 g yogurt greco 0%",
+       "1 banana (~120 g)",
+       "10 g miele",
+       "15 g granola GF"
+      ],
+      "preparazione": [
+       "Prepara in contenitore ermetico prima di andare in piscina. Mangia in spogliatoio mentre ti asciughi — non aspettare!"
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo al limone + zucchine grigliate",
+     "calorie_stimate": 380,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220 g petto di pollo",
+       "250 g zucchine",
+       "15 g olio EVO",
+       "succo 1 limone",
+       "origano GF · sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
+       "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
+      ]
+     }
+    },
+    "spuntini": []
+   }
+  },
+  {
+   "giorno": "Venerdì",
+   "data": "2026-07-31",
+   "allenamento": {
+    "tipo": "Nuoto",
+    "orario": "Pomeriggio",
+    "note": "17:30"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Uova strapazzate + pane GF + arancia",
+     "calorie_stimate": 430,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova intere (150 g)",
+       "2 fette pane GF (~60 g)",
+       "1 arancia (~150 g)",
+       "5 g olio EVO",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Sbatti le uova con sale e pepe. Cuoci in padella antiaderente con olio a fuoco basso, mescolando 2–3 min finché cremose.",
+       "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Pasta di riso al tonno & pomodoro",
+     "calorie_stimate": 580,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "90 g pasta di riso GF",
+       "160 g tonno al naturale",
+       "200 g passata di pomodoro",
+       "1 spicchio aglio",
+       "10 g olio EVO",
+       "basilico · sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci la pasta GF (attento: tende a scuocersi, controlla spesso). In parallelo scalda olio e aglio, aggiungi passata, cuoci 5 min.",
+       "Scola la pasta, aggiungi tonno al sugo, condisci con basilico fresco."
+      ]
+     }
+    },
+    "pre_workout": {
+     "descrizione": "Banana + caffè",
+     "calorie_stimate": 100,
+     "proteine_g": 1,
+     "ricetta": {
+      "ingredienti": [
+       "1 banana matura (~120 g)",
+       "1 caffè (opzionale)"
+      ],
+      "preparazione": [
+       "Mangia la banana mentre esci di casa. Zero prep. Il caffè migliora la performance — opzionale se lo tolleri a stomaco quasi vuoto."
+      ]
+     }
+    },
+    "post_workout": {
+     "descrizione": "Yogurt greco 150g + banana",
+     "calorie_stimate": 190,
+     "proteine_g": 10,
+     "ricetta": {
+      "ingredienti": [
+       "150 g yogurt greco 0%",
+       "1 banana media (~120 g)"
+      ],
+      "preparazione": [
+       "Porta in un contenitore. Mangia 30–45 min prima. La proteina dello yogurt dà energia più costante rispetto alla sola banana."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo alla piastra + zucchine grigliate",
+     "calorie_stimate": 390,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220 g petto di pollo",
+       "250 g zucchine",
+       "15 g olio EVO",
+       "succo ½ limone",
+       "origano GF · sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Marina il pollo con 5 g olio, limone e origano 5 min. Cuoci in padella grill 4–5 min per lato.",
+       "Griglia le zucchine a fette con l'olio rimasto, 2–3 min per lato."
+      ]
+     }
+    },
+    "spuntini": []
+   }
+  },
+  {
+   "giorno": "Sabato",
+   "data": "2026-08-01",
+   "allenamento": {
+    "tipo": "Attività da definire",
+    "orario": "",
+    "note": "Tipo e orario non ancora decisi — menù flessibile, spuntino come buffer"
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Frullato cioccolato + banana + yogurt greco",
+     "calorie_stimate": 360,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "1 banana matura (~120 g)",
+       "150 g yogurt greco 0%",
+       "150 ml latte parz. scremato",
+       "15 g cacao amaro GF in polvere",
+       "10 g miele",
+       "cubetti di ghiaccio q.b."
+      ],
+      "preparazione": [
+       "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
+       "Frulla 1 min. Ottimo anche come post-allenamento in sostituzione allo yogurt classico."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Insalata tonno, pomodori & fagiolini",
+     "calorie_stimate": 480,
+     "proteine_g": 40,
+     "ricetta": {
+      "ingredienti": [
+       "160 g tonno al naturale",
+       "200 g pomodorini",
+       "150 g fagiolini",
+       "50 g olive nere",
+       "15 g olio EVO",
+       "succo ½ limone",
+       "basilico · sale q.b."
+      ],
+      "preparazione": [
+       "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
+       "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Bistecca di manzo + insalata di pomodori & rucola",
+     "calorie_stimate": 450,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "200 g bistecca di manzo (controfiletto)",
+       "200 g pomodori",
+       "50 g rucola",
+       "15 g olio EVO",
+       "sale · pepe · rosmarino GF q.b."
+      ],
+      "preparazione": [
+       "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato. Riposa 3 min in carta stagnola.",
+       "Servi con insalata di pomodori e rucola condita con olio e sale."
+      ]
+     }
+    },
+    "spuntini": [
+     "4 datteri + 15g mandorle (~185 kcal, 4g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Domenica",
+   "data": "2026-08-02",
+   "allenamento": {
+    "tipo": "Ciclismo",
+    "orario": "Mattina presto",
+    "note": "Solo banana prima di partire, pasto pieno al rientro"
+   },
+   "pasti": {
+    "pre_workout": {
+     "descrizione": "1 banana — regola pre-bici mattutina, nient'altro prima di partire",
+     "calorie_stimate": 105,
+     "proteine_g": 1
+    },
+    "colazione": {
+     "descrizione": "Yogurt greco 150g + banana + mandorle",
+     "calorie_stimate": 365,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "150 g yogurt greco 0%",
+       "1 banana (~120 g)",
+       "20 g mandorle intere"
+      ],
+      "preparazione": [
+       "Yogurt + banana a rondelle + mandorle. Pronto in 3 minuti."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Riso basmati con tonno, pomodori & olive",
+     "calorie_stimate": 550,
+     "proteine_g": 40,
+     "ricetta": {
+      "ingredienti": [
+       "85 g riso basmati (peso crudo)",
+       "160 g tonno al naturale",
+       "150 g pomodorini",
+       "50 g olive nere",
+       "15 g olio EVO",
+       "succo ½ limone",
+       "basilico · sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci il riso 10–12 min. Scola e intiepidisci. Mescola con tonno, pomodorini, olive, olio e limone. Si prepara in anticipo."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Frittata zucchine & carote al forno",
+     "calorie_stimate": 420,
+     "proteine_g": 32,
+     "ricetta": {
+      "ingredienti": [
+       "4 uova intere (200 g)",
+       "150 g zucchine",
+       "100 g carote",
+       "40 g parmigiano GF grattugiato",
+       "10 g olio EVO",
+       "sale · pepe q.b."
+      ],
+      "preparazione": [
+       "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
+       "Sbatti uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
+      ]
+     }
+    },
+    "spuntini": []
+   }
+  }
+ ]
+}
