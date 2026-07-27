@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 2,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
