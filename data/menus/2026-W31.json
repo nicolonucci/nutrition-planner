@@ -152,7 +152,35 @@
        "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima: 2–3 min per lato (al sangue/media). Riposa 3 min avvolta in carta stagnola.",
        "Insalata di pomodori e rucola condita con olio e sale."
       ]
-     }
+     },
+     "consumato": "2026-07-27T20:52",
+     "consumato_dettaglio": [
+      "200 g bistecca di manzo",
+      "200 g pomodori",
+      "15 ml Olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Bistecca di Manzo (Controfiletto)",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 15,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": []
    }
