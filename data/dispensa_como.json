@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1046,
+   "quantita": 846,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -653,7 +653,7 @@
   {
    "nome": "Bistecca di Manzo (Controfiletto)",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 500,
+   "quantita": 485,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
