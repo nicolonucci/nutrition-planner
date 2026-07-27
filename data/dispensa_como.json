@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-26",
+ "ultimo_aggiornamento": "2026-07-27",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 450,
+   "quantita": 370,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -202,12 +202,12 @@
   {
    "nome": "Piadine Loriana",
    "categoria": "Snack & Altro",
-   "quantita": 1200,
+   "quantita": 900,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2026-10-12",
-   "note": "16x75g",
+   "note": "12x75g",
    "monoporzione": true
   },
   {
@@ -246,7 +246,7 @@
   {
    "nome": "Fagiolini Fini",
    "categoria": "Verdure & Frutta",
-   "quantita": 0,
+   "quantita": 220,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 220,
@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 1,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 0.67,
+   "quantita": 7,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 3,
+   "quantita": 9,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -312,7 +312,7 @@
   {
    "nome": "Cioccolato Lindt 78%",
    "categoria": "Snack & Altro",
-   "quantita": 175,
+   "quantita": 100,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 75,
+   "quantita": 25,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "3x25g",
+   "note": "1x25g",
    "monoporzione": true
   },
   {
@@ -356,7 +356,7 @@
   {
    "nome": "Trita di Manzo",
    "categoria": "Proteine",
-   "quantita": 45,
+   "quantita": 245,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 200,
+   "quantita": 180,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -389,18 +389,18 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 236,
+   "quantita": 1046,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "2x500g + datterino 250g",
+   "note": "",
    "monoporzione": false
   },
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 600,
+   "quantita": 414,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -422,29 +422,29 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 600,
+   "quantita": 800,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "3x200g",
+   "note": "4x200g",
    "monoporzione": true
   },
   {
    "nome": "Fettine di Manzo",
    "categoria": "Proteine",
-   "quantita": 164,
+   "quantita": 207,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "0,8x207g",
+   "note": "1x207g",
    "monoporzione": true
   },
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 5,
+   "quantita": 10,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 728,
+   "quantita": 1162,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -648,6 +648,94 @@
    "soglia_minima": 0,
    "scadenza": "2027-05",
    "note": "scadenza approssimata: solo mese/anno",
+   "monoporzione": false
+  },
+  {
+   "nome": "Bistecca di Manzo (Controfiletto)",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 200,
+   "scadenza": "",
+   "note": "da usare per primo",
+   "monoporzione": true
+  },
+  {
+   "nome": "Filetto di Salmone Fresco",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": "distinto da salmone affumicato",
+   "monoporzione": true
+  },
+  {
+   "nome": "Riso Soffiato GF",
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 100,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 50,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Mandorle",
+   "categoria": "Snack & Altro",
+   "quantita": 100,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 50,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Noci",
+   "categoria": "Snack & Altro",
+   "quantita": 100,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 50,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Marmellata GF",
+   "categoria": "Condimenti & Spezie",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "vasetto piccolo",
+   "monoporzione": false
+  },
+  {
+   "nome": "Miele",
+   "categoria": "Condimenti & Spezie",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 0,
+   "scadenza": "",
+   "note": "",
+   "monoporzione": false
+  },
+  {
+   "nome": "Olio EVO",
+   "categoria": "Condimenti & Spezie",
+   "quantita": 500,
+   "unita": "ml",
+   "congelato": false,
+   "soglia_minima": 100,
+   "scadenza": "",
+   "note": "",
    "monoporzione": false
   }
  ]
