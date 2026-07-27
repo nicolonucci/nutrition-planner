@@ -202,12 +202,12 @@
   {
    "nome": "Piadine Loriana",
    "categoria": "Snack & Altro",
-   "quantita": 1050,
+   "quantita": 900,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 2,
    "scadenza": "2026-10-12",
-   "note": "14x75g",
+   "note": "12x75g",
    "monoporzione": true
   },
   {
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 50,
+   "quantita": 25,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "2x25g",
+   "note": "1x25g",
    "monoporzione": true
   },
   {
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 200,
+   "quantita": 46,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 400,
+   "quantita": 200,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "2x200g",
+   "note": "1x200g",
    "monoporzione": true
   },
   {
