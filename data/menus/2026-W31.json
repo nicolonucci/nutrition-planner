@@ -207,7 +207,29 @@
       "preparazione": [
        "Versa il riso soffiato nel latte, aggiungi il miele. Leggero e digerisce bene prima dell'allenamento pomeridiano."
       ]
-     }
+     },
+     "consumato": "2026-07-28T08:40",
+     "consumato_dettaglio": [
+      "30 g riso soffiato GF",
+      "10 g miele",
+      "170 g latte"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Riso Soffiato GF",
+       "unita": "g",
+       "prelievo": 30,
+       "congelato": false
+      },
+      {
+       "nome": "Miele",
+       "unita": "g",
+       "prelievo": 10,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Pollo alla piastra + zucchine grigliate",
