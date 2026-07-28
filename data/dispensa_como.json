@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 414,
+   "quantita": 234,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 10,
+   "quantita": 6,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 912,
+   "quantita": 802,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 455,
+   "quantita": 445,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
