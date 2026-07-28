@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-27",
+ "ultimo_aggiornamento": "2026-07-28",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -675,7 +675,7 @@
   {
    "nome": "Riso Soffiato GF",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 100,
+   "quantita": 125,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
