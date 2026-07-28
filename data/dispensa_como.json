@@ -675,7 +675,7 @@
   {
    "nome": "Riso Soffiato GF",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 125,
+   "quantita": 95,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -719,7 +719,7 @@
   {
    "nome": "Miele",
    "categoria": "Condimenti & Spezie",
-   "quantita": 200,
+   "quantita": 190,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
