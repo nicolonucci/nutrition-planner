@@ -294,7 +294,43 @@
        "Salta zucchine a rondelle e carote a julienne con olio 4 min. Intiepidisci.",
        "Sbatti uova con parmigiano, sale e pepe. Unisci le verdure. Teglia oliata → forno 180°C 15–18 min."
       ]
-     }
+     },
+     "consumato": "2026-07-28T21:49",
+     "consumato_dettaglio": [
+      "4 pz uova intere",
+      "110 g zucchine",
+      "180 g carote",
+      "10 ml olio",
+      "40 g parmigiano"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 4,
+       "congelato": false
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 110,
+       "congelato": false
+      },
+      {
+       "nome": "Carote Vassoio",
+       "unita": "g",
+       "prelievo": 180,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 10,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "Yogurt greco 150g + miele + noci (~260 kcal, 20g prot)"
