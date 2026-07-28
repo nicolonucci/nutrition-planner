@@ -247,7 +247,35 @@
        "Marina il pollo con 5 g olio, limone e origano 5 min. Cuoci in padella grill 4–5 min per lato.",
        "Griglia le zucchine a fette con l'olio rimasto, 2–3 min per lato."
       ]
-     }
+     },
+     "consumato": "2026-07-28T21:44",
+     "consumato_dettaglio": [
+      "220 g petto di pollo",
+      "250 g zucchine",
+      "30 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 220,
+       "congelato": true
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 250,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Frittata zucchine & carote al forno",
