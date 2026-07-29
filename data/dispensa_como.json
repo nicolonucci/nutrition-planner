@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-28",
+ "ultimo_aggiornamento": "2026-07-29",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 730,
+   "quantita": 650,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 9,
+   "quantita": 8,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 580,
+   "quantita": 380,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "2,9x200g",
+   "note": "1,9x200g",
    "monoporzione": true
   },
   {
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 802,
+   "quantita": 552,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 445,
+   "quantita": 415,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
