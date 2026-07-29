@@ -386,7 +386,49 @@
        "Cuoci il riso. Rosola il pollo a strisce con aglio e olio 5–6 min.",
        "Aggiungi le zucchine a rondelle 4 min. Servi sul riso con limone."
       ]
-     }
+     },
+     "consumato": "2026-07-29T13:27",
+     "consumato_dettaglio": [
+      "80 g riso basmati",
+      "200 g petto di pollo",
+      "250 g zucchine",
+      "30 ml olio",
+      "1 pz banana"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Riso Basmati",
+       "unita": "g",
+       "prelievo": 80,
+       "congelato": false
+      },
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 250,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 30,
+       "congelato": false
+      },
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Salmone in padella + piselli & pomodorini",
