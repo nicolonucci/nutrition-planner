@@ -4,7 +4,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 400,
+   "quantita": 280,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 596,
+   "quantita": 446,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -510,12 +510,12 @@
   {
    "nome": "Guanciale",
    "categoria": "Proteine",
-   "quantita": 70,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 30,
    "scadenza": "",
-   "note": "1x70g",
+   "note": "0x70g",
    "monoporzione": true
   },
   {
