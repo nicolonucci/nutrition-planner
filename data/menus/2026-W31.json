@@ -447,7 +447,42 @@
        "In padella con olio e aglio: cuoci il salmone 3–4 min per lato. Togli e tieni da parte.",
        "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
       ]
-     }
+     },
+     "consumato": "2026-07-30T09:07",
+     "consumato_dettaglio": [
+      "200 g filetto di salmone fresco",
+      "150 g piselli surgelati",
+      "150 g pomodorini",
+      "30 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Filetto di Salmone Fresco",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": false
+      },
+      {
+       "nome": "Piselli",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": true
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": []
    }
