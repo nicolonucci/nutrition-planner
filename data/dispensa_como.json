@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 380,
+   "quantita": 180,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "1,9x200g",
+   "note": "0,9x200g",
    "monoporzione": true
   },
   {
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 552,
+   "quantita": 252,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 385,
+   "quantita": 345,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
