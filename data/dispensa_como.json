@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 370,
+   "quantita": 320,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 696,
+   "quantita": 596,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 6,
+   "quantita": 3,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
