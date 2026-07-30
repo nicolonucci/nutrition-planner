@@ -610,7 +610,35 @@
        "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
        "Griglia le zucchine a fette 2–3 min per lato. Semplice, veloce, efficace."
       ]
-     }
+     },
+     "consumato": "2026-07-30T22:56",
+     "consumato_dettaglio": [
+      "200 g petto di pollo",
+      "300 g zucchine",
+      "40 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pollo",
+       "unita": "g",
+       "prelievo": 200,
+       "congelato": true
+      },
+      {
+       "nome": "Zucchine",
+       "unita": "g",
+       "prelievo": 300,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 40,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": []
    },
