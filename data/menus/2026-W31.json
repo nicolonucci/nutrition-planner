@@ -613,7 +613,40 @@
      }
     },
     "spuntini": []
-   }
+   },
+   "pasti_liberi": [
+    {
+     "descrizione": "120 g elicoidali rummo, 150 g passata di pomodoro, 70 g guanciale",
+     "consumato": "2026-07-30T13:57",
+     "dettaglio": [
+      "120 g elicoidali rummo",
+      "150 g passata di pomodoro",
+      "70 g guanciale"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pasta Rummo Elicoidali",
+       "unita": "g",
+       "prelievo": 120,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": false
+      },
+      {
+       "nome": "Guanciale",
+       "unita": "g",
+       "prelievo": 70,
+       "congelato": false
+      }
+     ]
+    }
+   ]
   },
   {
    "giorno": "Venerdì",
