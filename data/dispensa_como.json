@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-29",
+ "ultimo_aggiornamento": "2026-07-30",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 846,
+   "quantita": 696,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 500,
+   "quantita": 350,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -664,7 +664,7 @@
   {
    "nome": "Filetto di Salmone Fresco",
    "categoria": "Proteine",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 415,
+   "quantita": 385,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
