@@ -513,7 +513,35 @@
        "Soffriggi la cipolla in olio 2 min. Aggiungi la passata, cuoci 4 min.",
        "Sguscia le uova nel sugo, mescola strapazzando 2 min. Servi su pane GF tostato."
       ]
-     }
+     },
+     "consumato": "2026-07-30T09:25",
+     "consumato_dettaglio": [
+      "3 pz uova intere",
+      "100 g passata di pomodoro",
+      "50 g pane senza glutine"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 3,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Riso basmati saltato con pollo & curcuma",
