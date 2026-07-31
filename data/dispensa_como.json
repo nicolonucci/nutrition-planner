@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-30",
+ "ultimo_aggiornamento": "2026-07-31",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 320,
+   "quantita": 270,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -444,7 +444,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 3,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
