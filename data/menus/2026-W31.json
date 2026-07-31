@@ -701,7 +701,28 @@
        "Sbatti le uova con sale e pepe. Cuoci in padella antiaderente con olio a fuoco basso, mescolando 2–3 min finché cremose.",
        "Tosta le fette di pane GF. Servi con arancia pelata a parte."
       ]
-     }
+     },
+     "consumato": "2026-07-31T12:53",
+     "consumato_dettaglio": [
+      "3 pz uova intere",
+      "50 g pane senza glutine"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Uova",
+       "unita": "pz",
+       "prelievo": 3,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Pasta di riso al tonno & pomodoro",
