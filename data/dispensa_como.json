@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-07-31",
+ "ultimo_aggiornamento": "2026-08-01",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -400,7 +400,7 @@
   {
    "nome": "Carote Vassoio",
    "categoria": "Verdure & Frutta",
-   "quantita": 234,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -422,12 +422,12 @@
   {
    "nome": "Pollo",
    "categoria": "Proteine",
-   "quantita": 180,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "0,9x200g",
+   "note": "0x200g",
    "monoporzione": true
   },
   {
@@ -499,7 +499,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 252,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 200,
