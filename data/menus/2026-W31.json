@@ -874,7 +874,43 @@
        "Banana a rondelle nel frullatore con yogurt, latte, cacao, miele e ghiaccio.",
        "Frulla 1 min. Ottimo anche come post-allenamento in sostituzione allo yogurt classico."
       ]
-     }
+     },
+     "consumato": "2026-08-01T11:23",
+     "consumato_dettaglio": [
+      "1 pz banana matura",
+      "1 pz yogurt greco 0%",
+      "10 g miele",
+      "150 ml Latte",
+      "10 g Cioccolato lindt 78%"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Miele",
+       "unita": "g",
+       "prelievo": 10,
+       "congelato": false
+      },
+      {
+       "nome": "Cioccolato Lindt 78%",
+       "unita": "g",
+       "prelievo": 10,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Insalata tonno, pomodori & fagiolini",
