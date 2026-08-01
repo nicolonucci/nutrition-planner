@@ -930,7 +930,42 @@
        "Lessa i fagiolini 6 min in acqua salata, scola e raffredda velocemente sotto acqua fredda.",
        "Mescola tutto in una ciotola. Condisci con olio, limone, sale e basilico."
       ]
-     }
+     },
+     "consumato": "2026-08-01T13:49",
+     "consumato_dettaglio": [
+      "1 pz tonno al naturale",
+      "206 g pomodorini",
+      "220 g fagiolini",
+      "15 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Tonno al Naturale",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 206,
+       "congelato": false
+      },
+      {
+       "nome": "Fagiolini Fini",
+       "unita": "g",
+       "prelievo": 220,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 15,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Bistecca di manzo + insalata di pomodori & rucola",
