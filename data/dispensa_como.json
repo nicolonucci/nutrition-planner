@@ -279,7 +279,7 @@
   {
    "nome": "Yogurt Greco 0%",
    "categoria": "Latticini",
-   "quantita": 7,
+   "quantita": 6,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 8,
+   "quantita": 7,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -312,7 +312,7 @@
   {
    "nome": "Cioccolato Lindt 78%",
    "categoria": "Snack & Altro",
-   "quantita": 100,
+   "quantita": 90,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -719,7 +719,7 @@
   {
    "nome": "Miele",
    "categoria": "Condimenti & Spezie",
-   "quantita": 190,
+   "quantita": 180,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
