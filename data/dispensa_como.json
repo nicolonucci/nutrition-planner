@@ -246,7 +246,7 @@
   {
    "nome": "Fagiolini Fini",
    "categoria": "Verdure & Frutta",
-   "quantita": 220,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 220,
@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 2,
+   "quantita": 1,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 246,
+   "quantita": 40,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 345,
+   "quantita": 330,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
