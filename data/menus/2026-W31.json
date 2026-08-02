@@ -1064,7 +1064,42 @@
       "preparazione": [
        "Cuoci il riso 10–12 min. Scola e intiepidisci. Mescola con tonno, pomodorini, olive, olio e limone. Si prepara in anticipo."
       ]
-     }
+     },
+     "consumato": "2026-08-02T23:23",
+     "consumato_dettaglio": [
+      "85 g riso basmati",
+      "1 pz tonno al naturale",
+      "150 g pomodorini",
+      "30 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Riso Basmati",
+       "unita": "g",
+       "prelievo": 85,
+       "congelato": false
+      },
+      {
+       "nome": "Tonno al Naturale",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Pomodoro",
+       "unita": "g",
+       "prelievo": 40,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Frittata zucchine & carote al forno",
