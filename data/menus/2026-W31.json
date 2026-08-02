@@ -1121,7 +1121,40 @@
      }
     },
     "spuntini": []
-   }
+   },
+   "pasti_liberi": [
+    {
+     "descrizione": "100 g pasta rummo elicoidali, 15 ml olio, 50 g pane carasau",
+     "consumato": "2026-08-02T23:23",
+     "dettaglio": [
+      "100 g pasta rummo elicoidali",
+      "15 ml olio",
+      "50 g pane carasau"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pasta Rummo Elicoidali",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 15,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
+    }
+   ]
   }
  ]
 }
