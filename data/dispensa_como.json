@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 650,
+   "quantita": 565,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -257,7 +257,7 @@
   {
    "nome": "Tonno al Naturale",
    "categoria": "Proteine",
-   "quantita": 1,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -389,7 +389,7 @@
   {
    "nome": "Pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 40,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 330,
+   "quantita": 300,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
