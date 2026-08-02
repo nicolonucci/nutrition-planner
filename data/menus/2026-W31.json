@@ -1017,7 +1017,35 @@
       "preparazione": [
        "Yogurt + banana a rondelle + mandorle. Pronto in 3 minuti."
       ]
-     }
+     },
+     "consumato": "2026-08-02T11:28",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "1 pz banana",
+      "20 g mandorle intere"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Mandorle",
+       "unita": "g",
+       "prelievo": 20,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Riso basmati con tonno, pomodori & olive",
