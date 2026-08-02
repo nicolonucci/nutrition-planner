@@ -4,7 +4,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 280,
+   "quantita": 180,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -147,7 +147,7 @@
   {
    "nome": "Pane Carasau",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 270,
+   "quantita": 220,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 300,
+   "quantita": 285,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
