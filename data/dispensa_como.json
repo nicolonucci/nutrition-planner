@@ -356,7 +356,7 @@
   {
    "nome": "Trita di Manzo",
    "categoria": "Proteine",
-   "quantita": 245,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
