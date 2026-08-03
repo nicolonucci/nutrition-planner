@@ -18,17 +18,56 @@
      "calorie_stimate": 365,
      "proteine_g": 22,
      "ricetta": {
-      "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g mandorle intere"],
-      "preparazione": ["Yogurt in ciotola, banana a rondelle, mandorle sopra.", "Pronto in 3 minuti."]
-     }
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "1 banana (~120g)",
+       "20g mandorle intere"
+      ],
+      "preparazione": [
+       "Yogurt in ciotola, banana a rondelle, mandorle sopra.",
+       "Pronto in 3 minuti."
+      ]
+     },
+     "consumato": "2026-08-03T21:44",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "1 pz banana"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Insalata di riso basmati con bresaola, grana padano e limone",
      "calorie_stimate": 550,
      "proteine_g": 35,
      "ricetta": {
-      "ingredienti": ["80g riso basmati (peso a crudo)", "100g bresaola Valtellina IGP", "30g grana padano DOP a scaglie", "succo di 1/2 limone", "10g olio EVO", "sale e pepe q.b."],
-      "preparazione": ["Cuoci il riso basmati e lascia raffreddare.", "Unisci bresaola a listarelle, grana a scaglie, olio e succo di limone.", "Mescola e servi tiepido o freddo."]
+      "ingredienti": [
+       "80g riso basmati (peso a crudo)",
+       "100g bresaola Valtellina IGP",
+       "30g grana padano DOP a scaglie",
+       "succo di 1/2 limone",
+       "10g olio EVO",
+       "sale e pepe q.b."
+      ],
+      "preparazione": [
+       "Cuoci il riso basmati e lascia raffreddare.",
+       "Unisci bresaola a listarelle, grana a scaglie, olio e succo di limone.",
+       "Mescola e servi tiepido o freddo."
+      ]
      }
     },
     "cena": {
@@ -36,11 +75,24 @@
      "calorie_stimate": 550,
      "proteine_g": 45,
      "ricetta": {
-      "ingredienti": ["245g trita di manzo", "1 uovo (se disponibile, altrimenti omettere)", "sale, pepe, origano GF q.b.", "200g piselli surgelati", "10g olio EVO"],
-      "preparazione": ["Forma le polpette con la trita condita e cuoci in padella 8-10 min girando spesso.", "Cuoci i piselli surgelati in padella con olio per 5-6 min.", "Servi insieme."]
+      "ingredienti": [
+       "245g trita di manzo",
+       "1 uovo (se disponibile, altrimenti omettere)",
+       "sale, pepe, origano GF q.b.",
+       "200g piselli surgelati",
+       "10g olio EVO"
+      ],
+      "preparazione": [
+       "Forma le polpette con la trita condita e cuoci in padella 8-10 min girando spesso.",
+       "Cuoci i piselli surgelati in padella con olio per 5-6 min.",
+       "Servi insieme."
+      ]
      }
     },
-    "spuntini": ["25g noci", "Pizzetta 70g (scade 07/08 — da smaltire)"]
+    "spuntini": [
+     "25g noci",
+     "Pizzetta 70g (scade 07/08 — da smaltire)"
+    ]
    }
   },
   {
@@ -62,8 +114,15 @@
      "calorie_stimate": 400,
      "proteine_g": 22,
      "ricetta": {
-      "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate", "10g miele"],
-      "preparazione": ["Yogurt in ciotola, banana a rondelle, noci spezzettate e miele sopra."]
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "1 banana (~120g)",
+       "20g noci sgusciate",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Yogurt in ciotola, banana a rondelle, noci spezzettate e miele sopra."
+      ]
      }
     },
     "pranzo": {
@@ -71,8 +130,18 @@
      "calorie_stimate": 550,
      "proteine_g": 35,
      "ricetta": {
-      "ingredienti": ["3 uova", "20g grana padano DOP grattugiato", "10g olio EVO", "sale e pepe q.b.", "40g pane carasau"],
-      "preparazione": ["Sbatti le uova con grana padano, sale e pepe.", "Cuoci in padella antiaderente 4-5 min per lato.", "Servi con pane carasau."]
+      "ingredienti": [
+       "3 uova",
+       "20g grana padano DOP grattugiato",
+       "10g olio EVO",
+       "sale e pepe q.b.",
+       "40g pane carasau"
+      ],
+      "preparazione": [
+       "Sbatti le uova con grana padano, sale e pepe.",
+       "Cuoci in padella antiaderente 4-5 min per lato.",
+       "Servi con pane carasau."
+      ]
      }
     },
     "cena": {
@@ -80,7 +149,9 @@
      "calorie_stimate": 800,
      "proteine_g": 28
     },
-    "spuntini": ["Quadratini Mulino Bianco 33g"]
+    "spuntini": [
+     "Quadratini Mulino Bianco 33g"
+    ]
    }
   },
   {
@@ -102,8 +173,15 @@
      "calorie_stimate": 420,
      "proteine_g": 24,
      "ricetta": {
-      "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "30g avena", "10g miele"],
-      "preparazione": ["Mescola yogurt e avena, aggiungi banana a rondelle e miele."]
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "1 banana (~120g)",
+       "30g avena",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Mescola yogurt e avena, aggiungi banana a rondelle e miele."
+      ]
      }
     },
     "pranzo": {
@@ -111,8 +189,19 @@
      "calorie_stimate": 550,
      "proteine_g": 40,
      "ricetta": {
-      "ingredienti": ["150g nasello", "150g piselli surgelati", "70g riso basmati (peso a crudo)", "10g olio EVO", "succo di 1/2 limone", "sale e pepe q.b."],
-      "preparazione": ["Cuoci il nasello in forno a 200°C per 15 min con olio e limone.", "Cuoci il riso e scalda i piselli a parte.", "Componi il piatto."]
+      "ingredienti": [
+       "150g nasello",
+       "150g piselli surgelati",
+       "70g riso basmati (peso a crudo)",
+       "10g olio EVO",
+       "succo di 1/2 limone",
+       "sale e pepe q.b."
+      ],
+      "preparazione": [
+       "Cuoci il nasello in forno a 200°C per 15 min con olio e limone.",
+       "Cuoci il riso e scalda i piselli a parte.",
+       "Componi il piatto."
+      ]
      }
     },
     "cena": {
@@ -120,11 +209,23 @@
      "calorie_stimate": 500,
      "proteine_g": 45,
      "ricetta": {
-      "ingredienti": ["207g fettine di manzo", "succo di 1 limone", "10g olio EVO", "sale e pepe q.b.", "40g pane carasau"],
-      "preparazione": ["Griglia le fettine 2-3 min per lato.", "Condisci con olio, limone, sale e pepe.", "Servi con pane carasau."]
+      "ingredienti": [
+       "207g fettine di manzo",
+       "succo di 1 limone",
+       "10g olio EVO",
+       "sale e pepe q.b.",
+       "40g pane carasau"
+      ],
+      "preparazione": [
+       "Griglia le fettine 2-3 min per lato.",
+       "Condisci con olio, limone, sale e pepe.",
+       "Servi con pane carasau."
+      ]
      }
     },
-    "spuntini": ["Wafer fondente Galbusera 45g"]
+    "spuntini": [
+     "Wafer fondente Galbusera 45g"
+    ]
    }
   },
   {
@@ -141,8 +242,14 @@
      "calorie_stimate": 370,
      "proteine_g": 22,
      "ricetta": {
-      "ingredienti": ["150g yogurt greco 0%", "1 banana (~120g)", "20g noci sgusciate"],
-      "preparazione": ["Yogurt in ciotola, banana a rondelle, noci sopra."]
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "1 banana (~120g)",
+       "20g noci sgusciate"
+      ],
+      "preparazione": [
+       "Yogurt in ciotola, banana a rondelle, noci sopra."
+      ]
      }
     },
     "pranzo": {
@@ -150,8 +257,17 @@
      "calorie_stimate": 550,
      "proteine_g": 22,
      "ricetta": {
-      "ingredienti": ["90g pasta Rummo", "30g grana padano DOP grattugiato", "15g olio EVO", "succo di 1/2 limone", "pepe q.b."],
-      "preparazione": ["Cuoci la pasta al dente.", "Manteca con grana padano, olio, limone e pepe fuori dal fuoco."]
+      "ingredienti": [
+       "90g pasta Rummo",
+       "30g grana padano DOP grattugiato",
+       "15g olio EVO",
+       "succo di 1/2 limone",
+       "pepe q.b."
+      ],
+      "preparazione": [
+       "Cuoci la pasta al dente.",
+       "Manteca con grana padano, olio, limone e pepe fuori dal fuoco."
+      ]
      }
     },
     "cena": {
@@ -159,11 +275,23 @@
      "calorie_stimate": 450,
      "proteine_g": 30,
      "ricetta": {
-      "ingredienti": ["3 uova", "20g grana padano DOP grattugiato", "10g olio EVO", "sale e pepe q.b.", "30g pane carasau"],
-      "preparazione": ["Sbatti le uova con grana padano, sale e pepe.", "Cuoci in padella antiaderente 4-5 min per lato.", "Servi con pane carasau."]
+      "ingredienti": [
+       "3 uova",
+       "20g grana padano DOP grattugiato",
+       "10g olio EVO",
+       "sale e pepe q.b.",
+       "30g pane carasau"
+      ],
+      "preparazione": [
+       "Sbatti le uova con grana padano, sale e pepe.",
+       "Cuoci in padella antiaderente 4-5 min per lato.",
+       "Servi con pane carasau."
+      ]
      }
     },
-    "spuntini": ["Sfogliatelle Graziosi 14,5g"]
+    "spuntini": [
+     "Sfogliatelle Graziosi 14,5g"
+    ]
    }
   }
  ]
