@@ -68,7 +68,35 @@
        "Unisci bresaola a listarelle, grana a scaglie, olio e succo di limone.",
        "Mescola e servi tiepido o freddo."
       ]
-     }
+     },
+     "consumato": "2026-08-03T21:44",
+     "consumato_dettaglio": [
+      "80 g riso basmati",
+      "100 g bresaola Valtellina IGP",
+      "50 g limone"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Riso Basmati",
+       "unita": "g",
+       "prelievo": 80,
+       "congelato": false
+      },
+      {
+       "nome": "Bresaola Valtellina IGP",
+       "unita": "g",
+       "prelievo": 100,
+       "congelato": false
+      },
+      {
+       "nome": "Limoni",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Polpette di trita di manzo + piselli surgelati",
