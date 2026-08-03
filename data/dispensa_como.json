@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 565,
+   "quantita": 485,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -378,7 +378,7 @@
   {
    "nome": "Bresaola Valtellina IGP",
    "categoria": "Proteine",
-   "quantita": 100,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 30,
@@ -532,7 +532,7 @@
   {
    "nome": "Limoni",
    "categoria": "Verdure & Frutta",
-   "quantita": 350,
+   "quantita": 300,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
