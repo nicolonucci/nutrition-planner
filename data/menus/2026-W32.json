@@ -115,7 +115,22 @@
        "Cuoci i piselli surgelati in padella con olio per 5-6 min.",
        "Servi insieme."
       ]
-     }
+     },
+     "consumato": "2026-08-03T21:44",
+     "consumato_dettaglio": [
+      "245 g trita di manzo",
+      "173 g pomodori"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Trita di Manzo",
+       "unita": "g",
+       "prelievo": 245,
+       "congelato": true
+      }
+     ]
     },
     "spuntini": [
      "25g noci",
