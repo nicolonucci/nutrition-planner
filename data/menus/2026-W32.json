@@ -225,7 +225,28 @@
       "preparazione": [
        "Mescola yogurt e avena, aggiungi banana a rondelle e miele."
       ]
-     }
+     },
+     "consumato": "2026-08-05T08:03",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "10 g miele"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Miele",
+       "unita": "g",
+       "prelievo": 10,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Nasello al forno con piselli e riso basmati",
