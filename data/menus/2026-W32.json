@@ -320,7 +320,29 @@
        "Condisci con olio, limone, sale e pepe.",
        "Servi con pane carasau."
       ]
-     }
+     },
+     "consumato": "2026-08-05T22:28",
+     "consumato_dettaglio": [
+      "207 g fettine di manzo",
+      "45 ml olio",
+      "150 g Carote"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Fettine di Manzo",
+       "unita": "g",
+       "prelievo": 207,
+       "congelato": true
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 45,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "Wafer fondente Galbusera 45g"
