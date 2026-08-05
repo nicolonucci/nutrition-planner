@@ -224,7 +224,7 @@
   {
    "nome": "Riso Basmati",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 485,
+   "quantita": 415,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -334,12 +334,12 @@
   {
    "nome": "Nasello",
    "categoria": "Proteine",
-   "quantita": 150,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "1x150g",
+   "note": "0x150g",
    "monoporzione": true
   },
   {
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 350,
+   "quantita": 200,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -730,7 +730,7 @@
   {
    "nome": "Olio EVO",
    "categoria": "Condimenti & Spezie",
-   "quantita": 285,
+   "quantita": 275,
    "unita": "ml",
    "congelato": false,
    "soglia_minima": 100,
