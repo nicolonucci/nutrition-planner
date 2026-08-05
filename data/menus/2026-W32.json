@@ -266,7 +266,42 @@
        "Cuoci il riso e scalda i piselli a parte.",
        "Componi il piatto."
       ]
-     }
+     },
+     "consumato": "2026-08-05T13:04",
+     "consumato_dettaglio": [
+      "150 g nasello",
+      "150 g piselli surgelati",
+      "70 g riso basmati",
+      "10 ml olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Nasello",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": true
+      },
+      {
+       "nome": "Piselli",
+       "unita": "g",
+       "prelievo": 150,
+       "congelato": true
+      },
+      {
+       "nome": "Riso Basmati",
+       "unita": "g",
+       "prelievo": 70,
+       "congelato": false
+      },
+      {
+       "nome": "Olio EVO",
+       "unita": "ml",
+       "prelievo": 10,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Fettine di manzo alla griglia con limone e pane carasau",
