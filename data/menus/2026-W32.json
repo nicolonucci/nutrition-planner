@@ -371,7 +371,35 @@
       "preparazione": [
        "Yogurt in ciotola, banana a rondelle, noci sopra."
       ]
-     }
+     },
+     "consumato": "2026-08-09T11:03",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "1 pz banana",
+      "20 g noci sgusciate"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Yogurt Greco 0%",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Banane",
+       "unita": "pz",
+       "prelievo": 1,
+       "congelato": false
+      },
+      {
+       "nome": "Noci",
+       "unita": "g",
+       "prelievo": 20,
+       "congelato": false
+      }
+     ]
     },
     "pranzo": {
      "descrizione": "Pasta Rummo con grana padano, olio EVO, limone e pepe",
