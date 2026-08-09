@@ -417,7 +417,35 @@
        "Cuoci la pasta al dente.",
        "Manteca con grana padano, olio, limone e pepe fuori dal fuoco."
       ]
-     }
+     },
+     "consumato": "2026-08-09T11:04",
+     "consumato_dettaglio": [
+      "90 g pasta Rummo",
+      "30 g grana padano DOP grattugiato",
+      "50 g limone"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pasta Rummo Elicoidali",
+       "unita": "g",
+       "prelievo": 90,
+       "congelato": false
+      },
+      {
+       "nome": "Grana Padano DOP",
+       "unita": "g",
+       "prelievo": 30,
+       "congelato": false
+      },
+      {
+       "nome": "Limoni",
+       "unita": "g",
+       "prelievo": 50,
+       "congelato": false
+      }
+     ]
     },
     "cena": {
      "descrizione": "Frittata con grana padano e pane carasau",
