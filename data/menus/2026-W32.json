@@ -464,7 +464,29 @@
        "Cuoci in padella antiaderente 4-5 min per lato.",
        "Servi con pane carasau."
       ]
-     }
+     },
+     "consumato": "2026-08-09T11:04",
+     "consumato_dettaglio": [
+      "20 g grana padano DOP grattugiato",
+      "30 g pane carasau",
+      "2 pz uova"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Grana Padano DOP",
+       "unita": "g",
+       "prelievo": 20,
+       "congelato": false
+      },
+      {
+       "nome": "Pane Carasau",
+       "unita": "g",
+       "prelievo": 30,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "Sfogliatelle Graziosi 14,5g"
