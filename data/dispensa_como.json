@@ -4,7 +4,7 @@
   {
    "nome": "Pasta Rummo Elicoidali",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 180,
+   "quantita": 90,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 100,
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 180,
+   "quantita": 150,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -532,7 +532,7 @@
   {
    "nome": "Limoni",
    "categoria": "Verdure & Frutta",
-   "quantita": 300,
+   "quantita": 250,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
