@@ -737,6 +737,28 @@
    "scadenza": "",
    "note": "",
    "monoporzione": false
+  },
+  {
+   "nome": "Pollo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 0,
+   "monoporzione": true,
+   "scadenza": "",
+   "note": ""
+  },
+  {
+   "nome": "Merluzzo",
+   "categoria": "Proteine",
+   "quantita": 200,
+   "unita": "g",
+   "congelato": true,
+   "soglia_minima": 0,
+   "monoporzione": true,
+   "scadenza": "",
+   "note": ""
   }
  ]
 }
