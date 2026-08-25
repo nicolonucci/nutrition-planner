@@ -1,0 +1,425 @@
+{
+ "settimana": "2026-W35",
+ "dal": "2026-08-25",
+ "al": "2026-08-30",
+ "note_settimana": "Settimana a Como, nessun allenamento previsto: tutti i giorni impostati come Riposo (~1.700–1.800 kcal, meno carboidrati). Pianificata da martedì a pranzo su richiesta — lunedì 24/08 e la colazione di martedì sono fuori piano. Richieste: pasta di riso con tonno e pomodoro + qualche piadina.",
+ "giorni": [
+  {
+   "giorno": "Martedì",
+   "data": "2026-08-25",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "note": "Pianificazione partita a pranzo: colazione libera già consumata, i totali contano solo i pasti da pranzo in poi.",
+   "pasti": {
+    "pranzo": {
+     "descrizione": "Pasta di riso al tonno & pomodoro",
+     "calorie_stimate": 580,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "90g pasta di riso GF",
+       "160g tonno al naturale",
+       "200g passata di pomodoro",
+       "1 spicchio aglio",
+       "10g olio EVO",
+       "basilico e sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci la pasta GF controllandola spesso (tende a scuocersi); in parallelo scalda olio e aglio, aggiungi la passata e cuoci 5 min.",
+       "Scola la pasta, aggiungi il tonno al sugo e condisci con basilico fresco."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Merluzzo al vapore + piselli & carote",
+     "calorie_stimate": 370,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "220g merluzzo (anche surgelato)",
+       "150g piselli surgelati",
+       "150g carote",
+       "15g olio EVO",
+       "succo di ½ limone",
+       "prezzemolo e sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci il merluzzo al vapore 10–12 min; in parallelo salta piselli e carote a rondelle con l'olio 5 min.",
+       "Condisci il merluzzo con limone e prezzemolo, servi con le verdure."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco 0% + miele (~180 kcal, 15g prot)",
+     "20g noci (~130 kcal)"
+    ]
+   }
+  },
+  {
+   "giorno": "Mercoledì",
+   "data": "2026-08-26",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Yogurt greco + banana + noci + miele",
+     "calorie_stimate": 370,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "1 banana (~120g)",
+       "20g noci sgusciate",
+       "10g miele"
+      ],
+      "preparazione": [
+       "Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Piadina GF con pollo, pomodori & rucola",
+     "calorie_stimate": 510,
+     "proteine_g": 42,
+     "ricetta": {
+      "ingredienti": [
+       "1 piadina GF (~80g)",
+       "170g petto di pollo",
+       "2 pomodori (~160g)",
+       "40g rucola",
+       "30g philadelphia GF",
+       "10g olio EVO",
+       "origano e sale q.b."
+      ],
+      "preparazione": [
+       "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
+       "Scalda la piadina in padella asciutta 1 min per lato, spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Salmone in padella + piselli & pomodorini",
+     "calorie_stimate": 470,
+     "proteine_g": 44,
+     "ricetta": {
+      "ingredienti": [
+       "200g filetto di salmone fresco",
+       "150g piselli surgelati",
+       "150g pomodorini",
+       "15g olio EVO",
+       "succo di ½ limone",
+       "aglio, prezzemolo e sale q.b."
+      ],
+      "preparazione": [
+       "In padella con olio e aglio cuoci il salmone 3–4 min per lato, poi tienilo da parte.",
+       "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
+      ]
+     }
+    },
+    "spuntini": [
+     "2 uova sode + 1 banana (~240 kcal, 16g prot)",
+     "150g yogurt greco 0% (~100 kcal, 15g prot)",
+     "50g bresaola (~75 kcal, 16g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Giovedì",
+   "data": "2026-08-27",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Uova strapazzate + pane GF + arancia",
+     "calorie_stimate": 430,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "3 uova intere",
+       "2 fette pane GF (~60g)",
+       "1 arancia (~150g)",
+       "5g olio EVO",
+       "sale e pepe q.b."
+      ],
+      "preparazione": [
+       "Sbatti le uova con sale e pepe, cuoci in antiaderente a fuoco basso mescolando 2–3 min finché cremose.",
+       "Tosta il pane GF e servi con l'arancia a parte."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Insalata tonno, pomodori & fagiolini",
+     "calorie_stimate": 480,
+     "proteine_g": 40,
+     "ricetta": {
+      "ingredienti": [
+       "160g tonno al naturale",
+       "200g pomodorini",
+       "150g fagiolini",
+       "50g olive nere",
+       "15g olio EVO",
+       "succo di ½ limone",
+       "basilico e sale q.b."
+      ],
+      "preparazione": [
+       "Lessa i fagiolini 6 min in acqua salata, scola e raffredda sotto acqua fredda.",
+       "Mescola tutto in una ciotola e condisci con olio, limone, sale e basilico."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Pollo al limone + zucchine grigliate",
+     "calorie_stimate": 380,
+     "proteine_g": 48,
+     "ricetta": {
+      "ingredienti": [
+       "220g petto di pollo",
+       "250g zucchine",
+       "15g olio EVO",
+       "succo di 1 limone",
+       "origano, sale e pepe q.b."
+      ],
+      "preparazione": [
+       "Marina il pollo con limone, olio e origano 10 min, poi cuoci in padella grill 4–5 min per lato.",
+       "Griglia le zucchine a fette 2–3 min per lato."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco 0% + banana + miele (~255 kcal, 20g prot)",
+     "20g mandorle (~120 kcal)",
+     "50g bresaola con succo di limone (~75 kcal, 16g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Venerdì",
+   "data": "2026-08-28",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Toast GF avocado + salmone affumicato",
+     "calorie_stimate": 410,
+     "proteine_g": 28,
+     "ricetta": {
+      "ingredienti": [
+       "2 fette pane GF (~60g)",
+       "½ avocado maturo (~80g)",
+       "80g salmone affumicato GF",
+       "succo di ½ limone",
+       "pepe ed erba cipollina q.b."
+      ],
+      "preparazione": [
+       "Tosta il pane GF; schiaccia l'avocado con limone, sale e pepe fino a crema rustica.",
+       "Spalma l'avocado, disponi il salmone e finisci con erba cipollina."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Piadina GF con gamberetti, pomodori & fagiolini",
+     "calorie_stimate": 440,
+     "proteine_g": 36,
+     "ricetta": {
+      "ingredienti": [
+       "1 piadina GF (~80g)",
+       "180g gamberetti surgelati",
+       "150g pomodorini",
+       "100g fagiolini",
+       "10g olio EVO",
+       "succo di ½ limone",
+       "aglio e prezzemolo q.b."
+      ],
+      "preparazione": [
+       "Lessa i fagiolini 6 min in acqua salata; in padella con olio e aglio cuoci i gamberetti 3 min.",
+       "Scalda la piadina in padella asciutta e riempi con gamberetti, fagiolini, pomodorini e limone."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Bistecca di manzo + insalata di pomodori",
+     "calorie_stimate": 450,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "200g bistecca di manzo (controfiletto)",
+       "200g pomodori",
+       "40g rucola",
+       "15g olio EVO",
+       "sale, pepe e rosmarino q.b."
+      ],
+      "preparazione": [
+       "Bistecca a temperatura ambiente 10 min, poi padella caldissima 2–3 min per lato; riposo 3 min nella stagnola.",
+       "Insalata di pomodori e rucola condita con olio e sale."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco 0% + miele + noci (~260 kcal, 20g prot)",
+     "2 uova sode (~140 kcal, 12g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Sabato",
+   "data": "2026-08-29",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Philadelphia GF + salmone + pane GF + pomodoro",
+     "calorie_stimate": 400,
+     "proteine_g": 26,
+     "ricetta": {
+      "ingredienti": [
+       "2 fette pane GF (~60g)",
+       "60g philadelphia GF",
+       "80g salmone affumicato GF",
+       "1 pomodoro (~120g)",
+       "pepe ed erba cipollina q.b."
+      ],
+      "preparazione": [
+       "Tosta il pane GF, spalma il philadelphia, aggiungi salmone e pomodoro a fette.",
+       "Finisci con pepe ed erba cipollina."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Pad Thai GF con gamberetti",
+     "calorie_stimate": 560,
+     "proteine_g": 38,
+     "ricetta": {
+      "ingredienti": [
+       "90g tagliatelle di riso GF",
+       "180g gamberetti surgelati",
+       "2 uova",
+       "100g fagiolini o germogli di soia",
+       "15ml tamari GF",
+       "10ml succo di lime",
+       "5g olio di sesamo",
+       "10g arachidi (opzionale)",
+       "aglio e zenzero q.b."
+      ],
+      "preparazione": [
+       "Ammolla le tagliatelle in acqua calda 5 min e scola; scongela i gamberetti sotto acqua fredda.",
+       "In wok con olio di sesamo: aglio 30 sec, gamberetti 2 min, scramble le uova al centro.",
+       "Unisci tagliatelle, tamari, lime e zenzero, salta 2 min; fagiolini 1 min e finisci con arachidi."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Salmone al forno + carote & piselli",
+     "calorie_stimate": 480,
+     "proteine_g": 44,
+     "ricetta": {
+      "ingredienti": [
+       "200g filetto di salmone fresco",
+       "150g carote",
+       "150g piselli surgelati",
+       "15g olio EVO",
+       "succo di ½ limone",
+       "rosmarino e sale q.b."
+      ],
+      "preparazione": [
+       "Forno 200°C: salmone su carta forno con olio, limone e rosmarino per 12–14 min.",
+       "In parallelo: carote a rondelle + piselli in padella con un filo d'olio, 8 min a fuoco medio."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco 0% + banana (~190 kcal, 20g prot)",
+     "20g noci (~130 kcal)",
+     "50g bresaola (~75 kcal, 16g prot)"
+    ]
+   }
+  },
+  {
+   "giorno": "Domenica",
+   "data": "2026-08-30",
+   "allenamento": {
+    "tipo": "Riposo",
+    "orario": "",
+    "note": ""
+   },
+   "pasti": {
+    "colazione": {
+     "descrizione": "Yogurt greco + frutti di bosco + semi di chia",
+     "calorie_stimate": 330,
+     "proteine_g": 22,
+     "ricetta": {
+      "ingredienti": [
+       "150g yogurt greco 0%",
+       "100g frutti di bosco misti",
+       "15g semi di chia",
+       "10g miele",
+       "cannella q.b."
+      ],
+      "preparazione": [
+       "Yogurt in ciotola con frutti di bosco, semi di chia, miele e cannella.",
+       "Meglio se preparato la sera prima: i semi si gonfiano e sazia di più."
+      ]
+     }
+    },
+    "pranzo": {
+     "descrizione": "Riso basmati saltato con pollo & curcuma",
+     "calorie_stimate": 590,
+     "proteine_g": 46,
+     "ricetta": {
+      "ingredienti": [
+       "90g riso basmati (peso crudo)",
+       "180g petto di pollo",
+       "100g zucchine",
+       "100g carote",
+       "15ml tamari GF",
+       "10g olio EVO",
+       "curcuma e zenzero q.b."
+      ],
+      "preparazione": [
+       "Cuoci il riso 10–12 min in acqua salata; in parallelo rosola il pollo a cubetti con curcuma 4 min.",
+       "Aggiungi le verdure a julienne 4 min, poi unisci riso e tamari e salta 2 min a fuoco vivo."
+      ]
+     }
+    },
+    "cena": {
+     "descrizione": "Frittata zucchine & carote al forno",
+     "calorie_stimate": 420,
+     "proteine_g": 32,
+     "ricetta": {
+      "ingredienti": [
+       "4 uova intere",
+       "150g zucchine",
+       "100g carote",
+       "40g grana grattugiato",
+       "10g olio EVO",
+       "sale e pepe q.b."
+      ],
+      "preparazione": [
+       "Salta zucchine a rondelle e carote a julienne con olio 4 min, poi lascia intiepidire.",
+       "Sbatti le uova con grana, sale e pepe, unisci le verdure e inforna in teglia oliata a 180°C per 15–18 min."
+      ]
+     }
+    },
+    "spuntini": [
+     "150g yogurt greco 0% + miele (~180 kcal, 15g prot)",
+     "50g bresaola con limone (~75 kcal, 16g prot)",
+     "20g mandorle (~120 kcal)"
+    ]
+   }
+  }
+ ]
+}
