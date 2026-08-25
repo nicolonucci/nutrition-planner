@@ -1,5 +1,5 @@
 {
- "ultimo_aggiornamento": "2026-08-09",
+ "ultimo_aggiornamento": "2026-08-25",
  "alimenti": [
   {
    "nome": "Pasta Rummo Elicoidali",
@@ -290,7 +290,7 @@
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
-   "quantita": 4,
+   "quantita": 0,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 2,
@@ -323,12 +323,12 @@
   {
    "nome": "Philadelphia Light",
    "categoria": "Latticini",
-   "quantita": 25,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
    "scadenza": "",
-   "note": "1x25g",
+   "note": "0x25g",
    "monoporzione": true
   },
   {
@@ -367,7 +367,7 @@
   {
    "nome": "Grana Padano DOP",
    "categoria": "Latticini",
-   "quantita": 130,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
@@ -488,7 +488,7 @@
   {
    "nome": "Piselli",
    "categoria": "Verdure & Frutta",
-   "quantita": 200,
+   "quantita": 0,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -532,7 +532,7 @@
   {
    "nome": "Limoni",
    "categoria": "Verdure & Frutta",
-   "quantita": 250,
+   "quantita": 0,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 0,
