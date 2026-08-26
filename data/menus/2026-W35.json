@@ -110,7 +110,17 @@
        "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
        "Scalda la piadina in padella asciutta 1 min per lato, spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "80 g piadina GF",
+      "170 g petto di pollo",
+      "160 g pomodori",
+      "25 g philadelphia GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "cena": {
      "descrizione": "Salmone in padella + piselli & pomodorini",
