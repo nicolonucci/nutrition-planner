@@ -139,7 +139,16 @@
        "In padella con olio e aglio cuoci il salmone 3–4 min per lato, poi tienilo da parte.",
        "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "200 g filetto di salmone fresco",
+      "150 g piselli surgelati",
+      "150 g pomodorini"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "spuntini": [
      "2 uova sode + 1 banana (~240 kcal, 16g prot)",
