@@ -81,7 +81,16 @@
       "preparazione": [
        "Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "20 g noci sgusciate",
+      "10 g miele"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "pranzo": {
      "descrizione": "Piadina GF con pollo, pomodori & rucola",
