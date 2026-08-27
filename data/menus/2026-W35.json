@@ -227,7 +227,19 @@
      "20g mandorle (~120 kcal)",
      "50g bresaola con succo di limone (~75 kcal, 16g prot)"
     ]
-   }
+   },
+   "pasti_liberi": [
+    {
+     "descrizione": "15 g noci",
+     "consumato": "2026-08-27T10:42",
+     "dettaglio": [
+      "15 g noci"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
+    }
+   ]
   },
   {
    "giorno": "Venerdì",
