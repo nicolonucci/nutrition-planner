@@ -202,7 +202,17 @@
        "Lessa i fagiolini 6 min in acqua salata, scola e raffredda sotto acqua fredda.",
        "Mescola tutto in una ciotola e condisci con olio, limone, sale e basilico."
       ]
-     }
+     },
+     "consumato": "2026-08-27T13:52",
+     "consumato_dettaglio": [
+      "1 pz tonno al naturale",
+      "150 g pomodorini",
+      "150 g fagiolini",
+      "15 g Olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "cena": {
      "descrizione": "Pollo al limone + zucchine grigliate",
