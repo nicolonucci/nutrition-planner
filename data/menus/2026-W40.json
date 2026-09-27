@@ -1,0 +1,556 @@
+{
+  "settimana": "2026-W40",
+  "dal": "2026-09-28",
+  "al": "2026-10-04",
+  "confermato": true,
+  "preferenze": {
+    "richieste": [
+      "Spaghetti di riso",
+      "Molte uova"
+    ],
+    "note": "Palestra mattina: colazione seguita subito da allenamento, niente pre-workout. Corsa: cena subito dopo, niente spuntino post separato. Sabato ciclismo a orario libero: niente spuntino pre/post."
+  },
+  "giorni": [
+    {
+      "giorno": "Lunedì",
+      "data": "2026-09-28",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Pomeriggio",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": [
+              "3 uova intere (150 g)",
+              "2 fette pane GF (~60 g)",
+              "1 arancia (~150 g)",
+              "5 g olio EVO",
+              "sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Sbatti le uova con sale e pepe. Cuoci a fuoco basso mescolando 2–3 min finché cremose.",
+              "Tosta il pane GF. Servi con l'arancia a parte."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Spaghetti di riso con pollo e verdure",
+          "calorie_stimate": 600,
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": [
+              "80 g spaghetti di riso",
+              "180 g petto di pollo a striscioline",
+              "100 g carote a julienne",
+              "100 g zucchine a julienne",
+              "15 ml tamari GF",
+              "10 g olio EVO",
+              "zenzero fresco q.b.",
+              "semi di sesamo q.b."
+            ],
+            "preparazione": [
+              "Ammolla gli spaghetti di riso in acqua calda 5–8 min, scola.",
+              "Rosola il pollo con lo zenzero 4–5 min, aggiungi carote e zucchine 3–4 min.",
+              "Unisci gli spaghetti + tamari, salta 2 min a fuoco vivo, spolvera di sesamo."
+            ]
+          }
+        },
+        "post_workout": {
+          "descrizione": "Yogurt greco 150g + banana + miele + granola GF (post-nuoto)",
+          "calorie_stimate": 310,
+          "proteine_g": 22,
+          "ricetta": {
+            "ingredienti": [
+              "150 g yogurt greco 0%",
+              "1 banana (~120 g)",
+              "10 g miele",
+              "15 g granola GF"
+            ],
+            "preparazione": [
+              "Prepara in contenitore prima di uscire di casa.",
+              "Mangia in spogliatoio — il post-nuoto è fondamentale per il recupero."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Piadina GF con salmone, pomodori e rucola",
+          "calorie_stimate": 440,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": [
+              "1 piadina GF (~80 g)",
+              "150 g salmone al naturale",
+              "2 pomodori (~160 g)",
+              "40 g rucola",
+              "30 g philadelphia GF",
+              "succo ½ limone"
+            ],
+            "preparazione": [
+              "Scalda la piadina GF 1 min per lato.",
+              "Spalma il philadelphia, aggiungi salmone, pomodori e rucola. Limone e piega."
+            ]
+          }
+        },
+        "spuntini": [
+          "Yogurt greco 150g + 20g noci (~270 kcal, 18g prot)"
+        ]
+      }
+    },
+    {
+      "giorno": "Martedì",
+      "data": "2026-09-29",
+      "allenamento": {
+        "tipo": "Corsa",
+        "orario": "Pomeriggio",
+        "note": "Cena subito dopo la corsa — niente spuntino post-workout separato."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Toast GF avocado + salmone affumicato",
+          "calorie_stimate": 410,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": [
+              "2 fette pane GF (~60 g)",
+              "½ avocado (~80 g)",
+              "80 g salmone affumicato GF",
+              "succo ½ limone",
+              "pepe · erba cipollina q.b."
+            ],
+            "preparazione": [
+              "Tosta il pane, schiaccia l'avocado con limone e pepe.",
+              "Spalma, disponi il salmone, guarnisci con erba cipollina."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo e curcuma",
+          "calorie_stimate": 590,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "90 g riso basmati (peso crudo)",
+              "180 g petto di pollo",
+              "100 g zucchine",
+              "100 g carote",
+              "15 ml tamari GF",
+              "10 g olio EVO",
+              "curcuma · zenzero q.b."
+            ],
+            "preparazione": [
+              "Cuoci il riso. Rosola il pollo a cubetti con curcuma 4 min.",
+              "Aggiungi le verdure 4 min. Unisci riso + tamari GF, salta 2 min."
+            ]
+          }
+        },
+        "pre_workout": {
+          "descrizione": "Banana + yogurt greco 150g (pre-corsa)",
+          "calorie_stimate": 190,
+          "proteine_g": 10
+        },
+        "cena": {
+          "descrizione": "Merluzzo al vapore + piselli e carote (subito dopo la corsa)",
+          "calorie_stimate": 370,
+          "proteine_g": 42,
+          "ricetta": {
+            "ingredienti": [
+              "220 g merluzzo fresco o surgelato",
+              "150 g piselli surgelati",
+              "150 g carote",
+              "15 g olio EVO",
+              "succo ½ limone",
+              "prezzemolo · sale q.b."
+            ],
+            "preparazione": [
+              "Merluzzo al vapore 10–12 min. Piselli e carote saltate 5 min.",
+              "Condisci tutto con olio, limone e prezzemolo."
+            ]
+          }
+        },
+        "spuntini": [
+          "Mela + 20g mandorle (~180 kcal, 4g prot)"
+        ]
+      }
+    },
+    {
+      "giorno": "Mercoledì",
+      "data": "2026-09-30",
+      "allenamento": {
+        "tipo": "Palestra",
+        "orario": "Mattina",
+        "note": "Colazione seguita direttamente dall'allenamento — niente pre-workout."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Smoothie fragola + banana + yogurt greco",
+          "calorie_stimate": 320,
+          "proteine_g": 20,
+          "ricetta": {
+            "ingredienti": [
+              "150 g fragole fresche o surgelate",
+              "1 banana matura (~120 g)",
+              "150 g yogurt greco 0%",
+              "80 ml latte parz. scremato",
+              "cubetti di ghiaccio q.b."
+            ],
+            "preparazione": [
+              "Taglia fragole e banana a pezzi, metti tutto nel frullatore con latte e ghiaccio.",
+              "Frulla 1 min alla massima velocità fino a crema liscia."
+            ]
+          }
+        },
+        "post_workout": {
+          "descrizione": "2 uova sode + banana (post-allenamento)",
+          "calorie_stimate": 240,
+          "proteine_g": 16,
+          "ricetta": {
+            "ingredienti": [
+              "2 uova sode (~100 g)",
+              "1 banana matura (~120 g)"
+            ],
+            "preparazione": [
+              "Bolli le uova 9 min la sera prima, conserva in frigo con il guscio.",
+              "Porta in borsa con la banana — zero prep post-allenamento."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati saltato con pollo e curcuma",
+          "calorie_stimate": 590,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "90 g riso basmati (peso crudo)",
+              "180 g petto di pollo",
+              "100 g zucchine",
+              "100 g carote",
+              "15 ml tamari GF",
+              "10 g olio EVO",
+              "curcuma · zenzero q.b."
+            ],
+            "preparazione": [
+              "Cuoci il riso 10–12 min in acqua salata. In parallelo rosola il pollo a cubetti con curcuma 4 min.",
+              "Aggiungi le verdure a julienne 4 min. Unisci riso e tamari GF, salta 2 min a fuoco vivo."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "200 g bistecca di manzo (controfiletto)",
+              "200 g pomodori",
+              "40 g rucola",
+              "15 g olio EVO",
+              "sale · pepe · rosmarino GF q.b."
+            ],
+            "preparazione": [
+              "Lascia la bistecca a temperatura ambiente 10 min. Padella caldissima 2–3 min per lato. Riposa 3 min avvolta in stagnola.",
+              "Insalata di pomodori e rucola condita con olio e sale."
+            ]
+          }
+        },
+        "spuntini": [
+          "Yogurt greco 150g + miele + 20g noci (~320 kcal, 19g prot)"
+        ]
+      }
+    },
+    {
+      "giorno": "Giovedì",
+      "data": "2026-10-01",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate al pomodoro + pane GF",
+          "calorie_stimate": 420,
+          "proteine_g": 26,
+          "ricetta": {
+            "ingredienti": [
+              "3 uova intere (150 g)",
+              "100 g passata di pomodoro",
+              "½ cipolla (~40 g)",
+              "2 fette pane GF (~60 g)",
+              "10 g olio EVO",
+              "prezzemolo · sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Soffriggi la cipolla in olio 2 min, aggiungi la passata, cuoci 4 min a fuoco medio.",
+              "Sguscia le uova nel sugo, strapazza 2 min. Servi su pane GF tostato con prezzemolo."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Spaghetti di soia con salmone e piselli",
+          "calorie_stimate": 520,
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": [
+              "80 g spaghetti di soia GF",
+              "180 g salmone fresco a cubetti",
+              "150 g piselli surgelati",
+              "15 ml tamari GF",
+              "10 g olio EVO",
+              "succo ½ limone",
+              "aglio · erba cipollina q.b."
+            ],
+            "preparazione": [
+              "Ammolla gli spaghetti di soia 5 min. Rosola il salmone 3 min, aggiungi i piselli 2 min.",
+              "Unisci spaghetti + tamari + limone, salta 1–2 min. Finisci con erba cipollina."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo al limone + zucchine grigliate",
+          "calorie_stimate": 380,
+          "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": [
+              "220 g petto di pollo",
+              "250 g zucchine",
+              "15 g olio EVO",
+              "succo 1 limone",
+              "origano GF · sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Marina il pollo con limone, olio e origano 10 min. Cuoci in padella grill 4–5 min per lato.",
+              "Griglia le zucchine a fette 2–3 min per lato."
+            ]
+          }
+        },
+        "spuntini": [
+          "Yogurt greco 150g + frutti di bosco (~180 kcal, 15g prot)",
+          "Mela + 10g mandorle (~150 kcal, 2g prot)"
+        ]
+      }
+    },
+    {
+      "giorno": "Venerdì",
+      "data": "2026-10-02",
+      "allenamento": {
+        "tipo": "Nuoto",
+        "orario": "Mattina",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Banana (pre-nuoto)",
+          "calorie_stimate": 105,
+          "proteine_g": 1
+        },
+        "post_workout": {
+          "descrizione": "6 crackers di riso GF + 2 uova sode + pomodoro (post-nuoto)",
+          "calorie_stimate": 380,
+          "proteine_g": 18,
+          "ricetta": {
+            "ingredienti": [
+              "6 crackers di riso GF (~60 g)",
+              "2 uova sode (~100 g)",
+              "1 pomodoro (~120 g)",
+              "5 g olio EVO"
+            ],
+            "preparazione": [
+              "Bolli le uova 9 min la sera prima e portale in borsa già sgusciate.",
+              "In spogliatoio: crackers, uova sode a fette, pomodoro e un filo d'olio."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Riso basmati con pollo e zucchine",
+          "calorie_stimate": 600,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "90 g riso basmati (peso crudo)",
+              "180 g petto di pollo",
+              "200 g zucchine",
+              "1 spicchio aglio",
+              "10 g olio EVO",
+              "succo ½ limone",
+              "sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Cuoci il riso. Rosola il pollo a strisce con aglio e olio 5–6 min.",
+              "Aggiungi le zucchine a rondelle 4 min. Servi sul riso con limone."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Bistecca di manzo + insalata di pomodori",
+          "calorie_stimate": 450,
+          "proteine_g": 46,
+          "ricetta": {
+            "ingredienti": [
+              "200 g bistecca di manzo",
+              "200 g pomodori",
+              "40 g rucola",
+              "15 g olio EVO",
+              "sale · pepe · rosmarino GF q.b."
+            ],
+            "preparazione": [
+              "Padella caldissima 2–3 min per lato. Riposa 3 min in carta stagnola.",
+              "Servi con insalata di pomodori e rucola."
+            ]
+          }
+        },
+        "spuntini": [
+          "Yogurt greco 200g + miele + noci (~320 kcal, 24g prot)",
+          "2 uova sode (~140 kcal, 12g prot)"
+        ]
+      }
+    },
+    {
+      "giorno": "Sabato",
+      "data": "2026-10-03",
+      "allenamento": {
+        "tipo": "Ciclismo",
+        "orario": "",
+        "note": "Orario da definire — nessuno spuntino pre/post; colazione e pranzo pensati per andare bene sia prima che dopo l'uscita."
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Philadelphia GF + salmone + pane GF + pomodoro",
+          "calorie_stimate": 400,
+          "proteine_g": 26,
+          "ricetta": {
+            "ingredienti": [
+              "2 fette pane GF (~60 g)",
+              "60 g philadelphia GF",
+              "80 g salmone affumicato GF",
+              "1 pomodoro (~120 g)",
+              "pepe q.b."
+            ],
+            "preparazione": [
+              "Tosta il pane, spalma il philadelphia.",
+              "Disponi salmone e pomodoro a fette, pepe."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Spaghetti di riso con gamberetti e verdure",
+          "calorie_stimate": 550,
+          "proteine_g": 40,
+          "ricetta": {
+            "ingredienti": [
+              "80 g spaghetti di riso",
+              "180 g gamberetti sgusciati",
+              "100 g peperoni a listarelle",
+              "80 g carote a julienne",
+              "1 spicchio aglio",
+              "15 ml tamari GF",
+              "10 g olio EVO",
+              "succo ½ lime",
+              "coriandolo fresco q.b."
+            ],
+            "preparazione": [
+              "Ammolla gli spaghetti di riso 5–8 min in acqua calda, scola.",
+              "Rosola aglio e gamberetti 2–3 min, aggiungi peperoni e carote 3–4 min.",
+              "Unisci spaghetti + tamari + lime, salta 2 min, guarnisci con coriandolo."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Pollo alla piastra + zucchine grigliate",
+          "calorie_stimate": 390,
+          "proteine_g": 48,
+          "ricetta": {
+            "ingredienti": [
+              "220 g petto di pollo",
+              "250 g zucchine",
+              "15 g olio EVO",
+              "succo ½ limone",
+              "origano GF · sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Marina il pollo 5 min. Grill 4–5 min per lato.",
+              "Griglia le zucchine 2–3 min per lato con l'olio rimasto."
+            ]
+          }
+        },
+        "spuntini": []
+      }
+    },
+    {
+      "giorno": "Domenica",
+      "data": "2026-10-04",
+      "allenamento": {
+        "tipo": "Riposo",
+        "orario": "",
+        "note": ""
+      },
+      "pasti": {
+        "colazione": {
+          "descrizione": "Uova strapazzate + pane GF + arancia",
+          "calorie_stimate": 430,
+          "proteine_g": 28,
+          "ricetta": {
+            "ingredienti": [
+              "3 uova intere (150 g)",
+              "2 fette pane GF (~60 g)",
+              "1 arancia (~150 g)",
+              "5 g olio EVO",
+              "sale · pepe q.b."
+            ],
+            "preparazione": [
+              "Sbatti le uova con sale e pepe. Cuoci a fuoco basso mescolando 2–3 min finché cremose.",
+              "Tosta le fette di pane GF. Servi con arancia pelata a parte."
+            ]
+          }
+        },
+        "pranzo": {
+          "descrizione": "Bowl riso venere, tonno e pomodorini",
+          "calorie_stimate": 500,
+          "proteine_g": 38,
+          "ricetta": {
+            "ingredienti": [
+              "70 g riso venere (peso crudo)",
+              "160 g tonno al naturale",
+              "150 g pomodorini",
+              "50 g olive nere",
+              "15 g olio EVO",
+              "succo ½ limone",
+              "basilico · sale q.b."
+            ],
+            "preparazione": [
+              "Cuoci il riso venere 18 min, scola e lascia intiepidire.",
+              "Mescola riso, tonno, pomodorini e olive. Condisci con olio, limone e basilico."
+            ]
+          }
+        },
+        "cena": {
+          "descrizione": "Salmone in padella + piselli e pomodorini",
+          "calorie_stimate": 470,
+          "proteine_g": 44,
+          "ricetta": {
+            "ingredienti": [
+              "200 g filetto di salmone fresco",
+              "150 g piselli surgelati",
+              "150 g pomodorini",
+              "15 g olio EVO",
+              "succo ½ limone",
+              "aglio · prezzemolo · sale q.b."
+            ],
+            "preparazione": [
+              "In padella con olio e aglio: cuoci il salmone 3–4 min per lato, tieni da parte.",
+              "Nella stessa padella: piselli e pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
+            ]
+          }
+        },
+        "spuntini": [
+          "Yogurt greco 150g + frutti di bosco + 15g noci (~280 kcal, 17g prot)",
+          "2 uova sode (~140 kcal, 12g prot)"
+        ]
+      }
+    }
+  ]
+}
