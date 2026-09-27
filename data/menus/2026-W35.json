@@ -81,7 +81,16 @@
       "preparazione": [
        "Yogurt in ciotola, banana a rondelle, noci spezzettate, miele. Pronto in 3 minuti."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "1 pz yogurt greco 0%",
+      "20 g noci sgusciate",
+      "10 g miele"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "pranzo": {
      "descrizione": "Piadina GF con pollo, pomodori & rucola",
@@ -101,7 +110,17 @@
        "Cuoci il pollo a striscioline con olio e origano 5–6 min in padella.",
        "Scalda la piadina in padella asciutta 1 min per lato, spalma il philadelphia, aggiungi pollo, pomodori e rucola. Arrotola."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "80 g piadina GF",
+      "170 g petto di pollo",
+      "160 g pomodori",
+      "25 g philadelphia GF"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "cena": {
      "descrizione": "Salmone in padella + piselli & pomodorini",
@@ -120,7 +139,16 @@
        "In padella con olio e aglio cuoci il salmone 3–4 min per lato, poi tienilo da parte.",
        "Nella stessa padella: piselli + pomodorini 5 min. Rimetti il salmone, aggiungi limone e prezzemolo."
       ]
-     }
+     },
+     "consumato": "2026-08-26T21:09",
+     "consumato_dettaglio": [
+      "200 g filetto di salmone fresco",
+      "150 g piselli surgelati",
+      "150 g pomodorini"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "spuntini": [
      "2 uova sode + 1 banana (~240 kcal, 16g prot)",
@@ -174,7 +202,17 @@
        "Lessa i fagiolini 6 min in acqua salata, scola e raffredda sotto acqua fredda.",
        "Mescola tutto in una ciotola e condisci con olio, limone, sale e basilico."
       ]
-     }
+     },
+     "consumato": "2026-08-27T13:52",
+     "consumato_dettaglio": [
+      "1 pz tonno al naturale",
+      "150 g pomodorini",
+      "150 g fagiolini",
+      "15 g Olio"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
     },
     "cena": {
      "descrizione": "Pollo al limone + zucchine grigliate",
@@ -199,7 +237,19 @@
      "20g mandorle (~120 kcal)",
      "50g bresaola con succo di limone (~75 kcal, 16g prot)"
     ]
-   }
+   },
+   "pasti_liberi": [
+    {
+     "descrizione": "15 g noci",
+     "consumato": "2026-08-27T10:42",
+     "dettaglio": [
+      "15 g noci"
+     ],
+     "consumato_sede": "como",
+     "consumato_no_scala": true,
+     "consumato_scalato": []
+    }
+   ]
   },
   {
    "giorno": "Venerdì",
