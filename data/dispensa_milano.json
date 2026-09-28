@@ -31,7 +31,7 @@
   {
    "nome": "Salmone affumicato GF",
    "categoria": "Proteine",
-   "quantita": 160,
+   "quantita": 0,
    "unita": "g",
    "soglia_minima": 80,
    "scadenza": "",
@@ -94,7 +94,7 @@
   {
    "nome": "Pomodori",
    "categoria": "Verdure & Frutta",
-   "quantita": 1000,
+   "quantita": 832,
    "unita": "g",
    "soglia_minima": 300,
    "scadenza": "",
@@ -193,7 +193,7 @@
   {
    "nome": "Philadelphia GF",
    "categoria": "Latticini",
-   "quantita": 150,
+   "quantita": 125,
    "unita": "g",
    "soglia_minima": 50,
    "scadenza": "",
