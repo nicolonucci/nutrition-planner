@@ -94,7 +94,36 @@
        "Scalda la piadina GF 1 min per lato.",
        "Spalma il philadelphia, aggiungi salmone, pomodori e rucola. Limone e piega."
       ]
-     }
+     },
+     "consumato": "2026-09-28T22:29",
+     "consumato_dettaglio": [
+      "168 g pomodori",
+      "25 g philadelphia GF",
+      "150 g Piadina loriana",
+      "200 g Salmone congelato"
+     ],
+     "consumato_sede": "milano",
+     "consumato_no_scala": false,
+     "consumato_scalato": [
+      {
+       "nome": "Pomodori",
+       "unita": "g",
+       "prelievo": 168,
+       "congelato": false
+      },
+      {
+       "nome": "Philadelphia GF",
+       "unita": "g",
+       "prelievo": 25,
+       "congelato": false
+      },
+      {
+       "nome": "Salmone affumicato GF",
+       "unita": "g",
+       "prelievo": 160,
+       "congelato": false
+      }
+     ]
     },
     "spuntini": [
      "Yogurt greco 150g + 20g noci (~270 kcal, 18g prot)"
