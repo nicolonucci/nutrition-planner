@@ -1,4 +1,212 @@
 {
-  "ultimo_aggiornamento": "2026-07-01",
-  "alimenti": []
+  "ultimo_aggiornamento": "2026-09-28",
+  "alimenti": [
+    {
+      "nome": "Uova",
+      "categoria": "Proteine",
+      "quantita": 20,
+      "unita": "pz",
+      "soglia_minima": 4,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Gamberetti sgusciati",
+      "categoria": "Proteine",
+      "quantita": 300,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Tonno al naturale",
+      "categoria": "Proteine",
+      "quantita": 320,
+      "unita": "g",
+      "soglia_minima": 160,
+      "scadenza": "",
+      "note": "2 scatolette da 160 g"
+    },
+    {
+      "nome": "Salmone affumicato GF",
+      "categoria": "Proteine",
+      "quantita": 160,
+      "unita": "g",
+      "soglia_minima": 80,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Petto di pollo",
+      "categoria": "Proteine",
+      "quantita": 1200,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Controfiletto di manzo",
+      "categoria": "Proteine",
+      "quantita": 400,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Merluzzo",
+      "categoria": "Proteine",
+      "quantita": 1000,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Filetto di salmone",
+      "categoria": "Proteine",
+      "quantita": 1000,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Piselli surgelati",
+      "categoria": "Verdure & Frutta",
+      "quantita": 450,
+      "unita": "g",
+      "soglia_minima": 150,
+      "scadenza": "",
+      "note": "congelato"
+    },
+    {
+      "nome": "Passata di pomodoro",
+      "categoria": "Verdure & Frutta",
+      "quantita": 2,
+      "unita": "confezioni",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Pomodori",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1000,
+      "unita": "g",
+      "soglia_minima": 300,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Zucchine",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1100,
+      "unita": "g",
+      "soglia_minima": 300,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Carote",
+      "categoria": "Verdure & Frutta",
+      "quantita": 750,
+      "unita": "g",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Avocado",
+      "categoria": "Verdure & Frutta",
+      "quantita": 1,
+      "unita": "pz",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Fragole",
+      "categoria": "Verdure & Frutta",
+      "quantita": 150,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Banane",
+      "categoria": "Verdure & Frutta",
+      "quantita": 5,
+      "unita": "pz",
+      "soglia_minima": 2,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Spaghetti di riso",
+      "categoria": "Cereali",
+      "quantita": 160,
+      "unita": "g",
+      "soglia_minima": 100,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Crackers di riso GF",
+      "categoria": "Cereali",
+      "quantita": 6,
+      "unita": "confezioni",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": ""
+    },
+    {
+      "nome": "Piadine GF",
+      "categoria": "Cereali",
+      "quantita": 2,
+      "unita": "confezioni",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": "225 g a confezione"
+    },
+    {
+      "nome": "Pane GF",
+      "categoria": "Cereali",
+      "quantita": 2,
+      "unita": "confezioni",
+      "soglia_minima": 1,
+      "scadenza": "",
+      "note": "330 g a confezione"
+    },
+    {
+      "nome": "Latte parzialmente scremato",
+      "categoria": "Latticini",
+      "quantita": 500,
+      "unita": "ml",
+      "soglia_minima": 200,
+      "scadenza": "",
+      "note": "piccola confezione"
+    },
+    {
+      "nome": "Philadelphia GF",
+      "categoria": "Latticini",
+      "quantita": 150,
+      "unita": "g",
+      "soglia_minima": 50,
+      "scadenza": "",
+      "note": "6 porzioni da 25 g"
+    },
+    {
+      "nome": "Yogurt greco 0%",
+      "categoria": "Latticini",
+      "quantita": 1350,
+      "unita": "g",
+      "soglia_minima": 300,
+      "scadenza": "",
+      "note": ""
+    }
+  ]
 }
