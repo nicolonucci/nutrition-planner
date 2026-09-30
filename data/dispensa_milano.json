@@ -4,7 +4,7 @@
   {
    "nome": "Uova",
    "categoria": "Proteine",
-   "quantita": 20,
+   "quantita": 16,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 4,
@@ -26,13 +26,13 @@
   {
    "nome": "Tonno al naturale",
    "categoria": "Proteine",
-   "quantita": 270,
+   "quantita": 160,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 160,
    "scadenza": "",
-   "note": "2 scatolette da 160 g",
-   "monoporzione": false
+   "note": "1x160 g",
+   "monoporzione": true
   },
   {
    "nome": "Salmone affumicato GF",
@@ -48,7 +48,7 @@
   {
    "nome": "Petto di pollo",
    "categoria": "Proteine",
-   "quantita": 1200,
+   "quantita": 1000,
    "unita": "g",
    "congelato": true,
    "soglia_minima": 200,
@@ -125,7 +125,7 @@
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
-   "quantita": 1100,
+   "quantita": 850,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 300,
@@ -191,13 +191,13 @@
   {
    "nome": "Crackers di riso GF",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 6,
+   "quantita": 4,
    "unita": "pz",
    "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": "",
-   "monoporzione": false
+   "note": "33g",
+   "monoporzione": true
   },
   {
    "nome": "Piadine GF",
@@ -213,7 +213,7 @@
   {
    "nome": "Pane GF",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 660,
+   "quantita": 410,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 330,
@@ -235,13 +235,13 @@
   {
    "nome": "Philadelphia GF",
    "categoria": "Latticini",
-   "quantita": 125,
+   "quantita": 75,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 50,
    "scadenza": "",
-   "note": "6 porzioni da 25 g",
-   "monoporzione": false
+   "note": "25 g",
+   "monoporzione": true
   },
   {
    "nome": "Yogurt greco 0%",
