@@ -103,12 +103,12 @@
   {
    "nome": "Passata di pomodoro",
    "categoria": "Verdure & Frutta",
-   "quantita": 1.75,
-   "unita": "pz",
+   "quantita": 700,
+   "unita": "g",
    "congelato": false,
-   "soglia_minima": 1,
+   "soglia_minima": 400,
    "scadenza": "",
-   "note": "",
+   "note": "400 g a confezione",
    "monoporzione": false
   },
   {
@@ -202,13 +202,13 @@
   {
    "nome": "Piadine GF",
    "categoria": "Cereali & Carboidrati",
-   "quantita": 450,
+   "quantita": 375,
    "unita": "g",
    "congelato": false,
    "soglia_minima": 225,
    "scadenza": "",
-   "note": "2x225g",
-   "monoporzione": false
+   "note": "5x75g",
+   "monoporzione": true
   },
   {
    "nome": "Pane GF",
