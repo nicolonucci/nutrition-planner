@@ -1,212 +1,258 @@
 {
- "ultimo_aggiornamento": "2026-09-28",
+ "ultimo_aggiornamento": "2026-09-30",
  "alimenti": [
   {
    "nome": "Uova",
    "categoria": "Proteine",
    "quantita": 20,
    "unita": "pz",
+   "congelato": false,
    "soglia_minima": 4,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Gamberetti sgusciati",
    "categoria": "Proteine",
    "quantita": 300,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Tonno al naturale",
    "categoria": "Proteine",
    "quantita": 270,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 160,
    "scadenza": "",
-   "note": "2 scatolette da 160 g"
+   "note": "2 scatolette da 160 g",
+   "monoporzione": false
   },
   {
    "nome": "Salmone affumicato GF",
    "categoria": "Proteine",
    "quantita": 0,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 80,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Petto di pollo",
    "categoria": "Proteine",
    "quantita": 1200,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Controfiletto di manzo",
    "categoria": "Proteine",
    "quantita": 400,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Merluzzo",
    "categoria": "Proteine",
    "quantita": 1000,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Filetto di salmone",
    "categoria": "Proteine",
    "quantita": 800,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Piselli surgelati",
    "categoria": "Verdure & Frutta",
    "quantita": 450,
    "unita": "g",
+   "congelato": true,
    "soglia_minima": 150,
    "scadenza": "",
-   "note": "congelato"
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Passata di pomodoro",
    "categoria": "Verdure & Frutta",
    "quantita": 1.75,
-   "unita": "confezioni",
+   "unita": "pz",
+   "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Pomodori",
    "categoria": "Verdure & Frutta",
    "quantita": 832,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 300,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Zucchine",
    "categoria": "Verdure & Frutta",
    "quantita": 1100,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 300,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Carote",
    "categoria": "Verdure & Frutta",
    "quantita": 750,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Avocado",
    "categoria": "Verdure & Frutta",
    "quantita": 1,
    "unita": "pz",
+   "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Fragole",
    "categoria": "Verdure & Frutta",
    "quantita": 150,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Banane",
    "categoria": "Verdure & Frutta",
    "quantita": 4,
    "unita": "pz",
+   "congelato": false,
    "soglia_minima": 2,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Spaghetti di riso",
-   "categoria": "Cereali",
+   "categoria": "Cereali & Carboidrati",
    "quantita": 160,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 100,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Crackers di riso GF",
-   "categoria": "Cereali",
+   "categoria": "Cereali & Carboidrati",
    "quantita": 6,
-   "unita": "confezioni",
+   "unita": "pz",
+   "congelato": false,
    "soglia_minima": 1,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   },
   {
    "nome": "Piadine GF",
-   "categoria": "Cereali",
-   "quantita": 2,
-   "unita": "confezioni",
-   "soglia_minima": 1,
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 450,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 225,
    "scadenza": "",
-   "note": "225 g a confezione"
+   "note": "2x225g",
+   "monoporzione": false
   },
   {
    "nome": "Pane GF",
-   "categoria": "Cereali",
-   "quantita": 2,
-   "unita": "confezioni",
-   "soglia_minima": 1,
+   "categoria": "Cereali & Carboidrati",
+   "quantita": 660,
+   "unita": "g",
+   "congelato": false,
+   "soglia_minima": 330,
    "scadenza": "",
-   "note": "330 g a confezione"
+   "note": "2x330g",
+   "monoporzione": false
   },
   {
    "nome": "Latte parzialmente scremato",
    "categoria": "Latticini",
    "quantita": 500,
    "unita": "ml",
+   "congelato": false,
    "soglia_minima": 200,
    "scadenza": "",
-   "note": "piccola confezione"
+   "note": "piccola confezione",
+   "monoporzione": false
   },
   {
    "nome": "Philadelphia GF",
    "categoria": "Latticini",
    "quantita": 125,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 50,
    "scadenza": "",
-   "note": "6 porzioni da 25 g"
+   "note": "6 porzioni da 25 g",
+   "monoporzione": false
   },
   {
    "nome": "Yogurt greco 0%",
    "categoria": "Latticini",
    "quantita": 1350,
    "unita": "g",
+   "congelato": false,
    "soglia_minima": 300,
    "scadenza": "",
-   "note": ""
+   "note": "",
+   "monoporzione": false
   }
  ]
 }
